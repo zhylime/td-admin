@@ -1,0 +1,21 @@
+script.
+  window.MLP = window.MLP || {};
+  MLP.paths = !{JSON.stringify(paths)};
+
+
+script(src=paths.js + 'vendor/jquery.js')
+
+script(src=paths.js + 'vendor.min.js')
+//- script(src=paths.js + 'vendor/jquery-ui.js')
+script(src=paths.js + 'app.js')
+<!--[if IE 9]>
+script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js")
+<![endif]-->
+
+
+
+if (host)
+  script#__bs_script__(type='text/javascript').
+    //<![CDATA[
+    document.write("<script async src='http://HOST:8081/browser-sync/browser-sync-client.2.9.11.js'><\\/script>".replace("HOST", location.hostname));
+    //]]>

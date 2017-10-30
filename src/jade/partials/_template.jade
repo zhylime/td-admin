@@ -1,0 +1,13 @@
+include ../mixins/_top-menu
+include ../mixins/_footer
+
+doctype html
+html(lang=config.language)
+  include _head
+  body
+    +top-menu
+    
+    block content
+
+    +footer
+  include _foot
