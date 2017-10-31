@@ -94,25 +94,24 @@
           display none
       &:hover
         .c-content__menu--info
-          display block
+          opacity .9
         img:nth-child(1)
           display none
         img:nth-child(2)
           display block
-          transform scale(1.1)
     &--info
       background-color $bg-overlay-blue
       border 1px solid $border-green
       color $color-white
       z-index 100000
       position absolute
-      opacity .9
       width 334px
       padding-bottom 10px
-      display none
+      transition opacity .2s linear
+      opacity 0
       &.info1
         left 80%
-        top -20px
+        top 50px
       &.info2
         left 80%
       &.info3

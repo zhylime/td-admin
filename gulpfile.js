@@ -208,7 +208,7 @@ gulp.task('stylus', function() {
     .pipe(stylus({
       use: [nib(), kouto()],
       import:['nib'],
-      compress: true
+      compress: false
     }))
     .on('error', gutil.log)
     .pipe(toggle(insert.prepend, featureEnabled.deploy, {params: config.header, name: 'deploy - css header'}))
