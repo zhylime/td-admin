@@ -1,0 +1,115 @@
+.c-mainFrame
+  font-size 0
+  &__sideNav
+  &__tabContent
+    display inline-block
+    vertical-align top
+    font-size 14px
+  &__sideNav
+    background $sidenav-bg-blue
+    width 300px
+    li
+      
+      span
+      a
+        display block
+        width 100%
+        height 55px
+        line-height 55px
+        color white
+        text-decoration none
+        cursor pointer
+        font-size 16px
+        border-bottom 1px solid $tabs-nav-border-blue
+        position relative
+        &:before
+          content ""
+          background url(../images/spirit-icons.png)
+          background-repeat no-repeat
+          position absolute
+          display block
+          top 50%
+          transform translateY(-50%)
+      a:hover
+        color white
+        text-decoration none
+      .subnav-3-item
+        &>span
+        &>a
+          font-size 14px
+    .subnav-1-item
+      &>span
+      &>a
+        padding-left 52px
+        &:before
+          width 24px
+          height 24px
+          left 18px
+        &:after
+          content ""
+          background url(../images/spirit-icons.png)
+          background-repeat no-repeat
+          position absolute
+          display block
+          width 17px
+          height 10px
+          right 20px
+          top 50%
+          transform translateY(-50%)
+          background-position -3px -44px
+    .subnav-2-item
+      &>span
+      &>a
+        padding-left 52px
+        &:before
+          width 24px
+          height 24px
+          left 18px
+          background-position -53px 0px
+    .subnav-3-item
+      &>span
+      &>a
+        padding-left 84px
+        &:before
+          width 24px
+          height 24px
+          left 54px
+          background-position -76px 0px
+      
+      
+          
+      
+  &__tabContent
+    width calc(100% - 300px)
+    width -webkit-calc(100% - 300px)
+    width -moz-calc(100% - 300px)
+    width -o-calc(100% - 300px)
+    background white
+    margin-top 0
+    
+    .nav-tabs
+      padding-left 0
+      background $tabs-bg-blue
+      margin-bottom 0
+      li
+        margin-right 0
+        a
+          font-size 16px
+        &.active
+          a
+            color $tabs-nav-text-active-blue
+            background white
+            button.navTabsCloseBtn
+              color $tabs-nav-text-active-blue
+              &:hover
+                color black !important
+      &>li>a
+        color $tabs-nav-text-blue
+        background $tabs-nav-bg-grey
+        button.navTabsCloseBtn
+          color $tabs-nav-text-blue
+          &:hover
+            color black !important
+             
+          
+        

@@ -13,9 +13,9 @@ $(function(){
 	//菜单点击
 	$('a',$('#menuSideBar')).on('click', function(e) {
 		e.stopPropagation();
-		var li = $(this).closest('li');
-		var menuId = $(li).attr('mid');
-		var url = $(li).attr('funurl');
+		// var li = $(this).closest('li');
+		var menuId = $(this).attr('mid');
+		var url = $(this).attr('funurl');
 		var title = $(this).text();
 		$('#mainFrameTabs').bTabsAdd(menuId,title,url);
 		

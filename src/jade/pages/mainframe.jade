@@ -4,28 +4,58 @@ extends ../partials/_template
 block content
   .c-mainFrame
     .row-fluid
-      .c-mainFrame__sideNav.col-md-2
-        .well.menuSideBar
+      .c-mainFrame__sideNav
+        .menuSideBar
           ul#menuSideBar.c-mainFrame__sideNav__navList.nav.nav-list
-            li.subnav-1-item(mid="tab1", funurl="index.html")
-              a(href="javascript:void(0);") A1
-              //- ul.subnav-2-list
-              //-   li.subnav-2-item A2
-              //-     ul.subnav-3-list
-              //-       li.subnav-3-list A3
             li.subnav-1-item
-              a(href="javascript:void(0);") B1
+              span 数据管理
+              //- 二级菜单
+              ul.subnav-2-list
+                li.subnav-2-item
+                  span 用户管理
+                  //- 三级
+                  ul.subnav-3-list
+                    li.subnav-3-item
+                      a(href="javascript:void(0)", mid="tab1", funurl="index.html") 统计分析类模型
+                    li.subnav-3-item
+                      a(href="javascript:void(0)") 角色管理
+                    li.subnav-3-item
+                      a(href="javascript:void(0)") 需求数据导入
+                    li.subnav-3-item
+                      a(href="javascript:void(0)") 数据源管理
+                li.subnav-2-item
+                  span 基础设置
+                  ul.subnav-3-list
+                    li.subnav-3-item
+                      a(href="javascript:void(0)") 基础设置子菜单
+                li.subnav-2-item
+                  span 业务表单管理
+                  ul.subnav-3-list
+                    li.subnav-3-item
+                      a(href="javascript:void(0)") 业务表单管理子菜单
             li.subnav-1-item
-              a(href="javascript:void(0);") C1
-      .col-md-10#mainFrameTabs
+              span 模型编配
+              ul.subnav-2-list
+                li.subnav-2-item
+                  span 二级菜单
+
+            li.subnav-1-item
+              span 数据显示
+              ul.subnav-2-list
+                li.subnav-2-item
+                  span 二级菜单
+                      
+
+           
+      .c-mainFrame__tabContent#mainFrameTabs
         ul.nav.nav-tabs(role="tablist")
           li.active.noclose(role="presentation")
-            a(href="#bTabs_navTabsMainPage", data-toggle="tab") Homepage
+            a(href="#bTabs_navTabsMainPage", data-toggle="tab") 首页
 
         .tab-content
           .tab-pane.active#bTabs_navTabsMainPage
             .page-header
-              p main page
+              p 这里是首页
     .clear
 
 
