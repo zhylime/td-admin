@@ -928,7 +928,7 @@ html {
 .c-content__menu--detail {
   width: 280px;
   margin: 0 auto 6px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Microsoft YaHei', 'Arial', sans-serif;
 }
 .c-content__menu--detail.tit {
   overflow: hidden;
@@ -946,7 +946,7 @@ html {
 }
 .c-footer {
   background-color: #041e45;
-  font-family: 'Microsoft YaHei', sans-serif;
+  font-family: 'Microsoft YaHei', 'Arial', sans-serif;
   font-size: 14px;
   text-align: center;
   padding: 1em 0;
@@ -964,7 +964,7 @@ html {
   color: #fff;
   height: 70px;
   vertical-align: middle;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Microsoft YaHei', 'Arial', sans-serif;
   position: relative;
   top: 0;
   left: 0;
@@ -1006,6 +1006,7 @@ html {
 }
 .c-header__login a {
   color: #fff;
+  font-size: 14px;
 }
 .c-header__login a:link,
 .c-header__login a:visited {
