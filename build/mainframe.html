@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>td admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <meta name="description" content="td admin">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./assets/css/vendor/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/vendor/font-awesome.css">
+    <link rel="stylesheet" href="./assets/css/vendor/b.tabs.css"><!--[if (gt IE 8)]><!-->
+    <link rel="stylesheet" href="./assets/css/app.css"><!--<![endif]-->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/ico">
+  </head>
+  <body>
+    <div class="c-header">
+      <div class="c-header__banner"><img src="./assets/images/logo.png" alt="TD logo"/><span class="c-header__banner--title">TD-ADMINS</span></div>
+      <div class="c-header__login"><span>
+          <div class="icon-user"></div></span><a href="#" class="c-header__login"><span>登录</span></a></div>
+    </div>
+    <div class="c-mainFrame">
+      <div class="row-fluid">
+        <div class="c-mainFrame__sideNav">
+          <div class="menuSideBar">
+            <ul id="menuSideBar" class="c-mainFrame__sideNav__navList nav nav-list">
+              <li class="subnav-1-item"><span>数据管理</span>
+                <ul class="subnav-2-list">
+                  <li class="subnav-2-item"><span>用户管理</span>
+                    <ul class="subnav-3-list">
+                      <li class="subnav-3-item"><a href="javascript:void(0)" mid="tab1" funurl="index.html">统计分析类模型</a></li>
+                      <li class="subnav-3-item"><a href="javascript:void(0)">角色管理</a></li>
+                      <li class="subnav-3-item"><a href="javascript:void(0)">需求数据导入</a></li>
+                      <li class="subnav-3-item"><a href="javascript:void(0)">数据源管理</a></li>
+                    </ul>
+                  </li>
+                  <li class="subnav-2-item"><span>基础设置</span>
+                    <ul class="subnav-3-list">
+                      <li class="subnav-3-item"><a href="javascript:void(0)">基础设置子菜单</a></li>
+                    </ul>
+                  </li>
+                  <li class="subnav-2-item"><span>业务表单管理</span>
+                    <ul class="subnav-3-list">
+                      <li class="subnav-3-item"><a href="javascript:void(0)">业务表单管理子菜单</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="subnav-1-item"><span>模型编配</span>
+                <ul class="subnav-2-list">
+                  <li class="subnav-2-item"><span>二级菜单</span></li>
+                </ul>
+              </li>
+              <li class="subnav-1-item"><span>数据显示</span>
+                <ul class="subnav-2-list">
+                  <li class="subnav-2-item"><span>二级菜单</span></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="mainFrameTabs" class="c-mainFrame__tabContent">
+          <ul role="tablist" class="nav nav-tabs">
+            <li role="presentation" class="active noclose"><a href="#bTabs_navTabsMainPage" data-toggle="tab">首页</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="bTabs_navTabsMainPage" class="tab-pane active">
+              <div class="page-header">
+                <p>这里是首页</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="c-footer">
+      <p>&copy; TD-ADMINS 北京凌瑞智同科技有限公司&nbsp;&nbsp;|&nbsp;&nbsp;京公网安备 55601202001908号</p>
+    </div>
+  </body>
+  <script>
+    window.MLP = window.MLP || {};
+    MLP.paths = {"root":"./","static":"./assets/","img":"./assets/images/","js":"./assets/js/","css":"./assets/css/"};
+    
+    
+  </script>
+  <script src="./assets/js/vendor/jquery.js"></script>
+  <script src="./assets/js/vendor.min.js"></script>
+  <script src="./assets/js/app.js"></script><!--[if IE 9]>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script><![endif]-->
+</html>

@@ -2,9 +2,10 @@
 // .c-content
 
 .c-content
-  background url("../images/bg-td.jpg") no-repeat 50% 50%
+  background $background-blue url("../images/bg-td.jpg") no-repeat 50% 50%
   min-width $desktop-min
-  min-height 580px
+  min-height 590px
+  height 100%
   margin 0 auto
   overflow hidden
   padding-bottom 5em
@@ -66,27 +67,20 @@
       animation-duration 1
   &__menu
     margin 0 auto
-    min-width 1024px
-    max-width 1440px
+    min-width 768px
+    max-width 1024px
     position relative
     &--item
       display inline-block
       cursor pointer
       position absolute
       width 450px
-      @media (min-width:1100px)
-        width 500px
-      @media (min-width:1200px)
-        width 540px
-      @media (min-width:1300px)
-        width 550px
-      @media (min-width:1400px)
-        width 600px
-      &:nth-child(1),
+      &:nth-child(1)
+        top 160px
       &:nth-child(3)
-        top 230px
+        top 210px
       &:nth-child(2)
-        top 10px
+        top 5px
         left 50%
         transform translateX(-50%)
       &:nth-child(1)
@@ -101,7 +95,7 @@
           display none
       &:hover
         .c-content__menu--info
-          opacity .9
+          opacity .8
         img:nth-child(1)
           display none
         img:nth-child(2)
@@ -117,13 +111,14 @@
       transition opacity .2s linear
       opacity 0
       &.info1
-        left 10%
-        top -200px
+        left 0%
+        top -150px
       &.info2
-        left 80%
+        left 85%
+        top 10px
       &.info3
-        left -30%
-        top 120px
+        left -35%
+        top 100px
       i
         width 4px
         height 4px

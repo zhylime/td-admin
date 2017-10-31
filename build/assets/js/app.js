@@ -180,7 +180,7 @@ var MLPModule = function () {
 }();
 
 $.mlpInit(MLPModule, 'MLPModule');
-"use strict";
+'use strict';
 
 /*
   Every plugin initialization goes here.
@@ -192,7 +192,61 @@ $(document).ready(function () {
   // $.TopMenuSmall();
 
 
+  $('[data-js-full-page]').FullPage();
 });
+"use strict";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var FullPage = function (_MLP$apps$MLPModule) {
+    _inherits(FullPage, _MLP$apps$MLPModule);
+
+    function FullPage() {
+        _classCallCheck(this, FullPage);
+
+        return _possibleConstructorReturn(this, (FullPage.__proto__ || Object.getPrototypeOf(FullPage)).apply(this, arguments));
+    }
+
+    _createClass(FullPage, [{
+        key: "init",
+        value: function init() {
+
+            this.events();
+        }
+    }, {
+        key: "events",
+        value: function events() {
+            var _this = this;
+            this.fullPage();
+            $("body").css("background-color", "#041e45");
+            $(window).resize(function () {
+                _this.fullPage();
+            });
+        }
+    }, {
+        key: "fullPage",
+        value: function fullPage() {
+            var windowHeight = $(window).height();
+            var footerHeight = $('.c-footer').outerHeight();
+            var headerHeight = $('.c-header').outerHeight();
+            if (windowHeight <= 1000) {
+                $(".c-content").height(windowHeight - footerHeight - headerHeight - 100);
+            } else if (windowHeight > 1000) {
+                $(".c-content").height(1000 - footerHeight - headerHeight - 100);
+            }
+        }
+    }]);
+
+    return FullPage;
+}(MLP.apps.MLPModule);
+
+$.mlpPlugin(FullPage, 'FullPage', false, false);
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
