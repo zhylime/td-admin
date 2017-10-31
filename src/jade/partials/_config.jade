@@ -2,6 +2,6 @@
 - paths.root = _root
 - modifyPath = function(path) {return path ? path.replace(config.build, paths.root) : ''; }
 - paths.static = paths.root + 'assets/'
-- paths.img = modifyPath(paths.img) || paths.static + 'img/' 
+- paths.img = modifyPath(paths.img) || paths.static + 'images/'
 - paths.js = modifyPath(paths.buildJs) || paths.static + 'js/' 
 - paths.css = modifyPath(paths.css) || paths.static + 'css/' 

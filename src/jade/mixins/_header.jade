@@ -1,0 +1,10 @@
+mixin header()
+  .c-header
+    .c-header__banner
+      img(src=paths.img + "logo.png", alt="TD logo")
+      span.c-header__banner--title!=header.title
+    .c-header__login
+      span
+        .icon-user
+      a.c-header__login(href="#")
+        span!=header.login
