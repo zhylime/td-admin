@@ -1,0 +1,34 @@
+extends ../partials/_template
+
+
+block content
+  .c-mainFrame
+    .row-fluid
+      .c-mainFrame__sideNav.col-md-2
+        .well.menuSideBar
+          ul#menuSideBar.c-mainFrame__sideNav__navList.nav.nav-list
+            li.subnav-1-item(mid="tab1", funurl="index.html")
+              a(href="javascript:void(0);") A1
+              //- ul.subnav-2-list
+              //-   li.subnav-2-item A2
+              //-     ul.subnav-3-list
+              //-       li.subnav-3-list A3
+            li.subnav-1-item
+              a(href="javascript:void(0);") B1
+            li.subnav-1-item
+              a(href="javascript:void(0);") C1
+      .col-md-10#mainFrameTabs
+        ul.nav.nav-tabs(role="tablist")
+          li.active.noclose(role="presentation")
+            a(href="#bTabs_navTabsMainPage", data-toggle="tab") Homepage
+
+        .tab-content
+          .tab-pane.active#bTabs_navTabsMainPage
+            .page-header
+              p main page
+    .clear
+
+
+
+
+   
