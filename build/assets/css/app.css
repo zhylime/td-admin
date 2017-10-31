@@ -331,6 +331,38 @@ body {
     filter: none;
   }
 }
+@-moz-keyframes animatedBackground {
+  0%, 100% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@-webkit-keyframes animatedBackground {
+  0%, 100% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@-o-keyframes animatedBackground {
+  0%, 100% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes animatedBackground {
+  0%, 100% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
 @font-face {
   font-family: 'Glypha LT Std';
   src: url("../fonts/32411E_4_0.eot");
@@ -620,13 +652,18 @@ html {
 }
 /* Components */
 .c-content {
-  background: url("../images/bg-td.jpg") no-repeat center;
+  background: url("../images/bg-td.jpg") no-repeat 50% 50%;
   min-width: 1024px;
   min-height: 650px;
   margin: 0 auto;
   overflow: hidden;
   padding-bottom: 5em;
   position: relative;
+  -webkit-animation: animatedBackground 20s linear infinite;
+  -moz-animation: animatedBackground 20s linear infinite;
+  -o-animation: animatedBackground 20s linear infinite;
+  -ms-animation: animatedBackground 20s linear infinite;
+  animation: animatedBackground 20s linear infinite;
 }
 .c-content__background {
   min-width: 1024px;
