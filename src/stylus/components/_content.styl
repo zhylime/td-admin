@@ -91,15 +91,57 @@
         width 100%
         height auto
         position absolute
-        &:nth-child(2)
-          display none
+      .fadeIn
+        opacity 0
+        transition opacity 1s
+      .z1
+        z-index 1
+      .z2
+        z-index 2
+      .z3
+        z-index 3
+      .z4
+        z-index 4
+      .z5
+        z-index 5
+      .z6
+        z-index 6
+      .z7
+        z-index 7
       &:hover
         .c-content__menu--info
           opacity .8
-        img:nth-child(1)
-          display none
-        img:nth-child(2)
-          display block
+        .rotate
+          animation rotate 2s linear infinite
+          transform-origin 24% 57%
+        .fadeIn
+          opacity 1
+        .movePos
+          animation movePos .5s linear 1
+        .movePos1
+          animation movePos1 1s linear 1
+        .movePos2
+          animation movePos2 1.5s linear 1
+        .movePos3
+          animation movePos3 2s linear 1
+        .moveSq
+          animation moveSq .5s linear 1
+        .moveSq1
+          animation moveSq1 1s linear 1
+        .moveSq2
+          animation moveSq2 1s linear 1
+        .moveSector
+          animation moveSector 1s ease-in-out 1
+        .fadeOut
+          animation fadeOut .3s ease-in-out 1
+        .fadeOut1
+          animation fadeOut1 .6s ease-in-out 1
+        .fadeOut2
+          animation fadeOut2 1s ease-in-out 1
+        .moveM1
+          animation moveM1 1s ease-in-out 1
+        .moveM2
+          animation moveM2 1s ease-in-out 1
     &--info
       background-color $bg-overlay-blue
       border 1px solid $border-green
@@ -108,7 +150,7 @@
       position absolute
       width 334px
       padding-bottom 10px
-      transition opacity .2s linear
+      transition opacity .3s ease-in-out
       opacity 0
       &.info1
         left 0%
@@ -117,8 +159,8 @@
         left 85%
         top 10px
       &.info3
-        left -35%
-        top 100px
+        left -50%
+        top 120px
       i
         width 4px
         height 4px
