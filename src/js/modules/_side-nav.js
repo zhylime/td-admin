@@ -44,13 +44,14 @@ class SideNav extends MLP.apps.MLPModule {
             $(_this.el.arrow).trigger('click');
           }
           
-          
         })
       });
 
       this.el.clickableItems.each(function(){
         $(this).on('click', function(){
           _this.setHeight();
+          _this.highlightNav();
+          _this.removeHightLight();
         });
       });
 
@@ -60,6 +61,11 @@ class SideNav extends MLP.apps.MLPModule {
         $(_this.el.arrow).attr('data-status', status);
         $(_this.el.sideNav).attr('data-status', status);
       });
+
+
+
+
+
     }
 
     setHeight(){
@@ -70,6 +76,26 @@ class SideNav extends MLP.apps.MLPModule {
         _this.el.sideNav.height(tabContentheight);
       }
       
+    }
+
+    highlightNav(){
+      var _this = this;
+      var cHref=$('.nav-tabs a[aria-expanded="true"]').attr('href');
+      var cidArray= cHref.split('_');
+      var cid = cidArray[1];
+      $('.tab-active').removeClass('tab-active');
+      $('a[mid="' + cid + '"]').addClass('tab-active');
+      
+
+
+    }
+    removeHightLight(){
+      
+      $('.navTabsCloseBtn').on('click', function(){
+        $('.tab-active').removeClass('tab-active');
+      });
+
+      this.highlightNav();
     }
    
 
