@@ -1830,6 +1830,7 @@ html {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
+  display: block;
 }
 .c-content__menu--item:hover .rotate {
   -webkit-animation: rotate 2s linear infinite;
@@ -1955,6 +1956,7 @@ html {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
+  display: none;
 }
 .c-content__menu--info.info1 {
   left: 0%;
@@ -2035,6 +2037,11 @@ html {
   line-height: 1.3em;
   color: #fff;
 }
+@media (min-width: 768px) {
+  .c-form .text-label {
+    text-align: right !important;
+  }
+}
 .c-header {
   background: #041e45 url("../images/bg-header.jpg") no-repeat left top;
   color: #fff;
@@ -2093,6 +2100,10 @@ html {
 }
 .c-header__login a:active {
   text-decoration: none;
+}
+.c-header a:focus,
+.c-header a:hover {
+  outline: none;
 }
 .c-mainFrame {
   font-size: 0;
@@ -2230,4 +2241,36 @@ html {
 }
 .c-mainFrame__tabContent .nav-tabs>li>a button.navTabsCloseBtn:hover {
   color: #000 !important;
+}
+@media (min-width: 768px) {
+  .loginModal {
+    margin-top: -300px;
+    top: 50%;
+  }
+}
+.loginModal .modal-header {
+  background-color: #7897c5;
+  color: #fff;
+}
+.loginModal .modal-body {
+  padding: 5rem 1rem;
+}
+.loginModal button {
+  min-width: 100px;
+}
+.loginModal .button-group {
+  padding-top: 3rem;
+}
+@media (min-width: 768px) {
+  .loginModal .button-group .button-single:nth-child(1) {
+    text-align: right;
+  }
+  .loginModal .button-group .button-single:nth-child(2) {
+    text-align: left;
+  }
+}
+@media (max-width: 767px) {
+  .loginModal .button-group .button-single button {
+    width: 100%;
+  }
 }

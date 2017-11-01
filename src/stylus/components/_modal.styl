@@ -1,0 +1,30 @@
+
+// modal
+
+.loginModal
+  @media(min-width: $tablet-min)
+    margin-top -300px
+    top 50%
+  .modal-header
+    background-color $color-login-blue
+    color $color-white
+
+  .modal-body
+    padding 5rem 1rem
+
+  button
+    min-width 100px
+
+  .button-group
+    padding-top 3rem
+    .button-single
+      @media(min-width: $tablet-min)
+        &:nth-child(1)
+          text-align right
+        &:nth-child(2)
+          text-align left
+      button
+        @media(max-width: $tablet-max)
+          width 100%
+
+    

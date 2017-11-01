@@ -193,6 +193,10 @@ $(document).ready(function () {
 
 
   $('[data-js-full-page]').FullPage();
+
+  if ($('#loginModal').length) {
+    $('#loginModal').modal({ backdrop: "static", show: false });
+  }
 });
 "use strict";
 

@@ -6,5 +6,41 @@ mixin header()
     .c-header__login
       span
         .icon-user
-      a.c-header__login(href="#")
+      a.c-header__login(href="#" data-toggle='modal', data-target='#loginModal')
         span!=header.login
+
+
+
+  #loginModal.modal.fade.loginModal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
+    .modal-dialog(role='document')
+      .modal-content
+        .modal-header
+          h4#myModalLabel.modal-title 用户登录
+        .modal-body
+          form.c-form(method="POST" name="loginForm" id="loginForm" data-js-form-validator)
+            .row
+              .col-sm-3
+                .form-group.text-label
+                  label.form__label(for="name") 用户名
+              .col-sm-7
+                .form-group
+                  input.form-control(type="text" id="name" name="name" data-rule="required|alpha|max:30")
+                  div.text-danger.l-padding-top-1.hide.input-error-message 请输入用户名
+            .row
+              .col-sm-3
+                .form-group.text-label
+                  label.form__label(for="password") 密码
+              .col-sm-7
+                .form-group
+                  input.form-control(type="text" data-js-mobile-smart-label id="password" name="password" data-rule="required|alpha|max:30")
+                  div.text-danger.l-padding-top-1.hide.input-error-message 请输入用密码
+            .row.button-group
+              .col-sm-6.button-single
+                .form-group
+                  button.btn.btn-primary(type='button') 登录
+              .col-sm-6.button-single
+                .form-group
+                  button.btn.btn-default(type='button' data-dismiss='modal' aria-label='Close') 取消
+
+
+
