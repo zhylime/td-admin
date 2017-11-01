@@ -38,7 +38,7 @@ block content
             .col-sm-3
               .form-group
                 label.text-label(for='latitude1') 纬度1
-            .col-sm-9.radioGroup
+            .col-sm-9.radioGroup.radioGroupActive
               .form-group
                 .btn-group(data-toggle='buttons')
                   label.btn.btn-default.disabled
@@ -76,7 +76,7 @@ block content
             .col-sm-3
               .form-group.text-label
                 label.form__label(for="target") 指标
-            .col-sm-9.radioGroup
+            .col-sm-9.radioDouble
               .form-group
                 .btn-group(data-toggle='buttons')
                   label.btn
@@ -89,10 +89,27 @@ block content
             .col-sm-3
               .form-group.text-label
                 label.form__label(for="type1") 类型
-            .col-sm-9
+            .col-sm-9.radioGroup
               .form-group
-                input.form-control(type="text" id="type1" name="type1" data-rule="required|alpha|max:30")
-                div.text-danger.l-padding-top-1.hide.input-error-message 请选择类型
+                .btn-group(data-toggle='buttons')
+                  label
+                    input#optio9(type='radio', name='latitude2', autocomplete='off')
+                    img.img-rounded(src="../assets/images/moudule-icon-1.jpg", alt="item")
+                  label.active
+                    input#option10(type='radio', name='latitude2', autocomplete='on')
+                    img.img-rounded(src="../assets/images/moudule-icon-2.jpg", alt="item")
+                  label
+                    input#option11(type='radio', name='latitude2', autocomplete='off')
+                    img.img-rounded(src="../assets/images/moudule-icon-3.jpg", alt="item")
+                  label
+                    input#option12(type='radio', name='latitude2', autocomplete='off')
+                    img.img-rounded(src="../assets/images/moudule-icon-4.jpg", alt="item")
+                  label
+                    input#option13(type='radio', name='latitude2', autocomplete='off')
+                    img.img-rounded(src="../assets/images/moudule-icon-5.jpg", alt="item")
+                  label
+                    input#option14(type='radio', name='latitude2', autocomplete='off')
+                    img.img-rounded(src="../assets/images/moudule-icon-6.jpg", alt="item")
 
         .col-sm-6
           .row

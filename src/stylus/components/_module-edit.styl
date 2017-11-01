@@ -11,13 +11,25 @@
     .btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child)
       border-radius 1rem
     label
-      margin-right 1rem
       border-radius 1rem!important
+      margin-right 1rem
       &:focus
         outline none
       &.active
-        background-color $btn-blue!important
+        background-color $btn-blue
         color $color-white
+
+  .radioDouble
+    text-align left
+    .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
+    .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
+    .btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child)
+      border-radius .5rem
+    label
+      border-radius .5rem!important
+      &.active
+        background-color $background-grey
+
   .text-label
     color $tabs-nav-text-active-blue
     font-weight bold
