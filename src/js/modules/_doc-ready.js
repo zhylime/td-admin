@@ -9,6 +9,7 @@ $(document).ready(function() {
 
 
     $('[data-js-full-page]').FullPage();
+    $('[data-js-sideNav]').SideNav(); 
 
     if($('#loginModal').length){
         $('#loginModal').modal({backdrop:"static",show:false})
