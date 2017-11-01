@@ -1,0 +1,29 @@
+extends ../partials/_template
+block footer
+block header
+
+block content
+  .c-module-edit.container-fluid
+    form.c-form-module(method="POST" name="moduleEditForm" id="moduleEditForm" data-js-form-validator)
+      .row
+        .col-sm-6.c-module-edit__left
+          .row
+            .col-sm-12.c-module-edit__preview
+              .form-group
+                img.c-module-edit__preview-img(src="../assets/images/module-edit-preview3.jpg", alt="item")
+          .row
+            .col-sm-12.c-module-edit__preview
+              .form-group
+                img.c-module-edit__preview-img(src="../assets/images/module-edit-preview2.jpg", alt="item")
+
+        .col-sm-6
+          .row
+            .col-sm-12
+              .form-group.c-module-edit__preview
+                img.c-module-edit__preview-img(src="../assets/images/module-edit-preview1.jpg", alt="item")
+
+
+
+
+
+      

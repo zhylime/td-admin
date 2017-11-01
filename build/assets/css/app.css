@@ -2285,6 +2285,10 @@ html {
 }
 .c-module-edit__preview {
   min-width: 400px;
+  text-align: center;
+}
+.c-module-edit__preview-img {
+  width: 100%;
 }
 @media (min-width: 768px) {
   .c-module-edit__left {
