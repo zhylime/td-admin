@@ -62,14 +62,26 @@
             </div>
             <div class="row">
               <div class="col-sm-3">
-                <div class="form-group text-label">
-                  <label for="latitude1" class="form__label">纬度1</label>
+                <div class="form-group">
+                  <label for="latitude1" class="text-label">纬度1</label>
                 </div>
               </div>
-              <div class="col-sm-9">
+              <div class="col-sm-9 radioGroup">
                 <div class="form-group">
-                  <input type="text" id="latitude1" name="latitude1" data-rule="required|alpha|max:30" class="form-control">
-                  <div class="text-danger l-padding-top-1 hide input-error-message">请选择纬度1</div>
+                  <div data-toggle="buttons" class="btn-group">
+                    <label class="btn btn-default disabled">
+                      <input id="option1" type="radio" name="latitude1" autocomplete="off"> 飞机型号
+                    </label>
+                    <label class="btn btn-default disabled">
+                      <input id="option2" type="radio" name="latitude1" autocomplete="off"> 飞机型号
+                    </label>
+                    <label class="btn btn-default active">
+                      <input id="option3" type="radio" name="latitude1" autocomplete="on"> 所属部队
+                    </label>
+                    <label class="btn btn-default disabled">
+                      <input id="option4" type="radio" name="latitude1" autocomplete="off"> 供应商
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
@@ -79,10 +91,22 @@
                   <label for="latitude2" class="form__label">纬度2</label>
                 </div>
               </div>
-              <div class="col-sm-9">
+              <div class="col-sm-9 radioGroup">
                 <div class="form-group">
-                  <input type="text" id="latitude2" name="latitude2" data-rule="required|alpha|max:30" class="form-control">
-                  <div class="text-danger l-padding-top-1 hide input-error-message">请选择纬度1</div>
+                  <div data-toggle="buttons" class="btn-group">
+                    <label class="btn btn-default">
+                      <input id="optio51" type="radio" name="latitude2" autocomplete="off"> 飞机型号
+                    </label>
+                    <label class="btn btn-default active">
+                      <input id="option6" type="radio" name="latitude2" autocomplete="on"> 飞机型号
+                    </label>
+                    <label class="btn btn-default">
+                      <input id="option7" type="radio" name="latitude2" autocomplete="off"> 所属部队
+                    </label>
+                    <label class="btn btn-default">
+                      <input id="option8" type="radio" name="latitude2" autocomplete="off"> 供应商
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
@@ -92,10 +116,16 @@
                   <label for="target" class="form__label">指标</label>
                 </div>
               </div>
-              <div class="col-sm-9">
+              <div class="col-sm-9 radioGroup">
                 <div class="form-group">
-                  <input type="text" id="target" name="target" data-rule="required|alpha|max:30" class="form-control">
-                  <div class="text-danger l-padding-top-1 hide input-error-message">请选择指标</div>
+                  <div data-toggle="buttons" class="btn-group">
+                    <label class="btn">
+                      <input type="radio" name="target" autocomplete="off"> 飞机数量统计
+                    </label>
+                    <label class="btn active">
+                      <input type="radio" name="target" autocomplete="on"> 编辑指标
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>

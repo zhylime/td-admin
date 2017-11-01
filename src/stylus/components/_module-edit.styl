@@ -4,6 +4,20 @@
 .c-module-edit
   margin 3rem auto 3rem 3rem
   min-width $tablet-min
+  .radioGroup
+    text-align left
+    .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
+    .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
+    .btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child)
+      border-radius 1rem
+    label
+      margin-right 1rem
+      border-radius 1rem!important
+      &:focus
+        outline none
+      &.active
+        background-color $btn-blue!important
+        color $color-white
   .text-label
     color $tabs-nav-text-active-blue
     font-weight bold

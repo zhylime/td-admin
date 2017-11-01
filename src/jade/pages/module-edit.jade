@@ -36,28 +36,55 @@ block content
                 div.text-danger.l-padding-top-1.hide.input-error-message 请输入类型
           .row
             .col-sm-3
-              .form-group.text-label
-                label.form__label(for="latitude1") 纬度1
-            .col-sm-9
               .form-group
-                input.form-control(type="text" id="latitude1" name="latitude1" data-rule="required|alpha|max:30")
-                div.text-danger.l-padding-top-1.hide.input-error-message 请选择纬度1
+                label.text-label(for='latitude1') 纬度1
+            .col-sm-9.radioGroup
+              .form-group
+                .btn-group(data-toggle='buttons')
+                  label.btn.btn-default.disabled
+                    input#option1(type='radio', name='latitude1', autocomplete='off')
+                    |  飞机型号
+                  label.btn.btn-default.disabled
+                    input#option2(type='radio', name='latitude1', autocomplete='off')
+                    |  飞机型号
+                  label.btn.btn-default.active
+                    input#option3(type='radio', name='latitude1', autocomplete='on')
+                    |  所属部队
+                  label.btn.btn-default.disabled
+                    input#option4(type='radio', name='latitude1', autocomplete='off')
+                    |  供应商
           .row
             .col-sm-3
               .form-group.text-label
                 label.form__label(for="latitude2") 纬度2
-            .col-sm-9
+            .col-sm-9.radioGroup
               .form-group
-                input.form-control(type="text" id="latitude2" name="latitude2" data-rule="required|alpha|max:30")
-                div.text-danger.l-padding-top-1.hide.input-error-message 请选择纬度1
+                .btn-group(data-toggle='buttons')
+                  label.btn.btn-default
+                    input#optio51(type='radio', name='latitude2', autocomplete='off')
+                    |  飞机型号
+                  label.btn.btn-default.active
+                    input#option6(type='radio', name='latitude2', autocomplete='on')
+                    |  飞机型号
+                  label.btn.btn-default
+                    input#option7(type='radio', name='latitude2', autocomplete='off')
+                    |  所属部队
+                  label.btn.btn-default
+                    input#option8(type='radio', name='latitude2', autocomplete='off')
+                    |  供应商
           .row
             .col-sm-3
               .form-group.text-label
                 label.form__label(for="target") 指标
-            .col-sm-9
+            .col-sm-9.radioGroup
               .form-group
-                input.form-control(type="text" id="target" name="target" data-rule="required|alpha|max:30")
-                div.text-danger.l-padding-top-1.hide.input-error-message 请选择指标
+                .btn-group(data-toggle='buttons')
+                  label.btn
+                    input(type='radio', name='target', autocomplete='off')
+                    |  飞机数量统计
+                  label.btn.active
+                    input(type='radio', name='target', autocomplete='on')
+                    |  编辑指标
           .row
             .col-sm-3
               .form-group.text-label

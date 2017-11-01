@@ -2117,7 +2117,66 @@ html {
 }
 .c-mainFrame__sideNav {
   background: #195baf;
-  width: 300px;
+  position: relative;
+  -webkit-transition: width 1s;
+  -moz-transition: width 1s;
+  -o-transition: width 1s;
+  -ms-transition: width 1s;
+  transition: width 1s;
+}
+.c-mainFrame__sideNav__arrow {
+  background: #052c5d;
+  width: 20px;
+  height: 60px;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.c-mainFrame__sideNav__arrow[data-status='open'] {
+  right: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.c-mainFrame__sideNav__arrow[data-status='open'] .c-mainFrame__sideNav__arrow__image {
+  background-position: -30px -35px;
+}
+.c-mainFrame__sideNav__arrow[data-status='close'] {
+  right: -20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.c-mainFrame__sideNav__arrow[data-status='close'] .c-mainFrame__sideNav__arrow__image {
+  background-position: -45px -35px;
+}
+.c-mainFrame__sideNav__arrow__image {
+  background: url("../images/spirit-icons.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 8px;
+  height: 15px;
+  z-index: 2;
+}
+.c-mainFrame__sideNav__navList li[data-expanded='true'] ul,
+.c-mainFrame__sideNav__navList li[data-expanded='true'] li {
+  display: block;
+}
+.c-mainFrame__sideNav__navList li[data-expanded='false'] ul,
+.c-mainFrame__sideNav__navList li[data-expanded='false'] li {
+  display: none;
 }
 .c-mainFrame__sideNav li span,
 .c-mainFrame__sideNav li a {
@@ -2132,6 +2191,15 @@ html {
   border-bottom: 1px solid #3070c1;
   position: relative;
 }
+.c-mainFrame__sideNav li span b,
+.c-mainFrame__sideNav li a b {
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  width: 195px;
+  overflow: hidden;
+  display: block;
+}
 .c-mainFrame__sideNav li span:before,
 .c-mainFrame__sideNav li a:before {
   content: "";
@@ -2145,6 +2213,8 @@ html {
   -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  width: 20px;
+  height: 22px;
 }
 .c-mainFrame__sideNav li a:hover {
   color: #fff;
@@ -2164,8 +2234,8 @@ html {
   height: 24px;
   left: 18px;
 }
-.c-mainFrame__sideNav .subnav-1-item>span:after,
-.c-mainFrame__sideNav .subnav-1-item>a:after {
+.c-mainFrame__sideNav .subnav-1-item[data-expanded='false']>span:after,
+.c-mainFrame__sideNav .subnav-1-item[data-expanded='false']>a:after {
   content: "";
   background: url("../images/spirit-icons.png");
   background-repeat: no-repeat;
@@ -2182,16 +2252,73 @@ html {
   transform: translateY(-50%);
   background-position: -3px -44px;
 }
+.c-mainFrame__sideNav .subnav-1-item[data-expanded='true']>span:after,
+.c-mainFrame__sideNav .subnav-1-item[data-expanded='true']>a:after {
+  content: "";
+  background: url("../images/spirit-icons.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  display: block;
+  width: 17px;
+  height: 10px;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background-position: -3px -44px;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.c-mainFrame__sideNav .subnav-2-item {
+  position: relative;
+}
 .c-mainFrame__sideNav .subnav-2-item>span,
 .c-mainFrame__sideNav .subnav-2-item>a {
   padding-left: 52px;
 }
 .c-mainFrame__sideNav .subnav-2-item>span:before,
 .c-mainFrame__sideNav .subnav-2-item>a:before {
+  display: none;
+}
+.c-mainFrame__sideNav .subnav-2-item[data-expanded='false']>span:before,
+.c-mainFrame__sideNav .subnav-2-item[data-expanded='false']>a:before {
+  content: "";
   width: 24px;
   height: 24px;
   left: 18px;
+  background: url("../images/spirit-icons.png");
   background-position: -53px 0px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.c-mainFrame__sideNav .subnav-2-item[data-expanded='true']>span:before,
+.c-mainFrame__sideNav .subnav-2-item[data-expanded='true']>a:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  left: 18px;
+  background: url("../images/spirit-icons.png");
+  background-position: -28px 0px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .c-mainFrame__sideNav .subnav-3-item>span,
 .c-mainFrame__sideNav .subnav-3-item>a {
@@ -2203,6 +2330,38 @@ html {
   height: 24px;
   left: 54px;
   background-position: -76px 0px;
+}
+.c-mainFrame__sideNav[data-status='open'] {
+  width: 300px;
+}
+.c-mainFrame__sideNav[data-status='open'] span,
+.c-mainFrame__sideNav[data-status='open'] a,
+.c-mainFrame__sideNav[data-status='open'] b {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -ms-transition: all 1s;
+  transition: all 1s;
+}
+.c-mainFrame__sideNav[data-status='close'] {
+  width: 45px;
+}
+.c-mainFrame__sideNav[data-status='close'] span,
+.c-mainFrame__sideNav[data-status='close'] a,
+.c-mainFrame__sideNav[data-status='close'] b {
+  border: none;
+  font-size: 0;
+}
+.c-mainFrame__sideNav[data-status='close'] span:after,
+.c-mainFrame__sideNav[data-status='close'] a:after,
+.c-mainFrame__sideNav[data-status='close'] b:after {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+.c-mainFrame__sideNav[data-status='close'] .subnav-1-item span:before,
+.c-mainFrame__sideNav[data-status='close'] .subnav-1-item a:before {
+  left: 11px;
 }
 .c-mainFrame__tabContent {
   width: calc(100% - 300px);
@@ -2222,6 +2381,23 @@ html {
 }
 .c-mainFrame__tabContent .nav-tabs li a {
   font-size: 16px;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  max-width: 195px;
+  overflow: hidden;
+  display: block;
+  padding-right: 20px;
+}
+.c-mainFrame__tabContent .nav-tabs li a button.navTabsCloseBtn {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 5px;
 }
 .c-mainFrame__tabContent .nav-tabs li.active a {
   color: #354967;
@@ -2278,6 +2454,34 @@ html {
 .c-module-edit {
   margin: 3rem auto 3rem 3rem;
   min-width: 768px;
+}
+.c-module-edit .radioGroup {
+  text-align: left;
+}
+.c-module-edit .radioGroup .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
+.c-module-edit .radioGroup .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
+.c-module-edit .radioGroup .btn-group > .btn:last-child:not(:first-child),
+.c-module-edit .radioGroup .btn-group > .dropdown-toggle:not(:first-child) {
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+.c-module-edit .radioGroup label {
+  margin-right: 1rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+.c-module-edit .radioGroup label:focus {
+  outline: none;
+}
+.c-module-edit .radioGroup label.active {
+  background-color: #77cdff !important;
+  color: #fff;
 }
 .c-module-edit .text-label {
   color: #354967;
