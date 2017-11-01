@@ -77,6 +77,13 @@
         font-size 16px
         border-bottom 1px solid $tabs-nav-border-blue
         position relative
+        b
+          white-space nowrap
+          text-overflow ellipsis
+          width 195px
+          overflow hidden
+          display block
+          
         &:before
           content ""
           background url(../images/spirit-icons.png)
@@ -210,12 +217,24 @@
         margin-right 0
         a
           font-size 16px
+          white-space nowrap
+          text-overflow ellipsis
+          max-width 195px
+          overflow hidden
+          display block
+          padding-right 20px
+          button.navTabsCloseBtn
+            position absolute
+            top 50%
+            transform translateY(-50%)
+            right 5px
         &.active
           a
             color $tabs-nav-text-active-blue
             background white
             button.navTabsCloseBtn
               color $tabs-nav-text-active-blue
+              
               &:hover
                 color black !important
       &>li>a
