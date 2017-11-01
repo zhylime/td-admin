@@ -2040,6 +2040,7 @@ html {
 @media (min-width: 768px) {
   .c-form .text-label {
     text-align: right !important;
+    color: #354967;
   }
 }
 .c-header {
@@ -2271,6 +2272,46 @@ html {
 }
 @media (max-width: 767px) {
   .loginModal .button-group .button-single button {
+    width: 100%;
+  }
+}
+.c-module-edit {
+  margin: 3rem auto 3rem 3rem;
+  min-width: 768px;
+}
+.c-module-edit .text-label {
+  color: #354967;
+  font-weight: bold;
+}
+.c-module-edit__preview {
+  min-width: 400px;
+}
+@media (min-width: 768px) {
+  .c-module-edit__left {
+    text-align: right;
+  }
+}
+.c-module-edit .form-group {
+  padding-right: 2rem;
+button
+  min-width: 100px;
+}
+.c-module-edit .button-group {
+  padding-top: 3rem;
+}
+@media (min-width: 768px) {
+  .c-module-edit .button-single:nth-child(1) {
+    text-align: right;
+  }
+  .c-module-edit .button-single:nth-child(2) {
+    text-align: left;
+  }
+}
+.c-module-edit .button-single button {
+  min-width: 100px;
+}
+@media (max-width: 767px) {
+  .c-module-edit .button-single button {
     width: 100%;
   }
 }

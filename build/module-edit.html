@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>td admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <meta name="description" content="td admin">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./assets/css/vendor/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/vendor/font-awesome.css">
+    <link rel="stylesheet" href="./assets/css/vendor/b.tabs.css"><!--[if (gt IE 8)]><!-->
+    <link rel="stylesheet" href="./assets/css/app.css"><!--<![endif]-->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/ico">
+  </head>
+  <body>
+    <div class="c-module-edit container-fluid">
+      <form method="POST" name="moduleEditForm" id="moduleEditForm" data-js-form-validator class="c-form-module">
+        <div class="row">
+          <div class="col-sm-6 c-module-edit__left">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group text-label">
+                  <label for="name" class="form__label">名称</label>
+                </div>
+              </div>
+              <div class="col-sm-9">
+                <div class="form-group">
+                  <input type="text" id="name" name="name" data-rule="required|alpha|max:30" class="form-control">
+                  <div class="text-danger l-padding-top-1 hide input-error-message">请输入名称</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group text-label">
+                  <label for="description" class="form__label">描述</label>
+                </div>
+              </div>
+              <div class="col-sm-9">
+                <div class="form-group">
+                  <textarea id="description" name="description" data-rule="required|max:200" class="form-control"></textarea>
+                  <div class="text-danger l-padding-top-1 hide input-error-message">请输入描述</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group text-label">
+                  <label for="type" class="form__label">类型</label>
+                </div>
+              </div>
+              <div class="col-sm-9">
+                <div class="form-group">
+                  <select type="text" data-js-mobile-smart-label id="type" name="type" data-rule="required" class="form-control">
+                    <option value="" class="active"></option>
+                    <option value="001">类型1</option>
+                    <option value="002">类型2</option>
+                  </select>
+                  <div class="text-danger l-padding-top-1 hide input-error-message">请输入类型</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group text-label">
+                  <label for="latitude1" class="form__label">纬度1</label>
+                </div>
+              </div>
+              <div class="col-sm-9">
+                <div class="form-group">
+                  <input type="text" id="latitude1" name="latitude1" data-rule="required|alpha|max:30" class="form-control">
+                  <div class="text-danger l-padding-top-1 hide input-error-message">请选择纬度1</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group text-label">
+                  <label for="latitude2" class="form__label">纬度2</label>
+                </div>
+              </div>
+              <div class="col-sm-9">
+                <div class="form-group">
+                  <input type="text" id="latitude2" name="latitude2" data-rule="required|alpha|max:30" class="form-control">
+                  <div class="text-danger l-padding-top-1 hide input-error-message">请选择纬度1</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group text-label">
+                  <label for="target" class="form__label">指标</label>
+                </div>
+              </div>
+              <div class="col-sm-9">
+                <div class="form-group">
+                  <input type="text" id="target" name="target" data-rule="required|alpha|max:30" class="form-control">
+                  <div class="text-danger l-padding-top-1 hide input-error-message">请选择指标</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group text-label">
+                  <label for="type1" class="form__label">类型</label>
+                </div>
+              </div>
+              <div class="col-sm-9">
+                <div class="form-group">
+                  <input type="text" id="type1" name="type1" data-rule="required|alpha|max:30" class="form-control">
+                  <div class="text-danger l-padding-top-1 hide input-error-message">请选择类型</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group text-label">
+                  <label for="type" class="form__label">图表预览</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group c-module-edit__preview"><img src="../assets/images/module-edit-preview.jpg" alt="item"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row button-group">
+          <div class="col-sm-6 button-single">
+            <div class="form-group">
+              <button type="button" class="btn btn-primary">保存</button>
+            </div>
+          </div>
+          <div class="col-sm-6 button-single">
+            <div class="form-group">
+              <button type="button" class="btn btn-default">取消</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    window.MLP = window.MLP || {};
+    MLP.paths = {"root":"./","static":"./assets/","img":"./assets/images/","js":"./assets/js/","css":"./assets/css/"};
+    
+    
+  </script>
+  <script src="./assets/js/vendor/jquery.js"></script>
+  <script src="./assets/js/vendor.min.js"></script>
+  <script src="./assets/js/app.js"></script><!--[if IE 9]>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script><![endif]-->
+</html>
