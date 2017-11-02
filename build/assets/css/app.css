@@ -2617,12 +2617,13 @@ html {
 }
 .c-module-edit .form-group {
   padding-right: 1rem;
-button
-  min-width: 100px;
 }
-@media (min-width: 1200px) {
-  .c-module-edit .form-group {
-    padding-right: 2rem;
+.c-module-edit .text-label {
+  text-align: left !important;
+}
+@media (min-width: 768px) {
+  .c-module-edit .text-label {
+    text-align: right !important;
   }
 }
 .c-module-edit .button-group {
@@ -2642,6 +2643,11 @@ button
 @media (max-width: 767px) {
   .c-module-edit .button-single button {
     width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .c-module-edit .form-group {
+    padding-right: 2rem;
   }
 }
 .c-module-setup .setupOption-image {

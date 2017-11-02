@@ -72,10 +72,12 @@
       text-align right
   .form-group
     padding-right 1rem
-    @media(min-width: 1200px)
-      padding-right 2rem
-    button
-    min-width 100px
+  .text-label
+    text-align left!important
+  @media(min-width: $tablet-min)
+    .text-label
+      text-align right!important
+
   .button-group
     padding-top 3rem
   .button-single
@@ -88,6 +90,10 @@
       min-width 100px
       @media(max-width: $tablet-max)
         width 100%
+
+  @media(min-width: 1200px)
+    .form-group
+      padding-right 2rem
 
 
     
