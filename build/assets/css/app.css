@@ -2616,9 +2616,14 @@ html {
   }
 }
 .c-module-edit .form-group {
-  padding-right: 2rem;
+  padding-right: 1rem;
 button
   min-width: 100px;
+}
+@media (min-width: 1200) {
+  .c-module-edit .form-group {
+    padding-right: 2rem;
+  }
 }
 .c-module-edit .button-group {
   padding-top: 3rem;
