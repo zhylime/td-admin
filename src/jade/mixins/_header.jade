@@ -1,13 +1,24 @@
-mixin header()
+mixin header(login)
   .c-header
     .c-header__banner
       img(src=paths.img + "logo.png", alt="TD logo")
       span.c-header__banner--title!=header.title
     .c-header__login
-      span
-        .icon-user
-      a.c-header__login(href="#" data-toggle='modal', data-target='#loginModal')
-        span!=header.login
+      - if(login)
+        span.c-header__login--user
+          img.img-rounded(src=paths.img + "icon-user.png", alt="")
+        a.c-header__login(href="#" data-toggle='modal', data-target='#loginModal')
+          span 退出
+        a.c-header__login
+          span Hi,
+          b Fishwon
+          span 欢迎登录
+
+      - else
+        span
+          .icon-user
+        a.c-header__login(href="#" data-toggle='modal', data-target='#loginModal')
+          span!=header.login
 
 
 

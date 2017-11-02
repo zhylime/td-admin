@@ -2091,8 +2091,19 @@ html {
   height: 70px;
   line-height: 70px;
   top: 0;
-  padding: 0 15px;
+  padding: 0 10px;
   cursor: pointer;
+}
+.c-header__login--user {
+  display: inline-block;
+  padding-top: 6px;
+}
+.c-header__login--user img {
+  max-width: 30px;
+}
+.c-header__login b {
+  color: #ff8226;
+  padding: 0 0.5em;
 }
 .c-header__login a {
   color: #fff;
