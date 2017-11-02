@@ -6,7 +6,7 @@ class SideNav extends MLP.apps.MLPModule {
       super.init();
       this.el ={
         extendableItems: this.el.target.find('[data-expanded] > span'),
-        clickableItems: this.el.target.find('[data-expanded] a'),
+        clickableItems: this.el.target.find('a'),
         sideNav: $('[data-js-sidenav]'),
         tabContent: $('#mainFrameTabs'),
         arrow: this.el.target.find('.js-arrow'),
@@ -49,9 +49,17 @@ class SideNav extends MLP.apps.MLPModule {
 
       this.el.clickableItems.each(function(){
         $(this).on('click', function(){
-          _this.setHeight();
-          _this.highlightNav();
-          _this.removeHightLight();
+          var status = $(_this.el.arrow).attr('data-status');
+          console.log(status);
+          if(status == 'open'){
+            _this.setHeight();
+            _this.highlightNav();
+            _this.removeHightLight();
+          }
+          else{
+            $(_this.el.arrow).trigger('click');
+          }
+          
         });
       });
 

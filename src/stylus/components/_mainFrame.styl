@@ -79,6 +79,8 @@
         font-size 16px
         border-bottom 1px solid $tabs-nav-border-blue
         position relative
+        padding-top 0
+        padding-bottom 0
         b
           white-space nowrap
           text-overflow ellipsis
@@ -97,8 +99,10 @@
           width 20px
           height 22px
       a:hover
+      a:focus
         color white
         text-decoration none
+        background none
       .subnav-3-item
         &>span
         &>a
@@ -200,13 +204,13 @@
     a
     b
       border none
-      
       font-size 0
       &:after
         opacity 0
     .subnav-1-item
       span
       a
+        padding-left 0 !important
         &:before
           left 11px
   &__tabContent

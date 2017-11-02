@@ -421,7 +421,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('vendor-js', function() {
-  exec('cat '+ paths.vendorJs +'*.js | uglifyjs -m -c > '+ paths.buildJs +'vendor.min.js', generalCallback);
+  // exec('cat '+ paths.vendorJs +'*.js | uglifyjs -m -c > '+ paths.buildJs +'vendor.min.js', generalCallback);
 });
 
 gulp.task('watch-vendor', function() {
