@@ -18,7 +18,30 @@
       &.active
         background-color $btn-blue
         color $color-white
+    .btn
+      margin-bottom .5rem
+  .radioImgGroup
+    text-align left
+    .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
+    .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle),
+    .btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child)
+      border-radius 0rem
 
+    &:focus
+      outline none
+    .img-rounded
+      border-radius 0
+      max-width 50px
+    label
+      border-radius 0rem!important
+      margin-right 0rem
+      &.active
+        background-color $moudal-bg-grey
+    .btn
+      padding 3px 3px 0 3px
+      background-color $color-white
+      margin-right .5rem
+      margin-bottom .5rem
   .radioDouble
     text-align left
     .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle),
@@ -29,7 +52,8 @@
       border-radius .5rem!important
       &.active
         background-color $background-grey
-
+    .btn
+      margin-bottom .5rem
   .text-label
     color $tabs-nav-text-active-blue
     font-weight bold
