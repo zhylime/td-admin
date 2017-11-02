@@ -4,7 +4,59 @@ block header
 
 block content
   .c-module.c-module-charts.container-fluid
-    //- form.c-form-module(method="POST" name="moduleEditForm" id="moduleEditForm" data-js-form-validator)
+    form.c-form-module(method="POST" name="moduleEditForm" id="moduleChartsForm" data-js-form-validator)
+      .c-module-charts__search-container.l-float-right
+        input.c-module-charts__search-container__input
+        button.c-module-charts__search-container__button 搜索
+      ul.nav.nav-tabs(role="tablist")
+        li(role="presentation")
+          a(href="#contract", aria-controls="contract", role="tab", data-toggle="tab") 合同
+        li(role="presentation")
+          a(href="#equipment", aria-controls="equipment", role="tab", data-toggle="tab") 装备
+      .tab-content
+        .tab-pane(role="tabpanel", id="contract")
+          .radio-group(data-toggle="buttons")
+            label.btn.btn-default
+              input(type="radio", name="chartsOptionGroup1", data-)
+              | option1
+            label.btn.btn-default
+              input(type="radio", name="chartsOptionGroup1")
+              | option2
+            label.btn.btn-default
+              input(type="radio", name="chartsOptionGroup1")
+              | option3
+        .tab-pane(role="tabpanel", id="equipment")
+          .btn-group(data-toggle="buttons")
+            label.btn.btn-default
+              input(type="radio", name="chartsOptionGroup1")
+              | 飞机
+            label.btn.btn-default
+              input(type="radio", name="chartsOptionGroup1")
+              | 发动机
+            label.btn.btn-default
+              input(type="radio", name="chartsOptionGroup1")
+              | 雷达
+
+      .c-module-charts__grid.grid
+        .grid-item.card
+          .card-front.card-flip
+            .c-module-charts__grid__thumb
+              img(src=paths.img + 'module-charts-thumb.jpg')
+            .c-module-charts__grid__title 数据权限对比模型
+          .card-back.card-flip
+            .c-module-charts__grid__desc
+            .c-module-charts__grid__buttons
+              a(href="javascript:void(0);").button-preview
+                i.icon-preview
+                | 预览
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+        .grid-item
+        .grid-item
+        .grid-item
+
+      
     //-   .row
     //-     .col-sm-6.c-module-edit__left
     //-       .row
