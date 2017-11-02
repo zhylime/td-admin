@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>td admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <meta name="description" content="td admin">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./assets/css/vendor/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/vendor/font-awesome.css">
+    <link rel="stylesheet" href="./assets/css/vendor/b.tabs.css"><!--[if (gt IE 8)]><!-->
+    <link rel="stylesheet" href="./assets/css/app.css"><!--<![endif]-->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/ico">
+  </head>
+  <body>
+    <div class="c-module c-module-setup container-fluid">
+      <form method="POST" name="moduleSetupForm" id="moduleSetupForm" data-js-form-validator class="c-form-setup c-form">
+        <div class="row">
+          <div class="col-sm-6 c-module-setup__left">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group text-label text-right">
+                  <label for="name" class="form__label">主标题</label>
+                </div>
+              </div>
+              <div class="col-sm-9">
+                <div class="form-group">
+                  <input type="text" id="name" name="name" data-rule="required|alpha|max:30" class="form-control">
+                  <div class="text-danger l-padding-top-1 hide input-error-message">请输入主标题</div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group text-label text-right">
+                  <label for="type" class="form__label">网站样式</label>
+                </div>
+              </div>
+              <div class="col-sm-9">
+                <div class="form-group">
+                  <select type="text" data-js-mobile-smart-label id="type" name="type" data-rule="required" class="form-control">
+                    <option value="" class="active"></option>
+                    <option value="001">样式1</option>
+                    <option value="002">样式2</option>
+                  </select>
+                  <div class="text-danger l-padding-top-1 hide input-error-message">请输入样式</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-js-module-setup-radios class="col-sm-6 c-module-setup__right">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group text-label">
+                  <label for="type" class="form__label">菜单详情-内容布局</label>
+                </div>
+              </div>
+            </div>
+            <div class="row radioGroup">
+              <div class="col-sm-2">
+                <label>
+                  <input id="setupOption1" type="radio" name="setupOption" autocomplete="off">
+                  <div data-image="setupOptionImg1" class="setupOption-image setupOption-image--1 js-radio-item"></div>
+                </label>
+              </div>
+              <div class="col-sm-2">
+                <label>
+                  <input id="setupOption2" type="radio" name="setupOption" autocomplete="off">
+                  <div data-image="setupOptionImg2" class="setupOption-image setupOption-image--2 js-radio-item"></div>
+                </label>
+              </div>
+              <div class="col-sm-2">
+                <label>
+                  <input id="setupOption3" type="radio" name="setupOption" autocomplete="off">
+                  <div data-image="setupOptionImg3" class="setupOption-image setupOption-image--3 js-radio-item"></div>
+                </label>
+              </div>
+              <div class="col-sm-2">
+                <label>
+                  <input id="setupOption4" type="radio" name="setupOption" autocomplete="off">
+                  <div data-image="setupOptionImg4" class="setupOption-image setupOption-image--4 js-radio-item"></div>
+                </label>
+              </div>
+              <div class="col-sm-2">
+                <label>
+                  <input id="setupOption5" type="radio" name="setupOption" autocomplete="off">
+                  <div data-image="setupOptionImg5" class="setupOption-image setupOption-image--5 js-radio-item"></div>
+                </label>
+              </div>
+              <div class="col-sm-2">
+                <label>
+                  <input id="setupOption6" type="radio" name="setupOption" autocomplete="off">
+                  <div data-image="setupOptionImg6" class="setupOption-image setupOption-image--6 js-radio-item"></div>
+                </label>
+              </div>
+            </div>
+            <div class="row setupOptionImgGroup js-radio-images">
+              <div class="col-sm-12"><img id="setupOptionImg1" src="./assets/images/module-setup-markup.jpg"><img id="setupOptionImg2" src="./assets/images/module-setup-markup.jpg"><img id="setupOptionImg3" src="./assets/images/module-setup-markup.jpg"><img id="setupOptionImg4" src="./assets/images/module-setup-markup.jpg"><img id="setupOptionImg5" src="./assets/images/module-setup-markup.jpg"><img id="setupOptionImg6" src="./assets/images/module-setup-markup.jpg"></div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    window.MLP = window.MLP || {};
+    MLP.paths = {"root":"./","static":"./assets/","img":"./assets/images/","js":"./assets/js/","css":"./assets/css/"};
+    
+    
+  </script>
+  <script src="./assets/js/vendor/jquery.js"></script>
+  <script src="./assets/js/vendor.min.js"></script>
+  <script src="./assets/js/app.js"></script><!--[if IE 9]>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script><![endif]-->
+</html>

@@ -194,6 +194,7 @@ $(document).ready(function () {
 
   $('[data-js-full-page]').FullPage();
   $('[data-js-sideNav]').SideNav();
+  $('[data-js-module-setup-radios]').RadioBtn();
 
   if ($('#loginModal').length) {
     $('#loginModal').modal({ backdrop: "static", show: false });
@@ -252,6 +253,79 @@ var FullPage = function (_MLP$apps$MLPModule) {
 }(MLP.apps.MLPModule);
 
 $.mlpPlugin(FullPage, 'FullPage', false, false);
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var RadioBtn = function (_MLP$apps$MLPModule) {
+  _inherits(RadioBtn, _MLP$apps$MLPModule);
+
+  function RadioBtn() {
+    _classCallCheck(this, RadioBtn);
+
+    return _possibleConstructorReturn(this, (RadioBtn.__proto__ || Object.getPrototypeOf(RadioBtn)).apply(this, arguments));
+  }
+
+  _createClass(RadioBtn, [{
+    key: 'init',
+    value: function init() {
+      _get(RadioBtn.prototype.__proto__ || Object.getPrototypeOf(RadioBtn.prototype), 'init', this).call(this);
+      this.el = {
+        radioItems: this.el.target.find('.js-radio-item')
+      };
+
+      this.events();
+    }
+  }, {
+    key: 'events',
+    value: function events() {
+      var _this = this;
+
+      this.el.radioItems.each(function () {
+        $(this).on('click', function () {
+          var isActive = $(this).hasClass('active');
+          if (isActive) {
+            return;
+          } else {
+            _this.el.radioItems.removeClass('active');
+            $(this).addClass('active');
+          }
+        });
+      });
+
+      // console.log(this.setupRadio);
+      if ($('.js-radio-images').length > 0) {
+        _this.radioImages();
+      }
+    }
+  }, {
+    key: 'radioImages',
+    value: function radioImages() {
+      var _this = this;
+      this.el.radioItems.each(function () {
+        $(this).on('click', function () {
+
+          var id = $(this).attr('data-image');
+          console.log(id);
+          $('.js-radio-images img').removeClass('active');
+          $('img#' + id).addClass('active');
+        });
+      });
+    }
+  }]);
+
+  return RadioBtn;
+}(MLP.apps.MLPModule);
+
+$.mlpPlugin(RadioBtn, 'RadioBtn', false, false);
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -340,11 +414,13 @@ var SideNav = function (_MLP$apps$MLPModule) {
     key: 'highlightNav',
     value: function highlightNav() {
       var _this = this;
-      var cHref = $('.nav-tabs a[aria-expanded="true"]').attr('href');
-      var cidArray = cHref.split('_');
-      var cid = cidArray[1];
-      $('.tab-active').removeClass('tab-active');
-      $('a[mid="' + cid + '"]').addClass('tab-active');
+      if ($('.nav-tabs a[aria-expanded="true"]').length > 0) {
+        var cHref = $('.nav-tabs a[aria-expanded="true"]').attr('href');
+        var cidArray = cHref.split('_');
+        var cid = cidArray[1];
+        $('.tab-active').removeClass('tab-active');
+        $('a[mid="' + cid + '"]').addClass('tab-active');
+      }
     }
   }, {
     key: 'removeHightLight',
