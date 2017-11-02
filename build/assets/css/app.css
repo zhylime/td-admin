@@ -2550,10 +2550,10 @@ html {
   background-color: #aabbd4;
 }
 .c-module-edit .radioImgGroup .btn {
-  padding: 3px 3px 0 3px;
+  padding: 4px 4px 0 4px;
   background-color: #fff;
   margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 .c-module-edit .radioDouble {
   text-align: left;
