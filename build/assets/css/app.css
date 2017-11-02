@@ -2046,9 +2046,18 @@ html {
   line-height: 1.3em;
   color: #fff;
 }
+.c-form .col-10-2 {
+  width: 20%;
+  float: left;
+}
+.c-form .text-label {
+  color: #354967;
+  font-weight: bold;
+  line-height: 31px;
+}
 @media (min-width: 768px) {
   .c-form .text-label {
-    text-align: right !important;
+text-align
     color: #354967;
   }
 }
@@ -2625,4 +2634,61 @@ button
   .c-module-edit .button-single button {
     width: 100%;
   }
+}
+.c-module-setup .setupOption-image {
+  background: url("../images/module-setup-spirit-icons.png");
+  background-repeat: no-repeat;
+  width: 83px;
+  height: 66px;
+  background-position: 0 0;
+}
+.c-module-setup .setupOption-image--1 {
+  background-position: 0 0;
+}
+.c-module-setup .setupOption-image--1.active {
+  background-position: 0 -66px;
+}
+.c-module-setup .setupOption-image--2 {
+  background-position: -95px 0;
+}
+.c-module-setup .setupOption-image--2.active {
+  background-position: -95px -66px;
+}
+.c-module-setup .setupOption-image--3 {
+  background-position: -190px 0;
+}
+.c-module-setup .setupOption-image--3.active {
+  background-position: -190px -66px;
+}
+.c-module-setup .setupOption-image--4 {
+  background-position: -285px 0;
+}
+.c-module-setup .setupOption-image--4.active {
+  background-position: -285px -66px;
+}
+.c-module-setup .setupOption-image--5 {
+  background-position: -380px 0;
+}
+.c-module-setup .setupOption-image--5.active {
+  background-position: -380px -66px;
+}
+.c-module-setup .setupOption-image--6 {
+  background-position: -475px 0;
+}
+.c-module-setup .setupOption-image--6.active {
+  background-position: -475px -66px;
+}
+.c-module-setup .setupOptionImgGroup img {
+  display: none;
+  width: 100%;
+}
+.c-module-setup .setupOptionImgGroup img.active {
+  display: block;
+}
+.c-module-setup [type="radio"] {
+  display: none;
+}
+.c-module {
+  margin: 3rem;
+  min-width: min-width 768px;
 }
