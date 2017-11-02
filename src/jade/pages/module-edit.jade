@@ -46,7 +46,7 @@ block content
                     |  飞机型号
                   label.btn.btn-default.disabled
                     input#option2(type='radio', name='latitude1', autocomplete='off')
-                    |  飞机型号
+                    |  飞机状态
                   label.btn.btn-default.active
                     input#option3(type='radio', name='latitude1', autocomplete='on')
                     |  所属部队
@@ -65,7 +65,7 @@ block content
                     |  飞机型号
                   label.btn.btn-default.active
                     input#option6(type='radio', name='latitude2', autocomplete='on')
-                    |  飞机型号
+                    |  飞机状态
                   label.btn.btn-default
                     input#option7(type='radio', name='latitude2', autocomplete='off')
                     |  所属部队
@@ -79,10 +79,10 @@ block content
             .col-sm-9.radioDouble
               .form-group
                 .btn-group(data-toggle='buttons')
-                  label.btn
+                  label.btn(data-toggle='modal', data-target='#moduleEdit')
                     input(type='radio', name='target', autocomplete='off')
                     |  飞机数量统计
-                  label.btn.active
+                  label.btn.active(data-toggle='modal', data-target='#moduleEdit')
                     input(type='radio', name='target', autocomplete='on')
                     |  编辑指标
           .row
@@ -129,6 +129,59 @@ block content
           .form-group
             button.btn.btn-default(type='button') 取消
 
+  #moduleEdit.modal.fade.moduleEdit(tabindex='-1', role='dialog', aria-labelledby='#moduleEditLabel' aria-hidden='true')
+    .modal-dialog(role='document')
+      .modal-content
+        .modal-header
+          h4#moduleEditLabel.modal-title 编辑指标
+        .modal-body
+          form.c-form(method="POST" name="moduleEditor" id="moduleEditor" data-js-form-validator)
+            .row
+              .col-sm-3
+                .form-group
+                  label.form__label(for="indexName") 名称
+              .col-sm-9
+                .form-group
+                  input.form-control(type="text" id="indexName" name="indexName" data-rule="required|alpha|max:30")
+                  div.text-danger.l-padding-top-1.hide.input-error-message 请输入名称
+            .row
+              .col-sm-3
+                .form-group
+                  label.form__label(for="formula") 公式
+              .col-sm-9
+                .form-group
+                  textarea.form-control(id="formula" name="formula" data-rule="required|max:200")
+            .row
+              .col-sm-6
+                .row
+                  .col-sm-12
+                    .form-group
+                      label.form__label(for="businessIndex") 业务表单指标
+                .row
+                  .col-sm-12
+                    .form-group
+                      select#businessIndex.selectpicker.show-tick.form-control(name='usertype', multiple='', data-live-search='false')
+                        option(value='0') 逐号
+                        option(value='1') 余寿
+
+
+              .col-sm-6
+                .control-group
+                  button.btn.btn-default(type='button') 计数
+                  button.btn.btn-default(type='button') 求和
+                  button.btn.btn-default(type='button') 最大值
+                  button.btn.btn-default(type='button') 最小值
+                  button.btn.btn-default(type='button') 平均值
+                  button.btn.btn-default(type='button') 减
+                  button.btn.btn-default(type='button') 加
+                  button.btn.btn-default(type='button') 乘
+                  button.btn.btn-default(type='button') 除
+
+
+            .row.button-group
+              .col-sm-12.button-single.text-center
+                .form-group
+                  button.btn.btn-primary(type='button' data-toggle='modal', data-target='#moduleEdit') 确定
 
 
       

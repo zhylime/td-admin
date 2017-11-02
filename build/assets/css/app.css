@@ -2221,6 +2221,8 @@ html {
   font-size: 16px;
   border-bottom: 1px solid #3070c1;
   position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .c-mainFrame__sideNav li span b,
 .c-mainFrame__sideNav li a b {
@@ -2247,9 +2249,11 @@ html {
   width: 20px;
   height: 22px;
 }
-.c-mainFrame__sideNav li a:hover {
+.c-mainFrame__sideNav li a:hover,
+.c-mainFrame__sideNav li a:focus {
   color: #fff;
   text-decoration: none;
+  background: none;
 }
 .c-mainFrame__sideNav li .subnav-3-item>span,
 .c-mainFrame__sideNav li .subnav-3-item>a {
@@ -2390,6 +2394,10 @@ html {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
 }
+.c-mainFrame__sideNav[data-status='close'] .subnav-1-item span,
+.c-mainFrame__sideNav[data-status='close'] .subnav-1-item a {
+  padding-left: 0 !important;
+}
 .c-mainFrame__sideNav[data-status='close'] .subnav-1-item span:before,
 .c-mainFrame__sideNav[data-status='close'] .subnav-1-item a:before {
   left: 11px;
@@ -2451,55 +2459,60 @@ html {
   color: #000 !important;
 }
 @media (min-width: 768px) {
-  .loginModal,
+  .loginModal {
+    margin-top: -300px;
+    top: 50%;
+  }
+}
+.loginModal .modal-header {
+  background-color: #7897c5;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .loginModal .modal-dialog {
+    width: 400px;
+  }
+}
+.loginModal .modal-body {
+  padding: 2rem 1rem;
+}
+@media (min-width: 768px) {
+  .loginModal .text-label {
+    text-align: right;
+  }
+}
+.loginModal button {
+  min-width: 100px;
+}
+.loginModal .button-group {
+  padding-top: 2rem;
+}
+@media (min-width: 768px) {
+  .loginModal .button-group .button-single:nth-child(1) {
+    text-align: right;
+  }
+  .loginModal .button-group .button-single:nth-child(2) {
+    text-align: left;
+  }
+}
+@media (max-width: 767px) {
+  .loginModal .button-group .button-single button {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
   .moduleEdit {
     margin-top: -300px;
     top: 50%;
   }
 }
-.loginModal .modal-header,
 .moduleEdit .modal-header {
   background-color: #7897c5;
   color: #fff;
 }
 @media (min-width: 768px) {
-  .loginModal .modal-dialog,
   .moduleEdit .modal-dialog {
     width: 400px;
-  }
-}
-.loginModal .modal-body,
-.moduleEdit .modal-body {
-  padding: 2rem 1rem;
-}
-@media (min-width: 768px) {
-  .loginModal .text-label,
-  .moduleEdit .text-label {
-    text-align: right;
-  }
-}
-.loginModal button,
-.moduleEdit button {
-  min-width: 100px;
-}
-.loginModal .button-group,
-.moduleEdit .button-group {
-  padding-top: 2rem;
-}
-@media (min-width: 768px) {
-  .loginModal .button-group .button-single:nth-child(1),
-  .moduleEdit .button-group .button-single:nth-child(1) {
-    text-align: right;
-  }
-  .loginModal .button-group .button-single:nth-child(2),
-  .moduleEdit .button-group .button-single:nth-child(2) {
-    text-align: left;
-  }
-}
-@media (max-width: 767px) {
-  .loginModal .button-group .button-single button,
-  .moduleEdit .button-group .button-single button {
-    width: 100%;
   }
 }
 @media (min-width: 768px) {
@@ -2516,6 +2529,34 @@ html {
 .moduleEdit .control-group select.input-xlarge {
   width: 100%;
   min-height: 100px;
+}
+.moduleEdit .button-group {
+  padding-top: 2rem;
+}
+@media (min-width: 768px) {
+  .moduleEdit .button-group .button-single:nth-child(1) {
+    text-align: center;
+  }
+}
+.moduleEdit button {
+  min-width: 100px;
+  outline: none !important;
+}
+.moduleEdit .control-group {
+  padding-top: 2rem;
+}
+.moduleEdit .control-group button {
+  min-width: 70px;
+  margin-bottom: 10px;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+.moduleEdit #businessIndex {
+  min-height: 210px;
+  scroll: auto;
 }
 .c-module-edit {
   margin: 3rem auto 3rem 3rem;
@@ -2675,6 +2716,10 @@ html {
     padding-right: 2rem;
   }
 }
+.c-module-preview {
+  max-width: 890px;
+  min-width: auto;
+}
 .c-module-setup .setupOption-image {
   background: url("../images/module-setup-spirit-icons.png");
   background-repeat: no-repeat;
@@ -2730,5 +2775,5 @@ html {
 }
 .c-module {
   margin: 3rem;
-  min-width: min-width 768px;
+  min-width: 768px;
 }

@@ -265,6 +265,43 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var ModuleEdit = function (_MLP$apps$MLPModule) {
+  _inherits(ModuleEdit, _MLP$apps$MLPModule);
+
+  function ModuleEdit() {
+    _classCallCheck(this, ModuleEdit);
+
+    return _possibleConstructorReturn(this, (ModuleEdit.__proto__ || Object.getPrototypeOf(ModuleEdit)).apply(this, arguments));
+  }
+
+  _createClass(ModuleEdit, [{
+    key: 'init',
+    value: function init() {
+      _get(ModuleEdit.prototype.__proto__ || Object.getPrototypeOf(ModuleEdit.prototype), 'init', this).call(this);
+
+      this.events();
+    }
+  }, {
+    key: 'events',
+    value: function events() {}
+  }]);
+
+  return ModuleEdit;
+}(MLP.apps.MLPModule);
+
+$.mlpPlugin(ModuleEdit, 'ModuleEdit', false, false);
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var RadioBtn = function (_MLP$apps$MLPModule) {
   _inherits(RadioBtn, _MLP$apps$MLPModule);
 
@@ -353,7 +390,7 @@ var SideNav = function (_MLP$apps$MLPModule) {
       _get(SideNav.prototype.__proto__ || Object.getPrototypeOf(SideNav.prototype), 'init', this).call(this);
       this.el = {
         extendableItems: this.el.target.find('[data-expanded] > span'),
-        clickableItems: this.el.target.find('[data-expanded] a'),
+        clickableItems: this.el.target.find('a'),
         sideNav: $('[data-js-sidenav]'),
         tabContent: $('#mainFrameTabs'),
         arrow: this.el.target.find('.js-arrow')
@@ -388,9 +425,15 @@ var SideNav = function (_MLP$apps$MLPModule) {
 
       this.el.clickableItems.each(function () {
         $(this).on('click', function () {
-          _this.setHeight();
-          _this.highlightNav();
-          _this.removeHightLight();
+          var status = $(_this.el.arrow).attr('data-status');
+          console.log(status);
+          if (status == 'open') {
+            _this.setHeight();
+            _this.highlightNav();
+            _this.removeHightLight();
+          } else {
+            $(_this.el.arrow).trigger('click');
+          }
         });
       });
 

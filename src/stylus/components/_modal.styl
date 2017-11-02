@@ -1,8 +1,7 @@
 
 // modal
 
-.loginModal,
-.moduleEdit
+.loginModal
   @media(min-width: $tablet-min)
     margin-top -300px
     top 50%
@@ -34,6 +33,15 @@
           width 100%
 
 .moduleEdit
+  @media(min-width: $tablet-min)
+    margin-top -300px
+    top 50%
+  .modal-header
+    background-color $login-blue-bg
+    color $color-white
+  .modal-dialog
+    @media(min-width: $tablet-min)
+      width 400px
   .modal-dialog
     @media(min-width: $tablet-min)
       min-width 450px
@@ -46,6 +54,27 @@
     select.input-xlarge
       width 100%
       min-height 100px
+  .button-group
+    padding-top 2rem
+    .button-single
+      @media(min-width: $tablet-min)
+        &:nth-child(1)
+          text-align center
+
+  button
+    min-width 100px
+    outline none!important
+  .control-group
+    padding-top 2rem
+    button
+      min-width 70px
+      margin-bottom 10px
+      border-radius 1rem
+  #businessIndex
+    min-height 210px
+    scroll auto
+
+
 
 
     

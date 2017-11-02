@@ -73,7 +73,7 @@
                       <input id="option1" type="radio" name="latitude1" autocomplete="off"> 飞机型号
                     </label>
                     <label class="btn btn-default disabled">
-                      <input id="option2" type="radio" name="latitude1" autocomplete="off"> 飞机型号
+                      <input id="option2" type="radio" name="latitude1" autocomplete="off"> 飞机状态
                     </label>
                     <label class="btn btn-default active">
                       <input id="option3" type="radio" name="latitude1" autocomplete="on"> 所属部队
@@ -98,7 +98,7 @@
                       <input id="optio51" type="radio" name="latitude2" autocomplete="off"> 飞机型号
                     </label>
                     <label class="btn btn-default active">
-                      <input id="option6" type="radio" name="latitude2" autocomplete="on"> 飞机型号
+                      <input id="option6" type="radio" name="latitude2" autocomplete="on"> 飞机状态
                     </label>
                     <label class="btn btn-default">
                       <input id="option7" type="radio" name="latitude2" autocomplete="off"> 所属部队
@@ -119,10 +119,10 @@
               <div class="col-sm-9 radioDouble">
                 <div class="form-group">
                   <div data-toggle="buttons" class="btn-group">
-                    <label class="btn">
+                    <label data-toggle="modal" data-target="#moduleEdit" class="btn">
                       <input type="radio" name="target" autocomplete="off"> 飞机数量统计
                     </label>
-                    <label class="btn active">
+                    <label data-toggle="modal" data-target="#moduleEdit" class="btn active">
                       <input type="radio" name="target" autocomplete="on"> 编辑指标
                     </label>
                   </div>
@@ -190,6 +190,85 @@
         </div>
       </form>
     </div>
+    <div id="moduleEdit" tabindex="-1" role="dialog" aria-labelledby="#moduleEditLabel" aria-hidden="true" class="modal fade moduleEdit">
+      <div role="document" class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 id="moduleEditLabel" class="modal-title">编辑指标</h4>
+          </div>
+          <div class="modal-body">
+            <form method="POST" name="moduleEditor" id="moduleEditor" data-js-form-validator class="c-form">
+              <div class="row">
+                <div class="col-sm-3">
+                  <div class="form-group">
+                    <label for="indexName" class="form__label">名称</label>
+                  </div>
+                </div>
+                <div class="col-sm-9">
+                  <div class="form-group">
+                    <input type="text" id="indexName" name="indexName" data-rule="required|alpha|max:30" class="form-control">
+                    <div class="text-danger l-padding-top-1 hide input-error-message">请输入名称</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-3">
+                  <div class="form-group">
+                    <label for="formula" class="form__label">公式</label>
+                  </div>
+                </div>
+                <div class="col-sm-9">
+                  <div class="form-group">
+                    <textarea id="formula" name="formula" data-rule="required|max:200" class="form-control"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label for="businessIndex" class="form__label">业务表单指标</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <select id="businessIndex" name="usertype" multiple="" data-live-search="false" class="selectpicker show-tick form-control">
+                          <option value="0">逐号</option>
+                          <option value="1">余寿</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="control-group">
+                    <button type="button" class="btn btn-default">计数</button>
+                    <button type="button" class="btn btn-default">求和</button>
+                    <button type="button" class="btn btn-default">最大值</button>
+                    <button type="button" class="btn btn-default">最小值</button>
+                    <button type="button" class="btn btn-default">平均值</button>
+                    <button type="button" class="btn btn-default">减</button>
+                    <button type="button" class="btn btn-default">加</button>
+                    <button type="button" class="btn btn-default">乘</button>
+                    <button type="button" class="btn btn-default">除</button>
+                  </div>
+                </div>
+              </div>
+              <div class="row button-group">
+                <div class="col-sm-12 button-single text-center">
+                  <div class="form-group">
+                    <button type="button" data-toggle="modal" data-target="#moduleEdit" class="btn btn-primary">确定</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
   <script>
     window.MLP = window.MLP || {};
@@ -198,7 +277,11 @@
     
   </script>
   <script src="./assets/js/vendor/jquery.js"></script>
-  <script src="./assets/js/vendor.min.js"></script>
+  <script src="./assets/js/vendor/jquery-ui.js"></script>
+  <script src="./assets/js/vendor/bootstrap.js"></script>
+  <script src="./assets/js/vendor/jquery.validate.js"></script>
+  <script src="./assets/js/vendor/mainFrame.js"></script>
+  <script src="./assets/js/vendor/b.tabs.js"></script>
   <script src="./assets/js/app.js"></script><!--[if IE 9]>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script><![endif]-->
 </html>
