@@ -1,0 +1,76 @@
+extends ../partials/_template
+block footer
+block header
+
+block content
+  .c-module.c-module-setup.container-fluid
+    form.c-form-setup.c-form(method="POST" name="moduleSetupForm" id="moduleSetupForm" data-js-form-validator)
+      .row
+        .col-sm-6.c-module-setup__left
+          .row
+            .col-sm-3
+              .form-group.text-label.text-right
+                label.form__label(for="name") 主标题
+            .col-sm-9
+              .form-group
+                input.form-control(type="text" id="name" name="name" data-rule="required|alpha|max:30")
+                div.text-danger.l-padding-top-1.hide.input-error-message 请输入主标题
+          .row
+            .col-sm-3
+                .form-group.text-label.text-right
+                  label.form__label(for="type") 网站样式
+              .col-sm-9
+                .form-group
+                  select.form-control(type="text" data-js-mobile-smart-label id="type" name="type" data-rule="required")
+                    option(value="" class="active")
+                    option(value="001") 样式1
+                    option(value="002") 样式2
+                  div.text-danger.l-padding-top-1.hide.input-error-message 请输入样式
+
+        .col-sm-6.c-module-setup__right(data-js-module-setup-radios)
+          .row
+            .col-sm-12
+              .form-group.text-label
+                label.form__label(for="type") 菜单详情-内容布局
+          .row.radioGroup
+            .col-sm-2
+              label
+                input#setupOption1(type='radio', name='setupOption', autocomplete='off')
+                .setupOption-image.setupOption-image--1.js-radio-item(data-image="setupOptionImg1")
+            .col-sm-2
+              label
+                input#setupOption2(type='radio', name='setupOption', autocomplete='off')
+                .setupOption-image.setupOption-image--2.js-radio-item(data-image="setupOptionImg2")
+            .col-sm-2
+              label
+                input#setupOption3(type='radio', name='setupOption', autocomplete='off')
+                .setupOption-image.setupOption-image--3.js-radio-item(data-image="setupOptionImg3")
+            .col-sm-2
+              label
+                input#setupOption4(type='radio', name='setupOption', autocomplete='off')
+                .setupOption-image.setupOption-image--4.js-radio-item(data-image="setupOptionImg4")
+            .col-sm-2
+              label
+                input#setupOption5(type='radio', name='setupOption', autocomplete='off')
+                .setupOption-image.setupOption-image--5.js-radio-item(data-image="setupOptionImg5")
+            .col-sm-2
+              label
+                input#setupOption6(type='radio', name='setupOption', autocomplete='off')
+                .setupOption-image.setupOption-image--6.js-radio-item(data-image="setupOptionImg6")
+          .row.setupOptionImgGroup.js-radio-images
+            .col-sm-12
+              img#setupOptionImg1(src=paths.img + 'module-setup-markup.jpg')
+              img#setupOptionImg2(src=paths.img + 'module-setup-markup.jpg')
+              img#setupOptionImg3(src=paths.img + 'module-setup-markup.jpg')
+              img#setupOptionImg4(src=paths.img + 'module-setup-markup.jpg')
+              img#setupOptionImg5(src=paths.img + 'module-setup-markup.jpg')
+              img#setupOptionImg6(src=paths.img + 'module-setup-markup.jpg')
+
+              
+                
+
+
+   
+
+
+      

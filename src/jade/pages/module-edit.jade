@@ -3,13 +3,13 @@ block footer
 block header
 
 block content
-  .c-module-edit.container-fluid
+  .c-module.c-module-edit.container-fluid
     form.c-form-module(method="POST" name="moduleEditForm" id="moduleEditForm" data-js-form-validator)
       .row
         .col-sm-6.c-module-edit__left
           .row
             .col-sm-3
-              .form-group.text-label
+              .form-group.text-label.text-right
                 label.form__label(for="name") 名称
             .col-sm-9
               .form-group
@@ -17,7 +17,7 @@ block content
                 div.text-danger.l-padding-top-1.hide.input-error-message 请输入名称
           .row
             .col-sm-3
-              .form-group.text-label
+              .form-group.text-label.text-right
                 label.form__label(for="description") 描述
             .col-sm-9
               .form-group
@@ -25,7 +25,7 @@ block content
                 div.text-danger.l-padding-top-1.hide.input-error-message 请输入描述
           .row
             .col-sm-3
-              .form-group.text-label
+              .form-group.text-label.text-right
                 label.form__label(for="type") 类型
             .col-sm-9
               .form-group
@@ -37,7 +37,7 @@ block content
           .row
             .col-sm-3
               .form-group
-                label.text-label(for='latitude1') 纬度1
+                label.text-label.text-right(for='latitude1') 纬度1
             .col-sm-9.radioGroup.radioGroupActive
               .form-group
                 .btn-group(data-toggle='buttons')
@@ -55,7 +55,7 @@ block content
                     |  供应商
           .row
             .col-sm-3
-              .form-group.text-label
+              .form-group.text-label.text-right
                 label.form__label(for="latitude2") 纬度2
             .col-sm-9.radioGroup
               .form-group
@@ -74,7 +74,7 @@ block content
                     |  供应商
           .row
             .col-sm-3
-              .form-group.text-label
+              .form-group.text-label.text-right
                 label.form__label(for="target") 指标
             .col-sm-9.radioDouble
               .form-group
@@ -87,7 +87,7 @@ block content
                     |  编辑指标
           .row
             .col-sm-3
-              .form-group.text-label
+              .form-group.text-label.text-right
                 label.form__label(for="type1") 类型
             .col-sm-9.radioImgGroup
               .form-group

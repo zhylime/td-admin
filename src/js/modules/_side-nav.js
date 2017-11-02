@@ -80,11 +80,14 @@ class SideNav extends MLP.apps.MLPModule {
 
     highlightNav(){
       var _this = this;
-      var cHref=$('.nav-tabs a[aria-expanded="true"]').attr('href');
-      var cidArray= cHref.split('_');
-      var cid = cidArray[1];
-      $('.tab-active').removeClass('tab-active');
-      $('a[mid="' + cid + '"]').addClass('tab-active');
+      if($('.nav-tabs a[aria-expanded="true"]').length > 0){
+        var cHref=$('.nav-tabs a[aria-expanded="true"]').attr('href');
+        var cidArray= cHref.split('_');
+        var cid = cidArray[1];
+        $('.tab-active').removeClass('tab-active');
+        $('a[mid="' + cid + '"]').addClass('tab-active');
+      }
+      
       
 
 
