@@ -8,15 +8,17 @@
   .modal-header
     background-color $login-blue-bg
     color $color-white
-
+  .modal-dialog
+    @media(min-width: $tablet-min)
+      width 400px
   .modal-body
-    padding 5rem 1rem
+    padding 2rem 1rem
 
   button
     min-width 100px
 
   .button-group
-    padding-top 3rem
+    padding-top 2rem
     .button-single
       @media(min-width: $tablet-min)
         &:nth-child(1)
