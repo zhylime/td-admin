@@ -1827,6 +1827,9 @@ html {
 .c-content__menu--item .z7 {
   z-index: 7;
 }
+.c-content__menu--item:focus {
+  outline: none;
+}
 .c-content__menu--item:hover .c-content__menu--info {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
@@ -2577,6 +2580,11 @@ html {
 }
 .c-module-edit .radioDouble .btn {
   margin-bottom: 0.5rem;
+}
+.c-module-edit .radioDouble .btn.active.focus,
+.c-module-edit .radioImgGroup .btn.active.focus,
+.c-module-edit .radioGroup .btn.active.focus {
+  outline: 0 !important;
 }
 .c-module-edit .text-label {
   color: #354967;
