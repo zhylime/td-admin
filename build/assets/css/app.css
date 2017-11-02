@@ -2451,46 +2451,71 @@ html {
   color: #000 !important;
 }
 @media (min-width: 768px) {
-  .loginModal {
+  .loginModal,
+  .moduleEdit {
     margin-top: -300px;
     top: 50%;
   }
 }
-.loginModal .modal-header {
+.loginModal .modal-header,
+.moduleEdit .modal-header {
   background-color: #7897c5;
   color: #fff;
 }
 @media (min-width: 768px) {
-  .loginModal .modal-dialog {
+  .loginModal .modal-dialog,
+  .moduleEdit .modal-dialog {
     width: 400px;
   }
 }
-.loginModal .modal-body {
+.loginModal .modal-body,
+.moduleEdit .modal-body {
   padding: 2rem 1rem;
 }
 @media (min-width: 768px) {
-  .loginModal .text-label {
+  .loginModal .text-label,
+  .moduleEdit .text-label {
     text-align: right;
   }
 }
-.loginModal button {
+.loginModal button,
+.moduleEdit button {
   min-width: 100px;
 }
-.loginModal .button-group {
+.loginModal .button-group,
+.moduleEdit .button-group {
   padding-top: 2rem;
 }
 @media (min-width: 768px) {
-  .loginModal .button-group .button-single:nth-child(1) {
+  .loginModal .button-group .button-single:nth-child(1),
+  .moduleEdit .button-group .button-single:nth-child(1) {
     text-align: right;
   }
-  .loginModal .button-group .button-single:nth-child(2) {
+  .loginModal .button-group .button-single:nth-child(2),
+  .moduleEdit .button-group .button-single:nth-child(2) {
     text-align: left;
   }
 }
 @media (max-width: 767px) {
-  .loginModal .button-group .button-single button {
+  .loginModal .button-group .button-single button,
+  .moduleEdit .button-group .button-single button {
     width: 100%;
   }
+}
+@media (min-width: 768px) {
+  .moduleEdit .modal-dialog {
+    min-width: 450px;
+  }
+}
+.moduleEdit .modal-body {
+  padding-right: 2rem;
+  padding-left: 2rem;
+  background-color: #f8fbff;
+  color: #354967;
+}
+.moduleEdit .control-group select.input-xlarge {
+  width: 100%;
+  min-height: 100px;
 }
 .c-module-edit {
   margin: 3rem auto 3rem 3rem;

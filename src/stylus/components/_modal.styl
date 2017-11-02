@@ -1,7 +1,8 @@
 
 // modal
 
-.loginModal
+.loginModal,
+.moduleEdit
   @media(min-width: $tablet-min)
     margin-top -300px
     top 50%
@@ -31,5 +32,20 @@
       button
         @media(max-width: $tablet-max)
           width 100%
+
+.moduleEdit
+  .modal-dialog
+    @media(min-width: $tablet-min)
+      min-width 450px
+  .modal-body
+    padding-right 2rem
+    padding-left 2rem
+    background-color $bg-moudule-edit
+    color $tabs-nav-text-active-blue
+  .control-group
+    select.input-xlarge
+      width 100%
+      min-height 100px
+
 
     
