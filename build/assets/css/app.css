@@ -363,6 +363,38 @@ body {
     background-position: 100% 50%;
   }
 }
+@-moz-keyframes animatedBackground1 {
+  0%, 100% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@-webkit-keyframes animatedBackground1 {
+  0%, 100% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@-o-keyframes animatedBackground1 {
+  0%, 100% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes animatedBackground1 {
+  0%, 100% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
 @-moz-keyframes rotate {
   0% {
     -webkit-transform: rotate(0deg);
@@ -1627,6 +1659,15 @@ html {
   -o-animation: animatedBackground 20s linear infinite;
   -ms-animation: animatedBackground 20s linear infinite;
   animation: animatedBackground 20s linear infinite;
+}
+@media (min-width: 1800px) {
+  .c-content {
+    -webkit-animation: animatedBackground1 20s linear infinite;
+    -moz-animation: animatedBackground1 20s linear infinite;
+    -o-animation: animatedBackground1 20s linear infinite;
+    -ms-animation: animatedBackground1 20s linear infinite;
+    animation: animatedBackground1 20s linear infinite;
+  }
 }
 .c-content__background {
   min-width: 1024px;
