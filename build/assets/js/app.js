@@ -241,10 +241,20 @@ var FullPage = function (_MLP$apps$MLPModule) {
             var windowHeight = $(window).height();
             var footerHeight = $('.c-footer').outerHeight();
             var headerHeight = $('.c-header').outerHeight();
-            if (windowHeight <= 1000) {
-                $(".c-content").height(windowHeight - footerHeight - headerHeight - 100);
+            if (windowHeight <= 700) {
+                $(".c-content__menu").attr("style", "");
+            } else if (windowHeight > 700 && windowHeight <= 800) {
+                var curHeight = 800 - footerHeight - headerHeight - 100;
+                $(".c-content").height(curHeight);
+                $(".c-content__menu").css({ "top": "50%", "margin-top": 50 - curHeight / 2 });
+            } else if (windowHeight > 800 && windowHeight <= 1000) {
+                var _curHeight = windowHeight - footerHeight - headerHeight - 100;
+                $(".c-content").height(_curHeight);
+                $(".c-content__menu").css({ "top": "50%", "margin-top": 50 - _curHeight / 2 });
             } else if (windowHeight > 1000) {
-                $(".c-content").height(1000 - footerHeight - headerHeight - 100);
+                var _curHeight2 = 1000 - footerHeight - headerHeight - 100;
+                $(".c-content").height(_curHeight2);
+                $(".c-content__menu").css({ "top": "50%", "margin-top": 100 - _curHeight2 / 2 });
             }
         }
     }]);

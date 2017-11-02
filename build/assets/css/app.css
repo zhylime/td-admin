@@ -1767,7 +1767,12 @@ html {
   display: inline-block;
   cursor: pointer;
   position: absolute;
-  width: 450px;
+  width: 400px;
+}
+@media (min-width: 1280px) {
+  .c-content__menu--item {
+    width: 450px;
+  }
 }
 .c-content__menu--item:nth-child(1) {
   top: 160px;
