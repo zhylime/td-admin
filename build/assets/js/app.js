@@ -182,6 +182,95 @@ var MLPModule = function () {
 $.mlpInit(MLPModule, 'MLPModule');
 'use strict';
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CardFlip = function (_MLP$apps$MLPModule) {
+  _inherits(CardFlip, _MLP$apps$MLPModule);
+
+  function CardFlip() {
+    _classCallCheck(this, CardFlip);
+
+    return _possibleConstructorReturn(this, (CardFlip.__proto__ || Object.getPrototypeOf(CardFlip)).apply(this, arguments));
+  }
+
+  _createClass(CardFlip, [{
+    key: 'init',
+    value: function init() {
+      _get(CardFlip.prototype.__proto__ || Object.getPrototypeOf(CardFlip.prototype), 'init', this).call(this);
+      this.el = {
+        cardItems: this.el.target.find('.js-card'),
+        cardSide: this.el.target.find('.card-side')
+      };
+
+      this.cardFront;
+      this.cardBack;
+      this.speed = 225;
+
+      this.events();
+    }
+  }, {
+    key: 'events',
+    value: function events() {
+      var _this = this;
+
+      // this.initCardSide();
+      this.el.cardItems.each(function () {
+        $(this).on('click', function () {
+
+          // console.log($(this).find('.card-side').hasClass('card-front'));
+          // console.log($(this).find('.card-side').hasClass('card-back'));
+          if ($(this).find('.card-side').hasClass('card-front')) {
+            _this.cardFront = $(this).find('.card-front');
+            // console.log(_this.cardFront);
+            setTimeout(function () {
+              _this.cardFront.addClass('card-back').removeClass('card-front');
+            });
+          }
+          if ($(this).find('.card-side').hasClass('card-back')) {
+            _this.cardBack = $(this).find('.card-back');
+            setTimeout(function () {
+              _this.cardBack.addClass('card-front').removeClass('card-back');
+            });
+          }
+        });
+      });
+      // this.el.cardItems.on('click', function(){
+      //   _this.cardFront.addClass('card-back').removeClass('card-front');
+      //   setTimeout(function(){
+      //     _this.cardBack.addClass('card-front').removeClass('card-back');
+      //     _this.initCardSide()
+      //   });
+      // })
+    }
+
+    // initCardSide(){
+    //   var _this = this;
+    //   this.el.cardSide.each(function(){
+    //     if($(this).hasClass('card-front')){
+    //       _this.cardFront = $(this);
+    //     }
+    //     else{
+    //       _this.cardBack = $(this);
+    //     }
+    //   });
+    // }
+
+  }]);
+
+  return CardFlip;
+}(MLP.apps.MLPModule);
+
+$.mlpPlugin(CardFlip, 'CardFlip', false, false);
+'use strict';
+
 /*
   Every plugin initialization goes here.
  */
@@ -195,7 +284,7 @@ $(document).ready(function () {
   $('[data-js-full-page]').FullPage();
   $('[data-js-sideNav]').SideNav();
   $('[data-js-module-setup-radios]').RadioBtn();
-
+  $('[data-js-card]').CardFlip();
   if ($('#loginModal').length) {
     $('#loginModal').modal({ backdrop: "static", show: false });
   }

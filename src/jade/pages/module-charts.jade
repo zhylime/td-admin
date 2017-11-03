@@ -25,8 +25,11 @@ block content
             label.btn.btn-default
               input(type="radio", name="chartsOptionGroup1")
               | option3
+          .filter-group
+            .filter-item 采购
+            .filter-item 统计
         .tab-pane(role="tabpanel", id="equipment")
-          .btn-group(data-toggle="buttons")
+          .radio-group(data-toggle="buttons")
             label.btn.btn-default
               input(type="radio", name="chartsOptionGroup1")
               | 飞机
@@ -36,15 +39,25 @@ block content
             label.btn.btn-default
               input(type="radio", name="chartsOptionGroup1")
               | 雷达
+          .filter-group
+            .filter-item 采购
+            .filter-item 统计
 
-      .c-module-charts__grid.grid
-        .grid-item.card
-          .card-front.card-flip
+      .c-module-charts__grid.grid(data-js-card)
+        .grid-item.card.js-card
+          .card-front.card-side
             .c-module-charts__grid__thumb
               img(src=paths.img + 'module-charts-thumb.jpg')
             .c-module-charts__grid__title 数据权限对比模型
-          .card-back.card-flip
+          .card-back.card-side
             .c-module-charts__grid__desc
+              .desc-title 数据权限比对模块
+              .desc-content 先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：
+              .desc-author.
+                创建人: <span>某某</span>
+              .desc-author.
+                最后修改人: <span>某某</span>
+
             .c-module-charts__grid__buttons
               a(href="javascript:void(0);").button-preview
                 i.icon-preview
@@ -52,10 +65,68 @@ block content
               a(href="javascript:void(0);").button-create
                 i.icon-module
                 | 建模
-        .grid-item
-        .grid-item
-        .grid-item
+        .grid-item.card.js-card
+          .card-front.card-side
+            .c-module-charts__grid__thumb
+              img(src=paths.img + 'module-charts-thumb.jpg')
+            .c-module-charts__grid__title 数据权限对比模型
+          .card-back.card-side
+            .c-module-charts__grid__desc
+              .desc-title 数据权限比对模块
+              .desc-content 先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：
+              .desc-author.
+                创建人: <span>某某</span>
+              .desc-author.
+                最后修改人: <span>某某</span>
+            .c-module-charts__grid__buttons
+              a(href="javascript:void(0);").button-preview
+                i.icon-preview
+                | 预览
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+        
+        .grid-item.card.js-card
+          .card-front.card-side
+            .c-module-charts__grid__thumb
+              img(src=paths.img + 'module-charts-thumb.jpg')
+            .c-module-charts__grid__title 数据权限对比模型
+          .card-back.card-side
+            .c-module-charts__grid__desc
+              .desc-title 数据权限比对模块
+              .desc-content 先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：
+              .desc-author.
+                创建人: <span>某某</span>
+              .desc-author.
+                最后修改人: <span>某某</span>
+            .c-module-charts__grid__buttons
+              a(href="javascript:void(0);").button-preview
+                i.icon-preview
+                | 预览
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
 
+        .grid-item.card.js-card
+          .card-front.card-side
+            .c-module-charts__grid__thumb
+              img(src=paths.img + 'module-charts-thumb.jpg')
+            .c-module-charts__grid__title 数据权限对比模型
+          .card-back.card-side
+            .c-module-charts__grid__desc
+              .desc-title 数据权限比对模块
+              .desc-content 先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：
+              .desc-author.
+                创建人: <span>某某</span>
+              .desc-author.
+                最后修改人: <span>某某</span>
+            .c-module-charts__grid__buttons
+              a(href="javascript:void(0);").button-preview
+                i.icon-preview
+                | 预览
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
       
     //-   .row
     //-     .col-sm-6.c-module-edit__left

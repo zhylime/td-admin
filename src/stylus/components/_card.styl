@@ -1,0 +1,32 @@
+@keyframes flipouttoleft
+  from
+    transform rotateY(0)
+  to
+    transform rotateY(90deg) scale(0.9)
+@keyframes flipintoleft
+  from
+    transform rotateY(0)
+  to
+    transform rotateY(-90deg) scale(0.9)
+.card
+  perspective 1000px
+  position absolute
+  &__front
+    animation-timing-function ease-out
+    // animation-duration 350ms
+  &__back
+    animation-timing-function ease-in
+    // animation-duration 225ms
+
+  &-side
+    backface-visibility hidden
+    transform translateX(0)
+    position absolute
+    &.card-back
+      transform rotateY(-90deg) scale(.9)
+      animation-name flipouttoleft
+      animation-duration 225ms
+     
+    &.card-front
+      animation-name flipintoleft
+      animation-duration 225ms
