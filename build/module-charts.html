@@ -14,6 +14,117 @@
   </head>
   <body>
     <div class="c-module c-module-charts container-fluid">
+      <form method="POST" name="moduleEditForm" id="moduleChartsForm" data-js-form-validator class="c-form-module">
+        <div class="c-module-charts__search-container l-float-right">
+          <input class="c-module-charts__search-container__input">
+          <button class="c-module-charts__search-container__button">搜索</button>
+        </div>
+        <ul role="tablist" class="nav nav-tabs">
+          <li role="presentation"><a href="#contract" aria-controls="contract" role="tab" data-toggle="tab">合同</a></li>
+          <li role="presentation"><a href="#equipment" aria-controls="equipment" role="tab" data-toggle="tab">装备</a></li>
+        </ul>
+        <div class="tab-content">
+          <div role="tabpanel" id="contract" class="tab-pane">
+            <div data-toggle="buttons" class="radio-group">
+              <label class="btn btn-default">
+                <input type="radio" name="chartsOptionGroup1" data->option1
+              </label>
+              <label class="btn btn-default">
+                <input type="radio" name="chartsOptionGroup1">option2
+              </label>
+              <label class="btn btn-default">
+                <input type="radio" name="chartsOptionGroup1">option3
+              </label>
+            </div>
+            <div class="filter-group">
+              <div class="filter-item">采购</div>
+              <div class="filter-item">统计</div>
+            </div>
+          </div>
+          <div role="tabpanel" id="equipment" class="tab-pane">
+            <div data-toggle="buttons" class="radio-group">
+              <label class="btn btn-default">
+                <input type="radio" name="chartsOptionGroup1">飞机
+              </label>
+              <label class="btn btn-default">
+                <input type="radio" name="chartsOptionGroup1">发动机
+              </label>
+              <label class="btn btn-default">
+                <input type="radio" name="chartsOptionGroup1">雷达
+              </label>
+            </div>
+            <div class="filter-group">
+              <div class="filter-item">采购</div>
+              <div class="filter-item">统计</div>
+            </div>
+          </div>
+        </div>
+        <div data-js-card class="c-module-charts__grid grid">
+          <div class="grid-item card js-card">
+            <div class="card-front card-side">
+              <div class="c-module-charts__grid__thumb"><img src="./assets/images/module-charts-thumb.jpg"></div>
+              <div class="c-module-charts__grid__title">数据权限对比模型</div>
+            </div>
+            <div class="card-back card-side">
+              <div class="c-module-charts__grid__desc">
+                <div class="desc-title">数据权限比对模块</div>
+                <div class="desc-content">先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：</div>
+                <div class="desc-author">创建人: <span>某某</span></div>
+                <div class="desc-author">
+                  最后修改人: <span>某某</span>
+                  
+                </div>
+              </div>
+              <div class="c-module-charts__grid__buttons"><a href="javascript:void(0);" class="button-preview"><i class="icon-preview"></i>预览</a><a href="javascript:void(0);" class="button-create"><i class="icon-module"></i>建模</a></div>
+            </div>
+          </div>
+          <div class="grid-item card js-card">
+            <div class="card-front card-side">
+              <div class="c-module-charts__grid__thumb"><img src="./assets/images/module-charts-thumb.jpg"></div>
+              <div class="c-module-charts__grid__title">数据权限对比模型</div>
+            </div>
+            <div class="card-back card-side">
+              <div class="c-module-charts__grid__desc">
+                <div class="desc-title">数据权限比对模块</div>
+                <div class="desc-content">先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：</div>
+                <div class="desc-author">创建人: <span>某某</span></div>
+                <div class="desc-author">最后修改人: <span>某某</span></div>
+              </div>
+              <div class="c-module-charts__grid__buttons"><a href="javascript:void(0);" class="button-preview"><i class="icon-preview"></i>预览</a><a href="javascript:void(0);" class="button-create"><i class="icon-module"></i>建模</a></div>
+            </div>
+          </div>
+          <div class="grid-item card js-card">
+            <div class="card-front card-side">
+              <div class="c-module-charts__grid__thumb"><img src="./assets/images/module-charts-thumb.jpg"></div>
+              <div class="c-module-charts__grid__title">数据权限对比模型</div>
+            </div>
+            <div class="card-back card-side">
+              <div class="c-module-charts__grid__desc">
+                <div class="desc-title">数据权限比对模块</div>
+                <div class="desc-content">先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：</div>
+                <div class="desc-author">创建人: <span>某某</span></div>
+                <div class="desc-author">最后修改人: <span>某某</span></div>
+              </div>
+              <div class="c-module-charts__grid__buttons"><a href="javascript:void(0);" class="button-preview"><i class="icon-preview"></i>预览</a><a href="javascript:void(0);" class="button-create"><i class="icon-module"></i>建模</a></div>
+            </div>
+          </div>
+          <div class="grid-item card js-card">
+            <div class="card-front card-side">
+              <div class="c-module-charts__grid__thumb"><img src="./assets/images/module-charts-thumb.jpg"></div>
+              <div class="c-module-charts__grid__title">数据权限对比模型</div>
+            </div>
+            <div class="card-back card-side">
+              <div class="c-module-charts__grid__desc">
+                <div class="desc-title">数据权限比对模块</div>
+                <div class="desc-content">先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：</div>
+                <div class="desc-author">创建人: <span>某某</span></div>
+                <div class="desc-author">最后修改人: <span>某某</span></div>
+              </div>
+              <div class="c-module-charts__grid__buttons"><a href="javascript:void(0);" class="button-preview"><i class="icon-preview"></i>预览</a><a href="javascript:void(0);" class="button-create"><i class="icon-module"></i>建模</a></div>
+            </div>
+          </div>
+        </div>
+      </form>
       
       
       
@@ -33,6 +144,7 @@
   <script src="./assets/js/vendor/jquery.validate.js"></script>
   <script src="./assets/js/vendor/mainFrame.js"></script>
   <script src="./assets/js/vendor/b.tabs.js"></script>
+  <script src="./assets/js/vendor/isotope.pkgd.min.js"></script>
   <script src="./assets/js/app.js"></script><!--[if IE 9]>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script><![endif]-->
 </html>
