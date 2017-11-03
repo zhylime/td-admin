@@ -8,6 +8,7 @@
     <meta name="keywords" content="">
     <link rel="stylesheet" href="./assets/css/vendor/bootstrap.css">
     <link rel="stylesheet" href="./assets/css/vendor/font-awesome.css">
+    <link rel="stylesheet" href="./assets/css/vendor/ionicons.css">
     <link rel="stylesheet" href="./assets/css/vendor/b.tabs.css"><!--[if (gt IE 8)]><!-->
     <link rel="stylesheet" href="./assets/css/app.css"><!--<![endif]-->
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/ico">
@@ -19,11 +20,11 @@
           <div class="col-sm-6 c-module-setup__left">
             <div class="row">
               <div class="col-sm-3">
-                <div class="form-group text-label text-right">
+                <div class="form-group text-label">
                   <label for="name" class="form__label">主标题</label>
                 </div>
               </div>
-              <div class="col-sm-9">
+              <div class="col-sm-9 col-xs-10">
                 <div class="form-group">
                   <input type="text" id="name" name="name" data-rule="required|alpha|max:30" class="form-control">
                   <div class="text-danger l-padding-top-1 hide input-error-message">请输入主标题</div>
@@ -32,11 +33,11 @@
             </div>
             <div class="row">
               <div class="col-sm-3">
-                <div class="form-group text-label text-right">
+                <div class="form-group text-label">
                   <label for="type" class="form__label">网站样式</label>
                 </div>
               </div>
-              <div class="col-sm-9">
+              <div class="col-sm-9 col-xs-10">
                 <div class="form-group">
                   <select type="text" data-js-mobile-smart-label id="type" name="type" data-rule="required" class="form-control">
                     <option value="" class="active"></option>
@@ -47,47 +48,122 @@
                 </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group text-label">
+                  <label for="addMenu" class="form__label">菜单设置</label>
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-10">
+                <div class="form-group">
+                  <button type="button" class="btn btn-default">添加菜单</button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group text-label hidden-xs">
+                  <label for="" class="form__label"></label>
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-10">
+                <div class="form-group"></div>
+                <div class="panel panel-default">
+                  <div class="panel-body"></div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group text-label">
+                  <label for="editMenu" class="form__label"></label>
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-10">
+                <div class="form-group">
+                  <button type="button" class="btn btn-default">编辑菜单</button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group text-label hidden-xs">
+                  <label for="" class="form__label"></label>
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-10">
+                <div class="form-group"></div>
+                <div data-tree-view class="panel panel-default">
+                  <div class="panel-body">
+                    <div class="js-view-tree treeview">
+                      <ul class="list-group">
+                        <li class="list-group-item node-first"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span>关于我们<span class="ion ion-code"></span><span class="ion ion-close"></span><span class="ion ion-android-create"></span><span class="ion ion-plus-round"></span></li>
+                        <li class="list-group-item node-second"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span>公司简介<span class="ion ion-code"></span><span class="ion ion-close"></span><span class="ion ion-android-create"></span></li>
+                        <li class="list-group-item node-third"><span class="icon glyphicon"></span><span class="icon node-icon"></span>联系电话<span class="ion ion-code"></span><span class="ion ion-close"></span><span class="ion ion-android-create"></span></li>
+                      </ul>
+                      <ul class="list-group">
+                        <li class="list-group-item node-first"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span>数据库<span class="ion ion-code"></span><span class="ion ion-close"></span><span class="ion ion-android-create"></span><span class="ion ion-plus-round"></span></li>
+                        <li class="list-group-item node-second"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span>数据源<span class="ion ion-code"></span><span class="ion ion-close"></span><span class="ion ion-android-create"></span><span class="ion ion-plus-round"></span></li>
+                        <li class="list-group-item node-third"><span class="icon glyphicon"></span><span class="icon node-icon"></span>数据分析<span class="ion ion-code"></span><span class="ion ion-close"></span><span class="ion ion-android-create"></span></li>
+                        <li class="list-group-item node-third"><span class="icon glyphicon"></span><span class="icon node-icon"></span>图表分析<span class="ion ion-code"></span><span class="ion ion-close"></span><span class="ion ion-android-create"></span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group text-label hidden-xs">
+                  <label for="" class="form__label"></label>
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-10">
+                <div class="form-group"></div>
+                <button type="button" class="btn btn-primary">确定</button>
+              </div>
+            </div>
           </div>
           <div data-js-module-setup-radios class="col-sm-6 c-module-setup__right">
             <div class="row">
               <div class="col-sm-12">
                 <div class="form-group text-label">
-                  <label for="type" class="form__label">菜单详情-内容布局</label>
+                  <label for="setupOption" class="form__label">菜单详情-内容布局</label>
                 </div>
               </div>
             </div>
             <div class="row radioGroup">
-              <div class="col-sm-2">
+              <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
                 <label>
                   <input id="setupOption1" type="radio" name="setupOption" autocomplete="off">
                   <div data-image="setupOptionImg1" class="setupOption-image setupOption-image--1 js-radio-item"></div>
                 </label>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
                 <label>
                   <input id="setupOption2" type="radio" name="setupOption" autocomplete="off">
                   <div data-image="setupOptionImg2" class="setupOption-image setupOption-image--2 js-radio-item"></div>
                 </label>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
                 <label>
                   <input id="setupOption3" type="radio" name="setupOption" autocomplete="off">
                   <div data-image="setupOptionImg3" class="setupOption-image setupOption-image--3 js-radio-item"></div>
                 </label>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
                 <label>
                   <input id="setupOption4" type="radio" name="setupOption" autocomplete="off">
                   <div data-image="setupOptionImg4" class="setupOption-image setupOption-image--4 js-radio-item"></div>
                 </label>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
                 <label>
                   <input id="setupOption5" type="radio" name="setupOption" autocomplete="off">
                   <div data-image="setupOptionImg5" class="setupOption-image setupOption-image--5 js-radio-item"></div>
                 </label>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
                 <label>
                   <input id="setupOption6" type="radio" name="setupOption" autocomplete="off">
                   <div data-image="setupOptionImg6" class="setupOption-image setupOption-image--6 js-radio-item"></div>
@@ -115,6 +191,7 @@
   <script src="./assets/js/vendor/mainFrame.js"></script>
   <script src="./assets/js/vendor/b.tabs.js"></script>
   <script src="./assets/js/vendor/isotope.pkgd.min.js"></script>
+  <script src="./assets/js/vendor/bootstrap-treeview.js"></script>
   <script src="./assets/js/app.js"></script><!--[if IE 9]>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script><![endif]-->
 </html>

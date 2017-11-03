@@ -16,5 +16,6 @@ $(document).ready(function() {
         $('#loginModal').modal({backdrop:"static",show:false})
     }
 
+    $('[data-tree-view]').TreeView();
 
 });

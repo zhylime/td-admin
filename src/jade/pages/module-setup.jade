@@ -2,6 +2,11 @@ extends ../partials/_template
 block footer
 block header
 
+block footerJs
+  script(src=paths.js + 'vendor/bootstrap-treeview.js')
+
+
+
 block content
   .c-module.c-module-setup.container-fluid
     form.c-form-setup.c-form(method="POST" name="moduleSetupForm" id="moduleSetupForm" data-js-form-validator)
@@ -9,51 +14,145 @@ block content
         .col-sm-6.c-module-setup__left
           .row
             .col-sm-3
-              .form-group.text-label.text-right
+              .form-group.text-label
                 label.form__label(for="name") 主标题
-            .col-sm-9
+            .col-sm-9.col-xs-10
               .form-group
                 input.form-control(type="text" id="name" name="name" data-rule="required|alpha|max:30")
                 div.text-danger.l-padding-top-1.hide.input-error-message 请输入主标题
           .row
             .col-sm-3
-                .form-group.text-label.text-right
+                .form-group.text-label
                   label.form__label(for="type") 网站样式
-              .col-sm-9
+              .col-sm-9.col-xs-10
                 .form-group
                   select.form-control(type="text" data-js-mobile-smart-label id="type" name="type" data-rule="required")
                     option(value="" class="active")
                     option(value="001") 样式1
                     option(value="002") 样式2
                   div.text-danger.l-padding-top-1.hide.input-error-message 请输入样式
+          .row
+            .col-sm-3
+              .form-group.text-label
+                label.form__label(for="addMenu") 菜单设置
+            .col-sm-9.col-xs-10
+              .form-group
+                button.btn.btn-default(type='button') 添加菜单
+          .row
+            .col-sm-3
+              .form-group.text-label.hidden-xs
+                label.form__label(for="")
+            .col-sm-9.col-xs-10
+              .form-group
+              .panel.panel-default
+                .panel-body
+          .row
+            .col-sm-3
+              .form-group.text-label
+                label.form__label(for="editMenu")
+            .col-sm-9.col-xs-10
+              .form-group
+                button.btn.btn-default(type='button') 编辑菜单
+          .row
+            .col-sm-3
+              .form-group.text-label.hidden-xs
+                label.form__label(for="")
+            .col-sm-9.col-xs-10
+              .form-group
+              .panel.panel-default(data-tree-view)
+                .panel-body
+                  .js-view-tree.treeview
+                    ul.list-group
+                      li.list-group-item.node-first
+                        span.icon.expand-icon.ion-arrow-down-b
+                        span.icon.node-icon
+                        | 关于我们
+                        span.ion.ion-code
+                        span.ion.ion-close
+                        span.ion.ion-android-create
+                        span.ion.ion-plus-round
+                      li.list-group-item.node-second
+                        span.icon.expand-icon.ion-arrow-down-b
+                        span.icon.node-icon
+                        | 公司简介
+                        span.ion.ion-code
+                        span.ion.ion-close
+                        span.ion.ion-android-create
+                      li.list-group-item.node-third
+                        span.icon.glyphicon
+                        span.icon.node-icon
+                        | 联系电话
+                        span.ion.ion-code
+                        span.ion.ion-close
+                        span.ion.ion-android-create
+                    ul.list-group
+                      li.list-group-item.node-first
+                        span.icon.expand-icon.ion-arrow-down-b
+                        span.icon.node-icon
+                        | 数据库
+                        span.ion.ion-code
+                        span.ion.ion-close
+                        span.ion.ion-android-create
+                        span.ion.ion-plus-round
+                      li.list-group-item.node-second
+                        span.icon.expand-icon.ion-arrow-down-b
+                        span.icon.node-icon
+                        | 数据源
+                        span.ion.ion-code
+                        span.ion.ion-close
+                        span.ion.ion-android-create
+                        span.ion.ion-plus-round
+                      li.list-group-item.node-third
+                        span.icon.glyphicon
+                        span.icon.node-icon
+                        | 数据分析
+                        span.ion.ion-code
+                        span.ion.ion-close
+                        span.ion.ion-android-create
+                      li.list-group-item.node-third
+                        span.icon.glyphicon
+                        span.icon.node-icon
+                        | 图表分析
+                        span.ion.ion-code
+                        span.ion.ion-close
+                        span.ion.ion-android-create
 
+
+
+          .row
+            .col-sm-3
+              .form-group.text-label.hidden-xs
+                label.form__label(for="")
+            .col-sm-9.col-xs-10
+              .form-group
+              button.btn.btn-primary(type="button") 确定
         .col-sm-6.c-module-setup__right(data-js-module-setup-radios)
           .row
             .col-sm-12
               .form-group.text-label
-                label.form__label(for="type") 菜单详情-内容布局
+                label.form__label(for="setupOption") 菜单详情-内容布局
           .row.radioGroup
-            .col-sm-2
+            .col-sm-3.col-xs-2.col-md-3.col-lg-2
               label
                 input#setupOption1(type='radio', name='setupOption', autocomplete='off')
                 .setupOption-image.setupOption-image--1.js-radio-item(data-image="setupOptionImg1")
-            .col-sm-2
+            .col-sm-3.col-xs-2.col-md-3.col-lg-2
               label
                 input#setupOption2(type='radio', name='setupOption', autocomplete='off')
                 .setupOption-image.setupOption-image--2.js-radio-item(data-image="setupOptionImg2")
-            .col-sm-2
+            .col-sm-3.col-xs-2.col-md-3.col-lg-2
               label
                 input#setupOption3(type='radio', name='setupOption', autocomplete='off')
                 .setupOption-image.setupOption-image--3.js-radio-item(data-image="setupOptionImg3")
-            .col-sm-2
+            .col-sm-3.col-xs-2.col-md-3.col-lg-2
               label
                 input#setupOption4(type='radio', name='setupOption', autocomplete='off')
                 .setupOption-image.setupOption-image--4.js-radio-item(data-image="setupOptionImg4")
-            .col-sm-2
+            .col-sm-3.col-xs-2.col-md-3.col-lg-2
               label
                 input#setupOption5(type='radio', name='setupOption', autocomplete='off')
                 .setupOption-image.setupOption-image--5.js-radio-item(data-image="setupOptionImg5")
-            .col-sm-2
+            .col-sm-3.col-xs-2.col-md-3.col-lg-2
               label
                 input#setupOption6(type='radio', name='setupOption', autocomplete='off')
                 .setupOption-image.setupOption-image--6.js-radio-item(data-image="setupOptionImg6")

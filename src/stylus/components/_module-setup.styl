@@ -37,4 +37,32 @@
         display block
   [type="radio"]
     display none
+  button.btn-primary,
+  button.btn-default
+    min-width 90px
+  .treeview
+    .list-group
+      &:not(:first-child):not(:last-child),
+      &:first-child
+        padding-bottom 1rem
+        margin-bottom 1rem
+        border-bottom 1px solid $border-panel-color
+    span.icon
+      width 12px
+      margin-right 5px
+    .node-first,
+    .node-second,
+    .node-third
+      color $tabs-nav-text-active-blue
+      border none
+    .node-second
+      padding-left 35px
+    .node-third
+      padding-left 55px
+    .ion
+      float right
+      margin-right 1rem
+      cursor pointer
+      &.ion-code
+        transform rotate(90deg)
   

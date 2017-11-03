@@ -2759,6 +2759,10 @@ html {
     width: 100%;
   }
 }
+.moduleEdit textarea {
+  resize: none;
+  min-height: 100px;
+}
 @media (min-width: 768px) {
   .moduleEdit {
     margin-top: -300px;
@@ -3184,7 +3188,53 @@ html {
 .c-module-setup [type="radio"] {
   display: none;
 }
+.c-module-setup button.btn-primary,
+.c-module-setup button.btn-default {
+  min-width: 90px;
+}
+.c-module-setup .treeview .list-group:not(:first-child):not(:last-child),
+.c-module-setup .treeview .list-group:first-child {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #dcdcdc;
+}
+.c-module-setup .treeview span.icon {
+  width: 12px;
+  margin-right: 5px;
+}
+.c-module-setup .treeview .node-first,
+.c-module-setup .treeview .node-second,
+.c-module-setup .treeview .node-third {
+  color: #354967;
+  border: none;
+}
+.c-module-setup .treeview .node-second {
+  padding-left: 35px;
+}
+.c-module-setup .treeview .node-third {
+  padding-left: 55px;
+}
+.c-module-setup .treeview .ion {
+  float: right;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.c-module-setup .treeview .ion.ion-code {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
 .c-module {
   margin: 3rem;
   min-width: 768px;
+}
+.c-module textarea {
+  resize: none;
+  min-height: 100px;
+}
+.c-module .panel-body {
+  min-height: 200px;
+  padding: 2px;
 }

@@ -81,7 +81,7 @@ var paths = {
   build: config.build,
   static: config.build + 'assets/',
   buildJs: config.build + 'assets/js/',
-  img: config.build + 'assets/img/',
+  img: config.build + 'assets/images/',
   css: config.build + 'assets/css/',
   js: config.src + 'js/',
   vendorJs: config.src + 'vendor/js/',
