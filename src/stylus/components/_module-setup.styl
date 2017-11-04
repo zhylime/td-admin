@@ -41,13 +41,24 @@
   button.btn-default
     min-width 90px
   .treeview
+    .icon
+      color $color-panel-icon
     .list-group
+      margin-bottom 0px
+      padding-bottom 0px
       &:not(:last-child)
-        padding-bottom 1rem
-        margin-bottom 1rem
         border-bottom 1px solid $border-panel-color
       &-second
+        border none
         margin-left 20px
+        .list-group-item
+          padding 10px 0 5px 0
+      &-third
+        .list-group-item
+          border none
+          &:nth-child(1)
+            margin-top 5px
+          padding 10px 0 5px 0
     span.icon
       width 12px
       margin-right 5px
@@ -59,7 +70,12 @@
 
     .node-first
       font-weight bold
+    .node-second
+      font-weight normal
+      font-size 100%
     .node-third
+      font-weight normal
+      font-size 90%
       .ion-stop
         font-size 7px
         position relative
@@ -68,20 +84,28 @@
       color $color-panel-icon
       font-weight bold
       float right
-      margin-right 1rem
+      margin-right .6rem
       cursor pointer
+      position relative
       &.ion-code
         transform rotate(90deg)
+      &.ion.ion-arrow
+        float right
+        margin-right .6rem
+        position relative
+      &.ion-arrow-up-b
+        top -3px
+        position absolute
+        font-size 85%
+      &.ion-arrow-down-b
+        top 6px
+        position absolute
+        font-size 85%
+      &.ion-close
+        margin-right 1.2rem
   .radioGroup
     label
       cursor pointer
-  .list-group-item
-    .node-third
-      &:hover
-        background-color $bg-panel-hover-blue
-        color $color-white
-        .ion
-          color $color-white
   &-editMenu
     display none
   

@@ -40,25 +40,8 @@ block content
                 button.btn.btn-default.js-open-modal(type='button' data-action="addFirst") 添加菜单
               .form-group.c-module-setup-editMenu
                 button.btn.btn-default(type='button') 编辑菜单
-          .row
-            .col-sm-3
-              .form-group.text-label.hidden-xs
-                label.form__label(for="")
-            .col-sm-9.col-xs-10
-              .form-group
-              .panel.panel-default
-                .panel-body.js-menu-item.treeview
 
-          //可以删除用于测试
-          .row.hide
-            .col-sm-3
-              .form-group.text-label
-                label.form__label(for="editMenu")
-            .col-sm-9.col-xs-10
-              .form-group
-                button.btn.btn-default(type='button') 编辑菜单
-          //可以删除用于测试
-          .row.hide
+          .row
             .col-sm-3
               .form-group.text-label.hidden-xs
                 label.form__label(for="")
@@ -66,66 +49,80 @@ block content
               .form-group
               .panel.panel-default(data-tree-view)
                 .panel-body
-                  .js-view-tree.treeview
+                  .js-menu-item.treeview
                     ul.list-group
                       li.list-group-item.node-first(data-index = "0")
                         span.icon.expand-icon.ion-arrow-down-b
                         span.icon.node-icon
                         | 关于我们
-                        span.ion.ion-code
+                        span.ion.ion-arrow
+                          span.ion.ion-arrow-down-b.js-arrow-down(data-action="orderFirst")
+                          span.ion.ion-arrow-up-b.js-arrow-up(data-action="orderFirst")
                         span.ion.ion-close.js-remove-node(data-action="removeALL")
                         span.ion.ion-android-create
                         span.ion.ion-plus-round.js-open-modal(data-action="addSecond")
-                      ul.list-group.list-group-second
-                        li.list-group-item.node-second(data-index = "1")
-                          span.icon.expand-icon.ion-arrow-down-b
-                          span.icon.node-icon
-                          | 公司简介
-                          span.ion.ion-code
-                          span.ion.ion-close.js-remove-node(data-action="removeSecond")
-                          span.ion.ion-android-create
-                          span.ion.ion-plus-round.js-open-modal(data-action="addThird")
-                        ul.list-group.list-group-third
-                          li.list-group-item.node-third(data-index = "2")
-                            span.icon.glyphicon
-                            span.icon.node-icon.ion-stop
-                            | 联系电话
-                            span.ion.ion-code
-                            span.ion.ion-close.js-remove-node(data-action="removeThird")
+                        ul.list-group.list-group-second
+                          li.list-group-item.node-second(data-index = "1")
+                            span.icon.expand-icon.ion-arrow-down-b
+                            span.icon.node-icon
+                            | 公司简介
+                            span.ion.ion-arrow
+                              span.ion.ion-arrow-down-b.js-arrow-down
+                              span.ion.ion-arrow-up-b.js-arrow-up
+                            span.ion.ion-close.js-remove-node(data-action="removeSecond")
                             span.ion.ion-android-create
+                            span.ion.ion-plus-round.js-open-modal(data-action="addThird")
+                            ul.list-group.list-group-third
+                              li.list-group-item.node-third(data-index = "2")
+                                span.icon.glyphicon
+                                span.icon.node-icon.ion-stop
+                                | 联系电话
+                                span.ion.ion-arrow
+                                  span.ion.ion-arrow-down-b.js-arrow-down
+                                  span.ion.ion-arrow-up-b.js-arrow-up
+                                span.ion.ion-close.js-remove-node(data-action="removeThird")
+                                span.ion.ion-android-create
                     ul.list-group
                       li.list-group-item.node-first(data-index = "0")
                         span.icon.expand-icon.ion-arrow-down-b
                         span.icon.node-icon
                         | 数据库
-                        span.ion.ion-code
+                        span.ion.ion-arrow
+                          span.ion.ion-arrow-down-b.js-arrow-down(data-action="orderFirst")
+                          span.ion.ion-arrow-up-b.js-arrow-up(data-action="orderFirst")
                         span.ion.ion-close.js-remove-node(data-action="removeALL")
                         span.ion.ion-android-create
                         span.ion.ion-plus-round.js-open-modal(data-action="addSecond")
-                      ul.list-group-second
-                        li.list-group-item.node-second(data-index = "1")
-                          span.icon.expand-icon.ion-arrow-down-b
-                          span.icon.node-icon
-                          | 数据源
-                          span.ion.ion-code
-                          span.ion.ion-close.js-remove-node(data-action="removeSecond")
-                          span.ion.ion-android-create
-                          span.ion.ion-plus-round.js-open-modal(data-action="addThird")
-                        ul.list-group-third
-                          li.list-group-item.node-third(data-index = "2")
-                            span.icon.glyphicon
-                            span.icon.node-icon.ion-stop
-                            | 数据分析
-                            span.ion.ion-code
-                            span.ion.ion-close.js-remove-node(data-action="removeThird")
+                        ul.list-group-second.list-group
+                          li.list-group-item.node-second(data-index = "1")
+                            span.icon.expand-icon.ion-arrow-down-b
+                            span.icon.node-icon
+                            | 数据源
+                            span.ion.ion-arrow
+                              span.ion.ion-arrow-down-b.js-arrow-down
+                              span.ion.ion-arrow-up-b.js-arrow-up
+                            span.ion.ion-close.js-remove-node(data-action="removeSecond")
                             span.ion.ion-android-create
-                          li.list-group-item.node-third(data-index = "2")
-                            span.icon.glyphicon
-                            span.icon.node-icon.ion-stop
-                            | 图表分析
-                            span.ion.ion-code
-                            span.ion.ion-close.js-remove-node(data-action="removeThird")
-                            span.ion.ion-android-create
+                            span.ion.ion-plus-round.js-open-modal(data-action="addThird")
+                            ul.list-group-third.list-group
+                              li.list-group-item.node-third(data-index = "2")
+                                span.icon.glyphicon
+                                span.icon.node-icon.ion-stop
+                                | 数据分析
+                                span.ion.ion-arrow
+                                  span.ion.ion-arrow-down-b.js-arrow-down
+                                  span.ion.ion-arrow-up-b.js-arrow-up
+                                span.ion.ion-close.js-remove-node(data-action="removeThird")
+                                span.ion.ion-android-create
+                              li.list-group-item.node-third(data-index = "2")
+                                span.icon.glyphicon
+                                span.icon.node-icon.ion-stop
+                                | 图表分析
+                                span.ion.ion-arrow
+                                  span.ion.ion-arrow-down-b.js-arrow-down
+                                  span.ion.ion-arrow-up-b.js-arrow-up
+                                span.ion.ion-close.js-remove-node(data-action="removeThird")
+                                span.ion.ion-android-create
 
 
 
