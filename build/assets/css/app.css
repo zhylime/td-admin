@@ -1603,6 +1603,9 @@ html {
 .text-size-zero {
   font-size: 0;
 }
+.text-blue {
+  color: #354967;
+}
 /* Vendor */
 .v-styleguide {
   margin: 3%;
@@ -2325,6 +2328,9 @@ html {
 .c-form .l-p-top-5 {
   padding-top: 5em;
 }
+.c-form .text-danger {
+  padding-top: 1rem;
+}
 .c-header {
   background: #041e45 url("../images/bg-header.jpg") no-repeat left top;
   color: #fff;
@@ -2765,56 +2771,80 @@ html {
     width: 100%;
   }
 }
-.moduleEdit textarea {
+.moduleEdit textarea,
+.modalSetup textarea,
+.modalConfirm textarea {
   resize: none;
   min-height: 100px;
 }
 @media (min-width: 768px) {
-  .moduleEdit {
+  .moduleEdit,
+  .modalSetup,
+  .modalConfirm {
     margin-top: -300px;
     top: 50%;
   }
 }
-.moduleEdit .modal-header {
+.moduleEdit .modal-header,
+.modalSetup .modal-header,
+.modalConfirm .modal-header {
   background-color: #7897c5;
   color: #fff;
 }
 @media (min-width: 768px) {
-  .moduleEdit .modal-dialog {
+  .moduleEdit .modal-dialog,
+  .modalSetup .modal-dialog,
+  .modalConfirm .modal-dialog {
     width: 400px;
   }
 }
 @media (min-width: 768px) {
-  .moduleEdit .modal-dialog {
+  .moduleEdit .modal-dialog,
+  .modalSetup .modal-dialog,
+  .modalConfirm .modal-dialog {
     min-width: 450px;
   }
 }
-.moduleEdit .modal-body {
+.moduleEdit .modal-body,
+.modalSetup .modal-body,
+.modalConfirm .modal-body {
   padding-right: 2rem;
   padding-left: 2rem;
   background-color: #f8fbff;
   color: #354967;
 }
-.moduleEdit .control-group select.input-xlarge {
+.moduleEdit .control-group select.input-xlarge,
+.modalSetup .control-group select.input-xlarge,
+.modalConfirm .control-group select.input-xlarge {
   width: 100%;
   min-height: 100px;
 }
-.moduleEdit .button-group {
+.moduleEdit .button-group,
+.modalSetup .button-group,
+.modalConfirm .button-group {
   padding-top: 2rem;
 }
 @media (min-width: 768px) {
-  .moduleEdit .button-group .button-single:nth-child(1) {
+  .moduleEdit .button-group .button-single:nth-child(1),
+  .modalSetup .button-group .button-single:nth-child(1),
+  .modalConfirm .button-group .button-single:nth-child(1) {
     text-align: center;
   }
 }
-.moduleEdit button {
+.moduleEdit button,
+.modalSetup button,
+.modalConfirm button {
   min-width: 100px;
   outline: none !important;
 }
-.moduleEdit .control-group {
+.moduleEdit .control-group,
+.modalSetup .control-group,
+.modalConfirm .control-group {
   padding-top: 2rem;
 }
-.moduleEdit .control-group button {
+.moduleEdit .control-group button,
+.modalSetup .control-group button,
+.modalConfirm .control-group button {
   min-width: 70px;
   margin-bottom: 10px;
   border-radius: 1rem;
@@ -2823,9 +2853,24 @@ html {
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
 }
-.moduleEdit #businessIndex {
+.moduleEdit #businessIndex,
+.modalSetup #businessIndex,
+.modalConfirm #businessIndex {
   min-height: 210px;
   scroll: auto;
+}
+.moduleEdit label.form__label.ion-android-warning,
+.modalSetup label.form__label.ion-android-warning,
+.modalConfirm label.form__label.ion-android-warning {
+  font-size: 100px;
+  color: #f6cc9f;
+}
+.moduleEdit .text-description,
+.modalSetup .text-description,
+.modalConfirm .text-description {
+  font-size: 16px;
+  line-height: 150%;
+  margin-top: 1rem;
 }
 .c-module-charts {
   max-width: 1000px;
@@ -3198,11 +3243,13 @@ html {
 .c-module-setup button.btn-default {
   min-width: 90px;
 }
-.c-module-setup .treeview .list-group:not(:first-child):not(:last-child),
-.c-module-setup .treeview .list-group:first-child {
+.c-module-setup .treeview .list-group:not(:last-child) {
   padding-bottom: 1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #dcdcdc;
+}
+.c-module-setup .treeview .list-group-second {
+  margin-left: 20px;
 }
 .c-module-setup .treeview span.icon {
   width: 12px;
@@ -3216,12 +3263,6 @@ html {
 }
 .c-module-setup .treeview .node-first {
   font-weight: bold;
-}
-.c-module-setup .treeview .node-second {
-  padding-left: 35px;
-}
-.c-module-setup .treeview .node-third {
-  padding-left: 55px;
 }
 .c-module-setup .treeview .node-third .ion-stop {
   font-size: 7px;
@@ -3245,12 +3286,15 @@ html {
 .c-module-setup .radioGroup label {
   cursor: pointer;
 }
-.c-module-setup .list-group-item:hover {
+.c-module-setup .list-group-item .node-third:hover {
   background-color: #90b5e6;
   color: #fff;
 }
-.c-module-setup .list-group-item:hover .ion {
+.c-module-setup .list-group-item .node-third:hover .ion {
   color: #fff;
+}
+.c-module-setup-editMenu {
+  display: none;
 }
 .c-module {
   margin: 3rem;

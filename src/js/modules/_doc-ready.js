@@ -17,5 +17,6 @@ $(document).ready(function() {
     }
 
     $('[data-tree-view]').TreeView();
+    $('[data-add-menu]').AddMenu();
 
 });

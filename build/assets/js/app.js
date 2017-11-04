@@ -192,6 +192,170 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var AddMenu = function (_MLP$apps$MLPModule) {
+    _inherits(AddMenu, _MLP$apps$MLPModule);
+
+    function AddMenu() {
+        _classCallCheck(this, AddMenu);
+
+        return _possibleConstructorReturn(this, (AddMenu.__proto__ || Object.getPrototypeOf(AddMenu)).apply(this, arguments));
+    }
+
+    _createClass(AddMenu, [{
+        key: 'init',
+        value: function init() {
+            _get(AddMenu.prototype.__proto__ || Object.getPrototypeOf(AddMenu.prototype), 'init', this).call(this);
+            this.el = {
+                addItem: this.el.target.find('.js-add-menu'),
+                menuItem: this.el.target.find('.js-menu-item'),
+                confirmBtn: this.el.target.find('.js-save-item'),
+                modalItem: this.el.target.find('.js-menu-modal'),
+                showModal: this.el.target.find('.js-open-modal'),
+                removeBtn: this.el.target.find(".js-remove-btn"),
+                modalConfirm: this.el.target.find(".js-confirm-modal")
+            };
+            this.$action = "addFirst";
+            this.target = "";
+            this.$removeAction = "removeThird";
+            this.removeStatus = false;
+
+            this.events();
+        }
+    }, {
+        key: 'events',
+        value: function events() {
+            var _this3 = this;
+
+            var _this = this;
+            this.openModal();
+            this.removeNode();
+            this.confirmRemove();
+            this.el.confirmBtn.off('click').on('click', function (evt) {
+
+                var _this = _this3,
+                    nodeIndex = void 0;
+                switch (_this3.$action) {
+                    case "addFirst":
+                        nodeIndex = 0;
+                        break;
+                    case "addSecond":
+                        nodeIndex = 1;
+                        break;
+                    default:
+                        nodeIndex = 2;
+                }
+
+                var $itemName = $(_this3.el.addItem).val();
+                var $errorMessage = $(_this3.el.addItem).siblings('.text-danger');
+                if ($itemName && $itemName.length >= 2 && $itemName.length <= 10) {
+                    _this3.el.modalItem.modal('hide');
+                    $errorMessage.addClass('hide');
+                    _this.updateMenu($itemName, nodeIndex, _this.target);
+                } else {
+                    $errorMessage.removeClass('hide');
+                }
+            });
+        }
+        //更新菜单内容
+
+    }, {
+        key: 'updateMenu',
+        value: function updateMenu(itemName, index, curTarget) {
+            var nodeIndex = void 0,
+                $item = void 0,
+                _this = this;
+            var $target = curTarget.parent();
+            var $firstTarget = $target.parent();
+
+            switch (index) {
+                case 0:
+                    nodeIndex = "node-first";
+                    $item = "<ul class='list-group'>" + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon expand-icon ion-arrow-down-b'></span><span class='icon node-icon'></span>" + itemName + "" + "<span class='ion ion-code node-first'></span><span class='ion ion-close js-remove-node' data-action='removeALL'></span>" + "<span class='ion ion-android-create'></span><span class='ion ion-plus-round js-open-modal'  data-action='addSecond'></span>" + "</li></ul>";
+                    $(this.el.menuItem).append($item);
+                    _this.openModal();
+                    _this.removeNode();
+                    break;
+                case 1:
+                    nodeIndex = "node-second";
+                    $item = "<ul class='list-group-second'><li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon expand-icon ion-arrow-down-b'></span><span class='icon node-icon'></span>" + itemName + "" + "<span class='ion ion-code'></span><span class='ion ion-close js-remove-node' data-action='removeSecond'></span>" + "<span class='ion ion-android-create'></span><span class='ion ion-plus-round js-open-modal'  data-action='addThird'></span>" + "</li></ul>";
+                    $firstTarget.append($item);
+                    _this.openModal();
+                    _this.removeNode();
+                    break;
+                default:
+                    nodeIndex = "node-third";
+                    $item = "<ul class='list-group-third'><li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon glyphicon'></span><span class='icon node-icon ion-stop'></span>" + itemName + "" + "<span class='ion ion-code'></span><span class='ion ion-close js-remove-node' data-action='removeThird'></span>" + "<span class='ion ion-android-create'></span>" + "</li></ul>";
+                    $target.after($item);
+                    _this.openModal();
+                    _this.removeNode();
+            }
+        }
+    }, {
+        key: 'openModal',
+        value: function openModal() {
+            var _this4 = this;
+
+            $(".js-open-modal").on('click', function (evt) {
+                _this4.target = $(evt.target);
+                _this4.$action = $(evt.target).data("action");
+                _this4.el.modalItem.modal('show');
+            });
+        }
+    }, {
+        key: 'removeNode',
+        value: function removeNode() {
+            var _this5 = this;
+
+            var _this = this;
+            this.removeStatus = false;
+            $(".js-remove-node").on('click', function (evt) {
+                _this5.$removeAction = $(evt.target).data("action");
+                switch (_this5.$removeAction) {
+                    case "removeThird":
+                        $(evt.target).parent().remove();
+                        break;
+                    default:
+                        $(".js-confirm-modal").modal("show");
+                        _this.confirmRemove($(evt.target).parent().parent());
+                        break;
+                }
+                console.log("remove");
+            });
+        }
+    }, {
+        key: 'confirmRemove',
+        value: function confirmRemove($target) {
+            var _this6 = this;
+
+            $(".js-remove-btn").off('click').on('click', function (evt) {
+                _this6.removeStatus = true;
+                _this6.el.modalConfirm.modal('hide');
+                if (_this6.removeStatus) {
+                    $target.remove();
+                    if (_this6.$removeAction == "removeSecond") {
+                        console.log($target.siblings(".node-third"));
+                    }
+                }
+            });
+        }
+    }]);
+
+    return AddMenu;
+}(MLP.apps.MLPModule);
+
+$.mlpPlugin(AddMenu, 'AddMenu', false, false);
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var CardFlip = function (_MLP$apps$MLPModule) {
   _inherits(CardFlip, _MLP$apps$MLPModule);
 
@@ -290,6 +454,7 @@ $(document).ready(function () {
   }
 
   $('[data-tree-view]').TreeView();
+  $('[data-add-menu]').AddMenu();
 });
 "use strict";
 

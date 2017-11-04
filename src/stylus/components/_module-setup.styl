@@ -42,11 +42,12 @@
     min-width 90px
   .treeview
     .list-group
-      &:not(:first-child):not(:last-child),
-      &:first-child
+      &:not(:last-child)
         padding-bottom 1rem
         margin-bottom 1rem
         border-bottom 1px solid $border-panel-color
+      &-second
+        margin-left 20px
     span.icon
       width 12px
       margin-right 5px
@@ -55,12 +56,10 @@
     .node-third
       color $tabs-nav-text-active-blue
       border none
+
     .node-first
       font-weight bold
-    .node-second
-      padding-left 35px
     .node-third
-      padding-left 55px
       .ion-stop
         font-size 7px
         position relative
@@ -77,9 +76,12 @@
     label
       cursor pointer
   .list-group-item
-    &:hover
-      background-color $bg-panel-hover-blue
-      color $color-white
-      .ion
+    .node-third
+      &:hover
+        background-color $bg-panel-hover-blue
         color $color-white
+        .ion
+          color $color-white
+  &-editMenu
+    display none
   

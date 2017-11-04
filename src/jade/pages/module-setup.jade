@@ -8,7 +8,7 @@ block footerJs
 
 
 block content
-  .c-module.c-module-setup.container-fluid
+  .c-module.c-module-setup.container-fluid(data-add-menu)
     form.c-form-setup.c-form(method="POST" name="moduleSetupForm" id="moduleSetupForm" data-js-form-validator)
       .row
         .col-sm-6.c-module-setup__left.l-p-bottom-5
@@ -36,8 +36,10 @@ block content
               .form-group.text-label
                 label.form__label(for="addMenu") 菜单设置
             .col-sm-9.col-xs-10
-              .form-group
-                button.btn.btn-default(type='button') 添加菜单
+              .form-group.c-module-setup-addMenu
+                button.btn.btn-default.js-open-modal(type='button' data-action="addFirst") 添加菜单
+              .form-group.c-module-setup-editMenu
+                button.btn.btn-default(type='button') 编辑菜单
           .row
             .col-sm-3
               .form-group.text-label.hidden-xs
@@ -45,15 +47,18 @@ block content
             .col-sm-9.col-xs-10
               .form-group
               .panel.panel-default
-                .panel-body
-          .row
+                .panel-body.js-menu-item.treeview
+
+          //可以删除用于测试
+          .row.hide
             .col-sm-3
               .form-group.text-label
                 label.form__label(for="editMenu")
             .col-sm-9.col-xs-10
               .form-group
                 button.btn.btn-default(type='button') 编辑菜单
-          .row
+          //可以删除用于测试
+          .row.hide
             .col-sm-3
               .form-group.text-label.hidden-xs
                 label.form__label(for="")
@@ -63,59 +68,64 @@ block content
                 .panel-body
                   .js-view-tree.treeview
                     ul.list-group
-                      li.list-group-item.node-first
+                      li.list-group-item.node-first(data-index = "0")
                         span.icon.expand-icon.ion-arrow-down-b
                         span.icon.node-icon
                         | 关于我们
                         span.ion.ion-code
-                        span.ion.ion-close
+                        span.ion.ion-close.js-remove-node(data-action="removeALL")
                         span.ion.ion-android-create
-                        span.ion.ion-plus
-                      li.list-group-item.node-second
-                        span.icon.expand-icon.ion-arrow-down-b
-                        span.icon.node-icon
-                        | 公司简介
-                        span.ion.ion-code
-                        span.ion.ion-close
-                        span.ion.ion-android-create
-                      li.list-group-item.node-third
-                        span.icon.glyphicon
-                        span.icon.node-icon.ion-stop
-                        | 联系电话
-                        span.ion.ion-code
-                        span.ion.ion-close
-                        span.ion.ion-android-create
+                        span.ion.ion-plus-round.js-open-modal(data-action="addSecond")
+                      ul.list-group.list-group-second
+                        li.list-group-item.node-second(data-index = "1")
+                          span.icon.expand-icon.ion-arrow-down-b
+                          span.icon.node-icon
+                          | 公司简介
+                          span.ion.ion-code
+                          span.ion.ion-close.js-remove-node(data-action="removeSecond")
+                          span.ion.ion-android-create
+                          span.ion.ion-plus-round.js-open-modal(data-action="addThird")
+                        ul.list-group.list-group-third
+                          li.list-group-item.node-third(data-index = "2")
+                            span.icon.glyphicon
+                            span.icon.node-icon.ion-stop
+                            | 联系电话
+                            span.ion.ion-code
+                            span.ion.ion-close.js-remove-node(data-action="removeThird")
+                            span.ion.ion-android-create
                     ul.list-group
-                      li.list-group-item.node-first
+                      li.list-group-item.node-first(data-index = "0")
                         span.icon.expand-icon.ion-arrow-down-b
                         span.icon.node-icon
                         | 数据库
                         span.ion.ion-code
-                        span.ion.ion-close
+                        span.ion.ion-close.js-remove-node(data-action="removeALL")
                         span.ion.ion-android-create
-                        span.ion.ion-plus-round
-                      li.list-group-item.node-second
-                        span.icon.expand-icon.ion-arrow-down-b
-                        span.icon.node-icon
-                        | 数据源
-                        span.ion.ion-code
-                        span.ion.ion-close
-                        span.ion.ion-android-create
-                        span.ion.ion-plus-round
-                      li.list-group-item.node-third
-                        span.icon.glyphicon
-                        span.icon.node-icon.ion-stop
-                        | 数据分析
-                        span.ion.ion-code
-                        span.ion.ion-close
-                        span.ion.ion-android-create
-                      li.list-group-item.node-third
-                        span.icon.glyphicon
-                        span.icon.node-icon.ion-stop
-                        | 图表分析
-                        span.ion.ion-code
-                        span.ion.ion-close
-                        span.ion.ion-android-create
+                        span.ion.ion-plus-round.js-open-modal(data-action="addSecond")
+                      ul.list-group-second
+                        li.list-group-item.node-second(data-index = "1")
+                          span.icon.expand-icon.ion-arrow-down-b
+                          span.icon.node-icon
+                          | 数据源
+                          span.ion.ion-code
+                          span.ion.ion-close.js-remove-node(data-action="removeSecond")
+                          span.ion.ion-android-create
+                          span.ion.ion-plus-round.js-open-modal(data-action="addThird")
+                        ul.list-group-third
+                          li.list-group-item.node-third(data-index = "2")
+                            span.icon.glyphicon
+                            span.icon.node-icon.ion-stop
+                            | 数据分析
+                            span.ion.ion-code
+                            span.ion.ion-close.js-remove-node(data-action="removeThird")
+                            span.ion.ion-android-create
+                          li.list-group-item.node-third(data-index = "2")
+                            span.icon.glyphicon
+                            span.icon.node-icon.ion-stop
+                            | 图表分析
+                            span.ion.ion-code
+                            span.ion.ion-close.js-remove-node(data-action="removeThird")
+                            span.ion.ion-android-create
 
 
 
@@ -177,5 +187,48 @@ block content
 
    
 
-
+    #modalSetup.modal.fade.modalSetup.js-menu-modal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            h4#myModalLabel.modal-title 添加菜单
+          .modal-body
+            form.c-form(method="POST" name="addMenuForm" id="addMenuForm" data-js-form-validator)
+              .row
+                .col-sm-3
+                  .form-group.text-label
+                    label.form__label(for="name") 菜单名称
+                .col-sm-7
+                  .form-group
+                    input.form-control.js-add-menu(type="text" id="name" name="name" autocomplete='off')
+                    div.text-danger.l-padding-top-1.hide.input-error-message 请输入有效名称
+              .row.button-group
+                .col-sm-6.button-single
+                  .form-group
+                    button.btn.btn-primary.js-save-item(type='button') 保存
+                .col-sm-6.button-single
+                  .form-group
+                    button.btn.btn-default(type='button' data-dismiss='modal' aria-label='Close') 取消
       
+    #modalConfirm.modal.fade.modalConfirm.js-confirm-modal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            h4#myModalLabel.modal-title 添加菜单
+          .modal-body
+            form.c-form
+              .row
+                .col-sm-4
+                  .form-group.text-right
+                    label.form__label.text-description
+                      img(src="./assets/images/icon-info.png", alt="item")
+                .col-sm-7
+                  .form-group
+                    label.form__label.text-blue.text-bold.text-description 将删除所有子菜单，是否删除？
+              .row.button-group
+                .col-sm-6.button-single
+                  .form-group
+                    button.btn.btn-primary.js-remove-btn(type='button') 确定
+                .col-sm-6.button-single
+                  .form-group
+                    button.btn.btn-default(type='button' data-dismiss='modal' aria-label='Close') 取消

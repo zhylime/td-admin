@@ -14,7 +14,7 @@
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/ico">
   </head>
   <body>
-    <div class="c-module c-module-setup container-fluid">
+    <div data-add-menu class="c-module c-module-setup container-fluid">
       <form method="POST" name="moduleSetupForm" id="moduleSetupForm" data-js-form-validator class="c-form-setup c-form">
         <div class="row">
           <div class="col-sm-6 c-module-setup__left l-p-bottom-5">
@@ -55,32 +55,10 @@
                 </div>
               </div>
               <div class="col-sm-9 col-xs-10">
-                <div class="form-group">
-                  <button type="button" class="btn btn-default">添加菜单</button>
+                <div class="form-group c-module-setup-addMenu">
+                  <button type="button" data-action="addFirst" class="btn btn-default js-open-modal">添加菜单</button>
                 </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-3">
-                <div class="form-group text-label hidden-xs">
-                  <label for="" class="form__label"></label>
-                </div>
-              </div>
-              <div class="col-sm-9 col-xs-10">
-                <div class="form-group"></div>
-                <div class="panel panel-default">
-                  <div class="panel-body"></div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-3">
-                <div class="form-group text-label">
-                  <label for="editMenu" class="form__label"></label>
-                </div>
-              </div>
-              <div class="col-sm-9 col-xs-10">
-                <div class="form-group">
+                <div class="form-group c-module-setup-editMenu">
                   <button type="button" class="btn btn-default">编辑菜单</button>
                 </div>
               </div>
@@ -93,19 +71,54 @@
               </div>
               <div class="col-sm-9 col-xs-10">
                 <div class="form-group"></div>
+                <div class="panel panel-default">
+                  <div class="panel-body js-menu-item treeview"></div>
+                </div>
+              </div>
+            </div>
+            <!--可以删除用于测试-->
+            <div class="row hide">
+              <div class="col-sm-3">
+                <div class="form-group text-label">
+                  <label for="editMenu" class="form__label"></label>
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-10">
+                <div class="form-group">
+                  <button type="button" class="btn btn-default">编辑菜单</button>
+                </div>
+              </div>
+            </div>
+            <!--可以删除用于测试-->
+            <div class="row hide">
+              <div class="col-sm-3">
+                <div class="form-group text-label hidden-xs">
+                  <label for="" class="form__label"></label>
+                </div>
+              </div>
+              <div class="col-sm-9 col-xs-10">
+                <div class="form-group"></div>
                 <div data-tree-view class="panel panel-default">
                   <div class="panel-body">
                     <div class="js-view-tree treeview">
                       <ul class="list-group">
-                        <li class="list-group-item node-first"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span>关于我们<span class="ion ion-code"></span><span class="ion ion-close"></span><span class="ion ion-android-create"></span><span class="ion ion-plus"></span></li>
-                        <li class="list-group-item node-second"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span>公司简介<span class="ion ion-code"></span><span class="ion ion-close"></span><span class="ion ion-android-create"></span></li>
-                        <li class="list-group-item node-third"><span class="icon glyphicon"></span><span class="icon node-icon ion-stop"></span>联系电话<span class="ion ion-code"></span><span class="ion ion-close"></span><span class="ion ion-android-create"></span></li>
+                        <li data-index="0" class="list-group-item node-first"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span>关于我们<span class="ion ion-code"></span><span data-action="removeALL" class="ion ion-close js-remove-node"></span><span class="ion ion-android-create"></span><span data-action="addSecond" class="ion ion-plus-round js-open-modal"></span></li>
+                        <ul class="list-group list-group-second">
+                          <li data-index="1" class="list-group-item node-second"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span>公司简介<span class="ion ion-code"></span><span data-action="removeSecond" class="ion ion-close js-remove-node"></span><span class="ion ion-android-create"></span><span data-action="addThird" class="ion ion-plus-round js-open-modal"></span></li>
+                          <ul class="list-group list-group-third">
+                            <li data-index="2" class="list-group-item node-third"><span class="icon glyphicon"></span><span class="icon node-icon ion-stop"></span>联系电话<span class="ion ion-code"></span><span data-action="removeThird" class="ion ion-close js-remove-node"></span><span class="ion ion-android-create"></span></li>
+                          </ul>
+                        </ul>
                       </ul>
                       <ul class="list-group">
-                        <li class="list-group-item node-first"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span>数据库<span class="ion ion-code"></span><span class="ion ion-close"></span><span class="ion ion-android-create"></span><span class="ion ion-plus-round"></span></li>
-                        <li class="list-group-item node-second"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span>数据源<span class="ion ion-code"></span><span class="ion ion-close"></span><span class="ion ion-android-create"></span><span class="ion ion-plus-round"></span></li>
-                        <li class="list-group-item node-third"><span class="icon glyphicon"></span><span class="icon node-icon ion-stop"></span>数据分析<span class="ion ion-code"></span><span class="ion ion-close"></span><span class="ion ion-android-create"></span></li>
-                        <li class="list-group-item node-third"><span class="icon glyphicon"></span><span class="icon node-icon ion-stop"></span>图表分析<span class="ion ion-code"></span><span class="ion ion-close"></span><span class="ion ion-android-create"></span></li>
+                        <li data-index="0" class="list-group-item node-first"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span>数据库<span class="ion ion-code"></span><span data-action="removeALL" class="ion ion-close js-remove-node"></span><span class="ion ion-android-create"></span><span data-action="addSecond" class="ion ion-plus-round js-open-modal"></span></li>
+                        <ul class="list-group-second">
+                          <li data-index="1" class="list-group-item node-second"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span>数据源<span class="ion ion-code"></span><span data-action="removeSecond" class="ion ion-close js-remove-node"></span><span class="ion ion-android-create"></span><span data-action="addThird" class="ion ion-plus-round js-open-modal"></span></li>
+                          <ul class="list-group-third">
+                            <li data-index="2" class="list-group-item node-third"><span class="icon glyphicon"></span><span class="icon node-icon ion-stop"></span>数据分析<span class="ion ion-code"></span><span data-action="removeThird" class="ion ion-close js-remove-node"></span><span class="ion ion-android-create"></span></li>
+                            <li data-index="2" class="list-group-item node-third"><span class="icon glyphicon"></span><span class="icon node-icon ion-stop"></span>图表分析<span class="ion ion-code"></span><span data-action="removeThird" class="ion ion-close js-remove-node"></span><span class="ion ion-android-create"></span></li>
+                          </ul>
+                        </ul>
                       </ul>
                     </div>
                   </div>
@@ -188,6 +201,81 @@
           </div>
         </div>
       </form>
+      <div id="modalSetup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade modalSetup js-menu-modal">
+        <div role="document" class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 id="myModalLabel" class="modal-title">添加菜单</h4>
+            </div>
+            <div class="modal-body">
+              <form method="POST" name="addMenuForm" id="addMenuForm" data-js-form-validator class="c-form">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="form-group text-label">
+                      <label for="name" class="form__label">菜单名称</label>
+                    </div>
+                  </div>
+                  <div class="col-sm-7">
+                    <div class="form-group">
+                      <input type="text" id="name" name="name" autocomplete="off" class="form-control js-add-menu">
+                      <div class="text-danger l-padding-top-1 hide input-error-message">请输入有效名称</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row button-group">
+                  <div class="col-sm-6 button-single">
+                    <div class="form-group">
+                      <button type="button" class="btn btn-primary js-save-item">保存</button>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 button-single">
+                    <div class="form-group">
+                      <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">取消</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="modalConfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade modalConfirm js-confirm-modal">
+        <div role="document" class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 id="myModalLabel" class="modal-title">添加菜单</h4>
+            </div>
+            <div class="modal-body">
+              <form class="c-form">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group text-right">
+                      <label class="form__label text-description"><img src="./assets/images/icon-info.png" alt="item"></label>
+                    </div>
+                  </div>
+                  <div class="col-sm-7">
+                    <div class="form-group">
+                      <label class="form__label text-blue text-bold text-description">将删除所有子菜单，是否删除？</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row button-group">
+                  <div class="col-sm-6 button-single">
+                    <div class="form-group">
+                      <button type="button" class="btn btn-primary js-remove-btn">确定</button>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 button-single">
+                    <div class="form-group">
+                      <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">取消</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
   <script>
