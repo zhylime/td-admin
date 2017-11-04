@@ -20,57 +20,6 @@
           <div class="icon-user"></div></span><a href="#" data-toggle="modal" data-target="#loginModal" class="c-header__login"><span>登录</span></a>
       </div>
     </div>
-    <div id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade loginModal">
-      <div role="document" class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 id="myModalLabel" class="modal-title">用户登录</h4>
-          </div>
-          <div class="modal-body">
-            <form method="POST" name="loginForm" id="loginForm" data-js-form-validator="data-js-form-validator" class="c-form">
-              <div class="row">
-                <div class="col-sm-3">
-                  <div class="form-group text-label">
-                    <label for="name" class="form__label">用户名</label>
-                  </div>
-                </div>
-                <div class="col-sm-7">
-                  <div class="form-group">
-                    <input type="text" id="name" name="name" data-rule="required|alpha|max:30" class="form-control"/>
-                    <div class="text-danger l-padding-top-1 hide input-error-message">请输入用户名</div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-3">
-                  <div class="form-group text-label">
-                    <label for="password" class="form__label">密码</label>
-                  </div>
-                </div>
-                <div class="col-sm-7">
-                  <div class="form-group">
-                    <input type="text" data-js-mobile-smart-label="data-js-mobile-smart-label" id="password" name="password" data-rule="required|alpha|max:30" class="form-control"/>
-                    <div class="text-danger l-padding-top-1 hide input-error-message">请输入用密码</div>
-                  </div>
-                </div>
-              </div>
-              <div class="row button-group">
-                <div class="col-sm-6 button-single">
-                  <div class="form-group">
-                    <button type="button" class="btn btn-primary">登录</button>
-                  </div>
-                </div>
-                <div class="col-sm-6 button-single">
-                  <div class="form-group">
-                    <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">取消</button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
     <div data-js-full-page class="c-content">
       <div class="c-content__background"><img src="./assets/images/blue-dot.png" alt="" class="c-content__background-blue star star1"><img src="./assets/images/pink-dot.png" alt="" class="c-content__background-pink star star2"><img src="./assets/images/blue-dot.png" alt="" class="c-content__background-blue star star3"><img src="./assets/images/blue-dot.png" alt="" class="c-content__background-blue star star4"><img src="./assets/images/pink-dot.png" alt="" class="c-content__background-pink star star5"><img src="./assets/images/pink-dot.png" alt="" class="c-content__background-pink star star6"><img src="./assets/images/blue-dot.png" alt="" class="c-content__background-blue star star7"><img src="./assets/images/blue-dot.png" alt="" class="c-content__background-blue star star8"></div>
       <div class="c-content__menu"><a href="#" data-toggle="modal" data-target="#loginModal" class="c-content__menu--item item-hover"><img src="./assets/images/data-admin-w.png" alt="item" class="z5 rotate"><img src="./assets/images/data-admin-s2.png" alt="item" class="z5 movePos3"><img src="./assets/images/data-admin-s1.png" alt="item" class="z4 movePos2"><img src="./assets/images/data-admin-p2.png" alt="item" class="z3 movePos1"><img src="./assets/images/data-admin-p1.png" alt="item" class="z2 movePos"><img src="./assets/images/data-admin-icon.png" alt="item" class="z1"><img src="./assets/images/data-admin-hover.png" alt="item" class="fadeIn"><img src="./assets/images/data-admin-bg.png" alt="item">
@@ -95,6 +44,57 @@
             <p class="c-content__menu--detail tit">特点：</p>
             <p class="c-content__menu--detail txt">丰富直观的数据可视化效果，提升用户体验，降低决策的复杂度。<br/>可交互的数据分析过程，快速定位到决策所需数据，快速产生分析结果。<br/>灵活的权限管理机制，严格控制报表和图表的查看范围。</p><i class="lt"></i><i class="rt"></i><i class="lb"></i><i class="rb"></i>
           </div></a></div>
+    </div>
+    <div id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade loginModal">
+      <div role="document" class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 id="myModalLabel" class="modal-title">用户登录</h4>
+          </div>
+          <div class="modal-body">
+            <form method="POST" name="loginForm" id="loginForm" data-js-form-validator class="c-form">
+              <div class="row">
+                <div class="col-sm-3">
+                  <div class="form-group text-label">
+                    <label for="name" class="form__label">用户名</label>
+                  </div>
+                </div>
+                <div class="col-sm-7">
+                  <div class="form-group">
+                    <input type="text" id="name" name="name" data-rule="required|alpha|max:30" class="form-control">
+                    <div class="text-danger l-padding-top-1 hide input-error-message">请输入用户名</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-3">
+                  <div class="form-group text-label">
+                    <label for="password" class="form__label">密码</label>
+                  </div>
+                </div>
+                <div class="col-sm-7">
+                  <div class="form-group">
+                    <input type="text" data-js-mobile-smart-label id="password" name="password" data-rule="required|alpha|max:30" class="form-control">
+                    <div class="text-danger l-padding-top-1 hide input-error-message">请输入用密码</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row button-group">
+                <div class="col-sm-6 button-single">
+                  <div class="form-group">
+                    <button type="button" class="btn btn-primary">登录</button>
+                  </div>
+                </div>
+                <div class="col-sm-6 button-single">
+                  <div class="form-group">
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">取消</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="c-footer">
       <p>&copy; TD-ADMINS 北京凌瑞智同科技有限公司&nbsp;&nbsp;|&nbsp;&nbsp;京公网安备 55601202001908号</p>
