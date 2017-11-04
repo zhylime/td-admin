@@ -3482,6 +3482,21 @@ html {
 }
 .c-module-setup .treeview .text-edit {
   display: inline-block;
+  word-wrap: break-word;
+}
+.c-module-setup .treeview .text-edit input {
+  min-width: 50px;
+  border: none;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .c-module-setup .treeview .text-edit {
+    max-width: 100px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1100px) {
+  .c-module-setup .treeview .text-edit {
+    max-width: 120px;
+  }
 }
 .c-module-setup .treeview .list-group {
   margin-bottom: 0px;
