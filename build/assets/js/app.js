@@ -370,13 +370,18 @@ var CardFlip = function (_MLP$apps$MLPModule) {
     value: function init() {
       _get(CardFlip.prototype.__proto__ || Object.getPrototypeOf(CardFlip.prototype), 'init', this).call(this);
       this.el = {
+        gridContainer: $('[data-js-card]'),
         cardItems: this.el.target.find('.js-card'),
-        cardSide: this.el.target.find('.card-side')
+        cardSide: this.el.target.find('.card-side'),
+        previewBtn: this.el.target.find('.button-preview'),
+        createModule: this.el.target.find('.button-create'),
+        remove: this.el.target.find('.button-remove')
       };
 
       this.cardFront;
       this.cardBack;
       this.speed = 225;
+      // this.enableFlip = true;
 
       this.events();
     }
@@ -385,12 +390,30 @@ var CardFlip = function (_MLP$apps$MLPModule) {
     value: function events() {
       var _this = this;
 
+      setTimeout(function () {
+        _this.el.gridContainer.css('opacity', '1');
+      }, 260);
+
+      this.el.previewBtn.each(function (e) {
+        $(this).on('click', function (evt) {
+          evt.stopPropagation();
+        });
+      });
+      this.el.createModule.each(function (e) {
+        $(this).on('click', function (evt) {
+          evt.stopPropagation();
+        });
+      });
+      this.el.remove.each(function (e) {
+        $(this).on('click', function (evt) {
+          evt.stopPropagation();
+          $(this).parents('.js-card').remove();
+        });
+      });
       // this.initCardSide();
       this.el.cardItems.each(function () {
-        $(this).on('click', function () {
+        $(this).on('click', function (e) {
 
-          // console.log($(this).find('.card-side').hasClass('card-front'));
-          // console.log($(this).find('.card-side').hasClass('card-back'));
           if ($(this).find('.card-side').hasClass('card-front')) {
             _this.cardFront = $(this).find('.card-front');
             // console.log(_this.cardFront);
@@ -406,33 +429,117 @@ var CardFlip = function (_MLP$apps$MLPModule) {
           }
         });
       });
-      // this.el.cardItems.on('click', function(){
-      //   _this.cardFront.addClass('card-back').removeClass('card-front');
-      //   setTimeout(function(){
-      //     _this.cardBack.addClass('card-front').removeClass('card-back');
-      //     _this.initCardSide()
-      //   });
-      // })
     }
-
-    // initCardSide(){
-    //   var _this = this;
-    //   this.el.cardSide.each(function(){
-    //     if($(this).hasClass('card-front')){
-    //       _this.cardFront = $(this);
-    //     }
-    //     else{
-    //       _this.cardBack = $(this);
-    //     }
-    //   });
-    // }
-
   }]);
 
   return CardFlip;
 }(MLP.apps.MLPModule);
 
 $.mlpPlugin(CardFlip, 'CardFlip', false, false);
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ChartsTypeButtons = function (_MLP$apps$MLPModule) {
+  _inherits(ChartsTypeButtons, _MLP$apps$MLPModule);
+
+  function ChartsTypeButtons() {
+    _classCallCheck(this, ChartsTypeButtons);
+
+    return _possibleConstructorReturn(this, (ChartsTypeButtons.__proto__ || Object.getPrototypeOf(ChartsTypeButtons)).apply(this, arguments));
+  }
+
+  _createClass(ChartsTypeButtons, [{
+    key: 'init',
+    value: function init() {
+      _get(ChartsTypeButtons.prototype.__proto__ || Object.getPrototypeOf(ChartsTypeButtons.prototype), 'init', this).call(this);
+      this.el = {
+        buttons: this.el.target.find('[data-group-id]')
+
+      };
+
+      this.events();
+    }
+  }, {
+    key: 'events',
+    value: function events() {
+      var _this = this;
+
+      this.el.buttons.each(function () {
+        $(this).on('click', function () {
+          var id = $(this).attr('data-group-id');
+          $('.filter-group').hide();
+          $('#' + id).show();
+        });
+      });
+
+      $('.filter-item').on('click', function () {
+        $(this).toggleClass('active');
+      });
+    }
+  }]);
+
+  return ChartsTypeButtons;
+}(MLP.apps.MLPModule);
+
+$.mlpPlugin(ChartsTypeButtons, 'ChartsTypeButtons', false, false);
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CheckBox = function (_MLP$apps$MLPModule) {
+  _inherits(CheckBox, _MLP$apps$MLPModule);
+
+  function CheckBox() {
+    _classCallCheck(this, CheckBox);
+
+    return _possibleConstructorReturn(this, (CheckBox.__proto__ || Object.getPrototypeOf(CheckBox)).apply(this, arguments));
+  }
+
+  _createClass(CheckBox, [{
+    key: 'init',
+    value: function init() {
+      _get(CheckBox.prototype.__proto__ || Object.getPrototypeOf(CheckBox.prototype), 'init', this).call(this);
+      this.el = {
+        checkBox: this.el.target.find('[type="checkbox"]')
+      };
+
+      this.events();
+    }
+  }, {
+    key: 'events',
+    value: function events() {
+      var _this = this;
+
+      this.el.checkBox.each(function () {
+        $(this).on('click', function () {
+
+          $(this).parent().toggleClass('active');
+        });
+      });
+    }
+  }]);
+
+  return CheckBox;
+}(MLP.apps.MLPModule);
+
+$.mlpPlugin(CheckBox, 'CheckBox', false, false);
 'use strict';
 
 /*
@@ -448,7 +555,11 @@ $(document).ready(function () {
   $('[data-js-full-page]').FullPage();
   $('[data-js-sideNav]').SideNav();
   $('[data-js-module-setup-radios]').RadioBtn();
+  $('[data-js-checbox]').CheckBox();
   $('[data-js-card]').CardFlip();
+  $('[data-js-charts-filter]').ChartsTypeButtons();
+  $('[data-js-module-data-dropdown]').ModuleDataDropDown();
+  $('[data-js-popup-preview').PopUpPreview();
   if ($('#loginModal').length) {
     $('#loginModal').modal({ backdrop: "static", show: false });
   }
@@ -531,6 +642,62 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var ModuleDataDropDown = function (_MLP$apps$MLPModule) {
+  _inherits(ModuleDataDropDown, _MLP$apps$MLPModule);
+
+  function ModuleDataDropDown() {
+    _classCallCheck(this, ModuleDataDropDown);
+
+    return _possibleConstructorReturn(this, (ModuleDataDropDown.__proto__ || Object.getPrototypeOf(ModuleDataDropDown)).apply(this, arguments));
+  }
+
+  _createClass(ModuleDataDropDown, [{
+    key: 'init',
+    value: function init() {
+      _get(ModuleDataDropDown.prototype.__proto__ || Object.getPrototypeOf(ModuleDataDropDown.prototype), 'init', this).call(this);
+      this.el = {
+        dropdownBtn: this.el.target.find('.js-module-data-dropdown')
+      };
+
+      this.events();
+    }
+  }, {
+    key: 'events',
+    value: function events() {
+      var _this = this;
+
+      this.el.dropdownBtn.each(function () {
+        $(this).on('click', function () {
+          var ifActive = $(this).hasClass('active');
+
+          // $(_this.el.dropdownBtn).removeClass('active');
+          if (!ifActive) {
+            $(this).addClass('active');
+          } else {
+            $(this).removeClass('active');
+          }
+          $(this).parent().next().toggleClass('hide');
+        });
+      });
+    }
+  }]);
+
+  return ModuleDataDropDown;
+}(MLP.apps.MLPModule);
+
+$.mlpPlugin(ModuleDataDropDown, 'ModuleDataDropDown', false, false);
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var ModuleEdit = function (_MLP$apps$MLPModule) {
   _inherits(ModuleEdit, _MLP$apps$MLPModule);
 
@@ -556,6 +723,61 @@ var ModuleEdit = function (_MLP$apps$MLPModule) {
 }(MLP.apps.MLPModule);
 
 $.mlpPlugin(ModuleEdit, 'ModuleEdit', false, false);
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PopUpPreview = function (_MLP$apps$MLPModule) {
+  _inherits(PopUpPreview, _MLP$apps$MLPModule);
+
+  function PopUpPreview() {
+    _classCallCheck(this, PopUpPreview);
+
+    return _possibleConstructorReturn(this, (PopUpPreview.__proto__ || Object.getPrototypeOf(PopUpPreview)).apply(this, arguments));
+  }
+
+  _createClass(PopUpPreview, [{
+    key: 'init',
+    value: function init() {
+      _get(PopUpPreview.prototype.__proto__ || Object.getPrototypeOf(PopUpPreview.prototype), 'init', this).call(this);
+      this.el = {
+        previewBtns: this.el.target.find('.button-preview')
+
+      };
+
+      this.events();
+    }
+  }, {
+    key: 'events',
+    value: function events() {
+      var _this = this;
+
+      this.el.previewBtns.each(function () {
+        $(this).on('click', function () {
+          $('.js-popup-preview').show();
+          $('.js-popup-cover').show();
+        });
+      });
+
+      $('.js-close-popup-preview').on('click', function () {
+        $('.js-popup-preview').hide();
+        $('.js-popup-cover').hide();
+      });
+    }
+  }]);
+
+  return PopUpPreview;
+}(MLP.apps.MLPModule);
+
+$.mlpPlugin(PopUpPreview, 'PopUpPreview', false, false);
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();

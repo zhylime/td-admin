@@ -1,0 +1,88 @@
+extends ../partials/_template
+include ../mixins/_card-flip
+include ../mixins/_chart-type-radio-group
+block footer
+block header
+//- 模型概括
+block content
+  .c-module.c-module-data.container-fluid
+    form.c-form-module(method="POST" name="moduleDataForm" id="moduleDataForm" data-js-form-validator)
+      .c-module-data__search-container.l-float-right
+        input.c-module-data__search-container__input
+        button.c-module-data__search-container__button 搜索
+      ul.nav.nav-tabs(role="tablist")
+        li(role="presentation")
+          a(href="#dataCategory0", aria-controls="dataCategory0", role="tab", data-toggle="tab") 所有
+        li(role="presentation")
+          a(href="#dataCategory1", aria-controls="dataCategory1", role="tab", data-toggle="tab") 统计
+        li(role="presentation")
+          a(href="#dataCategory2", aria-controls="dataCategory2", role="tab", data-toggle="tab") 对比
+        li(role="presentation")
+          a(href="#dataCategory3", aria-controls="dataCategory3", role="tab", data-toggle="tab") 预测
+      .tab-content(data-js-checbox, data-js-module-data-dropdown)
+        .tab-pane(role="tabpanel", id="dataCategory0")
+          .c-module-data__dropdown
+            .c-module-data__dropdown__button.js-module-data-dropdown.
+              业务表单<i class="icon-dropDown"></i>
+          .c-module-data__dropdown__content.hide
+            .button-group
+              label.btn.btn-default
+                input(type="checkbox", name="")
+                | 快速搭建数据门户
+              label.btn.btn-default
+                input(type="checkbox", name="")
+                | 搭建数据门户
+              label.btn.btn-default
+                input(type="checkbox", name="")
+                | 搭建数据门户
+              label.btn.btn-default
+                input(type="checkbox", name="")
+                | 搭建数据门户
+              label.btn.btn-default
+                input(type="checkbox", name="")
+                | 搭建数据门户
+              label.btn.btn-default
+                input(type="checkbox", name="")
+                | 搭建数据门户
+              label.btn.btn-default
+                input(type="checkbox", name="")
+                | 搭建数据门户
+              label.btn.btn-default
+                input(type="checkbox", name="")
+                | 搭建数据门户
+
+
+          .c-module-data__chartType
+            label(for="chartType") 图表类型
+            +chartTypeRadioGroup()
+                   
+
+        .tab-pane(role="tabpanel", id="dataCategory1")
+          .tab-pane(role="tabpanel", id="dataCategory0")
+            .c-module-data__dropdown
+              .c-module-data__dropdown__button.js-module-data-dropdown.
+                业务表单<i class="icon-dropDown"></i>
+            .c-module-data__dropdown__content.hide
+              .button-group
+                label.btn.btn-default
+                  input(type="checkbox", name="")
+                  | 快速搭建数据门户
+                label.btn.btn-default
+                  input(type="checkbox", name="")
+                  | 搭建数据门户
+
+            .c-module-data__chartType
+              label(for="chartType") 图表类型
+              +chartTypeRadioGroup()
+        .tab-pane(role="tabpanel", id="dataCategory2")
+        .tab-pane(role="tabpanel", id="dataCategory3")
+  
+
+        
+
+      .c-module-data__grid
+        +card-flip()
+       
+    
+
+      

@@ -1,0 +1,120 @@
+mixin card-flip(option)
+  .c-popup__cover.js-popup-cover
+  .c-popup__preview.js-popup-preview
+    .modal-dialog(role="document")
+      .modal-content
+        .modal-header
+          h4#previewLabel 图标预览
+          .icon-remove.js-close-popup-preview
+        .modal-body
+          table
+            tr
+              td
+                p 模型名称: 
+              td
+                span 模型名称文字
+            tr
+              td
+                p 模型描述:
+              td
+                span 描述文字段落描述文字段落描述文字段落描述文字段落描述文字段落描述文字段落描述文字段落描述文字段落描述文字段落描述文字段落
+          img(src=paths.img + 'popup-preview-chart-thumb.jpg')
+          .c-popup__preview__buttons.text-center
+            button 编辑
+            //- button 编辑
+  .c-card-flip.c-card-flip__grid(data-js-card, data-js-popup-preview)
+    .grid-item.card.js-card
+      .card-front.card-side
+        .c-card-flip__grid__thumb
+          img(src=paths.img + 'module-charts-line-thumb.jpg')
+        .c-card-flip__grid__title 数据权限对比模型(折线图)
+      .card-back.card-side
+        .c-card-flip__grid__desc
+          .desc-title 数据权限比对模块
+          .desc-content 先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：
+          .desc-author.
+            创建人: <span>某某</span>
+          .desc-author.
+            最后修改人: <span>某某</span>
+
+        .c-card-flip__grid__buttons
+          a(href="#", data-toggle='modal', data-target='#previewPopup').button-preview
+            i.icon-preview
+            | 预览
+          a(href="javascript:void(0);").button-create
+            i.icon-module
+            | 建模
+          a(href="javascript:void(0);").button-remove
+            i.icon-remove
+            | 删除
+    .grid-item.card.js-card
+      .card-front.card-side
+        .c-card-flip__grid__thumb
+          img(src=paths.img + 'module-charts-line-thumb.jpg')
+        .c-card-flip__grid__title 数据权限对比模型
+      .card-back.card-side
+        .c-card-flip__grid__desc
+          .desc-title 数据权限比对模块
+          .desc-content 先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：
+          .desc-author.
+            创建人: <span>某某</span>
+          .desc-author.
+            最后修改人: <span>某某</span>
+        .c-card-flip__grid__buttons
+          a(href="javascript:void(0);").button-preview
+            i.icon-preview
+            | 预览
+          a(href="javascript:void(0);").button-create
+            i.icon-module
+            | 建模
+          a(href="javascript:void(0);").button-remove
+            i.icon-remove
+            | 删除
+      
+    .grid-item.card.js-card
+      .card-front.card-side
+        .c-card-flip__grid__thumb
+          img(src=paths.img + 'module-charts-radar-thumb.jpg')
+        .c-card-flip__grid__title 数据权限对比模型(雷达图)
+      .card-back.card-side
+        .c-card-flip__grid__desc
+          .desc-title 数据权限比对模块
+          .desc-content 先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：
+          .desc-author.
+            创建人: <span>某某</span>
+          .desc-author.
+            最后修改人: <span>某某</span>
+        .c-card-flip__grid__buttons
+          a(href="javascript:void(0);").button-preview
+            i.icon-preview
+            | 预览
+          a(href="javascript:void(0);").button-create
+            i.icon-module
+            | 建模
+          a(href="javascript:void(0);").button-remove
+            i.icon-remove
+            | 删除
+
+    .grid-item.card.js-card
+      .card-front.card-side
+        .c-card-flip__grid__thumb
+          img(src=paths.img + 'module-charts-bar-thumb.jpg')
+        .c-card-flip__grid__title 数据权限对比模型(柱状图)
+      .card-back.card-side
+        .c-card-flip__grid__desc
+          .desc-title 数据权限比对模块
+          .desc-content 先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：
+          .desc-author.
+            创建人: <span>某某</span>
+          .desc-author.
+            最后修改人: <span>某某</span>
+        .c-card-flip__grid__buttons
+          a(href="javascript:void(0);").button-preview
+            i.icon-preview
+            | 预览
+          a(href="javascript:void(0);").button-create
+            i.icon-module
+            | 建模
+          a(href="javascript:void(0);").button-remove
+            i.icon-remove
+            | 删除

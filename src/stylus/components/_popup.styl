@@ -1,0 +1,46 @@
+.c-popup
+  &__preview
+    display none
+    position fixed
+    z-index 9999
+    left 50%
+    transform translateX(-50%)
+    img
+      width 100%
+    &__buttons
+      button
+        padding 5px 50px
+        color $tabs-nav-text-active-blue
+        border-radius 0.4rem
+    .modal-header
+      background $login-blue-bg
+      color white
+      .icon-remove
+        position absolute
+        top 15px
+        right 15px
+        cursor pointer
+    .modal-body
+      p
+        color $tabs-nav-text-active-blue
+        font-weight bold
+        margin-bottom 20px
+        width 80px
+        font-size 16px
+      td
+        vertical-align top
+      span
+        line-height 20px
+        font-size 14px
+        color black
+  &__cover
+    display none
+    position fixed
+    z-index 9998
+    width 100%
+    height 1005
+    top 0
+    bottom 0
+    left 0
+    right 0
+    background rgba(0, 0, 0, 0.6)

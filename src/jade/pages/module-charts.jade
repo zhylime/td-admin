@@ -1,7 +1,8 @@
 extends ../partials/_template
+include ../mixins/_card-flip
 block footer
 block header
-
+//- 业务表单
 block content
   .c-module.c-module-charts.container-fluid
     form.c-form-module(method="POST" name="moduleEditForm" id="moduleChartsForm" data-js-form-validator)
@@ -13,137 +14,48 @@ block content
           a(href="#contract", aria-controls="contract", role="tab", data-toggle="tab") 合同
         li(role="presentation")
           a(href="#equipment", aria-controls="equipment", role="tab", data-toggle="tab") 装备
-      .tab-content
+      .tab-content(data-js-charts-filter)
         .tab-pane(role="tabpanel", id="contract")
           .radio-group(data-toggle="buttons")
-            label.btn.btn-default
-              input(type="radio", name="chartsOptionGroup1", data-)
+            label.btn.btn-default(data-group-id="filterID1")
+              input(type="radio", name="chartsOptionGroup1")
               | option1
-            label.btn.btn-default
+            label.btn.btn-default(data-group-id="filterID2")
               input(type="radio", name="chartsOptionGroup1")
               | option2
-            label.btn.btn-default
-              input(type="radio", name="chartsOptionGroup1")
-              | option3
-          .filter-group
-            .filter-item 采购
+
+          .filter-group#filterID1
+            .filter-item 采购1
+            .filter-item 采购2
+            .filter-item 采购3
+          .filter-group#filterID2
             .filter-item 统计
+            .filter-item 统计2
+            .filter-item 统计3
         .tab-pane(role="tabpanel", id="equipment")
           .radio-group(data-toggle="buttons")
-            label.btn.btn-default
+            label.btn.btn-default(data-group-id="filterID3")
               input(type="radio", name="chartsOptionGroup1")
               | 飞机
-            label.btn.btn-default
+            label.btn.btn-default(data-group-id="filterID4")
               input(type="radio", name="chartsOptionGroup1")
               | 发动机
-            label.btn.btn-default
+            label.btn.btn-default(data-group-id="filterID5")
               input(type="radio", name="chartsOptionGroup1")
               | 雷达
-          .filter-group
-            .filter-item 采购
-            .filter-item 统计
+          .filter-group#filterID3
+            .filter-item Filter1
+          .filter-group#filterID4
+            .filter-item Filter2
+            .filter-item FilterZ
+          .filter-group#filterID5
+            .filter-item FilterY
+            .filter-item FilterX
 
-      .c-module-charts__grid.grid(data-js-card)
-        .grid-item.card.js-card
-          .card-front.card-side
-            .c-module-charts__grid__thumb
-              img(src=paths.img + 'module-charts-thumb.jpg')
-            .c-module-charts__grid__title 数据权限对比模型
-          .card-back.card-side
-            .c-module-charts__grid__desc
-              .desc-title 数据权限比对模块
-              .desc-content 先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：
-              .desc-author.
-                创建人: <span>某某</span>
-              .desc-author.
-                最后修改人: <span>某某</span>
+      .c-module-charts__grid
+        +card-flip
 
-            .c-module-charts__grid__buttons
-              a(href="javascript:void(0);").button-preview
-                i.icon-preview
-                | 预览
-              a(href="javascript:void(0);").button-create
-                i.icon-module
-                | 建模
-        .grid-item.card.js-card
-          .card-front.card-side
-            .c-module-charts__grid__thumb
-              img(src=paths.img + 'module-charts-thumb.jpg')
-            .c-module-charts__grid__title 数据权限对比模型
-          .card-back.card-side
-            .c-module-charts__grid__desc
-              .desc-title 数据权限比对模块
-              .desc-content 先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：
-              .desc-author.
-                创建人: <span>某某</span>
-              .desc-author.
-                最后修改人: <span>某某</span>
-            .c-module-charts__grid__buttons
-              a(href="javascript:void(0);").button-preview
-                i.icon-preview
-                | 预览
-              a(href="javascript:void(0);").button-create
-                i.icon-module
-                | 建模
-        
-        .grid-item.card.js-card
-          .card-front.card-side
-            .c-module-charts__grid__thumb
-              img(src=paths.img + 'module-charts-thumb.jpg')
-            .c-module-charts__grid__title 数据权限对比模型
-          .card-back.card-side
-            .c-module-charts__grid__desc
-              .desc-title 数据权限比对模块
-              .desc-content 先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：
-              .desc-author.
-                创建人: <span>某某</span>
-              .desc-author.
-                最后修改人: <span>某某</span>
-            .c-module-charts__grid__buttons
-              a(href="javascript:void(0);").button-preview
-                i.icon-preview
-                | 预览
-              a(href="javascript:void(0);").button-create
-                i.icon-module
-                | 建模
 
-        .grid-item.card.js-card
-          .card-front.card-side
-            .c-module-charts__grid__thumb
-              img(src=paths.img + 'module-charts-thumb.jpg')
-            .c-module-charts__grid__title 数据权限对比模型
-          .card-back.card-side
-            .c-module-charts__grid__desc
-              .desc-title 数据权限比对模块
-              .desc-content 先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：
-              .desc-author.
-                创建人: <span>某某</span>
-              .desc-author.
-                最后修改人: <span>某某</span>
-            .c-module-charts__grid__buttons
-              a(href="javascript:void(0);").button-preview
-                i.icon-preview
-                | 预览
-              a(href="javascript:void(0);").button-create
-                i.icon-module
-                | 建模
-      
-    //-   .row
-    //-     .col-sm-6.c-module-edit__left
-    //-       .row
-    //-         .col-sm-12.c-module-edit__preview
-    //-           .form-group
-    //-             img.c-module-edit__preview-img(src=paths.img + "module-edit-preview3.jpg", alt="item")
-    //-       .row
-    //-         .col-sm-12.c-module-edit__preview
-    //-           .form-group
-    //-             img.c-module-edit__preview-img(src=paths.img +  "module-edit-preview2.jpg", alt="item")
-
-    //-     .col-sm-6
-    //-       .row
-    //-         .col-sm-12
-    //-           .form-group.c-module-edit__preview
-    //-             img.c-module-edit__preview-img(src=paths.img + "module-edit-preview1.jpg", alt="item")
 
 
 

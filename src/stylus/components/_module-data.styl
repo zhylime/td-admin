@@ -1,0 +1,78 @@
+.c-module-data
+  max-width 1000px
+    
+  .nav-tabs
+    a
+      background $charts-tab-bg-blue
+      &[aria-expanded="true"]
+        border-top 3px solid $sidenav-bg-blue !important
+        border-radius 0
+      &:hover
+        background none !important
+        border-bottom 1px solid white !important
+        
+  .tab-content
+    // padding 20px
+    border-left 1px solid #ccc
+    border-bottom 1px solid #ccc
+    border-right 1px solid #ccc
+    position relative
+    .tab-pane.active
+      padding 20px
+  
+    
+  &__dropdown
+    position relative
+    z-index 2
+    width 165px
+    &__button
+      
+      height 40px
+      background $background-yellow
+      border 1px solid #ccc
+      line-height 40px
+      text-align center
+      cursor pointer
+      &.active
+        border-bottom 0
+      .icon-dropDown
+        margin-left 10px
+    &__content
+      border 1px solid #ccc
+      background $background-yellow
+      position relative
+      top -1px
+      padding 5px
+      position relative
+      z-index 1
+      .button-group
+        input[type="checkbox"]
+          position absolute
+          clip rect(0, 0, 0, 0)
+          pointer-events none
+        .btn
+          margin 5px
+          border-radius 1rem
+          position relative
+          &:hover
+            background white
+          &.active
+            background $btn-blue
+            color white
+  &__chartType
+    position absolute
+    right 0
+    top 12px
+    z-index 0
+    label
+    .c-chartTypeRadioGroup
+      display inline-block
+      vertical-align middle
+
+          
+  &__search-container
+    &__button
+      height 22px
+      padding 0 20px
+      border-radius 0.4rem
+      margin-left 5px

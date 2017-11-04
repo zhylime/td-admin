@@ -14,63 +14,123 @@
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/ico">
   </head>
   <body>
-    <div class="c-module c-module-charts container-fluid">
-      <form method="POST" name="moduleEditForm" id="moduleChartsForm" data-js-form-validator class="c-form-module">
-        <div class="c-module-charts__search-container l-float-right">
-          <input class="c-module-charts__search-container__input">
-          <button class="c-module-charts__search-container__button">搜索</button>
+    <div class="c-module c-module-data container-fluid">
+      <form method="POST" name="moduleDataForm" id="moduleDataForm" data-js-form-validator class="c-form-module">
+        <div class="c-module-data__search-container l-float-right">
+          <input class="c-module-data__search-container__input">
+          <button class="c-module-data__search-container__button">搜索</button>
         </div>
         <ul role="tablist" class="nav nav-tabs">
-          <li role="presentation"><a href="#contract" aria-controls="contract" role="tab" data-toggle="tab">合同</a></li>
-          <li role="presentation"><a href="#equipment" aria-controls="equipment" role="tab" data-toggle="tab">装备</a></li>
+          <li role="presentation"><a href="#dataCategory0" aria-controls="dataCategory0" role="tab" data-toggle="tab">所有</a></li>
+          <li role="presentation"><a href="#dataCategory1" aria-controls="dataCategory1" role="tab" data-toggle="tab">统计</a></li>
+          <li role="presentation"><a href="#dataCategory2" aria-controls="dataCategory2" role="tab" data-toggle="tab">对比</a></li>
+          <li role="presentation"><a href="#dataCategory3" aria-controls="dataCategory3" role="tab" data-toggle="tab">预测</a></li>
         </ul>
-        <div data-js-charts-filter class="tab-content">
-          <div role="tabpanel" id="contract" class="tab-pane">
-            <div data-toggle="buttons" class="radio-group">
-              <label data-group-id="filterID1" class="btn btn-default">
-                <input type="radio" name="chartsOptionGroup1">option1
-              </label>
-              <label data-group-id="filterID2" class="btn btn-default">
-                <input type="radio" name="chartsOptionGroup1">option2
-              </label>
+        <div data-js-checbox data-js-module-data-dropdown class="tab-content">
+          <div role="tabpanel" id="dataCategory0" class="tab-pane">
+            <div class="c-module-data__dropdown">
+              <div class="c-module-data__dropdown__button js-module-data-dropdown">业务表单<i class="icon-dropDown"></i></div>
             </div>
-            <div id="filterID1" class="filter-group">
-              <div class="filter-item">采购1</div>
-              <div class="filter-item">采购2</div>
-              <div class="filter-item">采购3</div>
+            <div class="c-module-data__dropdown__content hide">
+              <div class="button-group">
+                <label class="btn btn-default">
+                  <input type="checkbox" name="">快速搭建数据门户
+                </label>
+                <label class="btn btn-default">
+                  <input type="checkbox" name="">搭建数据门户
+                </label>
+                <label class="btn btn-default">
+                  <input type="checkbox" name="">搭建数据门户
+                </label>
+                <label class="btn btn-default">
+                  <input type="checkbox" name="">搭建数据门户
+                </label>
+                <label class="btn btn-default">
+                  <input type="checkbox" name="">搭建数据门户
+                </label>
+                <label class="btn btn-default">
+                  <input type="checkbox" name="">搭建数据门户
+                </label>
+                <label class="btn btn-default">
+                  <input type="checkbox" name="">搭建数据门户
+                </label>
+                <label class="btn btn-default">
+                  <input type="checkbox" name="">搭建数据门户
+                </label>
+              </div>
             </div>
-            <div id="filterID2" class="filter-group">
-              <div class="filter-item">统计</div>
-              <div class="filter-item">统计2</div>
-              <div class="filter-item">统计3</div>
+            <div class="c-module-data__chartType">
+              <label for="chartType">图表类型</label>
+              <div class="c-chartTypeRadioGroup">
+                <div data-toggle="buttons" class="btn-group">
+                  <label class="btn">
+                    <input id="chartType1" type="radio" name="dataChartType1"/><img src="./assets/images/moudule-icon-1.jpg" alt="item" class="img-rounded"/>
+                  </label>
+                  <label class="btn">
+                    <input id="chartType2" type="radio" name="dataChartType2"/><img src="./assets/images/moudule-icon-2.jpg" alt="item" class="img-rounded"/>
+                  </label>
+                  <label class="btn">
+                    <input id="chartType3" type="radio" name="dataChartType3"/><img src="./assets/images/moudule-icon-3.jpg" alt="item" class="img-rounded"/>
+                  </label>
+                  <label class="btn">
+                    <input id="chartType4" type="radio" name="dataChartType4"/><img src="./assets/images/moudule-icon-4.jpg" alt="item" class="img-rounded"/>
+                  </label>
+                  <label class="btn">
+                    <input id="chartType5" type="radio" name="dataChartType5"/><img src="./assets/images/moudule-icon-5.jpg" alt="item" class="img-rounded"/>
+                  </label>
+                  <label class="btn">
+                    <input id="chartType6" type="radio" name="dataChartType6"/><img src="./assets/images/moudule-icon-6.jpg" alt="item" class="img-rounded"/>
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
-          <div role="tabpanel" id="equipment" class="tab-pane">
-            <div data-toggle="buttons" class="radio-group">
-              <label data-group-id="filterID3" class="btn btn-default">
-                <input type="radio" name="chartsOptionGroup1">飞机
-              </label>
-              <label data-group-id="filterID4" class="btn btn-default">
-                <input type="radio" name="chartsOptionGroup1">发动机
-              </label>
-              <label data-group-id="filterID5" class="btn btn-default">
-                <input type="radio" name="chartsOptionGroup1">雷达
-              </label>
-            </div>
-            <div id="filterID3" class="filter-group">
-              <div class="filter-item">Filter1</div>
-            </div>
-            <div id="filterID4" class="filter-group">
-              <div class="filter-item">Filter2</div>
-              <div class="filter-item">FilterZ</div>
-            </div>
-            <div id="filterID5" class="filter-group">
-              <div class="filter-item">FilterY</div>
-              <div class="filter-item">FilterX</div>
+          <div role="tabpanel" id="dataCategory1" class="tab-pane">
+            <div role="tabpanel" id="dataCategory0" class="tab-pane">
+              <div class="c-module-data__dropdown">
+                <div class="c-module-data__dropdown__button js-module-data-dropdown">业务表单<i class="icon-dropDown"></i></div>
+              </div>
+              <div class="c-module-data__dropdown__content hide">
+                <div class="button-group">
+                  <label class="btn btn-default">
+                    <input type="checkbox" name="">快速搭建数据门户
+                  </label>
+                  <label class="btn btn-default">
+                    <input type="checkbox" name="">搭建数据门户
+                  </label>
+                </div>
+              </div>
+              <div class="c-module-data__chartType">
+                <label for="chartType">图表类型</label>
+                <div class="c-chartTypeRadioGroup">
+                  <div data-toggle="buttons" class="btn-group">
+                    <label class="btn">
+                      <input id="chartType1" type="radio" name="dataChartType1"/><img src="./assets/images/moudule-icon-1.jpg" alt="item" class="img-rounded"/>
+                    </label>
+                    <label class="btn">
+                      <input id="chartType2" type="radio" name="dataChartType2"/><img src="./assets/images/moudule-icon-2.jpg" alt="item" class="img-rounded"/>
+                    </label>
+                    <label class="btn">
+                      <input id="chartType3" type="radio" name="dataChartType3"/><img src="./assets/images/moudule-icon-3.jpg" alt="item" class="img-rounded"/>
+                    </label>
+                    <label class="btn">
+                      <input id="chartType4" type="radio" name="dataChartType4"/><img src="./assets/images/moudule-icon-4.jpg" alt="item" class="img-rounded"/>
+                    </label>
+                    <label class="btn">
+                      <input id="chartType5" type="radio" name="dataChartType5"/><img src="./assets/images/moudule-icon-5.jpg" alt="item" class="img-rounded"/>
+                    </label>
+                    <label class="btn">
+                      <input id="chartType6" type="radio" name="dataChartType6"/><img src="./assets/images/moudule-icon-6.jpg" alt="item" class="img-rounded"/>
+                    </label>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          <div role="tabpanel" id="dataCategory2" class="tab-pane"></div>
+          <div role="tabpanel" id="dataCategory3" class="tab-pane"></div>
         </div>
-        <div class="c-module-charts__grid">
+        <div class="c-module-data__grid">
           <div class="c-popup__cover js-popup-cover"></div>
           <div class="c-popup__preview js-popup-preview">
             <div role="document" class="modal-dialog">

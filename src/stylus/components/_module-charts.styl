@@ -22,11 +22,21 @@
       margin-top 0.5rem
       margin-right 0.5rem
       border-radius 1rem
+      position relative
       &:hover
         background none
       &.active
         background $btn-blue
         color white
+        &:after
+          content url(../images/filter-arrow.jpg)
+          width 15px
+          height 8px
+          position absolute
+          display block
+          left 50%
+          transform translateX(-50%)
+          top 29px
   &__grid
     margin-top 30px
     .grid-item
@@ -127,3 +137,5 @@
       height 22px
       padding 0 20px
       border-radius 6px
+  .button-remove
+    display none

@@ -1,4 +1,5 @@
 extends ../partials/_template
+include ../mixins/_chart-type-radio-group
 block footer
 block header
 
@@ -89,28 +90,8 @@ block content
             .col-sm-3
               .form-group.text-label.text-right
                 label.form__label(for="type1") 类型
-            .col-sm-9.radioImgGroup
-              .form-group
-                .btn-group(data-toggle='buttons')
-                  label.btn
-                    input#optio9(type='radio', name='latitude2', autocomplete='off')
-                    img.img-rounded(src="./assets/images/moudule-icon-1.jpg", alt="item")
-                  label.btn.active
-                    input#option10(type='radio', name='latitude2', autocomplete='on')
-                    img.img-rounded(src="./assets/images/moudule-icon-2.jpg", alt="item")
-                  label.btn
-                    input#option11(type='radio', name='latitude2', autocomplete='off')
-                    img.img-rounded(src="./assets/images/moudule-icon-3.jpg", alt="item")
-                  label.btn
-                    input#option12(type='radio', name='latitude2', autocomplete='off')
-                    img.img-rounded(src="./assets/images/moudule-icon-4.jpg", alt="item")
-                  label.btn
-                    input#option13(type='radio', name='latitude2', autocomplete='off')
-                    img.img-rounded(src="./assets/images/moudule-icon-5.jpg", alt="item")
-                  label.btn
-                    input#option14(type='radio', name='latitude2', autocomplete='off')
-                    img.img-rounded(src="./assets/images/moudule-icon-6.jpg", alt="item")
-
+            .col-sm-9
+              +chartTypeRadioGroup()
         .col-sm-6
           .row
             .col-sm-12

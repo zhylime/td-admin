@@ -4,13 +4,18 @@ class CardFlip extends MLP.apps.MLPModule {
   init() {
     super.init();
     this.el ={
+        gridContainer: $('[data-js-card]'),
         cardItems: this.el.target.find('.js-card'),
         cardSide: this.el.target.find('.card-side'),
+        previewBtn: this.el.target.find('.button-preview'),
+        createModule: this.el.target.find('.button-create'),
+        remove: this.el.target.find('.button-remove'),
       }
 
     this.cardFront;
     this.cardBack;
     this.speed = 225;
+    // this.enableFlip = true;
 
     this.events();
   }
@@ -18,12 +23,31 @@ class CardFlip extends MLP.apps.MLPModule {
   events(){
     var _this = this;
 
+    setTimeout(function(){
+      _this.el.gridContainer.css('opacity','1')
+    },260);
+
+    this.el.previewBtn.each(function(e){
+      $(this).on('click', function(evt){
+        evt.stopPropagation()
+      })
+    })
+    this.el.createModule.each(function(e){
+      $(this).on('click', function(evt){
+        evt.stopPropagation()
+      })
+    })
+    this.el.remove.each(function(e){
+      $(this).on('click', function(evt){
+        evt.stopPropagation();
+        $(this).parents('.js-card').remove();
+      })
+    })
     // this.initCardSide();
     this.el.cardItems.each(function(){
-      $(this).on('click', function(){
-
-        // console.log($(this).find('.card-side').hasClass('card-front'));
-        // console.log($(this).find('.card-side').hasClass('card-back'));
+      $(this).on('click', function(e){
+        
+   
         if($(this).find('.card-side').hasClass('card-front')){
           _this.cardFront = $(this).find('.card-front');
           // console.log(_this.cardFront);
@@ -39,31 +63,20 @@ class CardFlip extends MLP.apps.MLPModule {
           })
           
         }
+        
+       
     
 
 
       })
     })
-    // this.el.cardItems.on('click', function(){
-    //   _this.cardFront.addClass('card-back').removeClass('card-front');
-    //   setTimeout(function(){
-    //     _this.cardBack.addClass('card-front').removeClass('card-back');
-    //     _this.initCardSide()
-    //   });
-    // })
+
+
+    
+
   }
 
-  // initCardSide(){
-  //   var _this = this;
-  //   this.el.cardSide.each(function(){
-  //     if($(this).hasClass('card-front')){
-  //       _this.cardFront = $(this);
-  //     }
-  //     else{
-  //       _this.cardBack = $(this);
-  //     }
-  //   });
-  // }
+
 
 }
 
