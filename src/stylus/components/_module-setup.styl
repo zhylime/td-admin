@@ -43,6 +43,12 @@
   .treeview
     .icon
       color $color-panel-icon
+    .text-edit
+      display inline-block
+      input
+        min-width 50px
+        border none
+      @media
     .list-group
       margin-bottom 0px
       padding-bottom 0px
@@ -67,15 +73,18 @@
     .node-third
       color $tabs-nav-text-active-blue
       border none
-
     .node-first
-      font-weight bold
+      .text-edit
+        font-weight bold
+        font-size 100%
     .node-second
-      font-weight normal
-      font-size 100%
+      .text-edit
+        font-weight normal
+        font-size 95%
     .node-third
-      font-weight normal
-      font-size 90%
+      .text-edit
+        font-weight normal
+        font-size 90%
       .ion-stop
         font-size 7px
         position relative

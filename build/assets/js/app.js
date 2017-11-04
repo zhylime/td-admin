@@ -212,7 +212,8 @@ var AddMenu = function (_MLP$apps$MLPModule) {
         modalItem: this.el.target.find('.js-menu-modal'),
         showModal: this.el.target.find('.js-open-modal'),
         removeBtn: this.el.target.find(".js-remove-btn"),
-        modalConfirm: this.el.target.find(".js-confirm-modal")
+        modalConfirm: this.el.target.find(".js-confirm-modal"),
+        editMenuText: this.el.target.find(".js-edit-text")
       };
       this.$action = "addFirst";
       this.target = "";
@@ -231,6 +232,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
       this.removeNode();
       this.confirmRemove();
       this.orderMenu();
+      this.editMenuText();
       this.el.confirmBtn.off('click').on('click', function (evt) {
 
         var _this = _this3,
@@ -276,10 +278,11 @@ var AddMenu = function (_MLP$apps$MLPModule) {
       switch (index) {
         case 0:
           nodeIndex = "node-first";
-          $item = "<ul class='list-group'>" + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon expand-icon ion-arrow-down-b'></span><span class='icon node-icon'></span>" + itemName + "" + "<span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeALL'></span>" + "<span class='ion ion-android-create'></span><span class='ion ion-plus-round js-open-modal'  data-action='addSecond'></span>" + "</li></ul>";
+          $item = "<ul class='list-group'>" + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon expand-icon ion-arrow-down-b'></span><span class='icon node-icon'></span><span class='text-edit '>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeALL'></span>" + "<span class='ion ion-edit js-edit-text'></span><span class='ion ion-plus-round js-open-modal'  data-action='addSecond'></span>" + "</li></ul>";
           $(this.el.menuItem).append($item);
           _this.openModal();
           _this.removeNode();
+          _this.editMenuText();
           break;
         case 1:
           nodeIndex = "node-second";
@@ -287,11 +290,12 @@ var AddMenu = function (_MLP$apps$MLPModule) {
           $startTag = $targetNode && $targetNode.length ? "" : "<ul class='list-group list-group-second'>";
           $endTag = $targetNode && $targetNode.length ? "" : "</ul>";
           $firstNode = $targetNode && $targetNode.length ? $targetNode : $target;
-          $item = $startTag + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon expand-icon ion-arrow-down-b'></span><span class='icon node-icon'></span>" + itemName + "" + "<span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeSecond'></span>" + "<span class='ion ion-android-create'></span><span class='ion ion-plus-round js-open-modal'  data-action='addThird'></span>" + "</li>" + $endTag;
+          $item = $startTag + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon expand-icon ion-arrow-down-b'></span><span class='icon node-icon'></span><span class='text-edit '>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeSecond'></span>" + "<span class='ion ion-edit js-edit-text'></span><span class='ion ion-plus-round js-open-modal'  data-action='addThird'></span>" + "</li>" + $endTag;
           $firstNode.append($item);
           _this.openModal();
           _this.removeNode();
           _this.orderMenu();
+          _this.editMenuText();
           break;
         default:
           nodeIndex = "node-third";
@@ -299,11 +303,12 @@ var AddMenu = function (_MLP$apps$MLPModule) {
           $startTag = $sibling && $sibling.length ? "" : "<ul class='list-group-third list-group'>";
           $endTag = $sibling && $sibling.length ? "" : "</ul>";
           $secondNode = $sibling && $sibling.length ? $sibling : $target;
-          $item = $startTag + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon glyphicon'></span><span class='icon node-icon ion-stop'></span>" + itemName + "" + "<span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeThird'></span>" + "<span class='ion ion-android-create'></span>" + "</li>" + $endTag;
+          $item = $startTag + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon glyphicon'></span><span class='icon node-icon ion-stop'></span><span class='text-edit '>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeThird'></span>" + "<span class='ion ion-edit js-edit-text'></span>" + "</li>" + $endTag;
           $secondNode.append($item);
           _this.openModal();
           _this.removeNode();
           _this.orderMenu();
+          _this.editMenuText();
       }
     }
 
@@ -383,6 +388,41 @@ var AddMenu = function (_MLP$apps$MLPModule) {
         if ($silbings && $silbings.length) {
           $target.insertBefore($silbings);
         }
+      });
+    }
+
+    //编辑菜单文本
+
+  }, {
+    key: 'editMenuText',
+    value: function editMenuText() {
+      $(".js-edit-text").off('click').on('click', function (evt) {
+
+        var $textInput = $(evt.target).siblings(".text-edit"),
+            $input = $("<input type='text'/>");
+        var $text = $textInput.text();
+        if ($textInput.children("input").length > 0) {
+          return false;
+        }
+        $input.width($textInput.width() + 5);
+        $input.val($text);
+        $textInput.html("");
+        $input.appendTo($textInput).focus().select();
+        $input.on("click", function () {
+          return false;
+        });
+        $input.on('blur', function () {
+          var inputText = $input.val();
+          $textInput.html(inputText);
+        });
+        $input.on('keyup', function (event) {
+          var myEvent = event || window.event;
+          var key = myEvent.keyCode;
+          if (key == 13) {
+            var inputText = $input.val();
+            $textInput.html(inputText);
+          }
+        });
       });
     }
   }]);

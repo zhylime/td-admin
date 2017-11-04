@@ -3480,6 +3480,9 @@ html {
 .c-module-setup .treeview .icon {
   color: #7da6de;
 }
+.c-module-setup .treeview .text-edit {
+  display: inline-block;
+}
 .c-module-setup .treeview .list-group {
   margin-bottom: 0px;
   padding-bottom: 0px;
@@ -3511,14 +3514,15 @@ html {
   color: #354967;
   border: none;
 }
-.c-module-setup .treeview .node-first {
+.c-module-setup .treeview .node-first .text-edit {
   font-weight: bold;
-}
-.c-module-setup .treeview .node-second {
-  font-weight: normal;
   font-size: 100%;
 }
-.c-module-setup .treeview .node-third {
+.c-module-setup .treeview .node-second .text-edit {
+  font-weight: normal;
+  font-size: 95%;
+}
+.c-module-setup .treeview .node-third .text-edit {
   font-weight: normal;
   font-size: 90%;
 }
