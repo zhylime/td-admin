@@ -3483,6 +3483,7 @@ html {
 .c-module-setup .treeview .text-edit {
   display: inline-block;
   word-wrap: break-word;
+  line-height: 1.2em;
 }
 .c-module-setup .treeview .text-edit input {
   min-width: 50px;
@@ -3510,14 +3511,14 @@ html {
   margin-left: 20px;
 }
 .c-module-setup .treeview .list-group-second .list-group-item {
-  padding: 10px 0 5px 0;
+  padding: 0;
 }
 .c-module-setup .treeview .list-group-third .list-group-item {
   border: none;
-  padding: 10px 0 5px 0;
+  padding: 0;
 }
-.c-module-setup .treeview .list-group-third .list-group-item:nth-child(1) {
-  margin-top: 5px;
+.c-module-setup .treeview .list-group-item {
+  line-height: 1.8em;
 }
 .c-module-setup .treeview span.icon {
   width: 12px;

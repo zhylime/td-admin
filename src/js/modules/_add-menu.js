@@ -72,10 +72,11 @@ class AddMenu extends MLP.apps.MLPModule {
     switch (index) {
       case 0:
         nodeIndex = "node-first";
-        $item = "<ul class='list-group'>" + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon expand-icon ion-arrow-down-b'></span><span class='icon node-icon'></span><span class='text-edit '>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeALL'></span>" + "<span class='ion ion-edit js-edit-text'></span><span class='ion ion-plus-round js-open-modal'  data-action='addSecond'></span>" + "</li></ul>";
+        $item = "<ul class='list-group'>" + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon expand-icon ion-arrow-down-b'></span><span class='icon node-icon'></span><span class='text-edit '>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down' data-action='orderFirst'></span><span class='ion ion-arrow-up-b js-arrow-up' data-action='orderFirst'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeALL'></span>" + "<span class='ion ion-edit js-edit-text'></span><span class='ion ion-plus-round js-open-modal'  data-action='addSecond'></span>" + "</li></ul>";
         $(this.el.menuItem).append($item);
         _this.openModal();
         _this.removeNode();
+        _this.orderMenu();
         _this.editMenuText();
         break;
       case 1:
@@ -190,14 +191,14 @@ class AddMenu extends MLP.apps.MLPModule {
         return false;
       });
       $input.on('blur',()=>{
-        var inputText = $input.val();
+        var inputText = ($input.val())?$input.val():$text;
         $textInput.html(inputText);
       });
       $input.on('keyup',(event)=>{
         var myEvent = event || window.event;
         var key = myEvent.keyCode;
         if(key == 13){
-          var inputText = $input.val();
+          var inputText = ($input.val())?$input.val():$text;
           $textInput.html(inputText);
         }
       });
