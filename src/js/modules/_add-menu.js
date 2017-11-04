@@ -142,7 +142,11 @@ class AddMenu extends MLP.apps.MLPModule {
       this.removeStatus = true;
       this.el.modalConfirm.modal('hide');
       if (this.removeStatus) {
+        var $parentNode = $target.parent();
         $target.remove();
+        if(!$parentNode.find(".list-group-item").length){
+          $parentNode.remove()
+        }
       }
 
     });

@@ -3518,7 +3518,7 @@ html {
   padding: 0;
 }
 .c-module-setup .treeview .list-group-item {
-  line-height: 1.8em;
+  line-height: 1.8rem;
 }
 .c-module-setup .treeview span.icon {
   width: 12px;
@@ -3532,15 +3532,15 @@ html {
 }
 .c-module-setup .treeview .node-first .text-edit {
   font-weight: bold;
-  font-size: 100%;
+  font-size: 1.1rem;
 }
 .c-module-setup .treeview .node-second .text-edit {
   font-weight: normal;
-  font-size: 95%;
+  font-size: 1rem;
 }
 .c-module-setup .treeview .node-third .text-edit {
   font-weight: normal;
-  font-size: 90%;
+  font-size: 0.9rem;
 }
 .c-module-setup .treeview .node-third .ion-stop {
   font-size: 7px;
@@ -3554,6 +3554,7 @@ html {
   margin-right: 0.6rem;
   cursor: pointer;
   position: relative;
+  top: 6px;
 }
 .c-module-setup .treeview .ion.ion-code {
   -webkit-transform: rotate(90deg);
@@ -3568,12 +3569,12 @@ html {
   position: relative;
 }
 .c-module-setup .treeview .ion.ion-arrow-up-b {
-  top: -3px;
+  top: -2px;
   position: absolute;
   font-size: 85%;
 }
 .c-module-setup .treeview .ion.ion-arrow-down-b {
-  top: 6px;
+  top: 7px;
   position: absolute;
   font-size: 85%;
 }

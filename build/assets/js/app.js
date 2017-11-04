@@ -361,7 +361,11 @@ var AddMenu = function (_MLP$apps$MLPModule) {
         _this6.removeStatus = true;
         _this6.el.modalConfirm.modal('hide');
         if (_this6.removeStatus) {
+          var $parentNode = $target.parent();
           $target.remove();
+          if (!$parentNode.find(".list-group-item").length) {
+            $parentNode.remove();
+          }
         }
       });
     }
