@@ -55,14 +55,31 @@
     .node-third
       color $tabs-nav-text-active-blue
       border none
+    .node-first
+      font-weight bold
     .node-second
       padding-left 35px
     .node-third
       padding-left 55px
+      .ion-stop
+        font-size 7px
+        position relative
+        top -3px
     .ion
+      color $color-panel-icon
+      font-weight bold
       float right
       margin-right 1rem
       cursor pointer
       &.ion-code
         transform rotate(90deg)
+  .radioGroup
+    label
+      cursor pointer
+  .list-group-item
+    &:hover
+      background-color $bg-panel-hover-blue
+      color $color-white
+      .ion
+        color $color-white
   

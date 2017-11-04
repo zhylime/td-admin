@@ -2319,6 +2319,12 @@ html {
     color: #354967;
   }
 }
+.c-form .l-p-bottom-5 {
+  padding-bottom: 5em;
+}
+.c-form .l-p-top-5 {
+  padding-top: 5em;
+}
 .c-header {
   background: #041e45 url("../images/bg-header.jpg") no-repeat left top;
   color: #fff;
@@ -3208,13 +3214,23 @@ html {
   color: #354967;
   border: none;
 }
+.c-module-setup .treeview .node-first {
+  font-weight: bold;
+}
 .c-module-setup .treeview .node-second {
   padding-left: 35px;
 }
 .c-module-setup .treeview .node-third {
   padding-left: 55px;
 }
+.c-module-setup .treeview .node-third .ion-stop {
+  font-size: 7px;
+  position: relative;
+  top: -3px;
+}
 .c-module-setup .treeview .ion {
+  color: #7da6de;
+  font-weight: bold;
   float: right;
   margin-right: 1rem;
   cursor: pointer;
@@ -3225,6 +3241,16 @@ html {
   -o-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+}
+.c-module-setup .radioGroup label {
+  cursor: pointer;
+}
+.c-module-setup .list-group-item:hover {
+  background-color: #90b5e6;
+  color: #fff;
+}
+.c-module-setup .list-group-item:hover .ion {
+  color: #fff;
 }
 .c-module {
   margin: 3rem;
