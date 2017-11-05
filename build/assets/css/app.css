@@ -3036,6 +3036,9 @@ html {
   line-height: 150%;
   margin-top: 1rem;
 }
+.modalSetup .button-single {
+  text-align: center;
+}
 .c-module-charts {
   max-width: 1000px;
 }
