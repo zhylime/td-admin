@@ -3477,6 +3477,11 @@ html {
 .c-module-setup button.btn-default {
   min-width: 90px;
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .c-module-setup .col-sm-0 {
+    display: none;
+  }
+}
 .c-module-setup .treeview .icon {
   color: #7da6de;
 }
@@ -3489,7 +3494,7 @@ html {
   min-width: 50px;
   border: none;
 }
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
   .c-module-setup .treeview .text-edit {
     max-width: 100px;
   }
@@ -3517,8 +3522,14 @@ html {
   border: none;
   padding: 0;
 }
+.c-module-setup .treeview .list-group-third .list-group-item .text-info {
+  font-size: 0.9rem;
+  display: inline;
+  margin-right: 0.3rem;
+}
 .c-module-setup .treeview .list-group-item {
   line-height: 1.8rem;
+  height: auto;
 }
 .c-module-setup .treeview span.icon {
   width: 12px;
@@ -3555,6 +3566,8 @@ html {
   cursor: pointer;
   position: relative;
   top: 6px;
+  display: none;
+  line-height: 1.2em;
 }
 .c-module-setup .treeview .ion.ion-code {
   -webkit-transform: rotate(90deg);
@@ -3584,8 +3597,24 @@ html {
 .c-module-setup .radioGroup label {
   cursor: pointer;
 }
-.c-module-setup-editMenu {
+.c-module-setup-addMenu {
   display: none;
+}
+.c-module-setup-confirm {
+  display: none;
+}
+.c-module-setup.isEdit .treeview .list-group .ion {
+  display: inline-block;
+}
+.c-module-setup.isEdit .treeview .list-group .ion.text-info {
+  display: none;
+}
+.c-module-setup.isEdit .c-module-setup-editMenu {
+  display: none;
+}
+.c-module-setup.isEdit .c-module-setup-addMenu,
+.c-module-setup.isEdit .c-module-setup-confirm {
+  display: block;
 }
 .c-module {
   margin: 3rem;

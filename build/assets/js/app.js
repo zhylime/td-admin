@@ -213,8 +213,14 @@ var AddMenu = function (_MLP$apps$MLPModule) {
         showModal: this.el.target.find('.js-open-modal'),
         removeBtn: this.el.target.find(".js-remove-btn"),
         modalConfirm: this.el.target.find(".js-confirm-modal"),
-        editMenuText: this.el.target.find(".js-edit-text")
+        editMenuText: this.el.target.find(".js-edit-text"),
+        editMneu: this.el.target.find(".js-edit-menu"),
+        confirmInfoBtn: this.el.target.find(".js-confirm-info")
       };
+      this.className = {
+        isEdit: "isEdit"
+      };
+
       this.$action = "addFirst";
       this.target = "";
       this.$removeAction = "removeThird";
@@ -235,8 +241,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
       this.editMenuText();
       this.el.confirmBtn.off('click').on('click', function (evt) {
 
-        var _this = _this3,
-            nodeIndex = void 0;
+        var nodeIndex = void 0;
         switch (_this3.$action) {
           case "addFirst":
             nodeIndex = 0;
@@ -257,6 +262,13 @@ var AddMenu = function (_MLP$apps$MLPModule) {
         } else {
           $errorMessage.removeClass('hide');
         }
+      });
+
+      this.el.confirmInfoBtn.off('click').on('click', function (evt) {
+        $(".js-setup-menu").removeClass(_this3.className.isEdit);
+      });
+      this.el.editMneu.off('click').on('click', function (evt) {
+        $(".js-setup-menu").addClass(_this3.className.isEdit);
       });
     }
 

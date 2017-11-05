@@ -8,7 +8,7 @@ block footerJs
 
 
 block content
-  .c-module.c-module-setup.container-fluid(data-add-menu)
+  .c-module.c-module-setup.container-fluid.isEdit.js-setup-menu(data-add-menu)
     form.c-form-setup.c-form(method="POST" name="moduleSetupForm" id="moduleSetupForm" data-js-form-validator)
       .row
         .col-sm-6.c-module-setup__left.l-p-bottom-5
@@ -39,13 +39,13 @@ block content
               .form-group.c-module-setup-addMenu
                 button.btn.btn-default.js-open-modal(type='button' data-action="addFirst") 添加菜单
               .form-group.c-module-setup-editMenu
-                button.btn.btn-default(type='button') 编辑菜单
+                button.btn.btn-default.js-edit-menu(type='button') 编辑菜单
 
           .row
-            .col-sm-3
+            .col-sm-0.col-md-3
               .form-group.text-label.hidden-xs
                 label.form__label(for="")
-            .col-sm-9.col-xs-10
+            .col-sm-12.col-md-9.col-xs-10
               .form-group
               .panel.panel-default(data-tree-view)
                 .panel-body
@@ -82,6 +82,8 @@ block content
                                   span.ion.ion-arrow-up-b.js-arrow-up
                                 span.ion.ion-close.js-remove-node(data-action="removeThird")
                                 span.ion.ion-edit.js-edit-text
+                                span.ion.text-info 设置菜单内容布局
+                                span.ion.ion-edit.text-info.js-edit-info
                     ul.list-group
                       li.list-group-item.node-first(data-index = "0")
                         span.icon.expand-icon.ion-arrow-down-b
@@ -114,6 +116,8 @@ block content
                                   span.ion.ion-arrow-up-b.js-arrow-up
                                 span.ion.ion-close.js-remove-node(data-action="removeThird")
                                 span.ion.ion-edit.js-edit-text
+                                span.ion.text-info 设置菜单内容布局
+                                span.ion.ion-edit.text-info.js-edit-info
                               li.list-group-item.node-third(data-index = "2")
                                 span.icon.glyphicon
                                 span.icon.node-icon.ion-stop
@@ -123,16 +127,16 @@ block content
                                   span.ion.ion-arrow-up-b.js-arrow-up
                                 span.ion.ion-close.js-remove-node(data-action="removeThird")
                                 span.ion.ion-edit.js-edit-text
+                                span.ion.text-info 设置菜单内容布局
+                                span.ion.ion-edit.text-info.js-edit-info
 
-
-
-          .row
-            .col-sm-3
+          .row.c-module-setup-confirm
+            .col-sm-0.col-md-3
               .form-group.text-label.hidden-xs
                 label.form__label(for="")
-            .col-sm-9.col-xs-10
+            .col-sm-12.col-md-9.col-xs-10
               .form-group
-              button.btn.btn-primary(type="button") 确定
+              button.btn.btn-primary.js-confirm-info(type="button") 确定
         .col-sm-6.c-module-setup__right.l-p-bottom-5(data-js-module-setup-radios)
           .row
             .col-sm-12

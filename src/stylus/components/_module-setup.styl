@@ -40,6 +40,9 @@
   button.btn-primary,
   button.btn-default
     min-width 90px
+  @media screen and (min-width: 768px) and (max-width: 991px)
+    .col-sm-0
+      display none
   .treeview
     .icon
       color $color-panel-icon
@@ -50,7 +53,7 @@
       input
         min-width 50px
         border none
-      @media screen and (min-width: 768px) and (max-width: 992px)
+      @media screen and (min-width: 768px) and (max-width: 991px)
         max-width 100px
       @media screen and (min-width: 993px) and (max-width: 1100px)
         max-width 120px
@@ -68,8 +71,13 @@
         .list-group-item
           border none
           padding 0
+          .text-info
+            font-size .9rem
+            display inline
+            margin-right .3rem
       &-item
         line-height 1.8rem
+        height auto
     span.icon
       width 12px
       margin-right 5px
@@ -102,6 +110,8 @@
       cursor pointer
       position relative
       top 6px
+      display none
+      line-height 1.2em
       &.ion-code
         transform rotate(90deg)
       &.ion.ion-arrow
@@ -121,6 +131,20 @@
   .radioGroup
     label
       cursor pointer
-  &-editMenu
+  &-addMenu
     display none
-  
+  &-confirm
+    display none
+
+  &.isEdit
+    .treeview
+      .list-group
+        .ion
+          display inline-block
+          &.text-info
+            display none
+    .c-module-setup-editMenu
+      display none
+    .c-module-setup-addMenu,
+    .c-module-setup-confirm
+      display block
