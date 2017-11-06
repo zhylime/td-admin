@@ -1,12 +1,20 @@
 mixin slickCarousel()
-  .row
+  .row.c-module-slick(data-slick-detail)
     .col-sm-12
       .button.btn.btn-primary.slick-arrow.slick-prev
+        .glyphicon.glyphicon-chevron-left
       .button.btn.btn-primary.slick-arrow.slick-next
-      .form-group.l-padding-top-3
+        .glyphicon.glyphicon-chevron-right
+      .form-group.c-module-slick-group
         ul.js-select-data
-          li(data-id="0") 1111
+          li(data-id="0")
+            .row
+              .col-sm-5.col-xs-5.c-module-slick-detail sss
+              .col-sm-5.col-xs-5.c-module-slick-detail sss
+            .row
+              .col-sm-5.col-xs-5.c-module-slick-detail sss
+              .col-sm-5.col-xs-5.c-module-slick-detail sss
           li(data-id="1") 2222
           li(data-id="2") 3333
           li(data-id="3") 4444
-          li(data-id="4") 5555
+          li(data-id="4") 5555s

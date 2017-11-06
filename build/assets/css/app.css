@@ -3754,3 +3754,42 @@ html {
   right: 0;
   background: rgba(0,0,0,0.6);
 }
+.c-module-slick {
+  position: relative;
+}
+.c-module-slick .slick-arrow {
+  position: absolute;
+  top: 50%;
+  height: 3rem;
+  width: 1rem;
+  background-color: #7897c5;
+  border-color: #7897c5;
+}
+.c-module-slick .slick-arrow .glyphicon {
+  top: 27%;
+  right: 0.4rem;
+}
+.c-module-slick .slick-arrow.slick-next {
+  right: 0.5rem;
+}
+.c-module-slick .slick-arrow.slick-prev {
+  left: 0.5rem;
+}
+.c-module-slick-group {
+  padding: 1rem 2rem;
+}
+.c-module-slick-group margin-left,
+.c-module-slick-group li {
+  min-width: 400px;
+}
+.c-module-slick-group margin-left .row,
+.c-module-slick-group li .row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+.c-module-slick-detail {
+  background-color: #eef5ff;
+  padding: 10px;
+  margin: 2px;
+  width: 49%;
+}
