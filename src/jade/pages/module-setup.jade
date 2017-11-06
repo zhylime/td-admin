@@ -1,9 +1,12 @@
 extends ../partials/_template
+include ../mixins/_chart-type-radio-group
+include ../mixins/_slick-carousel
 block footer
 block header
+  link(rel='stylesheet', href=paths.css + 'vendor/slick.css')
 
 block footerJs
-  script(src=paths.js + 'vendor/bootstrap-treeview.js')
+  script(src=paths.js + 'vendor/slick.min.js')
 
 
 
@@ -22,15 +25,15 @@ block content
                 div.text-danger.l-padding-top-1.hide.input-error-message 请输入主标题
           .row
             .col-sm-3
-                .form-group.text-label
-                  label.form__label(for="type") 网站样式
-              .col-sm-9.col-xs-10
-                .form-group
-                  select.form-control(type="text" data-js-mobile-smart-label id="type" name="type" data-rule="required")
-                    option(value="" class="active")
-                    option(value="001") 样式1
-                    option(value="002") 样式2
-                  div.text-danger.l-padding-top-1.hide.input-error-message 请输入样式
+              .form-group.text-label
+                label.form__label(for="type") 网站样式
+            .col-sm-9.col-xs-10
+              .form-group
+                select.form-control(type="text" data-js-mobile-smart-label id="type" name="type" data-rule="required")
+                  option(value="" class="active")
+                  option(value="001") 样式1
+                  option(value="002") 样式2
+                div.text-danger.l-padding-top-1.hide.input-error-message 请输入样式
           .row
             .col-sm-3
               .form-group.text-label
@@ -82,7 +85,7 @@ block content
                                   span.ion.ion-arrow-up-b.js-arrow-up
                                 span.ion.ion-close.js-remove-node(data-action="removeThird")
                                 span.ion.ion-edit.js-edit-text
-                                span.ion.text-info 设置菜单内容布局
+                                span.ion.text-info.js-edit-info 设置菜单内容布局
                                 span.ion.ion-edit.text-info.js-edit-info
                     ul.list-group
                       li.list-group-item.node-first(data-index = "0")
@@ -116,7 +119,7 @@ block content
                                   span.ion.ion-arrow-up-b.js-arrow-up
                                 span.ion.ion-close.js-remove-node(data-action="removeThird")
                                 span.ion.ion-edit.js-edit-text
-                                span.ion.text-info 设置菜单内容布局
+                                span.ion.text-info.js-edit-info 设置菜单内容布局
                                 span.ion.ion-edit.text-info.js-edit-info
                               li.list-group-item.node-third(data-index = "2")
                                 span.icon.glyphicon
@@ -127,7 +130,7 @@ block content
                                   span.ion.ion-arrow-up-b.js-arrow-up
                                 span.ion.ion-close.js-remove-node(data-action="removeThird")
                                 span.ion.ion-edit.js-edit-text
-                                span.ion.text-info 设置菜单内容布局
+                                span.ion.text-info.js-edit-info 设置菜单内容布局
                                 span.ion.ion-edit.text-info.js-edit-info
 
           .row.c-module-setup-confirm
@@ -169,14 +172,14 @@ block content
                 .setupOption-image.setupOption-image--6.js-radio-item(data-image="setupOptionImg6")
           .row.setupOptionImgGroup.js-radio-images
             .col-sm-12
-              img#setupOptionImg1(src=paths.img + 'module-setup-markup-1.png')
-              img#setupOptionImg2(src=paths.img + 'module-setup-markup-2.png')
-              img#setupOptionImg3(src=paths.img + 'module-setup-markup-3.png')
-              img#setupOptionImg4(src=paths.img + 'module-setup-markup-4.png')
-              img#setupOptionImg5(src=paths.img + 'module-setup-markup-5.png')
-              img#setupOptionImg6(src=paths.img + 'module-setup-markup-6.png')
+              img#setupOptionImg1(src=paths.img + 'module-setup-markup.jpg')
+              img#setupOptionImg2(src=paths.img + 'module-setup-markup.jpg')
+              img#setupOptionImg3(src=paths.img + 'module-setup-markup.jpg')
+              img#setupOptionImg4(src=paths.img + 'module-setup-markup.jpg')
+              img#setupOptionImg5(src=paths.img + 'module-setup-markup.jpg')
+              img#setupOptionImg6(src=paths.img + 'module-setup-markup.jpg')
 
-              
+
       .row.button-group
         .col-sm-6.col-xs-6
           .form-group.text-center
@@ -186,8 +189,8 @@ block content
             button.btn.btn-default(type='button' data-dismiss='modal' aria-label='Close') 取消
 
 
-   
 
+    //添加菜单的弹出框
     #modalSetup.modal.fade.modalSetup.js-menu-modal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
       .modal-dialog(role='document')
         .modal-content
@@ -210,12 +213,13 @@ block content
                 .col-sm-6.button-single
                   .form-group
                     button.btn.btn-default(type='button' data-dismiss='modal' aria-label='Close') 取消
-      
+
+    //确认删除信息的弹出框
     #modalConfirm.modal.fade.modalConfirm.js-confirm-modal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
       .modal-dialog(role='document')
         .modal-content
           .modal-header
-            h4#myModalLabel.modal-title 添加菜单
+            h4.myModalLabel.modal-title 添加菜单
           .modal-body
             form.c-form
               .row
@@ -233,3 +237,37 @@ block content
                 .col-sm-6.button-single
                   .form-group
                     button.btn.btn-default(type='button' data-dismiss='modal' aria-label='Close') 取消
+
+    //内容布局添加数据的弹出框
+    #modalAddData.modal.fade.modalAddData.js-addData-modal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
+              | &times;
+            h4.myModalLabel.modal-title 位置1添加数据
+          .modal-body
+            form.c-form
+              ul.nav.nav-tabs(role="tablist")
+                li.active(role="presentation")
+                  a(href="#chartType", aria-controls="chartType", role="tab", data-toggle="tab") 图表类型
+                li(role="presentation")
+                  a(href="#bizForm", aria-controls="bizForm", role="tab", data-toggle="tab") 业务表单
+              .tab-content(data-js-charts-filter)
+                .tab-pane.active(role="tabpanel", id="chartType")
+                  .input-group.col-sm-12(style='margin-top:0px positon:relative')
+                    input.form-control(type='text', placeholder='')
+                    span.input-group-btn
+                      button.btn.btn-default.btn-search 搜索
+                  +slickCarousel()
+
+                .tab-pane(role="tabpanel", id="bizForm")
+                  +chartTypeRadioGroup()
+                  .input-group.col-sm-12(style='margin-top:0px positon:relative')
+                    input.form-control(type='text', placeholder='')
+                    span.input-group-btn
+                      button.btn.btn-default.btn-search 搜索
+              .row.button-group.text-center
+                .col-sm-12.button-single
+                  .form-group
+                    button.btn.btn-primary(type='button') 确定
