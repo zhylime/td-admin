@@ -1,9 +1,9 @@
 .c-module
   &-slick
     position relative
-    .slick-arrow
+    .slick-btn
       position absolute
-      top 50%
+      top 40%
       height 3rem
       width 1rem
       background-color $login-blue-bg
@@ -11,23 +11,65 @@
       .glyphicon
         top 27%
         right .4rem
-      &.slick-next
+      &.slick-btn-next
         right .5rem
-      &.slick-prev
+      &.slick-btn-prev
+        left .5rem
+    .slick-info
+      position absolute
+      top 27%
+      background-color transparent
+      border 0
+      color $login-blue-bg
+      &.slick-info-next
+        right .5rem
+      &.slick-info-prev
         left .5rem
     &-group
       padding 1rem 2rem
       margin-left
-      li
-        min-width 400px
-        .row
-          margin-right 0px
-          margin-left  0px
+      &.form-group
+        margin-bottom 0
+      ul
+        margin 0
+        padding 0
+        list-style-type none
+        overflow hidden
+        li
+          position relative
+          height auto
+          display inline-block
+          .row
+            margin-right 0px
+            margin-left  0px
+            width 500px
+    &-info
+      ul
+        .c-module-slick-detail
+          width 32%
+          border-radius 1em
+          border 1px solid $btn-blue
+          background-color $color-white
+          &.active
+            background-color $btn-blue
+            .ion.ion-close
+              display block
     &-detail
       background-color $bg-slick-blue
       padding 10px
       margin 2px
       width 49%
+      float left
+      cursor pointer
+      .ion.ion-close
+        float right
+        display none
+        color $color-white
+        cursor pointer
+      &.active
+        background-color $btn-blue
+        .ion.ion-close
+          display block
 
 
 

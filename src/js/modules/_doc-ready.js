@@ -15,12 +15,13 @@ $(document).ready(function() {
     $('[data-js-card]').CardFlip();
     $('[data-js-charts-filter]').ChartsTypeButtons();
     $('[data-js-module-data-dropdown]').ModuleDataDropDown();
-    $('[data-js-popup-preview').PopUpPreview();
-    if($('#loginModal').length){
-        $('#loginModal').modal({backdrop:"static",show:false})
+    $('[data-js-popup-preview]').PopUpPreview();
+    if($('.modal').length){
+        $('.modal').modal({backdrop:"static",show:false})
     }
 
     $('[data-tree-view]').TreeView();
     $('[data-add-menu]').AddMenu();
     $('[data-slick-detail]').Slick();
+
 });

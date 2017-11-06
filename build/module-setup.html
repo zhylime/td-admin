@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="./assets/css/vendor/bootstrap.css">
     <link rel="stylesheet" href="./assets/css/vendor/font-awesome.css">
     <link rel="stylesheet" href="./assets/css/vendor/ionicons.css">
-    <link rel="stylesheet" href="./assets/css/vendor/b.tabs.css"><!--[if (gt IE 8)]><!-->
+    <link rel="stylesheet" href="./assets/css/vendor/b.tabs.css">
+    <link rel="stylesheet" href="./assets/css/vendor/slick.css"><!--[if (gt IE 8)]><!-->
     <link rel="stylesheet" href="./assets/css/app.css"><!--<![endif]-->
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/ico">
   </head>
   <body>
-    <link rel="stylesheet" href="./assets/css/vendor/slick.css">
     <div data-add-menu class="c-module c-module-setup container-fluid isEdit js-setup-menu">
       <form method="POST" name="moduleSetupForm" id="moduleSetupForm" data-js-form-validator class="c-form-setup c-form">
         <div class="row">
@@ -162,7 +162,7 @@
               </div>
             </div>
             <div class="row setupOptionImgGroup js-radio-images">
-              <div class="col-sm-12"><img id="setupOptionImg1" src="./assets/images/module-setup-markup.jpg"><img id="setupOptionImg2" src="./assets/images/module-setup-markup.jpg"><img id="setupOptionImg3" src="./assets/images/module-setup-markup.jpg"><img id="setupOptionImg4" src="./assets/images/module-setup-markup.jpg"><img id="setupOptionImg5" src="./assets/images/module-setup-markup.jpg"><img id="setupOptionImg6" src="./assets/images/module-setup-markup.jpg"></div>
+              <div class="col-sm-12"><img id="setupOptionImg1" src="./assets/images/module-setup-markup-1.png"><img id="setupOptionImg2" src="./assets/images/module-setup-markup-2.png"><img id="setupOptionImg3" src="./assets/images/module-setup-markup-3.png"><img id="setupOptionImg4" src="./assets/images/module-setup-markup-4.png"><img id="setupOptionImg5" src="./assets/images/module-setup-markup-5.png"><img id="setupOptionImg6" src="./assets/images/module-setup-markup-6.png"></div>
             </div>
           </div>
         </div>
@@ -272,34 +272,78 @@
                 </ul>
                 <div data-js-charts-filter class="tab-content">
                   <div role="tabpanel" id="chartType" class="tab-pane active">
-                    <div style="margin-top:0px positon:relative" class="input-group col-sm-12">
+                    <div data-slick-detail class="row c-module-slick">
+                      <div class="col-sm-12">
+                        <div class="button btn btn-primary slick-info slick-info-prev">
+                          <div class="glyphicon glyphicon-chevron-left"></div>
+                        </div>
+                        <div class="button btn btn-primary slick-info slick-info-next">
+                          <div class="glyphicon glyphicon-chevron-right"></div>
+                        </div>
+                        <div class="form-group c-module-slick-group c-module-slick-info">
+                          <ul class="js-select-info">
+                            <li>
+                              <div class="row">
+                                <div class="c-module-slick-detail"><span>搭建数据门户</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>快速搭建数据门户</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>搭建数据门户</span><span class="ion ion-close js-remove-detail"></span></div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="row">
+                                <div class="c-module-slick-detail"><span>搭建数据门户</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>搭建数据门户</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>搭建数据门户</span><span class="ion ion-close js-remove-detail"></span></div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input-group col-sm-12">
                       <input type="text" placeholder="" class="form-control"><span class="input-group-btn">
                         <button class="btn btn-default btn-search">搜索</button></span>
                     </div>
                     <div data-slick-detail="data-slick-detail" class="row c-module-slick">
                       <div class="col-sm-12">
-                        <div class="button btn btn-primary slick-arrow slick-prev">
+                        <div class="button btn btn-primary slick-btn slick-btn-prev">
                           <div class="glyphicon glyphicon-chevron-left"></div>
                         </div>
-                        <div class="button btn btn-primary slick-arrow slick-next">
+                        <div class="button btn btn-primary slick-btn slick-btn-next">
                           <div class="glyphicon glyphicon-chevron-right"></div>
                         </div>
                         <div class="form-group c-module-slick-group">
                           <ul class="js-select-data">
-                            <li data-id="0">
+                            <li>
                               <div class="row">
-                                <div class="col-sm-5 col-xs-5 c-module-slick-detail">sss</div>
-                                <div class="col-sm-5 col-xs-5 c-module-slick-detail">sss</div>
+                                <div class="c-module-slick-detail"><span>数据权限对比模块</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据权限对比模块</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据建模雨需求分析</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据建模雨需求分析</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>民航飞机空军专用器械图</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>民航飞机空军专用器械图</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据权限对比模块</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据权限对比模块</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据建模雨需求分析</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据建模雨需求分析</span><span class="ion ion-close js-remove-detail"></span></div>
                               </div>
                               <div class="row">
-                                <div class="col-sm-5 col-xs-5 c-module-slick-detail">sss</div>
-                                <div class="col-sm-5 col-xs-5 c-module-slick-detail">sss</div>
+                                <div class="c-module-slick-detail"><span>民航飞机空军专用器械图</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>民航飞机空军专用器械图</span><span class="ion ion-close js-remove-detail"></span></div>
                               </div>
                             </li>
-                            <li data-id="1">2222</li>
-                            <li data-id="2">3333</li>
-                            <li data-id="3">4444</li>
-                            <li data-id="4">5555s</li>
+                            <li>
+                              <div class="row">
+                                <div class="c-module-slick-detail"><span>民航飞机空军专用器械图</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>民航飞机空军专用器械图</span><span class="ion ion-close js-remove-detail"></span></div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="row">
+                                <div class="c-module-slick-detail"><span>数据权限对比模块</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据权限对比模块</span><span class="ion ion-close js-remove-detail"></span></div>
+                              </div>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -328,34 +372,50 @@
                         </label>
                       </div>
                     </div>
-                    <div style="margin-top:0px positon:relative" class="input-group col-sm-12">
+                    <div class="input-group col-sm-12">
                       <input type="text" placeholder="" class="form-control"><span class="input-group-btn">
                         <button class="btn btn-default btn-search">搜索</button></span>
                     </div>
                     <div data-slick-detail="data-slick-detail" class="row c-module-slick">
                       <div class="col-sm-12">
-                        <div class="button btn btn-primary slick-arrow slick-prev">
+                        <div class="button btn btn-primary slick-btn slick-btn-prev">
                           <div class="glyphicon glyphicon-chevron-left"></div>
                         </div>
-                        <div class="button btn btn-primary slick-arrow slick-next">
+                        <div class="button btn btn-primary slick-btn slick-btn-next">
                           <div class="glyphicon glyphicon-chevron-right"></div>
                         </div>
                         <div class="form-group c-module-slick-group">
                           <ul class="js-select-data">
-                            <li data-id="0">
+                            <li>
                               <div class="row">
-                                <div class="col-sm-5 col-xs-5 c-module-slick-detail">sss</div>
-                                <div class="col-sm-5 col-xs-5 c-module-slick-detail">sss</div>
+                                <div class="c-module-slick-detail"><span>数据权限对比模块</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据权限对比模块</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据建模雨需求分析</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据建模雨需求分析</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>民航飞机空军专用器械图</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>民航飞机空军专用器械图</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据权限对比模块</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据权限对比模块</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据建模雨需求分析</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据建模雨需求分析</span><span class="ion ion-close js-remove-detail"></span></div>
                               </div>
                               <div class="row">
-                                <div class="col-sm-5 col-xs-5 c-module-slick-detail">sss</div>
-                                <div class="col-sm-5 col-xs-5 c-module-slick-detail">sss</div>
+                                <div class="c-module-slick-detail"><span>民航飞机空军专用器械图</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>民航飞机空军专用器械图</span><span class="ion ion-close js-remove-detail"></span></div>
                               </div>
                             </li>
-                            <li data-id="1">2222</li>
-                            <li data-id="2">3333</li>
-                            <li data-id="3">4444</li>
-                            <li data-id="4">5555s</li>
+                            <li>
+                              <div class="row">
+                                <div class="c-module-slick-detail"><span>民航飞机空军专用器械图</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>民航飞机空军专用器械图</span><span class="ion ion-close js-remove-detail"></span></div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="row">
+                                <div class="c-module-slick-detail"><span>数据权限对比模块</span><span class="ion ion-close js-remove-detail"></span></div>
+                                <div class="c-module-slick-detail"><span>数据权限对比模块</span><span class="ion ion-close js-remove-detail"></span></div>
+                              </div>
+                            </li>
                           </ul>
                         </div>
                       </div>

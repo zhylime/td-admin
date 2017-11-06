@@ -12,13 +12,14 @@ head
 
  
 
-  
+
   link(rel='stylesheet', href=paths.css + 'vendor/bootstrap.css')
   link(rel='stylesheet', href=paths.css + 'vendor/font-awesome.css')
   link(rel='stylesheet', href=paths.css + 'vendor/ionicons.css')
   link(rel='stylesheet', href=paths.css + 'vendor/b.tabs.css')
+  block headCss
   <!--[if (gt IE 8)]><!-->
   link(rel='stylesheet', href=paths.css + 'app.css')
   <!--<![endif]-->
   link(rel='shortcut icon' href=paths.img + 'favicon.ico' type='image/ico')
-  block headCss
+

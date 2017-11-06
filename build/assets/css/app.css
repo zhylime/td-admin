@@ -3060,8 +3060,11 @@ html {
 .modalSetup .button-single {
   text-align: center;
 }
+.modalAddData .button-group {
+  padding-top: 0rem;
+}
 .modalAddData .modal-dialog {
-  min-width: 500px;
+  min-width: 600px;
 }
 .modalAddData .modal-dialog .modal-header {
   border: 0;
@@ -3757,39 +3760,93 @@ html {
 .c-module-slick {
   position: relative;
 }
-.c-module-slick .slick-arrow {
+.c-module-slick .slick-btn {
   position: absolute;
-  top: 50%;
+  top: 40%;
   height: 3rem;
   width: 1rem;
   background-color: #7897c5;
   border-color: #7897c5;
 }
-.c-module-slick .slick-arrow .glyphicon {
+.c-module-slick .slick-btn .glyphicon {
   top: 27%;
   right: 0.4rem;
 }
-.c-module-slick .slick-arrow.slick-next {
+.c-module-slick .slick-btn.slick-btn-next {
   right: 0.5rem;
 }
-.c-module-slick .slick-arrow.slick-prev {
+.c-module-slick .slick-btn.slick-btn-prev {
+  left: 0.5rem;
+}
+.c-module-slick .slick-info {
+  position: absolute;
+  top: 27%;
+  background-color: transparent;
+  border: 0;
+  color: #7897c5;
+}
+.c-module-slick .slick-info.slick-info-next {
+  right: 0.5rem;
+}
+.c-module-slick .slick-info.slick-info-prev {
   left: 0.5rem;
 }
 .c-module-slick-group {
   padding: 1rem 2rem;
 }
 .c-module-slick-group margin-left,
-.c-module-slick-group li {
-  min-width: 400px;
+.c-module-slick-group.form-group {
+  margin-bottom: 0;
 }
-.c-module-slick-group margin-left .row,
-.c-module-slick-group li .row {
+.c-module-slick-group ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+}
+.c-module-slick-group ul li {
+  position: relative;
+  height: auto;
+  display: inline-block;
+}
+.c-module-slick-group ul li .row {
   margin-right: 0px;
   margin-left: 0px;
+  width: 500px;
+}
+.c-module-slick-info ul .c-module-slick-detail {
+  width: 32%;
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+  border: 1px solid #77cdff;
+  background-color: #fff;
+}
+.c-module-slick-info ul .c-module-slick-detail.active {
+  background-color: #77cdff;
+}
+.c-module-slick-info ul .c-module-slick-detail.active .ion.ion-close {
+  display: block;
 }
 .c-module-slick-detail {
   background-color: #eef5ff;
   padding: 10px;
   margin: 2px;
   width: 49%;
+  float: left;
+  cursor: pointer;
+}
+.c-module-slick-detail .ion.ion-close {
+  float: right;
+  display: none;
+  color: #fff;
+  cursor: pointer;
+}
+.c-module-slick-detail.active {
+  background-color: #77cdff;
+}
+.c-module-slick-detail.active .ion.ion-close {
+  display: block;
 }

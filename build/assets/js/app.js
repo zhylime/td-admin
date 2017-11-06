@@ -678,9 +678,9 @@ $(document).ready(function () {
   $('[data-js-card]').CardFlip();
   $('[data-js-charts-filter]').ChartsTypeButtons();
   $('[data-js-module-data-dropdown]').ModuleDataDropDown();
-  $('[data-js-popup-preview').PopUpPreview();
-  if ($('#loginModal').length) {
-    $('#loginModal').modal({ backdrop: "static", show: false });
+  $('[data-js-popup-preview]').PopUpPreview();
+  if ($('.modal').length) {
+    $('.modal').modal({ backdrop: "static", show: false });
   }
 
   $('[data-tree-view]').TreeView();
@@ -1116,8 +1116,16 @@ var Slick = function (_MLP$apps$MLPModule) {
       _get(Slick.prototype.__proto__ || Object.getPrototypeOf(Slick.prototype), 'init', this).call(this);
       this.el = {
         slickOpt: this.el.target.find('.js-select-data'),
-        prev: this.el.target.find('.slick-prev'),
-        next: this.el.target.find('.slick-next')
+        slickBtn: this.el.target.find('.js-select-info'),
+        prev: this.el.target.find('.slick-btn-prev'),
+        next: this.el.target.find('.slick-btn-next'),
+        prevBtn: this.el.target.find('.slick-info-prev'),
+        nextBtn: this.el.target.find('.slick-info-next'),
+        closeBtn: this.el.target.find('.js-remove-detail'),
+        detail: this.el.target.find(".c-module-slick-detail")
+      };
+      this.className = {
+        active: "active"
       };
 
       this.events();
@@ -1125,12 +1133,41 @@ var Slick = function (_MLP$apps$MLPModule) {
   }, {
     key: 'events',
     value: function events() {
+      var _this = this;
+
       this.el.slickOpt.slick({
-        centerMode: false,
-        infinite: true,
+        slide: "li",
         fade: true,
+        centerMode: false,
+        centerPadding: '0px',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        draggable: false,
         nextArrow: this.el.prev,
         prevArrow: this.el.next
+      });
+
+      this.el.slickBtn.slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        draggable: false,
+        nextArrow: this.el.prevBtn,
+        prevArrow: this.el.nextBtn
+      });
+
+      this.el.closeBtn.off("click").on("click", function (evt) {
+        $(evt.target).parent().remove();
+      });
+
+      this.el.detail.off("click").on("click", function (evt) {
+        var $target = $(evt.target).closest(".c-module-slick-detail");
+        if ($target.hasClass(_this.className.active)) {
+          $target.removeClass(_this.className.active);
+        } else {
+          $target.addClass(_this.className.active);
+        }
       });
     }
   }]);

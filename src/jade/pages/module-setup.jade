@@ -3,8 +3,8 @@ include ../mixins/_chart-type-radio-group
 include ../mixins/_slick-carousel
 block footer
 block header
+block headCss
   link(rel='stylesheet', href=paths.css + 'vendor/slick.css')
-
 block footerJs
   script(src=paths.js + 'vendor/slick.min.js')
 
@@ -172,12 +172,12 @@ block content
                 .setupOption-image.setupOption-image--6.js-radio-item(data-image="setupOptionImg6")
           .row.setupOptionImgGroup.js-radio-images
             .col-sm-12
-              img#setupOptionImg1(src=paths.img + 'module-setup-markup.jpg')
-              img#setupOptionImg2(src=paths.img + 'module-setup-markup.jpg')
-              img#setupOptionImg3(src=paths.img + 'module-setup-markup.jpg')
-              img#setupOptionImg4(src=paths.img + 'module-setup-markup.jpg')
-              img#setupOptionImg5(src=paths.img + 'module-setup-markup.jpg')
-              img#setupOptionImg6(src=paths.img + 'module-setup-markup.jpg')
+              img#setupOptionImg1(src=paths.img + 'module-setup-markup-1.png')
+              img#setupOptionImg2(src=paths.img + 'module-setup-markup-2.png')
+              img#setupOptionImg3(src=paths.img + 'module-setup-markup-3.png')
+              img#setupOptionImg4(src=paths.img + 'module-setup-markup-4.png')
+              img#setupOptionImg5(src=paths.img + 'module-setup-markup-5.png')
+              img#setupOptionImg6(src=paths.img + 'module-setup-markup-6.png')
 
 
       .row.button-group
@@ -255,7 +255,37 @@ block content
                   a(href="#bizForm", aria-controls="bizForm", role="tab", data-toggle="tab") 业务表单
               .tab-content(data-js-charts-filter)
                 .tab-pane.active(role="tabpanel", id="chartType")
-                  .input-group.col-sm-12(style='margin-top:0px positon:relative')
+                  .row.c-module-slick(data-slick-detail)
+                    .col-sm-12
+                      .button.btn.btn-primary.slick-info.slick-info-prev
+                        .glyphicon.glyphicon-chevron-left
+                      .button.btn.btn-primary.slick-info.slick-info-next
+                        .glyphicon.glyphicon-chevron-right
+                      .form-group.c-module-slick-group.c-module-slick-info
+                        ul.js-select-info
+                          li
+                            .row
+                              .c-module-slick-detail
+                                span 搭建数据门户
+                                span.ion.ion-close.js-remove-detail
+                              .c-module-slick-detail
+                                span 快速搭建数据门户
+                                span.ion.ion-close.js-remove-detail
+                              .c-module-slick-detail
+                                span 搭建数据门户
+                                span.ion.ion-close.js-remove-detail
+                          li
+                            .row
+                              .c-module-slick-detail
+                                span 搭建数据门户
+                                span.ion.ion-close.js-remove-detail
+                              .c-module-slick-detail
+                                span 搭建数据门户
+                                span.ion.ion-close.js-remove-detail
+                              .c-module-slick-detail
+                                span 搭建数据门户
+                                span.ion.ion-close.js-remove-detail
+                  .input-group.col-sm-12
                     input.form-control(type='text', placeholder='')
                     span.input-group-btn
                       button.btn.btn-default.btn-search 搜索
@@ -263,7 +293,7 @@ block content
 
                 .tab-pane(role="tabpanel", id="bizForm")
                   +chartTypeRadioGroup()
-                  .input-group.col-sm-12(style='margin-top:0px positon:relative')
+                  .input-group.col-sm-12
                     input.form-control(type='text', placeholder='')
                     span.input-group-btn
                       button.btn.btn-default.btn-search 搜索
