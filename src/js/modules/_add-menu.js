@@ -13,6 +13,8 @@ class AddMenu extends MLP.apps.MLPModule {
       editMenuText: this.el.target.find(".js-edit-text"),
       editMneu: this.el.target.find(".js-edit-menu"),
       confirmInfoBtn: this.el.target.find(".js-confirm-info"),
+      editInfoBtn: this.el.target.find(".js-edit-info"),
+      modalInfo: this.el.target.find(".js-addData-modal")
     };
     this.className = {
       isEdit:"isEdit"
@@ -34,6 +36,7 @@ class AddMenu extends MLP.apps.MLPModule {
     this.confirmRemove();
     this.orderMenu();
     this.editMenuText();
+    this.openInfoModal();
     this.el.confirmBtn.off('click').on('click', (evt) =>{
 
       let nodeIndex;
@@ -90,6 +93,7 @@ class AddMenu extends MLP.apps.MLPModule {
         _this.removeNode();
         _this.orderMenu();
         _this.editMenuText();
+        _this.openInfoModal();
         break;
       case 1:
         nodeIndex = "node-second";
@@ -103,6 +107,7 @@ class AddMenu extends MLP.apps.MLPModule {
         _this.removeNode();
         _this.orderMenu();
         _this.editMenuText();
+        _this.openInfoModal();
         break;
       default:
         nodeIndex = "node-third";
@@ -116,16 +121,22 @@ class AddMenu extends MLP.apps.MLPModule {
         _this.removeNode();
         _this.orderMenu();
         _this.editMenuText();
+        _this.openInfoModal();
     }
 
   }
 
   //打开modal
   openModal() {
-    $(".js-open-modal").on('click', (evt) =>{
+    $(".js-open-modal").off('click').on('click', (evt) =>{
       this.target = $(evt.target);
       this.$action = $(evt.target).data("action");
       this.el.modalItem.modal('show');
+    });
+  }
+  openInfoModal() {
+    $(".js-edit-info").off('click').on('click', (evt) =>{
+      this.el.modalInfo.modal('show');
     });
   }
 

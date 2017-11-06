@@ -22,5 +22,14 @@ $(document).ready(function() {
 
     $('[data-tree-view]').TreeView();
     $('[data-add-menu]').AddMenu();
-
+    $('.js-select-data').slick({
+        centerMode: false,
+        centerPadding: '0px',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        fade:true,
+        nextArrow: this.$nextArrow
+        prevArrow: this.$prevArrow,
+    });
 });

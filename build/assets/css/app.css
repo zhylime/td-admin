@@ -2937,41 +2937,47 @@ html {
 }
 .moduleEdit textarea,
 .modalSetup textarea,
-.modalConfirm textarea {
+.modalConfirm textarea,
+.modalAddData textarea {
   resize: none;
   min-height: 100px;
 }
 @media (min-width: 768px) {
   .moduleEdit,
   .modalSetup,
-  .modalConfirm {
+  .modalConfirm,
+  .modalAddData {
     margin-top: -300px;
     top: 50%;
   }
 }
 .moduleEdit .modal-header,
 .modalSetup .modal-header,
-.modalConfirm .modal-header {
+.modalConfirm .modal-header,
+.modalAddData .modal-header {
   background-color: #7897c5;
   color: #fff;
 }
 @media (min-width: 768px) {
   .moduleEdit .modal-dialog,
   .modalSetup .modal-dialog,
-  .modalConfirm .modal-dialog {
+  .modalConfirm .modal-dialog,
+  .modalAddData .modal-dialog {
     width: 400px;
   }
 }
 @media (min-width: 768px) {
   .moduleEdit .modal-dialog,
   .modalSetup .modal-dialog,
-  .modalConfirm .modal-dialog {
+  .modalConfirm .modal-dialog,
+  .modalAddData .modal-dialog {
     min-width: 450px;
   }
 }
 .moduleEdit .modal-body,
 .modalSetup .modal-body,
-.modalConfirm .modal-body {
+.modalConfirm .modal-body,
+.modalAddData .modal-body {
   padding-right: 2rem;
   padding-left: 2rem;
   background-color: #f8fbff;
@@ -2979,36 +2985,48 @@ html {
 }
 .moduleEdit .control-group select.input-xlarge,
 .modalSetup .control-group select.input-xlarge,
-.modalConfirm .control-group select.input-xlarge {
+.modalConfirm .control-group select.input-xlarge,
+.modalAddData .control-group select.input-xlarge {
   width: 100%;
   min-height: 100px;
 }
 .moduleEdit .button-group,
 .modalSetup .button-group,
-.modalConfirm .button-group {
+.modalConfirm .button-group,
+.modalAddData .button-group {
   padding-top: 2rem;
 }
 @media (min-width: 768px) {
   .moduleEdit .button-group .button-single:nth-child(1),
   .modalSetup .button-group .button-single:nth-child(1),
-  .modalConfirm .button-group .button-single:nth-child(1) {
+  .modalConfirm .button-group .button-single:nth-child(1),
+  .modalAddData .button-group .button-single:nth-child(1) {
     text-align: center;
   }
 }
+.moduleEdit .modal-header button,
+.modalSetup .modal-header button,
+.modalConfirm .modal-header button,
+.modalAddData .modal-header button {
+  min-width: auto;
+}
 .moduleEdit button,
 .modalSetup button,
-.modalConfirm button {
+.modalConfirm button,
+.modalAddData button {
   min-width: 100px;
   outline: none !important;
 }
 .moduleEdit .control-group,
 .modalSetup .control-group,
-.modalConfirm .control-group {
+.modalConfirm .control-group,
+.modalAddData .control-group {
   padding-top: 2rem;
 }
 .moduleEdit .control-group button,
 .modalSetup .control-group button,
-.modalConfirm .control-group button {
+.modalConfirm .control-group button,
+.modalAddData .control-group button {
   min-width: 70px;
   margin-bottom: 10px;
   border-radius: 1rem;
@@ -3019,25 +3037,70 @@ html {
 }
 .moduleEdit #businessIndex,
 .modalSetup #businessIndex,
-.modalConfirm #businessIndex {
+.modalConfirm #businessIndex,
+.modalAddData #businessIndex {
   min-height: 210px;
   scroll: auto;
 }
 .moduleEdit label.form__label.ion-android-warning,
 .modalSetup label.form__label.ion-android-warning,
-.modalConfirm label.form__label.ion-android-warning {
+.modalConfirm label.form__label.ion-android-warning,
+.modalAddData label.form__label.ion-android-warning {
   font-size: 100px;
   color: #f6cc9f;
 }
 .moduleEdit .text-description,
 .modalSetup .text-description,
-.modalConfirm .text-description {
+.modalConfirm .text-description,
+.modalAddData .text-description {
   font-size: 16px;
   line-height: 150%;
   margin-top: 1rem;
 }
 .modalSetup .button-single {
   text-align: center;
+}
+.modalAddData .modal-dialog {
+  min-width: 500px;
+}
+.modalAddData .modal-dialog .modal-header {
+  border: 0;
+}
+.modalAddData .modal-dialog .modal-body {
+  padding: 0;
+}
+.modalAddData .modal-dialog .modal-body .nav-tabs[role="tablist"] li[role="presentation"] {
+  width: 50%;
+  text-align: center;
+  font-weight: bold;
+}
+.modalAddData .modal-dialog .modal-body .nav-tabs[role="tablist"] li[role="presentation"] a {
+  margin: 0;
+}
+.modalAddData .modal-dialog .modal-body .nav-tabs[role="tablist"] li[role="presentation"].active a {
+  border: 1px solid #7897c5;
+  border-top: 0;
+}
+.modalAddData .modal-dialog .modal-body .nav-tabs[role="tablist"] li[role="presentation"]:not(.active) a {
+  background: #d9e6f9;
+}
+.modalAddData .modal-dialog .modal-body .nav-tabs[role="tablist"] > li > a {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+.modalAddData .modal-dialog .modal-body .tab-pane {
+  padding: 1rem 1rem;
+}
+.modalAddData .modal-dialog .modal-body .tab-pane .c-chartTypeRadioGroup,
+.modalAddData .modal-dialog .modal-body .tab-pane .input-group {
+  text-align: center;
+}
+.modalAddData .modal-dialog .modal-body .tab-pane .input-group {
+  padding-left: 7%;
+  padding-right: 8%;
 }
 .c-module-charts {
   max-width: 1000px;

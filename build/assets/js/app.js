@@ -215,7 +215,9 @@ var AddMenu = function (_MLP$apps$MLPModule) {
         modalConfirm: this.el.target.find(".js-confirm-modal"),
         editMenuText: this.el.target.find(".js-edit-text"),
         editMneu: this.el.target.find(".js-edit-menu"),
-        confirmInfoBtn: this.el.target.find(".js-confirm-info")
+        confirmInfoBtn: this.el.target.find(".js-confirm-info"),
+        editInfoBtn: this.el.target.find(".js-edit-info"),
+        modalInfo: this.el.target.find(".js-addData-modal")
       };
       this.className = {
         isEdit: "isEdit"
@@ -239,6 +241,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
       this.confirmRemove();
       this.orderMenu();
       this.editMenuText();
+      this.openInfoModal();
       this.el.confirmBtn.off('click').on('click', function (evt) {
 
         var nodeIndex = void 0;
@@ -296,6 +299,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
           _this.removeNode();
           _this.orderMenu();
           _this.editMenuText();
+          _this.openInfoModal();
           break;
         case 1:
           nodeIndex = "node-second";
@@ -309,6 +313,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
           _this.removeNode();
           _this.orderMenu();
           _this.editMenuText();
+          _this.openInfoModal();
           break;
         default:
           nodeIndex = "node-third";
@@ -322,6 +327,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
           _this.removeNode();
           _this.orderMenu();
           _this.editMenuText();
+          _this.openInfoModal();
       }
     }
 
@@ -332,10 +338,19 @@ var AddMenu = function (_MLP$apps$MLPModule) {
     value: function openModal() {
       var _this4 = this;
 
-      $(".js-open-modal").on('click', function (evt) {
+      $(".js-open-modal").off('click').on('click', function (evt) {
         _this4.target = $(evt.target);
         _this4.$action = $(evt.target).data("action");
         _this4.el.modalItem.modal('show');
+      });
+    }
+  }, {
+    key: 'openInfoModal',
+    value: function openInfoModal() {
+      var _this5 = this;
+
+      $(".js-edit-info").off('click').on('click', function (evt) {
+        _this5.el.modalInfo.modal('show');
       });
     }
 
@@ -344,13 +359,13 @@ var AddMenu = function (_MLP$apps$MLPModule) {
   }, {
     key: 'removeNode',
     value: function removeNode() {
-      var _this5 = this;
+      var _this6 = this;
 
       var _this = this;
       this.removeStatus = false;
       $(".js-remove-node").on('click', function (evt) {
-        _this5.$removeAction = $(evt.target).data("action");
-        switch (_this5.$removeAction) {
+        _this6.$removeAction = $(evt.target).data("action");
+        switch (_this6.$removeAction) {
           case "removeThird":
             $(evt.target).parent().remove();
             break;
@@ -367,12 +382,12 @@ var AddMenu = function (_MLP$apps$MLPModule) {
   }, {
     key: 'confirmRemove',
     value: function confirmRemove($target) {
-      var _this6 = this;
+      var _this7 = this;
 
       $(".js-remove-btn").off('click').on('click', function (evt) {
-        _this6.removeStatus = true;
-        _this6.el.modalConfirm.modal('hide');
-        if (_this6.removeStatus) {
+        _this7.removeStatus = true;
+        _this7.el.modalConfirm.modal('hide');
+        if (_this7.removeStatus) {
           var $parentNode = $target.parent();
           $target.remove();
           if (!$parentNode.find(".list-group-item").length) {
@@ -652,24 +667,32 @@ $.mlpPlugin(CheckBox, 'CheckBox', false, false);
 
 $(document).ready(function () {
 
-  // $('[data-js-top-menu]').TopMenu();
-  // $.TopMenuSmall();
+    // $('[data-js-top-menu]').TopMenu();
+    // $.TopMenuSmall();
 
 
-  $('[data-js-full-page]').FullPage();
-  $('[data-js-sideNav]').SideNav();
-  $('[data-js-module-setup-radios]').RadioBtn();
-  $('[data-js-checbox]').CheckBox();
-  $('[data-js-card]').CardFlip();
-  $('[data-js-charts-filter]').ChartsTypeButtons();
-  $('[data-js-module-data-dropdown]').ModuleDataDropDown();
-  $('[data-js-popup-preview').PopUpPreview();
-  if ($('#loginModal').length) {
-    $('#loginModal').modal({ backdrop: "static", show: false });
-  }
+    $('[data-js-full-page]').FullPage();
+    $('[data-js-sideNav]').SideNav();
+    $('[data-js-module-setup-radios]').RadioBtn();
+    $('[data-js-checbox]').CheckBox();
+    $('[data-js-card]').CardFlip();
+    $('[data-js-charts-filter]').ChartsTypeButtons();
+    $('[data-js-module-data-dropdown]').ModuleDataDropDown();
+    $('[data-js-popup-preview').PopUpPreview();
+    if ($('#loginModal').length) {
+        $('#loginModal').modal({ backdrop: "static", show: false });
+    }
 
-  $('[data-tree-view]').TreeView();
-  $('[data-add-menu]').AddMenu();
+    $('[data-tree-view]').TreeView();
+    $('[data-add-menu]').AddMenu();
+    $('.js-select-data').slick({
+        centerMode: false,
+        centerPadding: '0px',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        fade: true
+    });
 });
 "use strict";
 
