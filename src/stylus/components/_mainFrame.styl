@@ -12,7 +12,7 @@
   &__sideNav
     background $sidenav-bg-blue
     position relative
-    transition width 0s
+    transition width .5s
     min-height 600px
     
     &__arrow
@@ -199,7 +199,7 @@
     span
     a
     b
-      transition all 0s
+      transition all .5s
   &__sideNav[data-status='close']
     width 45px
     span
@@ -222,6 +222,7 @@
     width -o-calc(100% - 300px)
     background white
     margin-top 0
+    transition width .5s
     &[data-status='close']
       width calc(100% - 45px)
       width -webkit-calc(100% - 45px)
