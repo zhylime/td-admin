@@ -2585,11 +2585,11 @@ html {
 .c-mainFrame__sideNav {
   background: #195baf;
   position: relative;
-  -webkit-transition: width 0.5s;
-  -moz-transition: width 0.5s;
-  -o-transition: width 0.5s;
-  -ms-transition: width 0.5s;
-  transition: width 0.5s;
+  -webkit-transition: width 1s;
+  -moz-transition: width 1s;
+  -o-transition: width 1s;
+  -ms-transition: width 1s;
+  transition: width 1s;
   min-height: 600px;
 }
 .c-mainFrame__sideNav__arrow {
@@ -2846,11 +2846,11 @@ html {
   width: -o-calc(100% - 300px);
   background: #fff;
   margin-top: 0;
-  -webkit-transition: width 0.5s;
-  -moz-transition: width 0.5s;
-  -o-transition: width 0.5s;
-  -ms-transition: width 0.5s;
-  transition: width 0.5s;
+  -webkit-transition: width 1s;
+  -moz-transition: width 1s;
+  -o-transition: width 1s;
+  -ms-transition: width 1s;
+  transition: width 1s;
 }
 .c-mainFrame__tabContent[data-status='close'] {
   width: calc(100% - 45px);
