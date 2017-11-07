@@ -2571,6 +2571,7 @@ html {
 }
 .c-mainFrame {
   font-size: 0;
+  min-height: 600px;
 }
 .c-mainFrame .tab-active {
   background: #04489e;
@@ -2584,11 +2585,12 @@ html {
 .c-mainFrame__sideNav {
   background: #195baf;
   position: relative;
-  -webkit-transition: width 1s;
-  -moz-transition: width 1s;
-  -o-transition: width 1s;
-  -ms-transition: width 1s;
-  transition: width 1s;
+  -webkit-transition: width 0s;
+  -moz-transition: width 0s;
+  -o-transition: width 0s;
+  -ms-transition: width 0s;
+  transition: width 0s;
+  min-height: 600px;
 }
 .c-mainFrame__sideNav__arrow {
   background: #052c5d;
@@ -2807,11 +2809,11 @@ html {
 .c-mainFrame__sideNav[data-status='open'] span,
 .c-mainFrame__sideNav[data-status='open'] a,
 .c-mainFrame__sideNav[data-status='open'] b {
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -o-transition: all 1s;
-  -ms-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  -o-transition: all 0s;
+  -ms-transition: all 0s;
+  transition: all 0s;
 }
 .c-mainFrame__sideNav[data-status='close'] {
   width: 45px;
@@ -2844,6 +2846,12 @@ html {
   width: -o-calc(100% - 300px);
   background: #fff;
   margin-top: 0;
+}
+.c-mainFrame__tabContent[data-status='close'] {
+  width: calc(100% - 45px);
+  width: -webkit-calc(100% - 45px);
+  width: -moz-calc(100% - 45px);
+  width: -o-calc(100% - 45px);
 }
 .c-mainFrame__tabContent .nav-tabs {
   padding-left: 0;

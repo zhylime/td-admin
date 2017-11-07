@@ -9,7 +9,7 @@ class SideNav extends MLP.apps.MLPModule {
         clickableItems: this.el.target.find('a'),
         sideNav: $('[data-js-sidenav]'),
         tabContent: $('#mainFrameTabs'),
-        arrow: this.el.target.find('.js-arrow'),
+        arrow: this.el.target.find('.js-arrow')
 
       }
       this.events();
@@ -68,6 +68,7 @@ class SideNav extends MLP.apps.MLPModule {
         var status = $(this).attr('data-status') == 'open' ? 'close' : 'open';
         $(_this.el.arrow).attr('data-status', status);
         $(_this.el.sideNav).attr('data-status', status);
+        $("#mainFrameTabs").attr('data-status', status);
       });
 
 

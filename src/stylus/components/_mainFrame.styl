@@ -1,5 +1,6 @@
 .c-mainFrame
   font-size 0
+  min-height 600px
   .tab-active
     background $tabs-nav-active-blue
   &__sideNav
@@ -11,7 +12,8 @@
   &__sideNav
     background $sidenav-bg-blue
     position relative
-    transition width 1s
+    transition width 0s
+    min-height 600px
     
     &__arrow
       background $tabs-nav-arrow-bg-blue
@@ -197,7 +199,7 @@
     span
     a
     b
-      transition all 1s    
+      transition all 0s
   &__sideNav[data-status='close']
     width 45px
     span
@@ -220,6 +222,11 @@
     width -o-calc(100% - 300px)
     background white
     margin-top 0
+    &[data-status='close']
+      width calc(100% - 45px)
+      width -webkit-calc(100% - 45px)
+      width -moz-calc(100% - 45px)
+      width -o-calc(100% - 45px)
     
     .nav-tabs
       padding-left 0

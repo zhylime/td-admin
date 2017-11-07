@@ -1049,6 +1049,7 @@ var SideNav = function (_MLP$apps$MLPModule) {
         var status = $(this).attr('data-status') == 'open' ? 'close' : 'open';
         $(_this.el.arrow).attr('data-status', status);
         $(_this.el.sideNav).attr('data-status', status);
+        $("#mainFrameTabs").attr('data-status', status);
       });
     }
   }, {
