@@ -14,9 +14,15 @@ class FileInput extends MLP.apps.MLPModule {
   events() {
 
     this.el.uploadFile.fileinput({
+      language: 'zh',
+      browseClass: "btn btn-success",
+      browseLabel: "选择上传",
+      showUpload: true,
+      showCaption: true,
       allowedFileExtensions: ["jpg", "gif", "png", "txt"],
       previewClass: "bg-warning",
-      maxFilePreviewSize: 20240
+      maxFilePreviewSize: 20240,
+      showUpload: false
     });
   }
 

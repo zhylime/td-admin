@@ -2942,6 +2942,9 @@ html {
     min-width: 650px;
   }
 }
+.demandDataModal .c-form-input .file-label {
+  color: #354967;
+}
 .demandDataModal .c-form-input .file-input {
   padding-top: 1rem;
 }
