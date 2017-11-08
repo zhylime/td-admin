@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>td admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <meta name="description" content="td admin">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./assets/css/vendor/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/vendor/font-awesome.css">
+    <link rel="stylesheet" href="./assets/css/vendor/ionicons.css">
+    <link rel="stylesheet" href="./assets/css/vendor/b.tabs.css"><!--[if (gt IE 8)]><!-->
+    <link rel="stylesheet" href="./assets/css/app.css"><!--<![endif]-->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/ico">
+  </head>
+  <body>
+    <div class="c-module c-module-source container-fluid">
+      <form method="POST" role="form" name="moduleSourceForm" id="moduleSourceForm" data-js-form-validator class="c-form c-form-module form-horizontal">
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="form-group text-label">
+              <label for="dataType" class="form__label">数据库类型</label>
+            </div>
+          </div>
+          <div class="col-sm-10 col-xs-10">
+            <div class="form-group">
+              <select type="text" data-js-mobile-smart-label id="dataType" name="dataType" data-rule="required" class="form-control">
+                <option value="" class="active"></option>
+                <option value="001">达梦数据库1</option>
+                <option value="002">达梦数据库2</option>
+              </select>
+              <div class="text-danger l-padding-top-1 hide input-error-message">请选择数据类型</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="form-group text-label">
+              <label for="ipAddress" class="form__label">主机地址</label>
+            </div>
+          </div>
+          <div class="col-sm-10 col-xs-10">
+            <div class="form-group">
+              <input type="text" id="ipAddress" name="ipAddress" data-rule="required" placeholder="192.192.0.1" class="form-control">
+              <div class="text-danger l-padding-top-1 hide input-error-message">请输入IP地址</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="form-group text-label">
+              <label for="port" class="form__label">端口</label>
+            </div>
+          </div>
+          <div class="col-sm-10 col-xs-10">
+            <div class="form-group">
+              <input type="text" id="port" name="port" data-rule="required" placeholder="8080" class="form-control">
+              <div class="text-danger l-padding-top-1 hide input-error-message">请输入端口</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="form-group text-label">
+              <label for="serverName" class="form__label">服务名</label>
+            </div>
+          </div>
+          <div class="col-sm-10 col-xs-10">
+            <div class="form-group">
+              <input type="text" id="serverName" name="serverName" data-rule="required" placeholder="ORLD" class="form-control">
+              <div class="text-danger l-padding-top-1 hide input-error-message">请输入服务名</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="form-group text-label">
+              <label for="name" class="form__label">用户名</label>
+            </div>
+          </div>
+          <div class="col-sm-10 col-xs-10">
+            <div class="form-group">
+              <input type="text" id="name" name="name" data-rule="required" placeholder="fishwon" class="form-control">
+              <div class="text-danger l-padding-top-1 hide input-error-message">请输入用户名称</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="form-group text-label">
+              <label for="password" class="form__label">密码</label>
+            </div>
+          </div>
+          <div class="col-sm-10 col-xs-10">
+            <div class="form-group">
+              <input type="password" id="password" name="password" data-rule="required" class="form-control">
+              <div class="text-danger l-padding-top-1 hide input-error-message">请输入密码</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="form-group text-label">
+              <label for="password" class="form__label">确认密码</label>
+            </div>
+          </div>
+          <div class="col-sm-10 col-xs-10">
+            <div class="form-group">
+              <input type="password" id="ConfirmPassword" name="ConfirmPassword" data-rule="required" class="form-control">
+              <div class="text-danger l-padding-top-1 hide input-error-message">请确认密码</div>
+            </div>
+          </div>
+        </div>
+        <div class="row button-group">
+          <div class="col-sm-12 button-single text-center">
+            <div class="form-group">
+              <button type="button" class="btn btn-primary js-form-submit">保存</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    window.MLP = window.MLP || {};
+    MLP.paths = {"root":"./","static":"./assets/","img":"./assets/images/","js":"./assets/js/","css":"./assets/css/"};
+    
+    
+  </script>
+  <script src="./assets/js/vendor/jquery.js"></script>
+  <script src="./assets/js/vendor/jquery-ui.js"></script>
+  <script src="./assets/js/vendor/bootstrap.js"></script>
+  <script src="./assets/js/vendor/jquery.validate.js"></script>
+  <script src="./assets/js/vendor/mainFrame.js"></script>
+  <script src="./assets/js/vendor/b.tabs.js"></script>
+  <script src="./assets/js/vendor/isotope.pkgd.min.js"></script>
+  <script src="./assets/js/app.js"></script><!--[if IE 9]>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script><![endif]-->
+</html>

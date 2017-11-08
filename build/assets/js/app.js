@@ -686,6 +686,9 @@ $(document).ready(function () {
   $('[data-tree-view]').TreeView();
   $('[data-add-menu]').AddMenu();
   $('[data-slick-detail]').Slick();
+
+  //form validator
+  $('[data-js-form-validator]').Validator();
 });
 "use strict";
 
@@ -1269,3 +1272,169 @@ var TreeView = function (_MLP$apps$MLPModule) {
 }(MLP.apps.MLPModule);
 
 $.mlpPlugin(TreeView, 'TreeView', false, false);
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Validator = function (_MLP$apps$MLPModule) {
+  _inherits(Validator, _MLP$apps$MLPModule);
+
+  function Validator() {
+    _classCallCheck(this, Validator);
+
+    return _possibleConstructorReturn(this, (Validator.__proto__ || Object.getPrototypeOf(Validator)).apply(this, arguments));
+  }
+
+  _createClass(Validator, [{
+    key: 'init',
+    value: function init() {
+      _get(Validator.prototype.__proto__ || Object.getPrototypeOf(Validator.prototype), 'init', this).call(this);
+      this.sel.errorMsg = ".input-error-message";
+      this.sel.callback = this.el.target.attr('data-callback');
+      this.events();
+    }
+  }, {
+    key: 'events',
+    value: function events() {
+      var _this3 = this;
+
+      $('.js-form-submit').on("click", function (evt) {
+        if (!_this3.validate()) {
+          var errInfoPostion = _this3.getPostion();
+          if (errInfoPostion) {
+            $('html, body').animate({
+              scrollTop: errInfoPostion - 100
+            });
+          }
+          return false;
+        }
+
+        return false;
+      });
+    }
+  }, {
+    key: 'validate',
+    value: function validate() {
+      var _this4 = this;
+
+      var _isPassed, _this;
+      this.hideErrorMsg();
+      _isPassed = true;
+      _this = this;
+      $(this.el.target.context).find(" :input").each(function (index, item) {
+        var _rulesSplit;
+        if ($(item).is(":visible") || $(item).data("js-visible")) {
+          var _rules = $(item).data('rule');
+          if (_rules) {
+            _rulesSplit = _rules.split("|");
+            $.each(_rulesSplit, function (index, rule) {
+              if (!_this4.isRulePassed($(item), rule)) {
+                $(item).siblings('.input-error-message').removeClass('hide');
+                $(item).parent().siblings('.input-error-message').removeClass('hide');
+                _isPassed = false;
+              }
+            });
+          }
+        }
+      });
+      return _isPassed;
+    }
+  }, {
+    key: 'isRulePassed',
+    value: function isRulePassed(_this, rule) {
+      var _isValid = true,
+          number;
+      var splitRule = rule.split(':');
+      if (splitRule[0] == 'max' || splitRule[0] == 'min') {
+        rule = splitRule[0];
+        number = splitRule[1];
+      }
+
+      switch (rule) {
+        case 'required':
+          if (_this.attr('type') == 'checkbox') {
+            if (!_this.is(':checked')) {
+              _isValid = false;
+            }
+          } else {
+            if ($.trim(_this.val()).length === 0) {
+              _isValid = false;
+            }
+          }
+          break;
+
+        case 'max':
+          if ($.trim(_this.val()).length > number) {
+            _isValid = false;
+          }
+          break;
+        case 'max':
+          if ($.trim(_this.val()).length > number) {
+            _isValid = false;
+          }
+          break;
+        case 'min':
+          if ($.trim(_this.val()).length < number) {
+            _isValid = false;
+          }
+          break;
+        case 'noZZOnBeginning':
+          if (_this.val().toLowerCase().substr(0, 2) === 'zz') {
+            _isValid = false;
+          }
+          break;
+        case 'firstThreeNoRepeat':
+          var pattern = /([a-zA-Z0-3])\1{2,}/;
+          if (pattern.test(_this.val())) {
+            _isValid = false;
+          }
+          break;
+        case 'alpha':
+          var pattern = /[0-9~`!@#\$\%\^&*()_+,\.\/\;\'[\]\\<>\?\:\"\{\}\|～！@＃¥％……&＊（）＋——－＝、］［｛｝｜‘；：“／。，《》？]/i;
+          if (pattern.test(_this.val())) {
+            _isValid = false;
+          }
+          break;
+        case 'email':
+          var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+          if (!pattern.test(_this.val())) {
+            _isValid = false;
+          }
+          break;
+        case 'mobile':
+          var pattern = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i;
+          if (!pattern.test(_this.val())) {
+            _isValid = false;
+          }
+      }
+
+      return _isValid;
+    }
+  }, {
+    key: 'hideErrorMsg',
+    value: function hideErrorMsg() {
+      $(this.sel.errorMsg).addClass('hide');
+    }
+  }, {
+    key: 'getPostion',
+    value: function getPostion() {
+      for (var i = 0; i < $(".input-error-message").length; i++) {
+        if ($(".input-error-message").eq(i).is(":visible")) {
+          return $(".input-error-message").eq(i).offset().top;
+        }
+      }
+    }
+  }]);
+
+  return Validator;
+}(MLP.apps.MLPModule);
+
+$.mlpPlugin(Validator, 'Validator', false, false);

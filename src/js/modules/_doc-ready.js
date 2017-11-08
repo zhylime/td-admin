@@ -24,4 +24,7 @@ $(document).ready(function() {
     $('[data-add-menu]').AddMenu();
     $('[data-slick-detail]').Slick();
 
+    //form validator
+    $('[data-js-form-validator]').Validator();
+
 });

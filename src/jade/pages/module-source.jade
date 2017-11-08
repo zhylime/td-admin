@@ -1,0 +1,77 @@
+extends ../partials/_template
+include ../mixins/_card-flip
+include ../mixins/_chart-type-radio-group
+block footer
+block header
+//- 数据源
+block content
+  .c-module.c-module-source.container-fluid
+    form.c-form.c-form-module.form-horizontal(method="POST" role="form"  name="moduleSourceForm" id="moduleSourceForm" data-js-form-validator)
+
+      .row
+        .col-sm-2
+          .form-group.text-label
+            label.form__label(for="dataType") 数据库类型
+        .col-sm-10.col-xs-10
+          .form-group
+            select.form-control(type="text" data-js-mobile-smart-label id="dataType" name="dataType" data-rule="required")
+              option(value="" class="active")
+              option(value="001") 达梦数据库1
+              option(value="002") 达梦数据库2
+            div.text-danger.l-padding-top-1.hide.input-error-message 请选择数据类型
+      .row
+        .col-sm-2
+          .form-group.text-label
+            label.form__label(for="ipAddress") 主机地址
+        .col-sm-10.col-xs-10
+          .form-group
+            input.form-control(type="text" id="ipAddress" name="ipAddress" data-rule="required" placeholder="192.192.0.1")
+            div.text-danger.l-padding-top-1.hide.input-error-message 请输入IP地址
+
+      .row
+        .col-sm-2
+          .form-group.text-label
+            label.form__label(for="port") 端口
+        .col-sm-10.col-xs-10
+          .form-group
+            input.form-control(type="text" id="port" name="port" data-rule="required" placeholder="8080")
+            div.text-danger.l-padding-top-1.hide.input-error-message 请输入端口
+
+      .row
+        .col-sm-2
+          .form-group.text-label
+            label.form__label(for="serverName") 服务名
+        .col-sm-10.col-xs-10
+          .form-group
+            input.form-control(type="text" id="serverName" name="serverName" data-rule="required" placeholder="ORLD")
+            div.text-danger.l-padding-top-1.hide.input-error-message 请输入服务名
+
+      .row
+        .col-sm-2
+          .form-group.text-label
+            label.form__label(for="name") 用户名
+        .col-sm-10.col-xs-10
+          .form-group
+            input.form-control(type="text" id="name" name="name" data-rule="required" placeholder="fishwon")
+            div.text-danger.l-padding-top-1.hide.input-error-message 请输入用户名称
+      .row
+        .col-sm-2
+          .form-group.text-label
+            label.form__label(for="password") 密码
+        .col-sm-10.col-xs-10
+          .form-group
+            input.form-control(type="password" id="password" name="password" data-rule="required" )
+            div.text-danger.l-padding-top-1.hide.input-error-message 请输入密码
+      .row
+        .col-sm-2
+          .form-group.text-label
+            label.form__label(for="password") 确认密码
+        .col-sm-10.col-xs-10
+          .form-group
+            input.form-control(type="password" id="ConfirmPassword" name="ConfirmPassword" data-rule="required" )
+            div.text-danger.l-padding-top-1.hide.input-error-message 请确认密码
+
+      .row.button-group
+        .col-sm-12.button-single.text-center
+          .form-group
+            button.btn.btn-primary.js-form-submit(type='button') 保存
