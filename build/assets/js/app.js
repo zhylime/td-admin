@@ -699,6 +699,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -728,11 +730,18 @@ var FileInput = function (_MLP$apps$MLPModule) {
   }, {
     key: "events",
     value: function events() {
-
-      this.el.uploadFile.fileinput({
-        previewFileType: "text",
-        allowedFileExtensions: ["txt", "md", "ini", "text"],
-        previewClass: "bg-warning"
+      this.el.uploadFile.on("click", function (evt) {
+        $("#fileUpload").fileinput(_defineProperty({
+          language: 'zh',
+          theme: 'fa',
+          browseClass: "btn btn-success",
+          browseLabel: "选择上传",
+          showUpload: true,
+          showCaption: true,
+          allowedFileExtensions: ["jpg", "gif", "png"],
+          previewClass: "bg-warning",
+          maxFilePreviewSize: 20240
+        }, "showUpload", false));
       });
     }
   }]);
