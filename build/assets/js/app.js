@@ -693,7 +693,7 @@ $(document).ready(function () {
   //file upload
   $('[data-js-file-input]').FileInput();
 });
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -717,9 +717,9 @@ var FileInput = function (_MLP$apps$MLPModule) {
   }
 
   _createClass(FileInput, [{
-    key: "init",
+    key: 'init',
     value: function init() {
-      _get(FileInput.prototype.__proto__ || Object.getPrototypeOf(FileInput.prototype), "init", this).call(this);
+      _get(FileInput.prototype.__proto__ || Object.getPrototypeOf(FileInput.prototype), 'init', this).call(this);
 
       this.el = {
         uploadFile: this.el.target.find('.js-file-input')
@@ -728,21 +728,20 @@ var FileInput = function (_MLP$apps$MLPModule) {
       this.events();
     }
   }, {
-    key: "events",
+    key: 'events',
     value: function events() {
-      this.el.uploadFile.on("click", function (evt) {
-        $("#fileUpload").fileinput(_defineProperty({
-          language: 'zh',
-          theme: 'fa',
-          browseClass: "btn btn-success",
-          browseLabel: "选择上传",
-          showUpload: true,
-          showCaption: true,
-          allowedFileExtensions: ["jpg", "gif", "png"],
-          previewClass: "bg-warning",
-          maxFilePreviewSize: 20240
-        }, "showUpload", false));
-      });
+
+      $("#fileUpload").fileinput(_defineProperty({
+        language: 'zh',
+        theme: 'fa',
+        browseClass: "btn btn-success",
+        browseLabel: "选择上传",
+        showUpload: true,
+        showCaption: true,
+        allowedFileExtensions: ["jpg", "gif", "png"],
+        previewClass: "bg-warning",
+        maxFilePreviewSize: 20240
+      }, 'showUpload', false));
     }
   }]);
 
