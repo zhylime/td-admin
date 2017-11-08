@@ -474,10 +474,8 @@ var AddMenu = function (_MLP$apps$MLPModule) {
     value: function isSetMenu() {
       var menuItem = $(".js-menu-item").find(".list-group");
       if (menuItem && menuItem.length) {
-        console.log("11111");
         $(".js-setup-menu").addClass(this.className.hasItem);
       } else if (!menuItem.length) {
-        console.log("00000");
         $(".js-setup-menu").removeClass(this.className.hasItem);
       }
     }
@@ -706,7 +704,8 @@ $(document).ready(function () {
   if ($('.modal').length) {
     $('.modal').modal({ backdrop: "static", show: false });
   }
-
+  //select
+  $('.js-select-fancy').selectpicker();
   $('[data-tree-view]').TreeView();
   $('[data-add-menu]').AddMenu();
   $('[data-slick-detail]').Slick();

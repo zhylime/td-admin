@@ -247,10 +247,8 @@ class AddMenu extends MLP.apps.MLPModule {
   isSetMenu(){
     const menuItem = $(".js-menu-item").find(".list-group");
     if(menuItem && menuItem.length){
-      console.log("11111");
       $(".js-setup-menu").addClass(this.className.hasItem);
     }else if(!menuItem.length) {
-      console.log("00000");
       $(".js-setup-menu").removeClass(this.className.hasItem);
     }
   }

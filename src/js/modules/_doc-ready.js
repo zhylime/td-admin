@@ -19,7 +19,8 @@ $(document).ready(function() {
     if($('.modal').length){
         $('.modal').modal({backdrop:"static",show:false})
     }
-
+    //select
+    $('.js-select-fancy').selectpicker();
     $('[data-tree-view]').TreeView();
     $('[data-add-menu]').AddMenu();
     $('[data-slick-detail]').Slick();
@@ -29,5 +30,7 @@ $(document).ready(function() {
 
     //file upload
     $('[data-js-file-input]').FileInput();
+
+
 
 });
