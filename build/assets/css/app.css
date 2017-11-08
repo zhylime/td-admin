@@ -2507,6 +2507,12 @@ html {
 .c-form .l-p-top-2 {
   padding-top: 2rem;
 }
+.c-form .l-p-2 {
+  padding-left: 1rem;
+}
+.c-form .r-p-2 {
+  padding-right: 1rem;
+}
 .c-header {
   background: #041e45 url("../images/bg-header.jpg") no-repeat left top;
   color: #fff;
@@ -2917,6 +2923,9 @@ html {
 }
 .c-mainFrame__tabContent .nav-tabs>li>a button.navTabsCloseBtn:hover {
   color: #000 !important;
+}
+.demandDataModal .modal-dialog {
+  min-width: 550px !important;
 }
 .demandDataModal .modal-dialog .modal-header {
   background-color: #7897c5;
