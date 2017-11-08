@@ -220,7 +220,8 @@ var AddMenu = function (_MLP$apps$MLPModule) {
         modalInfo: this.el.target.find(".js-addData-modal")
       };
       this.className = {
-        isEdit: "isEdit"
+        isEdit: "isEdit",
+        hasItem: "hasItem"
       };
 
       this.$action = "addFirst";
@@ -242,6 +243,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
       this.orderMenu();
       this.editMenuText();
       this.openInfoModal();
+      this.isSetMenu();
       this.el.confirmBtn.off('click').on('click', function (evt) {
 
         var nodeIndex = void 0;
@@ -300,6 +302,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
           _this.orderMenu();
           _this.editMenuText();
           _this.openInfoModal();
+          _this.isSetMenu();
           break;
         case 1:
           nodeIndex = "node-second";
@@ -314,6 +317,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
           _this.orderMenu();
           _this.editMenuText();
           _this.openInfoModal();
+          _this.isSetMenu();
           break;
         default:
           nodeIndex = "node-third";
@@ -321,13 +325,14 @@ var AddMenu = function (_MLP$apps$MLPModule) {
           $startTag = $sibling && $sibling.length ? "" : "<ul class='list-group-third list-group'>";
           $endTag = $sibling && $sibling.length ? "" : "</ul>";
           $secondNode = $sibling && $sibling.length ? $sibling : $target;
-          $item = $startTag + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon glyphicon'></span><span class='icon node-icon ion-stop'></span><span class='text-edit '>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeThird'></span>" + "<span class='ion ion-edit js-edit-text'></span>" + "</li>" + $endTag;
+          $item = $startTag + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon glyphicon'></span><span class='icon node-icon ion-stop'></span><span class='text-edit '>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeThird'></span>" + "<span class='ion ion-edit js-edit-text'></span><span class='ion text-info js-edit-info'>设置菜单内容布局</span><span class='ion ion-edit text-info js-edit-info'></span>" + "</li>" + $endTag;
           $secondNode.append($item);
           _this.openModal();
           _this.removeNode();
           _this.orderMenu();
           _this.editMenuText();
           _this.openInfoModal();
+          _this.isSetMenu();
       }
     }
 
@@ -368,10 +373,12 @@ var AddMenu = function (_MLP$apps$MLPModule) {
         switch (_this6.$removeAction) {
           case "removeThird":
             $(evt.target).parent().remove();
+            _this.isSetMenu();
             break;
           default:
             $(".js-confirm-modal").modal("show");
             _this.confirmRemove($(evt.target).parent());
+            _this.isSetMenu();
             break;
         }
       });
@@ -384,6 +391,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
     value: function confirmRemove($target) {
       var _this7 = this;
 
+      var _this = this;
       $(".js-remove-btn").off('click').on('click', function (evt) {
         _this7.removeStatus = true;
         _this7.el.modalConfirm.modal('hide');
@@ -393,6 +401,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
           if (!$parentNode.find(".list-group-item").length) {
             $parentNode.remove();
           }
+          _this.isSetMenu();
         }
       });
     }
@@ -456,6 +465,21 @@ var AddMenu = function (_MLP$apps$MLPModule) {
           }
         });
       });
+    }
+
+    //是否有菜单
+
+  }, {
+    key: 'isSetMenu',
+    value: function isSetMenu() {
+      var menuItem = $(".js-menu-item").find(".list-group");
+      if (menuItem && menuItem.length) {
+        console.log("11111");
+        $(".js-setup-menu").addClass(this.className.hasItem);
+      } else if (!menuItem.length) {
+        console.log("00000");
+        $(".js-setup-menu").removeClass(this.className.hasItem);
+      }
     }
   }]);
 

@@ -71,33 +71,47 @@
                 </div>
               </div>
               <div class="col-sm-12 col-md-9 col-xs-10">
-                <div class="form-group"></div>
                 <div data-tree-view class="panel panel-default">
                   <div class="panel-body">
                     <div class="js-menu-item treeview">
-                      <ul class="list-group">
-                        <li data-index="0" class="list-group-item node-first"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span><span class="text-edit">关于我们</span><span class="ion ion-arrow"><span data-action="orderFirst" class="ion ion-arrow-down-b js-arrow-down"></span><span data-action="orderFirst" class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeALL" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span data-action="addSecond" class="ion ion-plus-round js-open-modal"></span>
-                          <ul class="list-group list-group-second">
-                            <li data-index="1" class="list-group-item node-second"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span><span class="text-edit">公司简介</span><span class="ion ion-arrow"><span class="ion ion-arrow-down-b js-arrow-down"></span><span class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeSecond" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span data-action="addThird" class="ion ion-plus-round js-open-modal"></span>
-                              <ul class="list-group list-group-third">
-                                <li data-index="2" class="list-group-item node-third"><span class="icon glyphicon"></span><span class="icon node-icon ion-stop"></span><span class="text-edit">联系电话</span><span class="ion ion-arrow"><span class="ion ion-arrow-down-b js-arrow-down"></span><span class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeThird" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span class="ion text-info js-edit-info">设置菜单内容布局</span><span class="ion ion-edit text-info js-edit-info"></span></li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                      <ul class="list-group">
-                        <li data-index="0" class="list-group-item node-first"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span><span class="text-edit">数据库</span><span class="ion ion-arrow"><span data-action="orderFirst" class="ion ion-arrow-down-b js-arrow-down"></span><span data-action="orderFirst" class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeALL" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span data-action="addSecond" class="ion ion-plus-round js-open-modal"></span>
-                          <ul class="list-group-second list-group">
-                            <li data-index="1" class="list-group-item node-second"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span><span class="text-edit">数据源</span><span class="ion ion-arrow"><span class="ion ion-arrow-down-b js-arrow-down"></span><span class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeSecond" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span data-action="addThird" class="ion ion-plus-round js-open-modal"></span>
-                              <ul class="list-group-third list-group">
-                                <li data-index="2" class="list-group-item node-third"><span class="icon glyphicon"></span><span class="icon node-icon ion-stop"></span><span class="text-edit">数据分析</span><span class="ion ion-arrow"><span class="ion ion-arrow-down-b js-arrow-down"></span><span class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeThird" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span class="ion text-info js-edit-info">设置菜单内容布局</span><span class="ion ion-edit text-info js-edit-info"></span></li>
-                                <li data-index="2" class="list-group-item node-third"><span class="icon glyphicon"></span><span class="icon node-icon ion-stop"></span><span class="text-edit">图表分析</span><span class="ion ion-arrow"><span class="ion ion-arrow-down-b js-arrow-down"></span><span class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeThird" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span class="ion text-info js-edit-info">设置菜单内容布局</span><span class="ion ion-edit text-info js-edit-info"></span></li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
+                      <!--基本结构-->
+                      <!--ul.list-group
+                      li.list-group-item.node-first(data-index = "0")
+                        span.icon.expand-icon.ion-arrow-down-b
+                        span.icon.node-icon
+                        span.text-edit 关于我们
+                        span.ion.ion-arrow
+                          span.ion.ion-arrow-down-b.js-arrow-down(data-action="orderFirst")
+                          span.ion.ion-arrow-up-b.js-arrow-up(data-action="orderFirst")
+                        span.ion.ion-close.js-remove-node(data-action="removeALL")
+                        span.ion.ion-edit.js-edit-text
+                        span.ion.ion-plus-round.js-open-modal(data-action="addSecond")
+                        ul.list-group.list-group-second
+                          li.list-group-item.node-second(data-index = "1")
+                            span.icon.expand-icon.ion-arrow-down-b
+                            span.icon.node-icon
+                            span.text-edit 公司简介
+                            span.ion.ion-arrow
+                              span.ion.ion-arrow-down-b.js-arrow-down
+                              span.ion.ion-arrow-up-b.js-arrow-up
+                            span.ion.ion-close.js-remove-node(data-action="removeSecond")
+                            span.ion.ion-edit.js-edit-text
+                            span.ion.ion-plus-round.js-open-modal(data-action="addThird")
+                            ul.list-group.list-group-third
+                              li.list-group-item.node-third(data-index = "2")
+                                span.icon.glyphicon
+                                span.icon.node-icon.ion-stop
+                                span.text-edit 联系电话
+                                span.ion.ion-arrow
+                                  span.ion.ion-arrow-down-b.js-arrow-down
+                                  span.ion.ion-arrow-up-b.js-arrow-up
+                                span.ion.ion-close.js-remove-node(data-action="removeThird")
+                                span.ion.ion-edit.js-edit-text
+                                span.ion.text-info.js-edit-info 设置菜单内容布局
+                                span.ion.ion-edit.text-info.js-edit-info
+                      
+                      
+                      -->
                     </div>
                   </div>
                 </div>
@@ -110,8 +124,9 @@
                 </div>
               </div>
               <div class="col-sm-12 col-md-9 col-xs-10">
-                <div class="form-group"></div>
-                <button type="button" class="btn btn-primary js-confirm-info">确定</button>
+                <div class="form-group">
+                  <button type="button" class="btn btn-primary js-confirm-info">确定</button>
+                </div>
               </div>
             </div>
           </div>
@@ -166,7 +181,7 @@
             </div>
           </div>
         </div>
-        <div class="row button-group">
+        <div class="row button-group c-module-setup-button l-p-top-4">
           <div class="col-sm-6 col-xs-6">
             <div class="form-group text-center">
               <button type="button" class="btn btn-primary">保存</button>
@@ -191,24 +206,24 @@
                 <div class="row">
                   <div class="col-sm-3">
                     <div class="form-group text-label">
-                      <label for="name" class="form__label">菜单名称</label>
+                      <label for="menuName" class="form__label">菜单名称</label>
                     </div>
                   </div>
                   <div class="col-sm-7">
                     <div class="form-group">
-                      <input type="text" id="name" name="name" autocomplete="off" class="form-control js-add-menu">
+                      <input type="text" id="menuName" name="menuName" autocomplete="off" class="form-control js-add-menu">
                       <div class="text-danger l-padding-top-1 hide input-error-message">请输入有效名称</div>
                     </div>
                   </div>
                 </div>
                 <div class="row button-group">
-                  <div class="col-sm-6 button-single">
-                    <div class="form-group">
+                  <div class="col-sm-6 col-xs-6 button-single">
+                    <div class="form-group text-right">
                       <button type="button" class="btn btn-primary js-save-item">保存</button>
                     </div>
                   </div>
-                  <div class="col-sm-6 button-single">
-                    <div class="form-group">
+                  <div class="col-sm-6 col-xs-6 button-single">
+                    <div class="form-group text-left">
                       <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">取消</button>
                     </div>
                   </div>
@@ -228,25 +243,25 @@
             <div class="modal-body">
               <form class="c-form">
                 <div class="row">
-                  <div class="col-sm-4">
+                  <div class="col-sm-4 col-xs-4">
                     <div class="form-group text-right">
                       <label class="form__label text-description"><img src="./assets/images/icon-info.png" alt="item"></label>
                     </div>
                   </div>
-                  <div class="col-sm-7">
+                  <div class="col-sm-7 col-xs-7">
                     <div class="form-group">
                       <label class="form__label text-blue text-bold text-description">将删除所有子菜单，是否删除？</label>
                     </div>
                   </div>
                 </div>
                 <div class="row button-group text-center">
-                  <div class="col-sm-6 button-single">
-                    <div class="form-group">
+                  <div class="col-sm-6 col-xs-6 button-single">
+                    <div class="form-group text-right">
                       <button type="button" class="btn btn-primary js-remove-btn">确定</button>
                     </div>
                   </div>
-                  <div class="col-sm-6 button-single">
-                    <div class="form-group">
+                  <div class="col-sm-6 col-xs-6 button-single">
+                    <div class="form-group text-left">
                       <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">取消</button>
                     </div>
                   </div>

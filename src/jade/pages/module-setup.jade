@@ -49,11 +49,11 @@ block content
               .form-group.text-label.hidden-xs
                 label.form__label(for="")
             .col-sm-12.col-md-9.col-xs-10
-              .form-group
               .panel.panel-default(data-tree-view)
                 .panel-body
                   .js-menu-item.treeview
-                    ul.list-group
+                    //基本结构
+                    //ul.list-group
                       li.list-group-item.node-first(data-index = "0")
                         span.icon.expand-icon.ion-arrow-down-b
                         span.icon.node-icon
@@ -87,51 +87,7 @@ block content
                                 span.ion.ion-edit.js-edit-text
                                 span.ion.text-info.js-edit-info 设置菜单内容布局
                                 span.ion.ion-edit.text-info.js-edit-info
-                    ul.list-group
-                      li.list-group-item.node-first(data-index = "0")
-                        span.icon.expand-icon.ion-arrow-down-b
-                        span.icon.node-icon
-                        span.text-edit 数据库
-                        span.ion.ion-arrow
-                          span.ion.ion-arrow-down-b.js-arrow-down(data-action="orderFirst")
-                          span.ion.ion-arrow-up-b.js-arrow-up(data-action="orderFirst")
-                        span.ion.ion-close.js-remove-node(data-action="removeALL")
-                        span.ion.ion-edit.js-edit-text
-                        span.ion.ion-plus-round.js-open-modal(data-action="addSecond")
-                        ul.list-group-second.list-group
-                          li.list-group-item.node-second(data-index = "1")
-                            span.icon.expand-icon.ion-arrow-down-b
-                            span.icon.node-icon
-                            span.text-edit 数据源
-                            span.ion.ion-arrow
-                              span.ion.ion-arrow-down-b.js-arrow-down
-                              span.ion.ion-arrow-up-b.js-arrow-up
-                            span.ion.ion-close.js-remove-node(data-action="removeSecond")
-                            span.ion.ion-edit.js-edit-text
-                            span.ion.ion-plus-round.js-open-modal(data-action="addThird")
-                            ul.list-group-third.list-group
-                              li.list-group-item.node-third(data-index = "2")
-                                span.icon.glyphicon
-                                span.icon.node-icon.ion-stop
-                                span.text-edit 数据分析
-                                span.ion.ion-arrow
-                                  span.ion.ion-arrow-down-b.js-arrow-down
-                                  span.ion.ion-arrow-up-b.js-arrow-up
-                                span.ion.ion-close.js-remove-node(data-action="removeThird")
-                                span.ion.ion-edit.js-edit-text
-                                span.ion.text-info.js-edit-info 设置菜单内容布局
-                                span.ion.ion-edit.text-info.js-edit-info
-                              li.list-group-item.node-third(data-index = "2")
-                                span.icon.glyphicon
-                                span.icon.node-icon.ion-stop
-                                span.text-edit 图表分析
-                                span.ion.ion-arrow
-                                  span.ion.ion-arrow-down-b.js-arrow-down
-                                  span.ion.ion-arrow-up-b.js-arrow-up
-                                span.ion.ion-close.js-remove-node(data-action="removeThird")
-                                span.ion.ion-edit.js-edit-text
-                                span.ion.text-info.js-edit-info 设置菜单内容布局
-                                span.ion.ion-edit.text-info.js-edit-info
+
 
           .row.c-module-setup-confirm
             .col-sm-0.col-md-3
@@ -139,7 +95,7 @@ block content
                 label.form__label(for="")
             .col-sm-12.col-md-9.col-xs-10
               .form-group
-              button.btn.btn-primary.js-confirm-info(type="button") 确定
+                button.btn.btn-primary.js-confirm-info(type="button") 确定
         .col-sm-6.c-module-setup__right.l-p-bottom-5(data-js-module-setup-radios)
           .row
             .col-sm-12
@@ -180,7 +136,7 @@ block content
               img#setupOptionImg6(src=paths.img + 'module-setup-markup-6.png')
 
 
-      .row.button-group
+      .row.button-group.c-module-setup-button.l-p-top-4
         .col-sm-6.col-xs-6
           .form-group.text-center
             button.btn.btn-primary(type='button') 保存
@@ -201,17 +157,17 @@ block content
               .row
                 .col-sm-3
                   .form-group.text-label
-                    label.form__label(for="name") 菜单名称
+                    label.form__label(for="menuName") 菜单名称
                 .col-sm-7
                   .form-group
-                    input.form-control.js-add-menu(type="text" id="name" name="name" autocomplete='off')
+                    input.form-control.js-add-menu(type="text" id="menuName" name="menuName" autocomplete='off')
                     div.text-danger.l-padding-top-1.hide.input-error-message 请输入有效名称
               .row.button-group
-                .col-sm-6.button-single
-                  .form-group
+                .col-sm-6.col-xs-6.button-single
+                  .form-group.text-right
                     button.btn.btn-primary.js-save-item(type='button') 保存
-                .col-sm-6.button-single
-                  .form-group
+                .col-sm-6.col-xs-6.button-single
+                  .form-group.text-left
                     button.btn.btn-default(type='button' data-dismiss='modal' aria-label='Close') 取消
 
     //确认删除信息的弹出框
@@ -223,19 +179,19 @@ block content
           .modal-body
             form.c-form
               .row
-                .col-sm-4
+                .col-sm-4.col-xs-4
                   .form-group.text-right
                     label.form__label.text-description
                       img(src="./assets/images/icon-info.png", alt="item")
-                .col-sm-7
+                .col-sm-7.col-xs-7
                   .form-group
                     label.form__label.text-blue.text-bold.text-description 将删除所有子菜单，是否删除？
               .row.button-group.text-center
-                .col-sm-6.button-single
-                  .form-group
+                .col-sm-6.col-xs-6.button-single
+                  .form-group.text-right
                     button.btn.btn-primary.js-remove-btn(type='button') 确定
-                .col-sm-6.button-single
-                  .form-group
+                .col-sm-6.col-xs-6.button-single
+                  .form-group.text-left
                     button.btn.btn-default(type='button' data-dismiss='modal' aria-label='Close') 取消
 
     //内容布局添加数据的弹出框

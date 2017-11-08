@@ -25,7 +25,7 @@ class FileInput extends MLP.apps.MLPModule {
       maxFilePreviewSize: 20240,
       showUpload: false
     });
-    
+
   }
 
 }

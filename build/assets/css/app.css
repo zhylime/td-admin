@@ -2507,10 +2507,13 @@ html {
 .c-form .l-p-top-2 {
   padding-top: 2rem;
 }
-.c-form .l-p-2 {
+.c-form .l-p-top-4 {
+  padding-top: 4rem;
+}
+.c-form .l-p-left-2 {
   padding-left: 1rem;
 }
-.c-form .r-p-2 {
+.c-form .l-p-right-2 {
   padding-right: 1rem;
 }
 .c-header {
@@ -3567,6 +3570,9 @@ html {
     padding-right: 2rem;
   }
 }
+.c-module-setup .panel {
+  margin-bottom: 10px;
+}
 .c-module-setup .setupOption-image {
   background: url("../images/module-setup-spirit-icons.png");
   background-repeat: no-repeat;
@@ -3660,7 +3666,6 @@ html {
 }
 .c-module-setup .treeview .list-group-second {
   border: none;
-  margin-left: 20px;
 }
 .c-module-setup .treeview .list-group-second .list-group-item {
   padding: 0;
@@ -3668,6 +3673,18 @@ html {
 .c-module-setup .treeview .list-group-third .list-group-item {
   border: none;
   padding: 0;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+.c-module-setup .treeview .list-group-third .list-group-item:hover {
+  background-color: #90b5e6;
+  color: #fff;
+}
+.c-module-setup .treeview .list-group-third .list-group-item:hover .ion {
+  color: #fff;
 }
 .c-module-setup .treeview .list-group-third .list-group-item .text-info {
   font-size: 0.9rem;
@@ -3675,6 +3692,7 @@ html {
   margin-right: 0.3rem;
 }
 .c-module-setup .treeview .list-group-item {
+  padding: 10px;
   line-height: 1.8rem;
   height: auto;
 }
@@ -3692,9 +3710,15 @@ html {
   font-weight: bold;
   font-size: 1.1rem;
 }
+.c-module-setup .treeview .node-second .icon.expand-icon.ion-arrow-down-b {
+  margin-left: 20px;
+}
 .c-module-setup .treeview .node-second .text-edit {
   font-weight: normal;
   font-size: 1rem;
+}
+.c-module-setup .treeview .node-third .icon.node-icon.ion-stop {
+  margin-left: 20px;
 }
 .c-module-setup .treeview .node-third .text-edit {
   font-weight: normal;
@@ -3750,11 +3774,27 @@ html {
 .c-module-setup-confirm {
   display: none;
 }
+.c-module-setup-button {
+  border-top: 1px solid #dcdcdc;
+}
+.c-module-setup.hasItem .panel-body {
+  background: none !important;
+}
+.c-module-setup.isEdit .panel-body {
+  background: #fff url("../images/icon-menu.png") no-repeat center;
+}
 .c-module-setup.isEdit .treeview .list-group .ion {
   display: inline-block;
 }
 .c-module-setup.isEdit .treeview .list-group .ion.text-info {
   display: none;
+}
+.c-module-setup.isEdit .treeview .list-group-third .list-group-item:hover {
+  background: none;
+  color: #354967;
+}
+.c-module-setup.isEdit .treeview .list-group-third .list-group-item .ion {
+  color: #7da6de;
 }
 .c-module-setup.isEdit .c-module-setup-editMenu {
   display: none;
@@ -3762,6 +3802,13 @@ html {
 .c-module-setup.isEdit .c-module-setup-addMenu,
 .c-module-setup.isEdit .c-module-setup-confirm {
   display: block;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .c-module-setup.isEdit .c-module-setup-addMenu,
+  .c-module-setup.isEdit .c-module-setup-confirm {
+    margin-bottom: 0px;
+  }
 }
 .c-module {
   margin: 3rem;
@@ -3780,6 +3827,9 @@ html {
 }
 .c-module .panel-body img {
   width: 100%;
+}
+.c-module-source .button-single button {
+  min-width: 100px;
 }
 .c-popup__preview {
   display: none;

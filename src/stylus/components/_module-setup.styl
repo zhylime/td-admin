@@ -1,4 +1,6 @@
 .c-module-setup
+  .panel
+    margin-bottom 10px
   .setupOption-image
     background url('../images/module-setup-spirit-icons.png')
     background-repeat no-repeat
@@ -64,18 +66,24 @@
         border-bottom 1px solid $border-panel-color
       &-second
         border none
-        margin-left 20px
         .list-group-item
           padding 0
       &-third
         .list-group-item
           border none
           padding 0
+          border-radius 0
+          &:hover
+            background-color $bg-panel-hover-blue
+            color $color-white
+            .ion
+              color $color-white
           .text-info
             font-size .9rem
             display inline
             margin-right .3rem
       &-item
+        padding 10px
         line-height 1.8rem
         height auto
     span.icon
@@ -91,10 +99,14 @@
         font-weight bold
         font-size 1.1rem
     .node-second
+      .icon.expand-icon.ion-arrow-down-b
+        margin-left 20px
       .text-edit
         font-weight normal
         font-size 1rem
     .node-third
+      .icon.node-icon.ion-stop
+        margin-left 20px
       .text-edit
         font-weight normal
         font-size .9rem
@@ -135,16 +147,32 @@
     display none
   &-confirm
     display none
-
+  &-button
+    border-top 1px solid $border-panel-color
+  &.hasItem
+    .panel-body
+      background none!important
   &.isEdit
+    .panel-body
+      background $color-white url('../images/icon-menu.png') no-repeat center
     .treeview
       .list-group
         .ion
           display inline-block
           &.text-info
             display none
+        &-third
+          .list-group-item
+            &:hover
+              background none
+              color $tabs-nav-text-active-blue
+            .ion
+              color $color-panel-icon
     .c-module-setup-editMenu
       display none
     .c-module-setup-addMenu,
     .c-module-setup-confirm
       display block
+      margin-bottom 10px
+      @media screen and (min-width: 768px)
+        margin-bottom 0px

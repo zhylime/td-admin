@@ -17,7 +17,8 @@ class AddMenu extends MLP.apps.MLPModule {
       modalInfo: this.el.target.find(".js-addData-modal")
     };
     this.className = {
-      isEdit:"isEdit"
+      isEdit:"isEdit",
+      hasItem: "hasItem"
     };
 
     this.$action = "addFirst";
@@ -37,6 +38,7 @@ class AddMenu extends MLP.apps.MLPModule {
     this.orderMenu();
     this.editMenuText();
     this.openInfoModal();
+    this.isSetMenu();
     this.el.confirmBtn.off('click').on('click', (evt) =>{
 
       let nodeIndex;
@@ -94,6 +96,7 @@ class AddMenu extends MLP.apps.MLPModule {
         _this.orderMenu();
         _this.editMenuText();
         _this.openInfoModal();
+        _this.isSetMenu();
         break;
       case 1:
         nodeIndex = "node-second";
@@ -108,6 +111,7 @@ class AddMenu extends MLP.apps.MLPModule {
         _this.orderMenu();
         _this.editMenuText();
         _this.openInfoModal();
+        _this.isSetMenu();
         break;
       default:
         nodeIndex = "node-third";
@@ -115,13 +119,14 @@ class AddMenu extends MLP.apps.MLPModule {
         $startTag = ($sibling && $sibling.length) ? "": "<ul class='list-group-third list-group'>";
         $endTag = ($sibling && $sibling.length) ? "": "</ul>";
         $secondNode = ($sibling && $sibling.length) ? $sibling: $target;
-        $item = $startTag + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon glyphicon'></span><span class='icon node-icon ion-stop'></span><span class='text-edit '>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeThird'></span>" + "<span class='ion ion-edit js-edit-text'></span>" + "</li>" + $endTag;
+        $item = $startTag + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon glyphicon'></span><span class='icon node-icon ion-stop'></span><span class='text-edit '>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeThird'></span>" + "<span class='ion ion-edit js-edit-text'></span><span class='ion text-info js-edit-info'>设置菜单内容布局</span><span class='ion ion-edit text-info js-edit-info'></span>" + "</li>" + $endTag;
         $secondNode.append($item);
         _this.openModal();
         _this.removeNode();
         _this.orderMenu();
         _this.editMenuText();
         _this.openInfoModal();
+        _this.isSetMenu();
     }
 
   }
@@ -149,10 +154,12 @@ class AddMenu extends MLP.apps.MLPModule {
       switch (this.$removeAction) {
         case "removeThird":
           $(evt.target).parent().remove();
+          _this.isSetMenu();
           break;
         default:
           $(".js-confirm-modal").modal("show");
           _this.confirmRemove($(evt.target).parent());
+          _this.isSetMenu();
           break;
       }
 
@@ -161,6 +168,7 @@ class AddMenu extends MLP.apps.MLPModule {
 
   //确认返回值
   confirmRemove($target) {
+    var _this = this;
     $(".js-remove-btn").off('click').on('click', (evt) =>{
       this.removeStatus = true;
       this.el.modalConfirm.modal('hide');
@@ -168,8 +176,10 @@ class AddMenu extends MLP.apps.MLPModule {
         var $parentNode = $target.parent();
         $target.remove();
         if(!$parentNode.find(".list-group-item").length){
-          $parentNode.remove()
+          $parentNode.remove();
+
         }
+        _this.isSetMenu();
       }
 
     });
@@ -231,6 +241,18 @@ class AddMenu extends MLP.apps.MLPModule {
       });
 
     });
+  }
+
+  //是否有菜单
+  isSetMenu(){
+    const menuItem = $(".js-menu-item").find(".list-group");
+    if(menuItem && menuItem.length){
+      console.log("11111");
+      $(".js-setup-menu").addClass(this.className.hasItem);
+    }else if(!menuItem.length) {
+      console.log("00000");
+      $(".js-setup-menu").removeClass(this.className.hasItem);
+    }
   }
 
 
