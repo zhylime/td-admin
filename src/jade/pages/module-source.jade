@@ -25,7 +25,7 @@ block content
             label.form__label(for="ipAddress") 主机地址
         .col-sm-10.col-xs-10
           .form-group
-            input.form-control(type="text" id="ipAddress" name="ipAddress" data-rule="required" placeholder="192.192.0.1")
+            input.form-control(type="text" id="ipAddress" name="ipAddress" data-rule="required|alpha|max:30" placeholder="192.192.0.1")
             div.text-danger.l-padding-top-1.hide.input-error-message 请输入IP地址
 
       .row
@@ -34,7 +34,7 @@ block content
             label.form__label(for="port") 端口
         .col-sm-10.col-xs-10
           .form-group
-            input.form-control(type="text" id="port" name="port" data-rule="required" placeholder="8080")
+            input.form-control(type="text" id="port" name="port" data-rule="required|alpha|max:30" placeholder="8080")
             div.text-danger.l-padding-top-1.hide.input-error-message 请输入端口
 
       .row
@@ -43,7 +43,7 @@ block content
             label.form__label(for="serverName") 服务名
         .col-sm-10.col-xs-10
           .form-group
-            input.form-control(type="text" id="serverName" name="serverName" data-rule="required" placeholder="ORLD")
+            input.form-control(type="text" id="serverName" name="serverName" data-rule="required|alpha|max:30" placeholder="ORLD")
             div.text-danger.l-padding-top-1.hide.input-error-message 请输入服务名
 
       .row
@@ -52,7 +52,7 @@ block content
             label.form__label(for="name") 用户名
         .col-sm-10.col-xs-10
           .form-group
-            input.form-control(type="text" id="name" name="name" data-rule="required" placeholder="fishwon")
+            input.form-control(type="text" id="name" name="name" data-rule="required|alpha|max:30" placeholder="fishwon")
             div.text-danger.l-padding-top-1.hide.input-error-message 请输入用户名称
       .row
         .col-sm-2

@@ -27,4 +27,7 @@ $(document).ready(function() {
     //form validator
     $('[data-js-form-validator]').Validator();
 
+    //file upload
+    $('[data-js-file-input]').FileInput();
+
 });

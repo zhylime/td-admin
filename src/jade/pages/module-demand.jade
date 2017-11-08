@@ -1,0 +1,49 @@
+extends ../partials/_template
+include ../mixins/_card-flip
+include ../mixins/_chart-type-radio-group
+block footer
+block header
+//- 需求数据
+
+block headCss
+  link(rel='stylesheet', href=paths.css + 'vendor/fileinput.css')
+block footerJs
+  script(src=paths.js + 'vendor/fileinput.js')
+
+block content
+  .c-module.c-module-demand.container-fluid
+    form.c-form.c-form-module.form-horizontal(method="POST" role="form"  name="moduleSourceForm" id="moduleSourceForm" data-js-form-validator)
+      .row
+        .col-sm-10.col-xs-10
+          .form-group
+          .panel.panel-default
+            .panel-body
+              img(src=paths.img + 'demand-data.jpg')
+
+
+      .row.button-group.l-m-l-0
+        .col-sm-12.button-single.text-left
+          .form-group
+            button.btn.btn-primary(type='button' data-toggle='modal', data-target='#demandDataModal') 更新项目数据
+
+  #demandDataModal.modal.fade.demandDataModal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
+    .modal-dialog(role='document')
+      .modal-content
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+          h4.modal-title 更新项目数据
+        .modal-body
+          form.c-form.c-form-input.form-horizontal(method="POST" role="form"  name="inputForm" id="inputForm" data-js-file-input)
+            .row
+              .col-sm-12
+                label(for='fileUpload') 请选择需求的项目数据
+                .file-loading
+                  input.file.js-file-input(name='fileUpload', id="fileUpload", type='file')
+
+            .row.button-group.text-center.l-p-top-2
+              .col-sm-6.button-single
+                .form-group
+                  button.btn.btn-primary.js-remove-btn(type='button') 确定
+              .col-sm-6.button-single
+                .form-group
+                  button.btn.btn-default(type='button' data-dismiss='modal' aria-label='Close') 取消

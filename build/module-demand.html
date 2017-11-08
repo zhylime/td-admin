@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>td admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <meta name="description" content="td admin">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./assets/css/vendor/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/vendor/font-awesome.css">
+    <link rel="stylesheet" href="./assets/css/vendor/ionicons.css">
+    <link rel="stylesheet" href="./assets/css/vendor/b.tabs.css">
+    <link rel="stylesheet" href="./assets/css/vendor/fileinput.css"><!--[if (gt IE 8)]><!-->
+    <link rel="stylesheet" href="./assets/css/app.css"><!--<![endif]-->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/ico">
+  </head>
+  <body>
+    <div class="c-module c-module-demand container-fluid">
+      <form method="POST" role="form" name="moduleSourceForm" id="moduleSourceForm" data-js-form-validator class="c-form c-form-module form-horizontal">
+        <div class="row">
+          <div class="col-sm-10 col-xs-10">
+            <div class="form-group"></div>
+            <div class="panel panel-default">
+              <div class="panel-body"><img src="./assets/images/demand-data.jpg"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row button-group l-m-l-0">
+          <div class="col-sm-12 button-single text-left">
+            <div class="form-group">
+              <button type="button" data-toggle="modal" data-target="#demandDataModal" class="btn btn-primary">更新项目数据</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="demandDataModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade demandDataModal">
+      <div role="document" class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+            <h4 class="modal-title">更新项目数据</h4>
+          </div>
+          <div class="modal-body">
+            <form method="POST" role="form" name="inputForm" id="inputForm" data-js-file-input class="c-form c-form-input form-horizontal">
+              <div class="row">
+                <div class="col-sm-12">
+                  <label for="fileUpload">请选择需求的项目数据</label>
+                  <div class="file-loading">
+                    <input name="fileUpload" id="fileUpload" type="file" class="file js-file-input">
+                  </div>
+                </div>
+              </div>
+              <div class="row button-group text-center l-p-top-2">
+                <div class="col-sm-6 button-single">
+                  <div class="form-group">
+                    <button type="button" class="btn btn-primary js-remove-btn">确定</button>
+                  </div>
+                </div>
+                <div class="col-sm-6 button-single">
+                  <div class="form-group">
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">取消</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    window.MLP = window.MLP || {};
+    MLP.paths = {"root":"./","static":"./assets/","img":"./assets/images/","js":"./assets/js/","css":"./assets/css/"};
+    
+    
+  </script>
+  <script src="./assets/js/vendor/jquery.js"></script>
+  <script src="./assets/js/vendor/jquery-ui.js"></script>
+  <script src="./assets/js/vendor/bootstrap.js"></script>
+  <script src="./assets/js/vendor/jquery.validate.js"></script>
+  <script src="./assets/js/vendor/mainFrame.js"></script>
+  <script src="./assets/js/vendor/b.tabs.js"></script>
+  <script src="./assets/js/vendor/isotope.pkgd.min.js"></script>
+  <script src="./assets/js/vendor/fileinput.js"></script>
+  <script src="./assets/js/app.js"></script><!--[if IE 9]>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script><![endif]-->
+</html>
