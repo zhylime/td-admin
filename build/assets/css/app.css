@@ -2994,6 +2994,20 @@ html {
   display: inline-block;
   line-height: 2rem;
 }
+.demandDataModal .c-form-input .file-preview .krajee-default .file-caption-info,
+.demandDataModal .c-form-input .file-preview .krajee-default .file-size-info {
+  line-height: 1em;
+}
+.demandDataModal .c-form-input .file-preview .krajee-default.file-preview-frame {
+  width: 96%;
+}
+.demandDataModal .c-form-input .file-preview .krajee-default.file-preview-frame .kv-file-content {
+  width: auto;
+  max-height: 300px;
+}
+.demandDataModal .c-form-input .file-preview .file-upload-indicator {
+  display: none;
+}
 .demandDataModal .c-form-input .file-preview .fileinput-remove {
   top: 4px;
   right: 4px;
