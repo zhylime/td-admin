@@ -14,13 +14,14 @@ class AddMenu extends MLP.apps.MLPModule {
       editMneu: this.el.target.find(".js-edit-menu"),
       confirmInfoBtn: this.el.target.find(".js-confirm-info"),
       editInfoBtn: this.el.target.find(".js-edit-info"),
-      modalInfo: this.el.target.find(".js-addData-modal")
+      modalInfo: this.el.target.find(".js-addData-modal"),
+      treeMenu: this.el.target.find(".js-tree-menu")
     };
     this.className = {
       isEdit:"isEdit",
       hasItem: "hasItem"
     };
-
+    this.menuData = {};
     this.$action = "addFirst";
     this.target = "";
     this.$removeAction = "removeThird";
@@ -39,6 +40,7 @@ class AddMenu extends MLP.apps.MLPModule {
     this.editMenuText();
     this.openInfoModal();
     this.isSetMenu();
+    this.upDateMenuTree();
     this.el.confirmBtn.off('click').on('click', (evt) =>{
 
       let nodeIndex;
@@ -67,6 +69,7 @@ class AddMenu extends MLP.apps.MLPModule {
 
     this.el.confirmInfoBtn.off('click').on('click', (evt)=>{
       $(".js-setup-menu").removeClass(this.className.isEdit);
+      this.upDateMenuTree();
     });
     this.el.editMneu.off('click').on('click', (evt)=>{
       $(".js-setup-menu").addClass(this.className.isEdit);
@@ -89,7 +92,7 @@ class AddMenu extends MLP.apps.MLPModule {
     switch (index) {
       case 0:
         nodeIndex = "node-first";
-        $item = "<ul class='list-group'>" + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon expand-icon ion-arrow-down-b'></span><span class='icon node-icon'></span><span class='text-edit '>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down' data-action='orderFirst'></span><span class='ion ion-arrow-up-b js-arrow-up' data-action='orderFirst'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeALL'></span>" + "<span class='ion ion-edit js-edit-text'></span><span class='ion ion-plus-round js-open-modal'  data-action='addSecond'></span>" + "</li></ul>";
+        $item = "<ul class='list-group list-group-first'>" + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon expand-icon ion-arrow-down-b'></span><span class='icon node-icon'></span><span class='text-edit text-first'>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down' data-action='orderFirst'></span><span class='ion ion-arrow-up-b js-arrow-up' data-action='orderFirst'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeALL'></span>" + "<span class='ion ion-edit js-edit-text'></span><span class='ion ion-plus-round js-open-modal'  data-action='addSecond'></span>" + "</li></ul>";
         $(this.el.menuItem).append($item);
         _this.openModal();
         _this.removeNode();
@@ -104,7 +107,7 @@ class AddMenu extends MLP.apps.MLPModule {
         $startTag = ($targetNode && $targetNode.length) ? "": "<ul class='list-group list-group-second'>";
         $endTag = ($targetNode && $targetNode.length) ? "": "</ul>";
         $firstNode = ($targetNode && $targetNode.length) ? $targetNode: $target;
-        $item = $startTag + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon expand-icon ion-arrow-down-b'></span><span class='icon node-icon'></span><span class='text-edit '>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeSecond'></span>" + "<span class='ion ion-edit js-edit-text'></span><span class='ion ion-plus-round js-open-modal'  data-action='addThird'></span>" + "</li>" + $endTag;
+        $item = $startTag + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon expand-icon ion-arrow-down-b'></span><span class='icon node-icon'></span><span class='text-edit text-second'>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeSecond'></span>" + "<span class='ion ion-edit js-edit-text'></span><span class='ion ion-plus-round js-open-modal'  data-action='addThird'></span>" + "</li>" + $endTag;
         $firstNode.append($item);
         _this.openModal();
         _this.removeNode();
@@ -119,7 +122,7 @@ class AddMenu extends MLP.apps.MLPModule {
         $startTag = ($sibling && $sibling.length) ? "": "<ul class='list-group-third list-group'>";
         $endTag = ($sibling && $sibling.length) ? "": "</ul>";
         $secondNode = ($sibling && $sibling.length) ? $sibling: $target;
-        $item = $startTag + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon glyphicon'></span><span class='icon node-icon ion-stop'></span><span class='text-edit '>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeThird'></span>" + "<span class='ion ion-edit js-edit-text'></span><span class='ion text-info js-edit-info'>设置菜单内容布局</span><span class='ion ion-edit text-info js-edit-info'></span>" + "</li>" + $endTag;
+        $item = $startTag + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon glyphicon'></span><span class='icon node-icon ion-stop'></span><span class='text-edit text-third'>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeThird'></span>" + "<span class='ion ion-edit js-edit-text'></span><span class='ion text-info js-edit-info'>设置菜单内容布局</span><span class='ion ion-edit text-info js-edit-info'></span>" + "</li>" + $endTag;
         $secondNode.append($item);
         _this.openModal();
         _this.removeNode();
@@ -187,7 +190,7 @@ class AddMenu extends MLP.apps.MLPModule {
 
   //节点排序
   orderMenu() {
-
+    var _this = this;
     $(".js-arrow-down").off('click').on('click', (evt) =>{
       let $action = $(evt.target).data("action");
       let $target = ($action) ? $(evt.target).closest(".list-group") : $(evt.target).closest(".list-group-item"),
@@ -212,6 +215,7 @@ class AddMenu extends MLP.apps.MLPModule {
 
   //编辑菜单文本
   editMenuText(){
+    var _this = this;
     $(".js-edit-text").off('click').on('click', (evt) =>{
 
       var $textInput = $(evt.target).siblings(".text-edit"),
@@ -251,6 +255,48 @@ class AddMenu extends MLP.apps.MLPModule {
     }else if(!menuItem.length) {
       $(".js-setup-menu").removeClass(this.className.hasItem);
     }
+  }
+
+  //更新菜单数据
+  upDateMenuTree(){
+    var _this = this;
+    var arr=[];
+    var menuObj = {};
+
+    let menuArr= $(".js-menu-item").find(".list-group-first >li");
+
+    for(let i = 0; i < menuArr.length ; i++){
+
+      let oFirstLevel = {};
+      oFirstLevel.name = $(menuArr[i]).find(".text-first").text();
+      oFirstLevel.children = [];
+
+      let menuSecond = $(menuArr[i]).find(".list-group-second >li");
+
+      for(let j= 0; j< menuSecond.length; j++){
+
+        let oSecondLevel = {};
+        oSecondLevel.name = $(menuSecond[j]).find(".text-second").text();
+        oSecondLevel.children = [];
+        oFirstLevel.children.push(oSecondLevel);
+
+        let menuThird = $(menuSecond[j]).find(".list-group-third >li");
+
+        for(let k= 0; k< menuThird.length; k++){
+
+          let oThirdLevel = {};
+          oThirdLevel.name = $(menuThird[k]).find(".text-third").text();
+          oSecondLevel.children.push(oThirdLevel);
+        }
+      }
+      arr.push(oFirstLevel);
+    }
+    menuObj.menuTree = arr;
+    if(arr && arr.length){
+      console.log(arr);
+      $(".js-tree-menu").val(JSON.stringify(menuObj));
+    }
+
   }
 
 

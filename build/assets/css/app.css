@@ -3004,6 +3004,7 @@ html {
 .demandDataModal .c-form-input .file-preview .krajee-default.file-preview-frame .kv-file-content {
   width: auto;
   max-height: 300px;
+  min-height: 240px;
 }
 .demandDataModal .c-form-input .file-preview .file-upload-indicator {
   display: none;
