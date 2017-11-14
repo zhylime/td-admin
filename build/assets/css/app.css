@@ -3618,6 +3618,73 @@ html {
     padding-right: 2rem;
   }
 }
+.c-module-login {
+  background: #fff url("../images/bg-admin.png") no-repeat top left;
+  min-height: 800px;
+}
+.c-module-login__header {
+  min-width: 1000px;
+}
+.c-module-login__header--login {
+  width: 13%;
+  min-height: 150px;
+  display: inline-block;
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+}
+.c-module-login__header--login img {
+  width: 100%;
+}
+.c-module-login__header--copy {
+  width: 70%;
+  display: inline-block;
+  vertical-align: top;
+  color: #536a8d;
+  padding-left: 2em;
+  font-family: 'Microsoft YaHei';
+}
+.c-module-login__header--copy h3 {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 2em;
+}
+.c-module-login__header--copy p {
+  font-size: 14px;
+  line-height: 2em;
+}
+.c-module-login__desc {
+  color: #536a8d;
+  font-family: 'Microsoft YaHei';
+  position: relative;
+}
+.c-module-login__desc-item {
+  margin-top: 3em;
+}
+.c-module-login__desc-item:nth-child(1) p {
+  width: 400px;
+}
+.c-module-login__desc-item:nth-child(2) p {
+  width: 300px;
+}
+.c-module-login__desc-item:nth-child(3) p {
+  width: 580px;
+}
+.c-module-login__desc-item h3 {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 2em;
+}
+.c-module-login__desc-item h3 .ion-stop {
+  font-size: 8px;
+  position: absolute;
+  left: -15px;
+  color: #addaff;
+}
+.c-module-login__desc-item p {
+  font-size: 14px;
+  line-height: 2em;
+}
 .c-module-setup .panel {
   margin-bottom: 10px;
 }
@@ -3859,7 +3926,7 @@ html {
   }
 }
 .c-module {
-  margin: 3rem;
+  margin: 2rem 0 3rem 3rem;
   min-width: 768px;
 }
 .c-module textarea {

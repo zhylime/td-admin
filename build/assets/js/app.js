@@ -492,19 +492,28 @@ var AddMenu = function (_MLP$apps$MLPModule) {
       var _this = this;
       var arr = [];
       var menuObj = {};
+
       var menuArr = $(".js-menu-item").find(".list-group-first >li");
+
       for (var i = 0; i < menuArr.length; i++) {
+
         var oFirstLevel = {};
         oFirstLevel.name = $(menuArr[i]).find(".text-first").text();
         oFirstLevel.children = [];
+
         var menuSecond = $(menuArr[i]).find(".list-group-second >li");
+
         for (var j = 0; j < menuSecond.length; j++) {
+
           var oSecondLevel = {};
           oSecondLevel.name = $(menuSecond[j]).find(".text-second").text();
           oSecondLevel.children = [];
           oFirstLevel.children.push(oSecondLevel);
+
           var menuThird = $(menuSecond[j]).find(".list-group-third >li");
+
           for (var k = 0; k < menuThird.length; k++) {
+
             var oThirdLevel = {};
             oThirdLevel.name = $(menuThird[k]).find(".text-third").text();
             oSecondLevel.children.push(oThirdLevel);
@@ -514,7 +523,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
       }
       menuObj.menuTree = arr;
       if (arr && arr.length) {
-        console.log(arr, "001");
+        console.log(arr);
         $(".js-tree-menu").val(JSON.stringify(menuObj));
       }
     }
