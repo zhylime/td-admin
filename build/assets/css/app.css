@@ -2636,6 +2636,10 @@ html {
   vertical-align: top;
   font-size: 14px;
 }
+.c-mainFrame .tab-content {
+  position: relative;
+  min-height: 700px;
+}
 .c-mainFrame__sideNav {
   background: #195baf;
   position: relative;
@@ -3626,7 +3630,7 @@ html {
   min-width: 1000px;
 }
 .c-module-login__header--login {
-  width: 13%;
+  width: 150px;
   min-height: 150px;
   display: inline-block;
   opacity: 0.3;
@@ -3637,7 +3641,7 @@ html {
   width: 100%;
 }
 .c-module-login__header--copy {
-  width: 70%;
+  width: 750px;
   display: inline-block;
   vertical-align: top;
   color: #536a8d;
@@ -3647,7 +3651,7 @@ html {
 .c-module-login__header--copy h3 {
   font-size: 30px;
   font-weight: bold;
-  line-height: 2em;
+  line-height: em;
 }
 .c-module-login__header--copy p {
   font-size: 14px;
