@@ -1425,6 +1425,11 @@ select.form-control option {
   height: 14px;
   display: inline-block !important;
 }
+.c-icon-edit {
+  display: inline-block;
+  content: url("../images/icon-edit.png");
+  top: 10px !important;
+}
 html,
 body,
 div,
@@ -2387,7 +2392,7 @@ html {
 }
 .c-content__menu--info {
   background-color: #001e4c;
-  border: 2px solid #59b0e5;
+  border: 2px solid #b4ceef;
   color: #fff;
   z-index: 100000;
   position: absolute;
@@ -2548,6 +2553,12 @@ html {
 }
 .c-form .l-p-right-2 {
   padding-right: 1rem;
+}
+.c-form .l-p-2-1 {
+  padding: 2em 0 1em 0;
+}
+.c-form .l-p-1-2 {
+  padding: 1em 0 2em 0;
 }
 .c-header {
   background: #041e45 url("../images/bg-header.jpg") no-repeat left top;
@@ -3026,6 +3037,17 @@ html {
 .demandDataModal .c-form-input .button-single button {
   min-width: 100px;
 }
+.modal .modal-header .close {
+  color: #fff;
+  opacity: 0.9;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: alpha(opacity=90);
+}
+.modal .modal-header .close:hover {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
 @media (min-width: 768px) {
   .loginModal {
     margin-top: -300px;
@@ -3071,7 +3093,8 @@ html {
 .moduleEdit textarea,
 .modalSetup textarea,
 .modalConfirm textarea,
-.modalAddData textarea {
+.modalAddData textarea,
+.modalDataType textarea {
   resize: none;
   min-height: 100px;
 }
@@ -3079,7 +3102,8 @@ html {
   .moduleEdit,
   .modalSetup,
   .modalConfirm,
-  .modalAddData {
+  .modalAddData,
+  .modalDataType {
     margin-top: -300px;
     top: 50%;
   }
@@ -3087,7 +3111,8 @@ html {
 .moduleEdit .modal-header,
 .modalSetup .modal-header,
 .modalConfirm .modal-header,
-.modalAddData .modal-header {
+.modalAddData .modal-header,
+.modalDataType .modal-header {
   background-color: #7897c5;
   color: #fff;
 }
@@ -3095,7 +3120,8 @@ html {
   .moduleEdit .modal-dialog,
   .modalSetup .modal-dialog,
   .modalConfirm .modal-dialog,
-  .modalAddData .modal-dialog {
+  .modalAddData .modal-dialog,
+  .modalDataType .modal-dialog {
     width: 400px;
   }
 }
@@ -3103,14 +3129,16 @@ html {
   .moduleEdit .modal-dialog,
   .modalSetup .modal-dialog,
   .modalConfirm .modal-dialog,
-  .modalAddData .modal-dialog {
+  .modalAddData .modal-dialog,
+  .modalDataType .modal-dialog {
     min-width: 450px;
   }
 }
 .moduleEdit .modal-body,
 .modalSetup .modal-body,
 .modalConfirm .modal-body,
-.modalAddData .modal-body {
+.modalAddData .modal-body,
+.modalDataType .modal-body {
   padding-right: 2rem;
   padding-left: 2rem;
   background-color: #f8fbff;
@@ -3119,47 +3147,54 @@ html {
 .moduleEdit .control-group select.input-xlarge,
 .modalSetup .control-group select.input-xlarge,
 .modalConfirm .control-group select.input-xlarge,
-.modalAddData .control-group select.input-xlarge {
+.modalAddData .control-group select.input-xlarge,
+.modalDataType .control-group select.input-xlarge {
   width: 100%;
   min-height: 100px;
 }
 .moduleEdit .button-group,
 .modalSetup .button-group,
 .modalConfirm .button-group,
-.modalAddData .button-group {
+.modalAddData .button-group,
+.modalDataType .button-group {
   padding-top: 2rem;
 }
 @media (min-width: 768px) {
   .moduleEdit .button-group .button-single:nth-child(1),
   .modalSetup .button-group .button-single:nth-child(1),
   .modalConfirm .button-group .button-single:nth-child(1),
-  .modalAddData .button-group .button-single:nth-child(1) {
+  .modalAddData .button-group .button-single:nth-child(1),
+  .modalDataType .button-group .button-single:nth-child(1) {
     text-align: center;
   }
 }
 .moduleEdit .modal-header button,
 .modalSetup .modal-header button,
 .modalConfirm .modal-header button,
-.modalAddData .modal-header button {
+.modalAddData .modal-header button,
+.modalDataType .modal-header button {
   min-width: auto;
 }
 .moduleEdit button,
 .modalSetup button,
 .modalConfirm button,
-.modalAddData button {
+.modalAddData button,
+.modalDataType button {
   min-width: 100px;
   outline: none !important;
 }
 .moduleEdit .control-group,
 .modalSetup .control-group,
 .modalConfirm .control-group,
-.modalAddData .control-group {
+.modalAddData .control-group,
+.modalDataType .control-group {
   padding-top: 2rem;
 }
 .moduleEdit .control-group button,
 .modalSetup .control-group button,
 .modalConfirm .control-group button,
-.modalAddData .control-group button {
+.modalAddData .control-group button,
+.modalDataType .control-group button {
   min-width: 70px;
   margin-bottom: 10px;
   border-radius: 1rem;
@@ -3171,21 +3206,24 @@ html {
 .moduleEdit #businessIndex,
 .modalSetup #businessIndex,
 .modalConfirm #businessIndex,
-.modalAddData #businessIndex {
+.modalAddData #businessIndex,
+.modalDataType #businessIndex {
   min-height: 210px;
   scroll: auto;
 }
 .moduleEdit label.form__label.ion-android-warning,
 .modalSetup label.form__label.ion-android-warning,
 .modalConfirm label.form__label.ion-android-warning,
-.modalAddData label.form__label.ion-android-warning {
+.modalAddData label.form__label.ion-android-warning,
+.modalDataType label.form__label.ion-android-warning {
   font-size: 100px;
   color: #f6cc9f;
 }
 .moduleEdit .text-description,
 .modalSetup .text-description,
 .modalConfirm .text-description,
-.modalAddData .text-description {
+.modalAddData .text-description,
+.modalDataType .text-description {
   font-size: 16px;
   line-height: 150%;
   margin-top: 1rem;
@@ -3193,50 +3231,111 @@ html {
 .modalSetup .button-single {
   text-align: center;
 }
-.modalAddData .button-group {
+@media (min-width: 768px) {
+  .modalAddData,
+  .modalDataType {
+    margin-top: -400px;
+    top: 50%;
+  }
+}
+.modalAddData .button-group,
+.modalDataType .button-group {
   padding-top: 0rem;
 }
-.modalAddData .modal-dialog {
-  min-width: 600px;
+.modalAddData .modal-dialog,
+.modalDataType .modal-dialog {
+  min-width: 720px;
 }
-.modalAddData .modal-dialog .modal-header {
+.modalAddData .modal-dialog .modal-header,
+.modalDataType .modal-dialog .modal-header {
   border: 0;
 }
-.modalAddData .modal-dialog .modal-body {
+.modalAddData .modal-dialog .modal-body,
+.modalDataType .modal-dialog .modal-body {
   padding: 0;
 }
-.modalAddData .modal-dialog .modal-body .nav-tabs[role="tablist"] li[role="presentation"] {
-  width: 50%;
-  text-align: center;
+.modalAddData .modal-dialog .modal-body .nav-tabs[role="tab"],
+.modalDataType .modal-dialog .modal-body .nav-tabs[role="tab"] {
+  background-color: #e2efff;
+}
+.modalAddData .modal-dialog .modal-body .nav-tabs[role="tab"] li[role="presentation"],
+.modalDataType .modal-dialog .modal-body .nav-tabs[role="tab"] li[role="presentation"] {
+  text-align: left;
   font-weight: bold;
+  padding: 0.6em 1em 0.5em;
 }
-.modalAddData .modal-dialog .modal-body .nav-tabs[role="tablist"] li[role="presentation"] a {
-  margin: 0;
+.modalAddData .modal-dialog .modal-body .nav-tabs[role="tab"] li[role="presentation"] img,
+.modalDataType .modal-dialog .modal-body .nav-tabs[role="tab"] li[role="presentation"] img {
+  width: 1.5em;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  position: relative;
+  top: -1px;
 }
-.modalAddData .modal-dialog .modal-body .nav-tabs[role="tablist"] li[role="presentation"].active a {
-  border: 1px solid #7897c5;
-  border-top: 0;
-}
-.modalAddData .modal-dialog .modal-body .nav-tabs[role="tablist"] li[role="presentation"]:not(.active) a {
-  background: #d9e6f9;
-}
-.modalAddData .modal-dialog .modal-body .nav-tabs[role="tablist"] > li > a {
-  border-radius: 0;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-}
-.modalAddData .modal-dialog .modal-body .tab-pane {
+.modalAddData .modal-dialog .modal-body .tab-pane,
+.modalDataType .modal-dialog .modal-body .tab-pane {
   padding: 1rem 1rem;
 }
 .modalAddData .modal-dialog .modal-body .tab-pane .c-chartTypeRadioGroup,
-.modalAddData .modal-dialog .modal-body .tab-pane .input-group {
+.modalDataType .modal-dialog .modal-body .tab-pane .c-chartTypeRadioGroup,
+.modalAddData .modal-dialog .modal-body .tab-pane .input-group,
+.modalDataType .modal-dialog .modal-body .tab-pane .input-group {
   text-align: center;
 }
-.modalAddData .modal-dialog .modal-body .tab-pane .input-group {
+.modalAddData .modal-dialog .modal-body .tab-pane .input-group,
+.modalDataType .modal-dialog .modal-body .tab-pane .input-group {
   padding-left: 7%;
   padding-right: 8%;
+}
+.modalAddData-select,
+.modalDataType-select {
+  margin: 0 auto;
+  margin-left: 3em;
+  margin-right: 3.4em;
+}
+.modalDataType .modal-dialog {
+  min-width: 450px;
+}
+.modalDataType-btn {
+  width: 145px;
+  height: 145px;
+  border: 1px solid #b4ceef;
+  border-radius: 0.2em;
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  -ms-border-radius: 0.2em;
+  -o-border-radius: 0.2em;
+  margin: 0 auto;
+  position: absolute;
+  font-weight: bold;
+  color: #7897c5;
+  background-color: #eef5ff;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 2em;
+  padding-top: 2em;
+}
+.modalDataType-btn img {
+  display: inline-block;
+  height: 46px;
+  width: auto;
+}
+.modalDataType-btn span {
+  display: block;
+}
+.modalDataType-btn:hover {
+  background-color: #deebff;
+}
+.modalDataType-grid {
+  position: relative;
+  min-height: 180px;
+}
+.modalDataType-grid:nth-child(1) .modalDataType-btn {
+  right: 1em;
+}
+.modalDataType-grid:nth-child(2) .modalDataType-btn {
+  left: 1em;
 }
 .c-module-charts {
   max-width: 1000px;
@@ -3691,6 +3790,14 @@ html {
 }
 .c-module-setup .panel {
   margin-bottom: 10px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+.c-module-setup .col-sm-0 {
+  min-height: 0;
 }
 .c-module-setup .setupOption-image {
   background: url("../images/module-setup-spirit-icons.png");
@@ -3805,6 +3912,9 @@ html {
 .c-module-setup .treeview .list-group-third .list-group-item:hover .ion {
   color: #fff;
 }
+.c-module-setup .treeview .list-group-third .list-group-item:hover .c-icon-edit {
+  content: url("../images/icon-edit-white.png");
+}
 .c-module-setup .treeview .list-group-third .list-group-item .text-info {
   font-size: 0.9rem;
   display: inline;
@@ -3886,6 +3996,13 @@ html {
 }
 .c-module-setup .radioGroup label {
   cursor: pointer;
+}
+.c-module-setup-menu {
+  padding: 1em 0.5em;
+  background-color: #e2efff;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  margin-bottom: 0px !important;
 }
 .c-module-setup-addMenu {
   display: none;
@@ -4065,7 +4182,7 @@ html {
 .c-module-slick-group ul li .row {
   margin-right: 0px;
   margin-left: 0px;
-  width: 500px;
+  width: 620px;
 }
 .c-module-slick-info ul .c-module-slick-detail {
   width: 32%;

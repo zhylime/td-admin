@@ -14,8 +14,8 @@ class AddMenu extends MLP.apps.MLPModule {
       editMneu: this.el.target.find(".js-edit-menu"),
       confirmInfoBtn: this.el.target.find(".js-confirm-info"),
       editInfoBtn: this.el.target.find(".js-edit-info"),
-      modalInfo: this.el.target.find(".js-addData-modal"),
-      treeMenu: this.el.target.find(".js-tree-menu")
+      treeMenu: this.el.target.find(".js-tree-menu"),
+      modalType: this.el.target.find(".js-dataType-modal")
     };
     this.className = {
       isEdit:"isEdit",
@@ -43,6 +43,7 @@ class AddMenu extends MLP.apps.MLPModule {
     this.isSetMenu();
     this.upDateMenuTree();
     this.showInfoMenu();
+    this.openDataTypeModal();
     this.el.confirmBtn.off('click').on('click', (evt) =>{
 
       let nodeIndex;
@@ -146,12 +147,25 @@ class AddMenu extends MLP.apps.MLPModule {
     });
   }
   openInfoModal() {
-    $(".js-add-menu-info").off('click').on('click', (evt) =>{
-      this.el.modalInfo.modal('show');
+    $(".js-dataType-modal-1").off('click').on('click', (evt) =>{
+      $(".js-addData-modal-1").modal('show');
+      this.el.modalType.modal('hide');
+    });
+    $(".js-dataType-modal-2").off('click').on('click', (evt) =>{
+      $(".js-addData-modal-2").modal('show');
+      this.el.modalType.modal('hide');
     });
   }
 
+  openDataTypeModal() {
+    $(".js-add-menu-info").off('click').on('click', (evt) =>{
+      this.el.modalType.modal('show');
+    });
+  }
   showInfoMenu() {
+    $(".js-edit-info").off('click').on('click', (evt) =>{
+      $(".js-module-setup-radios").removeClass(this.className.hide);
+    });
     $(".js-edit-info").off('click').on('click', (evt) =>{
       $(".js-module-setup-radios").removeClass(this.className.hide);
     });

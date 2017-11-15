@@ -1,6 +1,13 @@
 
 // modal
 
+.modal
+  .modal-header
+    .close
+      color $color-white
+      opacity .9
+      &:hover
+        opacity 1
 .loginModal
   @media(min-width: $tablet-min)
     margin-top -300px
@@ -95,30 +102,29 @@
     text-align center
 
 .modalAddData
+  @media(min-width: $tablet-min)
+    margin-top -400px
+    top 50%
   .button-group
     padding-top 0rem
   .modal-dialog
-    min-width 600px
+    min-width 720px
     .modal-header
       border 0
     .modal-body
       padding 0
-      .nav-tabs[role="tablist"]
+      .nav-tabs[role="tab"]
+        background-color #e2efff
         li[role="presentation"]
-          width 50%
-          text-align center
+          text-align left
           font-weight bold
-          a
-            margin 0
-          &.active
-            a
-              border 1px solid $login-blue-bg
-              border-top 0
-          &:not(.active)
-            a
-              background $charts-tab-bg-blue
-        & > li > a
-          border-radius 0
+          padding .6em 1em .5em
+          img
+            width 1.5em
+            vertical-align middle
+            margin-right .5em
+            position relative
+            top -1px
       .tab-pane
         padding 1rem 1rem
         .c-chartTypeRadioGroup,
@@ -127,6 +133,50 @@
         .input-group
           padding-left  7%
           padding-right  8%
+  &-select
+    margin 0 auto
+    margin-left 3em
+    margin-right 3.4em
+
+.modalDataType
+  @extends .modalAddData
+  .modal-dialog
+    min-width 450px
+  &-btn
+    width 145px
+    height 145px
+    border 1px solid $color-border-blue
+    border-radius .2em
+    margin 0 auto
+    position absolute
+    font-weight bold
+    color $login-blue-bg
+    background-color $bg-slick-blue
+    cursor pointer
+    text-align center
+    vertical-align middle
+    line-height 2em
+    padding-top 2em
+    img
+      display inline-block
+      height 46px
+      width auto
+    span
+      display block
+    &:hover
+      background-color $bg-dark-blue
+  &-grid
+    position relative
+    min-height 180px
+    &:nth-child(1)
+      .modalDataType-btn
+        right 1em
+    &:nth-child(2)
+      .modalDataType-btn
+        left 1em
+
+
+
 
 
 

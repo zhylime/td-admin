@@ -51,69 +51,34 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-sm-3">
+              <div class="col-sm-12 col-md-3">
                 <div class="form-group text-label">
                   <label for="addMenu" class="form__label">菜单设置</label>
                 </div>
               </div>
-              <div class="col-sm-9 col-xs-10">
-                <div class="form-group c-module-setup-addMenu">
+              <div class="col-sm-12 col-md-9 col-xs-10">
+                <div class="form-group c-module-setup-addMenu c-module-setup-menu">
                   <button type="button" data-action="addFirst" class="btn btn-default js-open-modal">添加菜单</button>
                 </div>
-                <div class="form-group c-module-setup-editMenu">
+                <div class="form-group c-module-setup-editMenu c-module-setup-menu">
                   <button type="button" class="btn btn-default js-edit-menu">编辑菜单</button>
                 </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-0 col-md-3">
-                <div class="form-group text-label hidden-xs">
-                  <label for="" class="form__label"></label>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-9 col-xs-10">
                 <div data-tree-view class="panel panel-default">
                   <div class="panel-body">
                     <input type="hidden" name="treeMenu" id="treeMenu" value="" class="js-tree-menu">
                     <div class="js-menu-item treeview">
                       <!--基本结构-->
-                      <!--ul.list-group.list-group-first
-                      li.list-group-item.node-first(data-index = "0")
-                        span.icon.expand-icon.ion-arrow-down-b
-                        span.icon.node-icon
-                        span.text-edit.text-first 关于我们
-                        span.ion.ion-arrow
-                          span.ion.ion-arrow-down-b.js-arrow-down(data-action="orderFirst")
-                          span.ion.ion-arrow-up-b.js-arrow-up(data-action="orderFirst")
-                        span.ion.ion-close.js-remove-node(data-action="removeALL")
-                        span.ion.ion-edit.js-edit-text
-                        span.ion.ion-plus-round.js-open-modal(data-action="addSecond")
-                        ul.list-group.list-group-second
-                          li.list-group-item.node-second(data-index = "1")
-                            span.icon.expand-icon.ion-arrow-down-b
-                            span.icon.node-icon
-                            span.text-edit.text-second 公司简介
-                            span.ion.ion-arrow
-                              span.ion.ion-arrow-down-b.js-arrow-down
-                              span.ion.ion-arrow-up-b.js-arrow-up
-                            span.ion.ion-close.js-remove-node(data-action="removeSecond")
-                            span.ion.ion-edit.js-edit-text
-                            span.ion.ion-plus-round.js-open-modal(data-action="addThird")
-                            ul.list-group.list-group-third
-                              li.list-group-item.node-third(data-index = "2")
-                                span.icon.glyphicon
-                                span.icon.node-icon.ion-stop
-                                span.text-edit.text-third 联系电话
-                                span.ion.ion-arrow
-                                  span.ion.ion-arrow-down-b.js-arrow-down
-                                  span.ion.ion-arrow-up-b.js-arrow-up
-                                span.ion.ion-close.js-remove-node(data-action="removeThird")
-                                span.ion.ion-edit.js-edit-text
-                                span.ion.text-info.js-edit-info 设置菜单内容布局
-                                span.ion.ion-edit.text-info.js-edit-info
-                      
-                      
-                      -->
+                      <ul class="list-group list-group-first">
+                        <li data-index="0" class="list-group-item node-first"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span><span class="text-edit text-first">关于我们</span><span class="ion ion-arrow"><span data-action="orderFirst" class="ion ion-arrow-down-b js-arrow-down"></span><span data-action="orderFirst" class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeALL" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span data-action="addSecond" class="ion ion-plus-round js-open-modal"></span>
+                          <ul class="list-group list-group-second">
+                            <li data-index="1" class="list-group-item node-second"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span><span class="text-edit text-second">公司简介</span><span class="ion ion-arrow"><span class="ion ion-arrow-down-b js-arrow-down"></span><span class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeSecond" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span data-action="addThird" class="ion ion-plus-round js-open-modal"></span>
+                              <ul class="list-group list-group-third">
+                                <li data-index="2" class="list-group-item node-third"><span class="icon glyphicon"></span><span class="icon node-icon ion-stop"></span><span class="text-edit text-third">联系电话</span><span class="ion ion-arrow"><span class="ion ion-arrow-down-b js-arrow-down"></span><span class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeThird" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span class="ion text-info js-edit-info">设置菜单内容布局</span><span class="ion c-icon-edit text-info js-edit-info"></span></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -201,17 +166,18 @@
         <div role="document" class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
+              <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
               <h4 id="myModalLabel" class="modal-title">添加菜单</h4>
             </div>
             <div class="modal-body">
               <form method="POST" name="addMenuForm" id="addMenuForm" data-js-form-validator class="c-form">
                 <div class="row">
-                  <div class="col-sm-3">
+                  <div class="col-sm-3 col-xs-3">
                     <div class="form-group text-label">
                       <label for="menuName" class="form__label">菜单名称</label>
                     </div>
                   </div>
-                  <div class="col-sm-7">
+                  <div class="col-sm-8 col-xs-8">
                     <div class="form-group">
                       <input type="text" id="menuName" name="menuName" autocomplete="off" class="form-control js-add-menu">
                       <div class="text-danger l-padding-top-1 hide input-error-message">请输入有效名称</div>
@@ -240,6 +206,7 @@
         <div role="document" class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
+              <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
               <h4 class="myModalLabel modal-title">添加菜单</h4>
             </div>
             <div class="modal-body">
@@ -273,8 +240,8 @@
           </div>
         </div>
       </div>
-      <!--内容布局添加数据的弹出框-->
-      <div id="modalAddData" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade modalAddData js-addData-modal">
+      <!--位置添加数据-->
+      <div id="modalDataType" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade modalDataType js-dataType-modal">
         <div role="document" class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -283,40 +250,54 @@
             </div>
             <div class="modal-body">
               <form class="c-form">
-                <ul role="tablist" class="nav nav-tabs">
-                  <li role="presentation" class="active"><a href="#chartType" aria-controls="chartType" role="tab" data-toggle="tab">图表类型</a></li>
-                  <li role="presentation"><a href="#bizForm" aria-controls="bizForm" role="tab" data-toggle="tab">业务表单</a></li>
+                <div class="row l-p-2-1">
+                  <div class="col-sm-12 text-center text-bold">请选择添加数据类型</div>
+                </div>
+                <div class="row l-p-1-2">
+                  <div class="col-sm-6 col-xs-6 text-center modalDataType-grid js-dataType-modal-1">
+                    <div class="modalDataType-btn"><img src="./assets/images/icon-list.png"><span>业务表单</span></div>
+                  </div>
+                  <div class="col-sm-6 col-xs-6 text-center modalDataType-grid js-dataType-modal-2">
+                    <div class="modalDataType-btn"><img src="./assets/images/icon-chart.png"><span>图表类型</span></div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--内容布局添加业务表单数据的弹出框-->
+      <div id="modalAddData1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade modalAddData js-addData-modal-1">
+        <div role="document" class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+              <h4 class="myModalLabel modal-title">位置1添加数据</h4>
+            </div>
+            <div class="modal-body">
+              <form class="c-form">
+                <ul role="tab" class="nav nav-tabs">
+                  <li role="presentation"><img src="./assets/images/icon-list-grey.png"><span>业务表单数据</span></li>
                 </ul>
-                <div data-js-charts-filter class="tab-content">
-                  <div role="tabpanel" id="chartType" class="tab-pane active">
-                    <div data-slick-detail class="row c-module-slick">
-                      <div class="col-sm-12">
-                        <div class="button btn btn-primary slick-info slick-info-prev">
-                          <div class="glyphicon glyphicon-chevron-left"></div>
-                        </div>
-                        <div class="button btn btn-primary slick-info slick-info-next">
-                          <div class="glyphicon glyphicon-chevron-right"></div>
-                        </div>
-                        <div class="form-group c-module-slick-group c-module-slick-info">
-                          <ul class="js-select-info">
-                            <li>
-                              <div class="row">
-                                <div class="c-module-slick-detail"><span>搭建数据门户</span><span class="ion ion-close js-remove-detail"></span></div>
-                                <div class="c-module-slick-detail"><span>快速搭建数据门户</span><span class="ion ion-close js-remove-detail"></span></div>
-                                <div class="c-module-slick-detail"><span>搭建数据门户</span><span class="ion ion-close js-remove-detail"></span></div>
-                              </div>
-                            </li>
-                            <li>
-                              <div class="row">
-                                <div class="c-module-slick-detail"><span>搭建数据门户</span><span class="ion ion-close js-remove-detail"></span></div>
-                                <div class="c-module-slick-detail"><span>搭建数据门户</span><span class="ion ion-close js-remove-detail"></span></div>
-                                <div class="c-module-slick-detail"><span>搭建数据门户</span><span class="ion ion-close js-remove-detail"></span></div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
+                <div class="tab-content">
+                  <div class="form-group l-p-1-2 modalAddData-select">
+                    <div class="col-sm-4 col-xs-4">
+                      <select id="input_first" name="input_first" class="form-control">
+                        <option value=""></option>
+                      </select>
                     </div>
+                    <div class="col-sm-4 col-xs-4">
+                      <select id="input_second" name="input_second" class="form-control">
+                        <option value=""></option>
+                      </select>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                      <select id="input_third" name="input_third" class="form-control">
+                        <option value=""></option>
+                      </select>
+                    </div>
+                  </div>
+                  <div role="tabpanel" id="chartType" class="tab-pane active">
                     <div class="input-group col-sm-12">
                       <input type="text" placeholder="" class="form-control"><span class="input-group-btn">
                         <button class="btn btn-default btn-search">搜索</button></span>
@@ -366,30 +347,141 @@
                       </div>
                     </div>
                   </div>
-                  <div role="tabpanel" id="bizForm" class="tab-pane">
-                    <div class="c-chartTypeRadioGroup">
-                      <div data-toggle="buttons" class="btn-group">
-                        <label class="btn">
-                          <input id="chartType1" type="radio" name="dataChartType1"/><img src="./assets/images/moudule-icon-1.jpg" alt="item" class="img-rounded"/>
-                        </label>
-                        <label class="btn">
-                          <input id="chartType2" type="radio" name="dataChartType2"/><img src="./assets/images/moudule-icon-2.jpg" alt="item" class="img-rounded"/>
-                        </label>
-                        <label class="btn">
-                          <input id="chartType3" type="radio" name="dataChartType3"/><img src="./assets/images/moudule-icon-3.jpg" alt="item" class="img-rounded"/>
-                        </label>
-                        <label class="btn">
-                          <input id="chartType4" type="radio" name="dataChartType4"/><img src="./assets/images/moudule-icon-4.jpg" alt="item" class="img-rounded"/>
-                        </label>
-                        <label class="btn">
-                          <input id="chartType5" type="radio" name="dataChartType5"/><img src="./assets/images/moudule-icon-5.jpg" alt="item" class="img-rounded"/>
-                        </label>
-                        <label class="btn">
-                          <input id="chartType6" type="radio" name="dataChartType6"/><img src="./assets/images/moudule-icon-6.jpg" alt="item" class="img-rounded"/>
-                        </label>
-                      </div>
+                </div>
+                <div class="row button-group text-center">
+                  <div class="col-sm-12 button-single">
+                    <div class="form-group">
+                      <button type="button" class="btn btn-primary">确定</button>
                     </div>
-                    <div class="input-group col-sm-12">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--内容布局添加图表类型数据的弹出框-->
+      <div id="modalAddData2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade modalAddData js-addData-modal-2">
+        <div role="document" class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+              <h4 class="myModalLabel modal-title">位置1添加数据</h4>
+            </div>
+            <div class="modal-body">
+              <form class="c-form c-module-data">
+                <ul role="tab" class="nav nav-tabs">
+                  <li role="presentation"><img src="./assets/images/icon-chart-grey.png"><span>图表类型</span></li>
+                </ul>
+                <div class="tab-content">
+                  <div role="tabpanel" id="bizForm" class="tab-pane active">
+                    <ul role="tablist" class="nav nav-tabs">
+                      <li role="presentation" class="active"><a href="#dataCategory1" aria-controls="dataCategory1" role="tab" data-toggle="tab">统计</a></li>
+                      <li role="presentation"><a href="#dataCategory2" aria-controls="dataCategory2" role="tab" data-toggle="tab">对比</a></li>
+                      <li role="presentation"><a href="#dataCategory3" aria-controls="dataCategory3" role="tab" data-toggle="tab">预测</a></li>
+                    </ul>
+                    <div data-js-checbox data-js-module-data-dropdown class="tab-content">
+                      <div role="tabpanel" id="dataCategory1" class="tab-pane active">
+                        <div class="c-module-data__dropdown">
+                          <div class="c-module-data__dropdown__button js-module-data-dropdown">业务表单<i class="icon-dropDown"></i></div>
+                        </div>
+                        <div class="c-module-data__dropdown__content hide">
+                          <div class="button-group">
+                            <label class="btn btn-default">
+                              <input type="checkbox" name="">快速搭建数据门户
+                            </label>
+                            <label class="btn btn-default">
+                              <input type="checkbox" name="">搭建数据门户
+                            </label>
+                            <label class="btn btn-default">
+                              <input type="checkbox" name="">搭建数据门户
+                            </label>
+                            <label class="btn btn-default">
+                              <input type="checkbox" name="">搭建数据门户
+                            </label>
+                            <label class="btn btn-default">
+                              <input type="checkbox" name="">搭建数据门户
+                            </label>
+                            <label class="btn btn-default">
+                              <input type="checkbox" name="">搭建数据门户
+                            </label>
+                            <label class="btn btn-default">
+                              <input type="checkbox" name="">搭建数据门户
+                            </label>
+                            <label class="btn btn-default">
+                              <input type="checkbox" name="">搭建数据门户
+                            </label>
+                          </div>
+                        </div>
+                        <div class="c-module-data__chartType">
+                          <label for="chartType">图表类型</label>
+                          <div class="c-chartTypeRadioGroup">
+                            <div data-toggle="buttons" class="btn-group">
+                              <label class="btn">
+                                <input id="chartType1" type="radio" name="dataChartType1"/><img src="./assets/images/moudule-icon-1.jpg" alt="item" class="img-rounded"/>
+                              </label>
+                              <label class="btn">
+                                <input id="chartType2" type="radio" name="dataChartType2"/><img src="./assets/images/moudule-icon-2.jpg" alt="item" class="img-rounded"/>
+                              </label>
+                              <label class="btn">
+                                <input id="chartType3" type="radio" name="dataChartType3"/><img src="./assets/images/moudule-icon-3.jpg" alt="item" class="img-rounded"/>
+                              </label>
+                              <label class="btn">
+                                <input id="chartType4" type="radio" name="dataChartType4"/><img src="./assets/images/moudule-icon-4.jpg" alt="item" class="img-rounded"/>
+                              </label>
+                              <label class="btn">
+                                <input id="chartType5" type="radio" name="dataChartType5"/><img src="./assets/images/moudule-icon-5.jpg" alt="item" class="img-rounded"/>
+                              </label>
+                              <label class="btn">
+                                <input id="chartType6" type="radio" name="dataChartType6"/><img src="./assets/images/moudule-icon-6.jpg" alt="item" class="img-rounded"/>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div role="tabpanel" id="dataCategory2" class="tab-pane">
+                        <div class="c-module-data__dropdown">
+                          <div class="c-module-data__dropdown__button js-module-data-dropdown">业务表单<i class="icon-dropDown"></i></div>
+                        </div>
+                        <div class="c-module-data__dropdown__content hide">
+                          <div class="button-group">
+                            <label class="btn btn-default">
+                              <input type="checkbox" name="">快速搭建数据门户
+                            </label>
+                            <label class="btn btn-default">
+                              <input type="checkbox" name="">搭建数据门户
+                            </label>
+                          </div>
+                        </div>
+                        <div class="c-module-data__chartType">
+                          <label for="chartType">图表类型</label>
+                          <div class="c-chartTypeRadioGroup">
+                            <div data-toggle="buttons" class="btn-group">
+                              <label class="btn">
+                                <input id="chartType1" type="radio" name="dataChartType1"/><img src="./assets/images/moudule-icon-1.jpg" alt="item" class="img-rounded"/>
+                              </label>
+                              <label class="btn">
+                                <input id="chartType2" type="radio" name="dataChartType2"/><img src="./assets/images/moudule-icon-2.jpg" alt="item" class="img-rounded"/>
+                              </label>
+                              <label class="btn">
+                                <input id="chartType3" type="radio" name="dataChartType3"/><img src="./assets/images/moudule-icon-3.jpg" alt="item" class="img-rounded"/>
+                              </label>
+                              <label class="btn">
+                                <input id="chartType4" type="radio" name="dataChartType4"/><img src="./assets/images/moudule-icon-4.jpg" alt="item" class="img-rounded"/>
+                              </label>
+                              <label class="btn">
+                                <input id="chartType5" type="radio" name="dataChartType5"/><img src="./assets/images/moudule-icon-5.jpg" alt="item" class="img-rounded"/>
+                              </label>
+                              <label class="btn">
+                                <input id="chartType6" type="radio" name="dataChartType6"/><img src="./assets/images/moudule-icon-6.jpg" alt="item" class="img-rounded"/>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div role="tabpanel" id="dataCategory3" class="tab-pane"></div>
+                    </div>
+                    <div class="input-group col-sm-12 l-p-top-2">
                       <input type="text" placeholder="" class="form-control"><span class="input-group-btn">
                         <button class="btn btn-default btn-search">搜索</button></span>
                     </div>

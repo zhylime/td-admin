@@ -35,26 +35,21 @@ block content
                   option(value="002") 样式2
                 div.text-danger.l-padding-top-1.hide.input-error-message 请输入样式
           .row
-            .col-sm-3
+            .col-sm-12.col-md-3
               .form-group.text-label
                 label.form__label(for="addMenu") 菜单设置
-            .col-sm-9.col-xs-10
-              .form-group.c-module-setup-addMenu
+            .col-sm-12.col-md-9.col-xs-10
+              .form-group.c-module-setup-addMenu.c-module-setup-menu
                 button.btn.btn-default.js-open-modal(type='button' data-action="addFirst") 添加菜单
-              .form-group.c-module-setup-editMenu
+              .form-group.c-module-setup-editMenu.c-module-setup-menu
                 button.btn.btn-default.js-edit-menu(type='button') 编辑菜单
 
-          .row
-            .col-sm-0.col-md-3
-              .form-group.text-label.hidden-xs
-                label.form__label(for="")
-            .col-sm-12.col-md-9.col-xs-10
               .panel.panel-default(data-tree-view)
                 .panel-body
                   input.js-tree-menu(type="hidden" , name="treeMenu" id="treeMenu"   value='')
                   .js-menu-item.treeview
                     //基本结构
-                    //ul.list-group.list-group-first
+                    ul.list-group.list-group-first
                       li.list-group-item.node-first(data-index = "0")
                         span.icon.expand-icon.ion-arrow-down-b
                         span.icon.node-icon
@@ -87,7 +82,7 @@ block content
                                 span.ion.ion-close.js-remove-node(data-action="removeThird")
                                 span.ion.ion-edit.js-edit-text
                                 span.ion.text-info.js-edit-info 设置菜单内容布局
-                                span.ion.ion-edit.text-info.js-edit-info
+                                span.ion.c-icon-edit.text-info.js-edit-info
 
 
           .row.c-module-setup-confirm
@@ -152,14 +147,16 @@ block content
       .modal-dialog(role='document')
         .modal-content
           .modal-header
+            button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
+              | &times;
             h4#myModalLabel.modal-title 添加菜单
           .modal-body
             form.c-form(method="POST" name="addMenuForm" id="addMenuForm" data-js-form-validator)
               .row
-                .col-sm-3
+                .col-sm-3.col-xs-3
                   .form-group.text-label
                     label.form__label(for="menuName") 菜单名称
-                .col-sm-7
+                .col-sm-8.col-xs-8
                   .form-group
                     input.form-control.js-add-menu(type="text" id="menuName" name="menuName" autocomplete='off')
                     div.text-danger.l-padding-top-1.hide.input-error-message 请输入有效名称
@@ -176,6 +173,8 @@ block content
       .modal-dialog(role='document')
         .modal-content
           .modal-header
+            button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
+              | &times;
             h4.myModalLabel.modal-title 添加菜单
           .modal-body
             form.c-form
@@ -194,9 +193,8 @@ block content
                 .col-sm-6.col-xs-6.button-single
                   .form-group.text-left
                     button.btn.btn-default(type='button' data-dismiss='modal' aria-label='Close') 取消
-
-    //内容布局添加数据的弹出框
-    #modalAddData.modal.fade.modalAddData.js-addData-modal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
+    //位置添加数据
+    #modalDataType.modal.fade.modalDataType.js-dataType-modal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
       .modal-dialog(role='document')
         .modal-content
           .modal-header
@@ -205,52 +203,134 @@ block content
             h4.myModalLabel.modal-title 位置1添加数据
           .modal-body
             form.c-form
-              ul.nav.nav-tabs(role="tablist")
-                li.active(role="presentation")
-                  a(href="#chartType", aria-controls="chartType", role="tab", data-toggle="tab") 图表类型
+              .row.l-p-2-1
+                .col-sm-12.text-center.text-bold 请选择添加数据类型
+              .row.l-p-1-2
+                .col-sm-6.col-xs-6.text-center.modalDataType-grid.js-dataType-modal-1
+                  .modalDataType-btn
+                    img(src=paths.img + 'icon-list.png')
+                    span 业务表单
+                .col-sm-6.col-xs-6.text-center.modalDataType-grid.js-dataType-modal-2
+                  .modalDataType-btn
+                    img(src=paths.img + 'icon-chart.png')
+                    span 图表类型
+
+
+
+    //内容布局添加业务表单数据的弹出框
+    #modalAddData1.modal.fade.modalAddData.js-addData-modal-1(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
+              | &times;
+            h4.myModalLabel.modal-title 位置1添加数据
+          .modal-body
+            form.c-form
+              ul.nav.nav-tabs(role="tab")
                 li(role="presentation")
-                  a(href="#bizForm", aria-controls="bizForm", role="tab", data-toggle="tab") 业务表单
-              .tab-content(data-js-charts-filter)
+                  img(src=paths.img + 'icon-list-grey.png')
+                  span 业务表单数据
+              .tab-content
+                .form-group.l-p-1-2.modalAddData-select
+                  .col-sm-4.col-xs-4
+                    select#input_first.form-control(name='input_first')
+                      option(value='')
+                  .col-sm-4.col-xs-4
+                    select#input_second.form-control(name='input_second')
+                      option(value='')
+                  .col-sm-4.col-xs-4
+                    select#input_third.form-control(name='input_third')
+                      option(value='')
+
                 .tab-pane.active(role="tabpanel", id="chartType")
-                  .row.c-module-slick(data-slick-detail)
-                    .col-sm-12
-                      .button.btn.btn-primary.slick-info.slick-info-prev
-                        .glyphicon.glyphicon-chevron-left
-                      .button.btn.btn-primary.slick-info.slick-info-next
-                        .glyphicon.glyphicon-chevron-right
-                      .form-group.c-module-slick-group.c-module-slick-info
-                        ul.js-select-info
-                          li
-                            .row
-                              .c-module-slick-detail
-                                span 搭建数据门户
-                                span.ion.ion-close.js-remove-detail
-                              .c-module-slick-detail
-                                span 快速搭建数据门户
-                                span.ion.ion-close.js-remove-detail
-                              .c-module-slick-detail
-                                span 搭建数据门户
-                                span.ion.ion-close.js-remove-detail
-                          li
-                            .row
-                              .c-module-slick-detail
-                                span 搭建数据门户
-                                span.ion.ion-close.js-remove-detail
-                              .c-module-slick-detail
-                                span 搭建数据门户
-                                span.ion.ion-close.js-remove-detail
-                              .c-module-slick-detail
-                                span 搭建数据门户
-                                span.ion.ion-close.js-remove-detail
                   .input-group.col-sm-12
                     input.form-control(type='text', placeholder='')
                     span.input-group-btn
                       button.btn.btn-default.btn-search 搜索
                   +slickCarousel()
+              .row.button-group.text-center
+                .col-sm-12.button-single
+                  .form-group
+                    button.btn.btn-primary(type='button') 确定
 
-                .tab-pane(role="tabpanel", id="bizForm")
-                  +chartTypeRadioGroup()
-                  .input-group.col-sm-12
+    //内容布局添加图表类型数据的弹出框
+    #modalAddData2.modal.fade.modalAddData.js-addData-modal-2(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
+              | &times;
+            h4.myModalLabel.modal-title 位置1添加数据
+          .modal-body
+            form.c-form.c-module-data
+              ul.nav.nav-tabs(role="tab")
+                li(role="presentation")
+                  img(src=paths.img + 'icon-chart-grey.png')
+                  span 图表类型
+              .tab-content
+                .tab-pane.active(role="tabpanel", id="bizForm")
+                  ul.nav.nav-tabs(role="tablist")
+                    li.active(role="presentation")
+                      a(href="#dataCategory1", aria-controls="dataCategory1", role="tab", data-toggle="tab") 统计
+                    li(role="presentation")
+                      a(href="#dataCategory2", aria-controls="dataCategory2", role="tab", data-toggle="tab") 对比
+                    li(role="presentation")
+                      a(href="#dataCategory3", aria-controls="dataCategory3", role="tab", data-toggle="tab") 预测
+                  .tab-content(data-js-checbox, data-js-module-data-dropdown)
+                    .tab-pane.active(role="tabpanel", id="dataCategory1")
+                      .c-module-data__dropdown
+                        .c-module-data__dropdown__button.js-module-data-dropdown.
+                          业务表单<i class="icon-dropDown"></i>
+                      .c-module-data__dropdown__content.hide
+                        .button-group
+                          label.btn.btn-default
+                            input(type="checkbox", name="")
+                            | 快速搭建数据门户
+                          label.btn.btn-default
+                            input(type="checkbox", name="")
+                            | 搭建数据门户
+                          label.btn.btn-default
+                            input(type="checkbox", name="")
+                            | 搭建数据门户
+                          label.btn.btn-default
+                            input(type="checkbox", name="")
+                            | 搭建数据门户
+                          label.btn.btn-default
+                            input(type="checkbox", name="")
+                            | 搭建数据门户
+                          label.btn.btn-default
+                            input(type="checkbox", name="")
+                            | 搭建数据门户
+                          label.btn.btn-default
+                            input(type="checkbox", name="")
+                            | 搭建数据门户
+                          label.btn.btn-default
+                            input(type="checkbox", name="")
+                            | 搭建数据门户
+
+                      .c-module-data__chartType
+                        label(for="chartType") 图表类型
+                        +chartTypeRadioGroup()
+
+                    .tab-pane(role="tabpanel", id="dataCategory2")
+                      .c-module-data__dropdown
+                        .c-module-data__dropdown__button.js-module-data-dropdown.
+                          业务表单<i class="icon-dropDown"></i>
+                      .c-module-data__dropdown__content.hide
+                        .button-group
+                          label.btn.btn-default
+                            input(type="checkbox", name="")
+                            | 快速搭建数据门户
+                          label.btn.btn-default
+                            input(type="checkbox", name="")
+                            | 搭建数据门户
+
+                      .c-module-data__chartType
+                        label(for="chartType") 图表类型
+                        +chartTypeRadioGroup()
+                    .tab-pane(role="tabpanel", id="dataCategory3")
+                  .input-group.col-sm-12.l-p-top-2
                     input.form-control(type='text', placeholder='')
                     span.input-group-btn
                       button.btn.btn-default.btn-search 搜索

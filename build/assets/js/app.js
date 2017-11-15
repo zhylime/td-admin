@@ -217,8 +217,8 @@ var AddMenu = function (_MLP$apps$MLPModule) {
         editMneu: this.el.target.find(".js-edit-menu"),
         confirmInfoBtn: this.el.target.find(".js-confirm-info"),
         editInfoBtn: this.el.target.find(".js-edit-info"),
-        modalInfo: this.el.target.find(".js-addData-modal"),
-        treeMenu: this.el.target.find(".js-tree-menu")
+        treeMenu: this.el.target.find(".js-tree-menu"),
+        modalType: this.el.target.find(".js-dataType-modal")
       };
       this.className = {
         isEdit: "isEdit",
@@ -248,6 +248,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
       this.isSetMenu();
       this.upDateMenuTree();
       this.showInfoMenu();
+      this.openDataTypeModal();
       this.el.confirmBtn.off('click').on('click', function (evt) {
 
         var nodeIndex = void 0;
@@ -360,17 +361,34 @@ var AddMenu = function (_MLP$apps$MLPModule) {
     value: function openInfoModal() {
       var _this5 = this;
 
+      $(".js-dataType-modal-1").off('click').on('click', function (evt) {
+        $(".js-addData-modal-1").modal('show');
+        _this5.el.modalType.modal('hide');
+      });
+      $(".js-dataType-modal-2").off('click').on('click', function (evt) {
+        $(".js-addData-modal-2").modal('show');
+        _this5.el.modalType.modal('hide');
+      });
+    }
+  }, {
+    key: 'openDataTypeModal',
+    value: function openDataTypeModal() {
+      var _this6 = this;
+
       $(".js-add-menu-info").off('click').on('click', function (evt) {
-        _this5.el.modalInfo.modal('show');
+        _this6.el.modalType.modal('show');
       });
     }
   }, {
     key: 'showInfoMenu',
     value: function showInfoMenu() {
-      var _this6 = this;
+      var _this7 = this;
 
       $(".js-edit-info").off('click').on('click', function (evt) {
-        $(".js-module-setup-radios").removeClass(_this6.className.hide);
+        $(".js-module-setup-radios").removeClass(_this7.className.hide);
+      });
+      $(".js-edit-info").off('click').on('click', function (evt) {
+        $(".js-module-setup-radios").removeClass(_this7.className.hide);
       });
     }
 
@@ -379,13 +397,13 @@ var AddMenu = function (_MLP$apps$MLPModule) {
   }, {
     key: 'removeNode',
     value: function removeNode() {
-      var _this7 = this;
+      var _this8 = this;
 
       var _this = this;
       this.removeStatus = false;
       $(".js-remove-node").on('click', function (evt) {
-        _this7.$removeAction = $(evt.target).data("action");
-        switch (_this7.$removeAction) {
+        _this8.$removeAction = $(evt.target).data("action");
+        switch (_this8.$removeAction) {
           case "removeThird":
             $(evt.target).parent().remove();
             _this.isSetMenu();
@@ -404,13 +422,13 @@ var AddMenu = function (_MLP$apps$MLPModule) {
   }, {
     key: 'confirmRemove',
     value: function confirmRemove($target) {
-      var _this8 = this;
+      var _this9 = this;
 
       var _this = this;
       $(".js-remove-btn").off('click').on('click', function (evt) {
-        _this8.removeStatus = true;
-        _this8.el.modalConfirm.modal('hide');
-        if (_this8.removeStatus) {
+        _this9.removeStatus = true;
+        _this9.el.modalConfirm.modal('hide');
+        if (_this9.removeStatus) {
           var $parentNode = $target.parent();
           $target.remove();
           if (!$parentNode.find(".list-group-item").length) {

@@ -1,6 +1,9 @@
 .c-module-setup
   .panel
     margin-bottom 10px
+    border-radius 0
+  .col-sm-0
+    min-height 0
   .setupOption-image
     background url('../images/module-setup-spirit-icons.png')
     background-repeat no-repeat
@@ -78,6 +81,8 @@
             color $color-white
             .ion
               color $color-white
+            .c-icon-edit
+              content url('../images/icon-edit-white.png')
           .text-info
             font-size .9rem
             display inline
@@ -143,6 +148,12 @@
   .radioGroup
     label
       cursor pointer
+  &-menu
+    padding 1em .5em
+    background-color #e2efff
+    border 1px solid #ddd
+    border-bottom none
+    margin-bottom 0px!important
   &-addMenu
     display none
   &-confirm
