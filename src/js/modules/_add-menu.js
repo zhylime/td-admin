@@ -19,7 +19,8 @@ class AddMenu extends MLP.apps.MLPModule {
     };
     this.className = {
       isEdit:"isEdit",
-      hasItem: "hasItem"
+      hasItem: "hasItem",
+      hide: "hide"
     };
     this.menuData = {};
     this.$action = "addFirst";
@@ -41,6 +42,7 @@ class AddMenu extends MLP.apps.MLPModule {
     this.openInfoModal();
     this.isSetMenu();
     this.upDateMenuTree();
+    this.showInfoMenu();
     this.el.confirmBtn.off('click').on('click', (evt) =>{
 
       let nodeIndex;
@@ -130,6 +132,7 @@ class AddMenu extends MLP.apps.MLPModule {
         _this.editMenuText();
         _this.openInfoModal();
         _this.isSetMenu();
+        _this.showInfoMenu();
     }
 
   }
@@ -143,8 +146,14 @@ class AddMenu extends MLP.apps.MLPModule {
     });
   }
   openInfoModal() {
-    $(".js-edit-info").off('click').on('click', (evt) =>{
+    $(".js-add-menu-info").off('click').on('click', (evt) =>{
       this.el.modalInfo.modal('show');
+    });
+  }
+
+  showInfoMenu() {
+    $(".js-edit-info").off('click').on('click', (evt) =>{
+      $(".js-module-setup-radios").removeClass(this.className.hide);
     });
   }
 

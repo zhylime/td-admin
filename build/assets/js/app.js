@@ -222,7 +222,8 @@ var AddMenu = function (_MLP$apps$MLPModule) {
       };
       this.className = {
         isEdit: "isEdit",
-        hasItem: "hasItem"
+        hasItem: "hasItem",
+        hide: "hide"
       };
       this.menuData = {};
       this.$action = "addFirst";
@@ -246,6 +247,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
       this.openInfoModal();
       this.isSetMenu();
       this.upDateMenuTree();
+      this.showInfoMenu();
       this.el.confirmBtn.off('click').on('click', function (evt) {
 
         var nodeIndex = void 0;
@@ -336,6 +338,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
           _this.editMenuText();
           _this.openInfoModal();
           _this.isSetMenu();
+          _this.showInfoMenu();
       }
     }
 
@@ -357,8 +360,17 @@ var AddMenu = function (_MLP$apps$MLPModule) {
     value: function openInfoModal() {
       var _this5 = this;
 
-      $(".js-edit-info").off('click').on('click', function (evt) {
+      $(".js-add-menu-info").off('click').on('click', function (evt) {
         _this5.el.modalInfo.modal('show');
+      });
+    }
+  }, {
+    key: 'showInfoMenu',
+    value: function showInfoMenu() {
+      var _this6 = this;
+
+      $(".js-edit-info").off('click').on('click', function (evt) {
+        $(".js-module-setup-radios").removeClass(_this6.className.hide);
       });
     }
 
@@ -367,13 +379,13 @@ var AddMenu = function (_MLP$apps$MLPModule) {
   }, {
     key: 'removeNode',
     value: function removeNode() {
-      var _this6 = this;
+      var _this7 = this;
 
       var _this = this;
       this.removeStatus = false;
       $(".js-remove-node").on('click', function (evt) {
-        _this6.$removeAction = $(evt.target).data("action");
-        switch (_this6.$removeAction) {
+        _this7.$removeAction = $(evt.target).data("action");
+        switch (_this7.$removeAction) {
           case "removeThird":
             $(evt.target).parent().remove();
             _this.isSetMenu();
@@ -392,13 +404,13 @@ var AddMenu = function (_MLP$apps$MLPModule) {
   }, {
     key: 'confirmRemove',
     value: function confirmRemove($target) {
-      var _this7 = this;
+      var _this8 = this;
 
       var _this = this;
       $(".js-remove-btn").off('click').on('click', function (evt) {
-        _this7.removeStatus = true;
-        _this7.el.modalConfirm.modal('hide');
-        if (_this7.removeStatus) {
+        _this8.removeStatus = true;
+        _this8.el.modalConfirm.modal('hide');
+        if (_this8.removeStatus) {
           var $parentNode = $target.parent();
           $target.remove();
           if (!$parentNode.find(".list-group-item").length) {

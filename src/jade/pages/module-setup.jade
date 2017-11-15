@@ -23,7 +23,7 @@ block content
               .form-group
                 input.form-control(type="text" id="name" name="name" data-rule="required|alpha|max:30")
                 div.text-danger.l-padding-top-1.hide.input-error-message 请输入主标题
-          .row
+          .row.hide
             .col-sm-3
               .form-group.text-label
                 label.form__label(for="type") 网站样式
@@ -97,7 +97,7 @@ block content
             .col-sm-12.col-md-9.col-xs-10
               .form-group
                 button.btn.btn-primary.js-confirm-info(type="button") 确定
-        .col-sm-6.c-module-setup__right.l-p-bottom-5(data-js-module-setup-radios)
+        .col-sm-6.c-module-setup__right.l-p-bottom-5.hide.js-module-setup-radios(data-js-module-setup-radios)
           .row
             .col-sm-12
               .form-group.text-label
@@ -129,12 +129,12 @@ block content
                 .setupOption-image.setupOption-image--6.js-radio-item(data-image="setupOptionImg6")
           .row.setupOptionImgGroup.js-radio-images
             .col-sm-12
-              img#setupOptionImg1(src=paths.img + 'module-setup-markup-1.png')
-              img#setupOptionImg2(src=paths.img + 'module-setup-markup-2.png')
-              img#setupOptionImg3(src=paths.img + 'module-setup-markup-3.png')
-              img#setupOptionImg4(src=paths.img + 'module-setup-markup-4.png')
-              img#setupOptionImg5(src=paths.img + 'module-setup-markup-5.png')
-              img#setupOptionImg6(src=paths.img + 'module-setup-markup-6.png')
+              img.js-add-menu-info#setupOptionImg1(src=paths.img + 'module-setup-markup-1.png')
+              img.js-add-menu-info#setupOptionImg2(src=paths.img + 'module-setup-markup-2.png')
+              img.js-add-menu-info#setupOptionImg3(src=paths.img + 'module-setup-markup-3.png')
+              img.js-add-menu-info#setupOptionImg4(src=paths.img + 'module-setup-markup-4.png')
+              img.js-add-menu-info#setupOptionImg5(src=paths.img + 'module-setup-markup-5.png')
+              img.js-add-menu-info#setupOptionImg6(src=paths.img + 'module-setup-markup-6.png')
 
 
       .row.button-group.c-module-setup-button.l-p-top-3
