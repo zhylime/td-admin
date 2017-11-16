@@ -125,7 +125,7 @@ class AddMenu extends MLP.apps.MLPModule {
         $startTag = ($sibling && $sibling.length) ? "": "<ul class='list-group-third list-group'>";
         $endTag = ($sibling && $sibling.length) ? "": "</ul>";
         $secondNode = ($sibling && $sibling.length) ? $sibling: $target;
-        $item = $startTag + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon glyphicon'></span><span class='icon node-icon ion-stop'></span><span class='text-edit text-third'>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeThird'></span>" + "<span class='ion ion-edit js-edit-text'></span><span class='ion text-info js-edit-info'>设置菜单内容布局</span><span class='ion ion-edit text-info js-edit-info'></span>" + "</li>" + $endTag;
+        $item = $startTag + "<li class='list-group-item " + nodeIndex + "' data-index = '" + index + "'>" + "<span class='icon glyphicon'></span><span class='icon node-icon ion-stop'></span><span class='text-edit text-third'>" + itemName + "" + "</span><span class='ion ion-arrow'><span class='ion ion-arrow-down-b js-arrow-down'></span><span class='ion ion-arrow-up-b js-arrow-up'></span></span>" + "<span class='ion ion-close js-remove-node' data-action='removeThird'></span>" + "<span class='ion ion-edit js-edit-text'></span><span class='ion text-info js-edit-info'>设置菜单内容布局</span><span class='ion c-icon-edit text-info js-edit-info'></span>" + "</li>" + $endTag;
         $secondNode.append($item);
         _this.openModal();
         _this.removeNode();
