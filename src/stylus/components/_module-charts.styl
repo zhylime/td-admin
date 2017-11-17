@@ -37,6 +37,79 @@
           left 50%
           transform translateX(-50%)
           top 29px
+  &__dropdown-menu
+    position relative
+    background #edf4fc
+    height 60px
+    width 100%
+    padding 9px 10px
+    &__list
+      background #5085cd
+      padding 15px 5px
+      width 185px
+      position absolute 
+      z-index 1
+      box-shadow 1px 3px 10px #ccc
+      .icon-dropdown-arrow
+        background-position 0 0
+        position absolute
+        right 10px
+        top 50%
+        transform translateY(-50%)
+      &__item
+        width 175px
+        height 42px
+        line-height 42px
+        color white
+        text-align center
+        position relative
+        border-radius 4px
+        cursor pointer
+        &.active
+        &:hover
+          background $color-panel-icon
+          
+        
+        
+    &__sub-list
+      background #ddecff
+      padding 15px 5px
+      width 185px
+      position absolute
+      z-index 1
+      box-shadow 1px 3px 10px #ccc
+      .icon-dropdown-arrow
+        background-position -7px 0
+        position absolute
+        right 10px
+        top 50%
+        transform translateY(-50%)
+      .c-module-charts__dropdown-menu__list__item
+        width 175px
+        height 42px
+        line-height 42px
+        color $tabs-nav-text-active-blue
+        text-align center
+        &.active
+        &:hover
+          background #b1ccf1
+    &__selected
+      width 175px
+      height 42px
+      line-height 42px
+      background $color-panel-icon
+      color white
+      text-align center
+      position relative
+      border-radius 4px
+      cursor pointer
+      .icon-dropdown-arrow
+        background-position 0 0
+        position absolute
+        right 10px
+        top 50%
+        transform translateY(-50%)
+    
   &__grid
     margin-top 30px
     .grid-item
@@ -133,9 +206,12 @@
           margin-right 5px
           
   &__search-container
+    margin-top 5px
     &__button
-      height 22px
       padding 0 20px
       border-radius 6px
+    &__button
+    input
+      height 35px
   .button-remove
     display none
