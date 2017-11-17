@@ -27,6 +27,9 @@ $(document).ready(function() {
 
     // 业务表单 - 下拉菜单
     $('[data-js-dropdown]').CustomDropDown();
+    // 业务表单 -瀑布流 + 点击popup
+    $('[data-js-masonry]').MasonryLayout();
+
 
     //form validator
     $('[data-js-form-validator]').Validator();

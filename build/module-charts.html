@@ -11,165 +11,170 @@
     <link rel="stylesheet" href="./assets/css/vendor/ionicons.css">
     <link rel="stylesheet" href="./assets/css/vendor/b.tabs.css">
     <link rel="stylesheet" href="./assets/css/vendor/bootstrap-select.css">
-    <link rel="stylesheet" href="./assets/css/vendor/slick.css"><!--[if (gt IE 8)]><!-->
+    <link rel="stylesheet" href="./assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="./assets/css/vendor/pager.css"><!--[if (gt IE 8)]><!-->
     <link rel="stylesheet" href="./assets/css/app.css"><!--<![endif]-->
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/ico">
   </head>
   <body>
     <div class="c-module c-module-charts container-fluid">
       <form method="POST" name="moduleEditForm" id="moduleChartsForm" data-js-form-validator class="c-form-module">
-        <div class="c-module-charts__search-container l-float-right">
-          <input class="c-module-charts__search-container__input">
-          <button class="c-module-charts__search-container__button">搜索</button>
+        <div data-js-dropdown class="c-module-charts__dropdown-menu">
+          <div class="c-module-charts__search-container l-float-right">
+            <input class="c-module-charts__search-container__input">
+            <button class="c-module-charts__search-container__button">搜索</button>
+          </div>
+          <div class="c-module-charts__dropdown-menu__selected js-dropdown-btn"><span>选择类型</span><span class="icon-dropdown-arrow"></span></div>
+          <ul class="c-module-charts__dropdown-menu__list hide js-dropdown-list">
+            <li>
+              <div class="c-module-charts__dropdown-menu__list__item js-dropdown-item"><span>装备</span><span class="icon-dropdown-arrow"></span></div>
+              <ul class="c-module-charts__dropdown-menu__sub-list hide jd-dropdown-sub-list">
+                <li>
+                  <div class="c-module-charts__dropdown-menu__list__item js-dropdown-item"><span>飞机</span><span class="icon-dropdown-arrow"></span></div>
+                  <ul class="c-module-charts__dropdown-menu__sub-list hide jd-dropdown-sub-list">
+                    <li>
+                      <div class="c-module-charts__dropdown-menu__list__item js-dropdown-item"><span>采购</span><span class="icon-dropdown-arrow"></span></div>
+                    </li>
+                    <li>
+                      <div class="c-module-charts__dropdown-menu__list__item js-dropdown-item"><span>研制</span><span class="icon-dropdown-arrow"></span></div>
+                    </li>
+                    <li>
+                      <div class="c-module-charts__dropdown-menu__list__item js-dropdown-item"><span>统计</span><span class="icon-dropdown-arrow"></span></div>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="c-module-charts__dropdown-menu__list__item js-dropdown-item"><span>发动机</span><span class="icon-dropdown-arrow"></span></div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="c-module-charts__dropdown-menu__list__item js-dropdown-item"><span>合同</span><span class="icon-dropdown-arrow"></span></div>
+            </li>
+            <li>
+              <div class="c-module-charts__dropdown-menu__list__item js-dropdown-item"><span>数据</span><span class="icon-dropdown-arrow"></span></div>
+            </li>
+          </ul>
         </div>
-        <ul role="tablist" class="nav nav-tabs">
-          <li role="presentation"><a href="#contract" aria-controls="contract" role="tab" data-toggle="tab">合同</a></li>
-          <li role="presentation"><a href="#equipment" aria-controls="equipment" role="tab" data-toggle="tab">装备</a></li>
-        </ul>
-        <div data-js-charts-filter class="tab-content">
-          <div role="tabpanel" id="contract" class="tab-pane">
-            <div data-toggle="buttons" class="radio-group">
-              <label data-group-id="filterID1" class="btn btn-default">
-                <input type="radio" name="chartsOptionGroup1">option1
-              </label>
-              <label data-group-id="filterID2" class="btn btn-default">
-                <input type="radio" name="chartsOptionGroup1">option2
-              </label>
-            </div>
-            <div id="filterID1" class="filter-group">
-              <div class="filter-item">采购1</div>
-              <div class="filter-item">采购2</div>
-              <div class="filter-item">采购3</div>
-            </div>
-            <div id="filterID2" class="filter-group">
-              <div class="filter-item">统计</div>
-              <div class="filter-item">统计2</div>
-              <div class="filter-item">统计3</div>
-            </div>
-          </div>
-          <div role="tabpanel" id="equipment" class="tab-pane">
-            <div data-toggle="buttons" class="radio-group">
-              <label data-group-id="filterID3" class="btn btn-default">
-                <input type="radio" name="chartsOptionGroup1">飞机
-              </label>
-              <label data-group-id="filterID4" class="btn btn-default">
-                <input type="radio" name="chartsOptionGroup1">发动机
-              </label>
-              <label data-group-id="filterID5" class="btn btn-default">
-                <input type="radio" name="chartsOptionGroup1">雷达
-              </label>
-            </div>
-            <div id="filterID3" class="filter-group">
-              <div class="filter-item">Filter1</div>
-            </div>
-            <div id="filterID4" class="filter-group">
-              <div class="filter-item">Filter2</div>
-              <div class="filter-item">FilterZ</div>
-            </div>
-            <div id="filterID5" class="filter-group">
-              <div class="filter-item">FilterY</div>
-              <div class="filter-item">FilterX</div>
-            </div>
-          </div>
-        </div>
-        <div class="c-module-charts__grid">
-          <div class="c-popup__cover js-popup-cover"></div>
-          <div class="c-popup__preview js-popup-preview">
-            <div role="document" class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 id="previewLabel">图标预览</h4>
-                  <div class="icon-remove js-close-popup-preview"></div>
-                </div>
-                <div class="modal-body">
-                  <table>
-                    <tr>
-                      <td>
-                        <p>模型名称: </p>
-                      </td>
-                      <td><span>模型名称文字</span></td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <p>模型描述:</p>
-                      </td>
-                      <td><span>描述文字段落描述文字段落描述文字段落描述文字段落描述文字段落描述文字段落描述文字段落描述文字段落描述文字段落描述文字段落</span></td>
-                    </tr>
-                  </table><img src="./assets/images/popup-preview-chart-thumb.jpg"/>
-                  <div class="c-popup__preview__buttons text-center">
-                    <button>编辑</button>
-                  </div>
-                </div>
+        <div data-js-masonry class="c-module-charts__grid">
+          <div id="masonry" class="container-fluid">
+            <div class="box grid-item">
+              <div class="grid-item__image"><img src="./assets/images/chart-grid-thumb.jpg"></div>
+              <div class="grid-item__content">
+                <div class="name">数据权限对比模块</div>
+                <div class="brief">先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：“这场比赛这场比赛两队都无欲无求欲无求了...</div>
               </div>
+              <div class="grid-item__btns"><a href="javascript:void(0);" class="button-create"><i class="icon-module"></i>建模</a><a href="#" data-toggle="modal" data-target="#previewPopup" class="button-preview js-open-modal-charts-preview"><i class="icon-preview"></i>预览</a></div>
             </div>
-          </div>
-          <div data-js-card="data-js-card" data-js-popup-preview="data-js-popup-preview" class="c-card-flip c-card-flip__grid">
-            <div class="grid-item card js-card">
-              <div class="card-front card-side">
-                <div class="c-card-flip__grid__thumb"><img src="./assets/images/module-charts-line-thumb.jpg"/></div>
-                <div class="c-card-flip__grid__title">数据权限对比模型(折线图)</div>
+            <div class="box grid-item">
+              <div class="grid-item__image"><img src="./assets/images/chart-grid-thumb.jpg"></div>
+              <div class="grid-item__content">
+                <div class="name">数据权限对比模块</div>
+                <div class="brief">先来看看范志毅命中的瑞超2串1，“这场比赛这场比赛两队都无欲无求欲无求了...</div>
               </div>
-              <div class="card-back card-side">
-                <div class="c-card-flip__grid__desc">
-                  <div class="desc-title">数据权限比对模块</div>
-                  <div class="desc-content">先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：</div>
-                  <div class="desc-author">创建人: <span>某某</span></div>
-                  <div class="desc-author">
-                    最后修改人: <span>某某</span>
-                    
-                  </div>
-                </div>
-                <div class="c-card-flip__grid__buttons"><a href="#" data-toggle="modal" data-target="#previewPopup" class="button-preview"><i class="icon-preview"></i>预览</a><a href="javascript:void(0);" class="button-create"><i class="icon-module"></i>建模</a><a href="javascript:void(0);" class="button-remove"><i class="icon-remove"></i>删除</a></div>
-              </div>
+              <div class="grid-item__btns"><a href="javascript:void(0);" class="button-create"><i class="icon-module"></i>建模</a><a href="#" data-toggle="modal" data-target="#previewPopup" class="button-preview"><i class="icon-preview"></i>预览</a></div>
             </div>
-            <div class="grid-item card js-card">
-              <div class="card-front card-side">
-                <div class="c-card-flip__grid__thumb"><img src="./assets/images/module-charts-line-thumb.jpg"/></div>
-                <div class="c-card-flip__grid__title">数据权限对比模型</div>
+            <div class="box grid-item">
+              <div class="grid-item__image">
               </div>
-              <div class="card-back card-side">
-                <div class="c-card-flip__grid__desc">
-                  <div class="desc-title">数据权限比对模块</div>
-                  <div class="desc-content">先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：</div>
-                  <div class="desc-author">创建人: <span>某某</span></div>
-                  <div class="desc-author">最后修改人: <span>某某</span></div>
-                </div>
-                <div class="c-card-flip__grid__buttons"><a href="javascript:void(0);" class="button-preview"><i class="icon-preview"></i>预览</a><a href="javascript:void(0);" class="button-create"><i class="icon-module"></i>建模</a><a href="javascript:void(0);" class="button-remove"><i class="icon-remove"></i>删除</a></div>
+              <div class="grid-item__content">
+                <div class="name">数据权限对比模块</div>
+                <div class="brief">先来看看范志毅命中的瑞超2串1前，范志毅分析后给出推荐：“这场比赛这场比赛两队都无欲无求欲无求了...</div>
               </div>
+              <div class="grid-item__btns"><a href="javascript:void(0);" class="button-create"><i class="icon-module"></i>建模</a><a href="#" data-toggle="modal" data-target="#previewPopup" class="button-preview"><i class="icon-preview"></i>预览</a></div>
             </div>
-            <div class="grid-item card js-card">
-              <div class="card-front card-side">
-                <div class="c-card-flip__grid__thumb"><img src="./assets/images/module-charts-radar-thumb.jpg"/></div>
-                <div class="c-card-flip__grid__title">数据权限对比模型(雷达图)</div>
+            <div class="box grid-item">
+              <div class="grid-item__image"><img src="./assets/images/chart-grid-thumb.jpg"></div>
+              <div class="grid-item__content">
+                <div class="name">数据权限对比模块</div>
+                <div class="brief">先来看看范志毅命中的瑞超2串1前，范志毅分析后给出推荐：“这场比赛这场比赛两队都无欲无求欲无求了...</div>
               </div>
-              <div class="card-back card-side">
-                <div class="c-card-flip__grid__desc">
-                  <div class="desc-title">数据权限比对模块</div>
-                  <div class="desc-content">先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：</div>
-                  <div class="desc-author">创建人: <span>某某</span></div>
-                  <div class="desc-author">最后修改人: <span>某某</span></div>
-                </div>
-                <div class="c-card-flip__grid__buttons"><a href="javascript:void(0);" class="button-preview"><i class="icon-preview"></i>预览</a><a href="javascript:void(0);" class="button-create"><i class="icon-module"></i>建模</a><a href="javascript:void(0);" class="button-remove"><i class="icon-remove"></i>删除</a></div>
-              </div>
+              <div class="grid-item__btns"><a href="javascript:void(0);" class="button-create"><i class="icon-module"></i>建模</a><a href="#" data-toggle="modal" data-target="#previewPopup" class="button-preview"><i class="icon-preview"></i>预览</a></div>
             </div>
-            <div class="grid-item card js-card">
-              <div class="card-front card-side">
-                <div class="c-card-flip__grid__thumb"><img src="./assets/images/module-charts-bar-thumb.jpg"/></div>
-                <div class="c-card-flip__grid__title">数据权限对比模型(柱状图)</div>
+            <div class="box grid-item">
+              <div class="grid-item__image">
               </div>
-              <div class="card-back card-side">
-                <div class="c-card-flip__grid__desc">
-                  <div class="desc-title">数据权限比对模块</div>
-                  <div class="desc-content">先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：</div>
-                  <div class="desc-author">创建人: <span>某某</span></div>
-                  <div class="desc-author">最后修改人: <span>某某</span></div>
-                </div>
-                <div class="c-card-flip__grid__buttons"><a href="javascript:void(0);" class="button-preview"><i class="icon-preview"></i>预览</a><a href="javascript:void(0);" class="button-create"><i class="icon-module"></i>建模</a><a href="javascript:void(0);" class="button-remove"><i class="icon-remove"></i>删除</a></div>
+              <div class="grid-item__content">
+                <div class="name">数据权限对比模块</div>
+                <div class="brief">先来看看范志毅命中的瑞超2串1前，范志毅分析后给出推荐：“这场比赛这场比赛两队都无欲无求欲无求了...</div>
               </div>
+              <div class="grid-item__btns"><a href="javascript:void(0);" class="button-create"><i class="icon-module"></i>建模</a><a href="#" data-toggle="modal" data-target="#previewPopup" class="button-preview"><i class="icon-preview"></i>预览</a></div>
+            </div>
+            <div class="box grid-item">
+              <div class="grid-item__image"><img src="./assets/images/chart-grid-thumb.jpg"></div>
+              <div class="grid-item__content">
+                <div class="name">数据权限对比模块</div>
+                <div class="brief">先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：“这场比赛这场比赛两队都无欲无求欲无求了...</div>
+              </div>
+              <div class="grid-item__btns"><a href="javascript:void(0);" class="button-create"><i class="icon-module"></i>建模</a><a href="#" data-toggle="modal" data-target="#previewPopup" class="button-preview"><i class="icon-preview"></i>预览</a></div>
+            </div>
+            <div class="box grid-item">
+              <div class="grid-item__image"><img src="./assets/images/chart-grid-thumb.jpg"></div>
+              <div class="grid-item__content">
+                <div class="name">数据权限对比模块</div>
+                <div class="brief">先来看看范志毅命中的瑞超2串1，“这场比赛这场比赛两队都无欲无求欲无求了...</div>
+              </div>
+              <div class="grid-item__btns"><a href="javascript:void(0);" class="button-create"><i class="icon-module"></i>建模</a><a href="#" data-toggle="modal" data-target="#previewPopup" class="button-preview"><i class="icon-preview"></i>预览</a></div>
             </div>
           </div>
         </div>
+        <!--添加菜单的弹出框-->
       </form>
+      <div id="previewPopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade modalChartsPreview">
+        <div role="document" class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+              <h4 id="myModalLabel" class="modal-title">业务列表预览</h4>
+            </div>
+            <div class="modal-body">
+              <table>
+                <tr>
+                  <th>字段名称</th>
+                  <th>别名</th>
+                  <th>表头</th>
+                  <th>表头</th>
+                  <th>是否为维度</th>
+                  <th>是否为指标</th>
+                </tr>
+                <tr>
+                  <td>字段 </td>
+                  <td>飞机类型</td>
+                  <td>表格内容</td>
+                  <td>表格内容</td>
+                  <td>是</td>
+                  <td>是</td>
+                </tr>
+                <tr>
+                  <td>字段 </td>
+                  <td>飞机类型</td>
+                  <td>表格内容</td>
+                  <td>表格内容</td>
+                  <td>是</td>
+                  <td>是</td>
+                </tr>
+                <tr>
+                  <td>字段 </td>
+                  <td>飞机类型</td>
+                  <td>表格内容</td>
+                  <td>表格内容</td>
+                  <td>是</td>
+                  <td>是</td>
+                </tr>
+                <tr>
+                  <td>字段 </td>
+                  <td>飞机类型</td>
+                  <td>表格内容</td>
+                  <td>表格内容</td>
+                  <td>是</td>
+                  <td>是</td>
+                </tr>
+              </table>
+              <div id="chartsPager"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
   <script>
@@ -187,6 +192,8 @@
   <script src="./assets/js/vendor/isotope.pkgd.min.js"></script>
   <script src="./assets/js/vendor/bootstrap-select.js"></script>
   <script src="./assets/js/vendor/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="./assets/js/vendor/masonry-docs.js"></script>
+  <script src="./assets/js/vendor/jquery.pager.js"></script>
   <script src="./assets/js/app.js"></script><!--[if IE 9]>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script><![endif]-->
 </html>

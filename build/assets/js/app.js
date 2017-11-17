@@ -900,6 +900,8 @@ $(document).ready(function () {
 
   // 业务表单 - 下拉菜单
   $('[data-js-dropdown]').CustomDropDown();
+  // 业务表单 -瀑布流 + 点击popup
+  $('[data-js-masonry]').MasonryLayout();
 
   //form validator
   $('[data-js-form-validator]').Validator();
@@ -1026,6 +1028,97 @@ var FullPage = function (_MLP$apps$MLPModule) {
 }(MLP.apps.MLPModule);
 
 $.mlpPlugin(FullPage, 'FullPage', false, false);
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// 业务表单 - 瀑布流 + 点击popup
+var MasonryLayout = function (_MLP$apps$MLPModule) {
+  _inherits(MasonryLayout, _MLP$apps$MLPModule);
+
+  function MasonryLayout() {
+    _classCallCheck(this, MasonryLayout);
+
+    return _possibleConstructorReturn(this, (MasonryLayout.__proto__ || Object.getPrototypeOf(MasonryLayout)).apply(this, arguments));
+  }
+
+  _createClass(MasonryLayout, [{
+    key: 'init',
+    value: function init() {
+      _get(MasonryLayout.prototype.__proto__ || Object.getPrototypeOf(MasonryLayout.prototype), 'init', this).call(this);
+      this.el = {
+        gridContainer: this.el.target.find('#masonry'),
+        gridItem: this.el.target.find('.grid-item'),
+        previewBtn: this.el.target.find('.js-open-modal-charts-preview'),
+        pager: $('#chartsPager')
+      };
+
+      this.events();
+    }
+  }, {
+    key: 'events',
+    value: function events() {
+      var _this = this;
+      this.layout();
+      this.highlightItem();
+      this.popup();
+    }
+  }, {
+    key: 'layout',
+    value: function layout() {
+      this.el.gridContainer.masonry({
+        itemSelector: '.box',
+        columnWidth: 260,
+        // isFitWidth:true,
+        gutter: 20
+        // isAnimated: true
+      });
+    }
+  }, {
+    key: 'highlightItem',
+    value: function highlightItem() {
+      var _this = this;
+      this.el.gridItem.each(function () {
+        $(this).on('click', function (e) {
+
+          _this.el.gridItem.removeClass('active');
+          this.addClass('active');
+        });
+      });
+    }
+  }, {
+    key: 'popup',
+    value: function popup() {
+      var _this = this;
+
+      this.el.previewBtn.on('click', function (e) {
+        e.stopPropagation();
+        var id = $(this).attr('data-target');
+        $(id).modal('show');
+        _this.previewPager();
+      });
+    }
+  }, {
+    key: 'previewPager',
+    value: function previewPager() {
+      $(this.el.pager).pager({
+        buttonClickCallback: function buttonClickCallback(pagenumber, pagecount, _buttonClickCallback) {}
+      });
+    }
+  }]);
+
+  return MasonryLayout;
+}(MLP.apps.MLPModule);
+
+$.mlpPlugin(MasonryLayout, 'MasonryLayout', false, false);
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();

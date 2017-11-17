@@ -1,7 +1,14 @@
 extends ../partials/_template
-include ../mixins/_card-flip
+//- include ../mixins/_card-flip
 block footer
 block header
+
+
+block headCss
+  link(rel='stylesheet', href=paths.css + 'vendor/pager.css')
+block footerJs
+  script(src=paths.js + 'vendor/masonry-docs.js')
+  script(src=paths.js + 'vendor/jquery.pager.js')
 //- 业务表单
 block content
   .c-module.c-module-charts.container-fluid
@@ -97,8 +104,161 @@ block content
       //-       .filter-item FilterY
       //-       .filter-item FilterX
 
-      .c-module-charts__grid
-        +card-flip
+      .c-module-charts__grid(data-js-masonry)
+        #masonry.container-fluid
+          .box.grid-item
+            .grid-item__image
+              img(src=paths.img + 'chart-grid-thumb.jpg')
+            .grid-item__content
+              .name 数据权限对比模块
+              .brief.
+                先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：“这场比赛这场比赛两队都无欲无求欲无求了...
+            .grid-item__btns
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+              a(href="#", data-toggle='modal', data-target='#previewPopup').button-preview.js-open-modal-charts-preview
+                i.icon-preview
+                | 预览
+
+          .box.grid-item
+            .grid-item__image
+              img(src=paths.img + 'chart-grid-thumb.jpg')
+            .grid-item__content
+              .name 数据权限对比模块
+              .brief.
+                先来看看范志毅命中的瑞超2串1，“这场比赛这场比赛两队都无欲无求欲无求了...
+            .grid-item__btns
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+              a(href="#", data-toggle='modal', data-target='#previewPopup').button-preview
+                i.icon-preview
+                | 预览
+
+          .box.grid-item
+            .grid-item__image
+              //- img(src=paths.img + 'chart-grid-thumb.jpg')
+            .grid-item__content
+              .name 数据权限对比模块
+              .brief.
+                先来看看范志毅命中的瑞超2串1前，范志毅分析后给出推荐：“这场比赛这场比赛两队都无欲无求欲无求了...
+            .grid-item__btns
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+              a(href="#", data-toggle='modal', data-target='#previewPopup').button-preview
+                i.icon-preview
+                | 预览
+
+          .box.grid-item
+            .grid-item__image
+              img(src=paths.img + 'chart-grid-thumb.jpg')
+            .grid-item__content
+              .name 数据权限对比模块
+              .brief.
+                先来看看范志毅命中的瑞超2串1前，范志毅分析后给出推荐：“这场比赛这场比赛两队都无欲无求欲无求了...
+            .grid-item__btns
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+              a(href="#", data-toggle='modal', data-target='#previewPopup').button-preview
+                i.icon-preview
+                | 预览
+
+          .box.grid-item
+            .grid-item__image
+              //- img(src=paths.img + 'chart-grid-thumb.jpg')
+            .grid-item__content
+              .name 数据权限对比模块
+              .brief.
+                先来看看范志毅命中的瑞超2串1前，范志毅分析后给出推荐：“这场比赛这场比赛两队都无欲无求欲无求了...
+            .grid-item__btns
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+              a(href="#", data-toggle='modal', data-target='#previewPopup').button-preview
+                i.icon-preview
+                | 预览
+
+          .box.grid-item
+            .grid-item__image
+              img(src=paths.img + 'chart-grid-thumb.jpg')
+            .grid-item__content
+              .name 数据权限对比模块
+              .brief.
+                先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：“这场比赛这场比赛两队都无欲无求欲无求了...
+            .grid-item__btns
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+              a(href="#", data-toggle='modal', data-target='#previewPopup').button-preview
+                i.icon-preview
+                | 预览
+
+          .box.grid-item
+            .grid-item__image
+              img(src=paths.img + 'chart-grid-thumb.jpg')
+            .grid-item__content
+              .name 数据权限对比模块
+              .brief.
+                先来看看范志毅命中的瑞超2串1，“这场比赛这场比赛两队都无欲无求欲无求了...
+            .grid-item__btns
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+              a(href="#", data-toggle='modal', data-target='#previewPopup').button-preview
+                i.icon-preview
+                | 预览
+
+      //添加菜单的弹出框
+    #previewPopup.modal.fade.modalChartsPreview(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
+              | &times;
+            h4#myModalLabel.modal-title 业务列表预览
+          .modal-body
+            table
+              tr
+                th 字段名称
+                th 别名
+                th 表头
+                th 表头
+                th 是否为维度
+                th 是否为指标
+              tr
+                td 字段 
+                td 飞机类型
+                td 表格内容
+                td 表格内容
+                td 是
+                td 是
+              tr
+                td 字段 
+                td 飞机类型
+                td 表格内容
+                td 表格内容
+                td 是
+                td 是
+              tr
+                td 字段 
+                td 飞机类型
+                td 表格内容
+                td 表格内容
+                td 是
+                td 是
+              tr
+                td 字段 
+                td 飞机类型
+                td 表格内容
+                td 表格内容
+                td 是
+                td 是
+            #chartsPager
+
+      
 
 
 
