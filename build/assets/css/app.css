@@ -3864,6 +3864,16 @@ html {
     display: none;
   }
 }
+.c-module-setup .treeview {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.c-module-setup .treeview::-webkit-scrollbar {
+  background-color: #ecf2fa;
+}
+.c-module-setup .treeview::-webkit-scrollbar-thumb {
+  background-color: #b4ceef;
+}
 .c-module-setup .treeview .icon {
   color: #7da6de;
 }
@@ -3935,6 +3945,7 @@ html {
 .c-module-setup .treeview .node-first,
 .c-module-setup .treeview .node-second,
 .c-module-setup .treeview .node-third {
+  background-color: #f7f7f7;
   color: #354967;
   border: none;
 }
