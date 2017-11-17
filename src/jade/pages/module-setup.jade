@@ -16,18 +16,18 @@ block content
       .row
         .col-sm-6.c-module-setup__left.l-p-bottom-5
           .row
-            .col-sm-3
+            .col-sm-3.col-md-2
               .form-group.text-label
                 label.form__label(for="name") 主标题
-            .col-sm-9.col-xs-10
+            .col-sm-9.col-md-10.col-xs-10
               .form-group
                 input.form-control(type="text" id="name" name="name" data-rule="required|alpha|max:30")
                 div.text-danger.l-padding-top-1.hide.input-error-message 请输入主标题
           .row.hide
-            .col-sm-3
+            .col-sm-3.col-md-2
               .form-group.text-label
                 label.form__label(for="type") 网站样式
-            .col-sm-9.col-xs-10
+            .col-sm-9.col-md-10.col-xs-10
               .form-group
                 select.js-select-fancy.form-control(type="text" data-js-mobile-smart-label id="type" name="type" data-rule="required")
                   option(value="" class="active")
@@ -35,10 +35,10 @@ block content
                   option(value="002") 样式2
                 div.text-danger.l-padding-top-1.hide.input-error-message 请输入样式
           .row
-            .col-sm-12.col-md-3
+            .col-sm-12.col-md-2
               .form-group.text-label
                 label.form__label(for="addMenu") 菜单设置
-            .col-sm-12.col-md-9.col-xs-10
+            .col-sm-12.col-md-10.col-xs-10
               .form-group.c-module-setup-addMenu.c-module-setup-menu
                 button.btn.btn-default.js-open-modal(type='button' data-action="addFirst") 添加菜单
               .form-group.c-module-setup-editMenu.c-module-setup-menu
@@ -86,13 +86,13 @@ block content
 
 
           .row.c-module-setup-confirm
-            .col-sm-0.col-md-3
+            .col-sm-0.col-md-2
               .form-group.text-label.hidden-xs
                 label.form__label(for="")
-            .col-sm-12.col-md-9.col-xs-10
+            .col-sm-12.col-md-10.col-xs-10
               .form-group
                 button.btn.btn-primary.js-confirm-info(type="button") 确定
-        .col-sm-6.c-module-setup__right.l-p-bottom-5.hide.js-module-setup-radios(data-js-module-setup-radios)
+        .col-sm-6.c-module-setup__right.l-p-bottom-5.js-module-setup-radios(data-js-module-setup-radios)
           .row
             .col-sm-12
               .form-group.text-label
@@ -124,12 +124,87 @@ block content
                 .setupOption-image.setupOption-image--6.js-radio-item(data-image="setupOptionImg6")
           .row.setupOptionImgGroup.js-radio-images
             .col-sm-12
-              img.js-add-menu-info#setupOptionImg1(src=paths.img + 'module-setup-markup-1.png')
-              img.js-add-menu-info#setupOptionImg2(src=paths.img + 'module-setup-markup-2.png')
-              img.js-add-menu-info#setupOptionImg3(src=paths.img + 'module-setup-markup-3.png')
-              img.js-add-menu-info#setupOptionImg4(src=paths.img + 'module-setup-markup-4.png')
-              img.js-add-menu-info#setupOptionImg5(src=paths.img + 'module-setup-markup-5.png')
-              img.js-add-menu-info#setupOptionImg6(src=paths.img + 'module-setup-markup-6.png')
+              .c-module-setup__item.active.c-module-setup__item-one.js-add-menu-info#setupOptionImg1
+                .c-module-setup__item-block
+                  .c-module-setup__item-btn
+                    span.icon.ion-plus-round
+                    br
+                    span 位置1添加数据
+              .c-module-setup__item.c-module-setup__item-two-h.js-add-menu-info#setupOptionImg2
+                .c-module-setup__item-block
+                  .c-module-setup__item-btn
+                    span.icon.ion-plus-round
+                    br
+                    span 位置1添加数据
+                .c-module-setup__item-block
+                  .c-module-setup__item-btn
+                    span.icon.ion-plus-round
+                    br
+                    span 位置2添加数据
+              .c-module-setup__item.c-module-setup__item-two-v.js-add-menu-info#setupOptionImg3
+                .c-module-setup__item-block
+                  .c-module-setup__item-btn
+                    span.icon.ion-plus-round
+                    br
+                    span 位置1添加数据
+                .c-module-setup__item-block
+                  .c-module-setup__item-btn
+                    span.icon.ion-plus-round
+                    br
+                    span 位置2添加数据
+              .c-module-setup__item.c-module-setup__item-three-h.js-add-menu-info#setupOptionImg4
+                .c-module-setup__item-block
+                  .c-module-setup__item-btn
+                    span.icon.ion-plus-round
+                    br
+                    span 位置1添加数据
+                .c-module-setup__item-block
+                  .c-module-setup__item-btn
+                    span.icon.ion-plus-round
+                    br
+                    span 位置2添加数据
+                .c-module-setup__item-block
+                  .c-module-setup__item-btn
+                    span.icon.ion-plus-round
+                    br
+                    span 位置3添加数据
+              .c-module-setup__item.c-module-setup__item-three-v.js-add-menu-info#setupOptionImg5
+                .c-module-setup__item-block
+                  .c-module-setup__item-btn
+                    span.icon.ion-plus-round
+                    br
+                    span 位置1添加数据
+                .c-module-setup__item-block
+                  .c-module-setup__item-btn
+                    span.icon.ion-plus-round
+                    br
+                    span 位置2添加数据
+                .c-module-setup__item-block
+                  .c-module-setup__item-btn
+                    span.icon.ion-plus-round
+                    br
+                    span 位置3添加数据
+              .c-module-setup__item.c-module-setup__item-four.js-add-menu-info#setupOptionImg6
+                .c-module-setup__item-block
+                  .c-module-setup__item-btn
+                    span.icon.ion-plus-round
+                    br
+                    span 位置1添加数据
+                .c-module-setup__item-block
+                  .c-module-setup__item-btn
+                    span.icon.ion-plus-round
+                    br
+                    span 位置2添加数据
+                .c-module-setup__item-block
+                  .c-module-setup__item-btn
+                    span.icon.ion-plus-round
+                    br
+                    span 位置3添加数据
+                .c-module-setup__item-block
+                  .c-module-setup__item-btn
+                    span.icon.ion-plus-round
+                    br
+                    span 位置4添加数据
 
 
       .row.button-group.c-module-setup-button.l-p-top-3

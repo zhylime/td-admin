@@ -21,12 +21,12 @@
         <div class="row">
           <div class="col-sm-6 c-module-setup__left l-p-bottom-5">
             <div class="row">
-              <div class="col-sm-3">
+              <div class="col-sm-3 col-md-2">
                 <div class="form-group text-label">
                   <label for="name" class="form__label">主标题</label>
                 </div>
               </div>
-              <div class="col-sm-9 col-xs-10">
+              <div class="col-sm-9 col-md-10 col-xs-10">
                 <div class="form-group">
                   <input type="text" id="name" name="name" data-rule="required|alpha|max:30" class="form-control">
                   <div class="text-danger l-padding-top-1 hide input-error-message">请输入主标题</div>
@@ -34,12 +34,12 @@
               </div>
             </div>
             <div class="row hide">
-              <div class="col-sm-3">
+              <div class="col-sm-3 col-md-2">
                 <div class="form-group text-label">
                   <label for="type" class="form__label">网站样式</label>
                 </div>
               </div>
-              <div class="col-sm-9 col-xs-10">
+              <div class="col-sm-9 col-md-10 col-xs-10">
                 <div class="form-group">
                   <select type="text" data-js-mobile-smart-label id="type" name="type" data-rule="required" class="js-select-fancy form-control">
                     <option value="" class="active"></option>
@@ -51,12 +51,12 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-sm-12 col-md-3">
+              <div class="col-sm-12 col-md-2">
                 <div class="form-group text-label">
                   <label for="addMenu" class="form__label">菜单设置</label>
                 </div>
               </div>
-              <div class="col-sm-12 col-md-9 col-xs-10">
+              <div class="col-sm-12 col-md-10 col-xs-10">
                 <div class="form-group c-module-setup-addMenu c-module-setup-menu">
                   <button type="button" data-action="addFirst" class="btn btn-default js-open-modal">添加菜单</button>
                 </div>
@@ -111,19 +111,19 @@
               </div>
             </div>
             <div class="row c-module-setup-confirm">
-              <div class="col-sm-0 col-md-3">
+              <div class="col-sm-0 col-md-2">
                 <div class="form-group text-label hidden-xs">
                   <label for="" class="form__label"></label>
                 </div>
               </div>
-              <div class="col-sm-12 col-md-9 col-xs-10">
+              <div class="col-sm-12 col-md-10 col-xs-10">
                 <div class="form-group">
                   <button type="button" class="btn btn-primary js-confirm-info">确定</button>
                 </div>
               </div>
             </div>
           </div>
-          <div data-js-module-setup-radios class="col-sm-6 c-module-setup__right l-p-bottom-5 hide js-module-setup-radios">
+          <div data-js-module-setup-radios class="col-sm-6 c-module-setup__right l-p-bottom-5 js-module-setup-radios">
             <div class="row">
               <div class="col-sm-12">
                 <div class="form-group text-label">
@@ -170,7 +170,65 @@
               </div>
             </div>
             <div class="row setupOptionImgGroup js-radio-images">
-              <div class="col-sm-12"><img id="setupOptionImg1" src="./assets/images/module-setup-markup-1.png" class="js-add-menu-info"><img id="setupOptionImg2" src="./assets/images/module-setup-markup-2.png" class="js-add-menu-info"><img id="setupOptionImg3" src="./assets/images/module-setup-markup-3.png" class="js-add-menu-info"><img id="setupOptionImg4" src="./assets/images/module-setup-markup-4.png" class="js-add-menu-info"><img id="setupOptionImg5" src="./assets/images/module-setup-markup-5.png" class="js-add-menu-info"><img id="setupOptionImg6" src="./assets/images/module-setup-markup-6.png" class="js-add-menu-info"></div>
+              <div class="col-sm-12">
+                <div id="setupOptionImg1" class="c-module-setup__item active c-module-setup__item-one js-add-menu-info">
+                  <div class="c-module-setup__item-block">
+                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置1添加数据</span></div>
+                  </div>
+                </div>
+                <div id="setupOptionImg2" class="c-module-setup__item c-module-setup__item-two-h js-add-menu-info">
+                  <div class="c-module-setup__item-block">
+                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置1添加数据</span></div>
+                  </div>
+                  <div class="c-module-setup__item-block">
+                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置2添加数据</span></div>
+                  </div>
+                </div>
+                <div id="setupOptionImg3" class="c-module-setup__item c-module-setup__item-two-v js-add-menu-info">
+                  <div class="c-module-setup__item-block">
+                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置1添加数据</span></div>
+                  </div>
+                  <div class="c-module-setup__item-block">
+                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置2添加数据</span></div>
+                  </div>
+                </div>
+                <div id="setupOptionImg4" class="c-module-setup__item c-module-setup__item-three-h js-add-menu-info">
+                  <div class="c-module-setup__item-block">
+                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置1添加数据</span></div>
+                  </div>
+                  <div class="c-module-setup__item-block">
+                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置2添加数据</span></div>
+                  </div>
+                  <div class="c-module-setup__item-block">
+                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置3添加数据</span></div>
+                  </div>
+                </div>
+                <div id="setupOptionImg5" class="c-module-setup__item c-module-setup__item-three-v js-add-menu-info">
+                  <div class="c-module-setup__item-block">
+                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置1添加数据</span></div>
+                  </div>
+                  <div class="c-module-setup__item-block">
+                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置2添加数据</span></div>
+                  </div>
+                  <div class="c-module-setup__item-block">
+                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置3添加数据</span></div>
+                  </div>
+                </div>
+                <div id="setupOptionImg6" class="c-module-setup__item c-module-setup__item-four js-add-menu-info">
+                  <div class="c-module-setup__item-block">
+                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置1添加数据</span></div>
+                  </div>
+                  <div class="c-module-setup__item-block">
+                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置2添加数据</span></div>
+                  </div>
+                  <div class="c-module-setup__item-block">
+                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置3添加数据</span></div>
+                  </div>
+                  <div class="c-module-setup__item-block">
+                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置4添加数据</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

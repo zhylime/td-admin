@@ -34,12 +34,6 @@
       background-position -475px 0
       &.active
         background-position -475px -66px
-  .setupOptionImgGroup
-    img
-      display none
-      width 100%
-      &.active
-        display block
   [type="radio"]
     display none
   button.btn-primary,
@@ -187,3 +181,85 @@
       margin-bottom 10px
       @media screen and (min-width: 768px)
         margin-bottom 0px
+
+
+  .setupOptionImgGroup
+    .c-module-setup__item
+      display none
+      width 100%
+      &.active
+        display block
+  &__item
+    height 369px
+    width 553px
+    margin 0 auto
+    background-color $color-white
+    position relative
+    padding 2%
+    &-btn
+      margin auto
+      width 90%
+      height 50%
+      text-align center
+      position relative
+      top 35%
+      color $color-btn-blue
+      font-weight bold
+      span.ion-plus-round
+        font-size 3em
+        position relative
+        top -.5em
+    &-block
+      background-color $bg-file-blue
+      border 1px dashed $color-panel-icon
+      width 48%
+      height 48%
+      float left
+    &-one
+      .c-module-setup__item-block
+        width 100%
+        height 100%
+    &-two-h
+      .c-module-setup__item-block
+        height 100%
+        width 49%
+        &:nth-child(1)
+          margin-right 2%
+    &-two-v
+      .c-module-setup__item-block
+        float none
+        height 49%
+        width 100%
+        &:nth-child(2)
+          position relative
+          top 2.5%
+    &-four
+      .c-module-setup__item-block
+        width 49%
+        height 49%
+        &:nth-child(1)
+          margin-bottom 1.7%
+          margin-right 2%
+        &:nth-child(3)
+          margin-right 2%
+    &-three-v
+      .c-module-setup__item-block
+        height 49%
+        &:nth-child(1)
+          margin-bottom 1.7%
+          width 100%
+        &:nth-child(2)
+          margin-right 2%
+          width 49%
+        &:nth-child(3)
+          width 49%
+    &-three-h
+      .c-module-setup__item-block
+        width 49%
+        height 49%
+        &:nth-child(2)
+          float right
+          height  100%
+        &:nth-child(3)
+          position relative
+          top 2%

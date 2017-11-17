@@ -1124,7 +1124,9 @@ var RadioBtn = function (_MLP$apps$MLPModule) {
           var id = $(this).attr('data-image');
           console.log(id);
           $('.js-radio-images img').removeClass('active');
+          $('.js-add-menu-info').removeClass('active');
           $('img#' + id).addClass('active');
+          $('#' + id).addClass('active');
         });
       });
     }
