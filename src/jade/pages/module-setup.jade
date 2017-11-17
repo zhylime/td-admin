@@ -4,13 +4,9 @@ include ../mixins/_slick-carousel
 block footer
 block header
 block headCss
-  link(rel='stylesheet', href=paths.css + 'vendor/slick.css')
   link(rel='stylesheet', href=paths.css + 'vendor/jquery.mCustomScrollbar.min.css')
 block footerJs
   script(src=paths.js + 'vendor/slick.min.js')
-  script(src=paths.js + 'vendor/jquery.mCustomScrollbar.concat.min.js')
-
-
 
 
 block content
@@ -52,7 +48,7 @@ block content
                   input.js-tree-menu(type="hidden" , name="treeMenu" id="treeMenu"   value='')
                   .js-menu-item.treeview
                     //基本结构
-                    //ul.list-group.list-group-first
+                    ul.list-group.list-group-first
                       li.list-group-item.node-first(data-index = "0")
                         span.icon.expand-icon.ion-arrow-down-b
                         span.icon.node-icon
