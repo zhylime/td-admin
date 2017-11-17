@@ -568,7 +568,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
     key: 'scrollBar',
     value: function scrollBar() {
       $(".js-menu-scroll").mCustomScrollbar({
-        setHeight: 400,
+        setHeight: 300,
         theme: "blue-1"
       });
     }
