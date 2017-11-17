@@ -44,6 +44,7 @@ class AddMenu extends MLP.apps.MLPModule {
     this.upDateMenuTree();
     this.showInfoMenu();
     this.openDataTypeModal();
+    this.scrollBar();
     this.el.confirmBtn.off('click').on('click', (evt) =>{
 
       let nodeIndex;
@@ -103,6 +104,7 @@ class AddMenu extends MLP.apps.MLPModule {
         _this.editMenuText();
         _this.openInfoModal();
         _this.isSetMenu();
+        _this.scrollBar();
         break;
       case 1:
         nodeIndex = "node-second";
@@ -118,6 +120,7 @@ class AddMenu extends MLP.apps.MLPModule {
         _this.editMenuText();
         _this.openInfoModal();
         _this.isSetMenu();
+        _this.scrollBar();
         break;
       default:
         nodeIndex = "node-third";
@@ -134,6 +137,7 @@ class AddMenu extends MLP.apps.MLPModule {
         _this.openInfoModal();
         _this.isSetMenu();
         _this.showInfoMenu();
+        _this.scrollBar();
     }
 
   }
@@ -320,6 +324,14 @@ class AddMenu extends MLP.apps.MLPModule {
       $(".js-tree-menu").val(JSON.stringify(menuObj));
     }
 
+  }
+
+  //添加滚动条
+  scrollBar(){
+    $(".js-menu-scroll").mCustomScrollbar({
+      setHeight:400,
+      theme:"blue-1"
+    });
   }
 
 

@@ -5,8 +5,11 @@ block footer
 block header
 block headCss
   link(rel='stylesheet', href=paths.css + 'vendor/slick.css')
+  link(rel='stylesheet', href=paths.css + 'vendor/jquery.mCustomScrollbar.min.css')
 block footerJs
   script(src=paths.js + 'vendor/slick.min.js')
+  script(src=paths.js + 'vendor/jquery.mCustomScrollbar.concat.min.js')
+
 
 
 
@@ -45,11 +48,11 @@ block content
                 button.btn.btn-default.js-edit-menu(type='button') 编辑菜单
 
               .panel.panel-default(data-tree-view)
-                .panel-body
+                .panel-body.js-menu-scroll
                   input.js-tree-menu(type="hidden" , name="treeMenu" id="treeMenu"   value='')
                   .js-menu-item.treeview
                     //基本结构
-                    //ul.list-group.list-group-first
+                    ul.list-group.list-group-first
                       li.list-group-item.node-first(data-index = "0")
                         span.icon.expand-icon.ion-arrow-down-b
                         span.icon.node-icon
@@ -83,7 +86,6 @@ block content
                                 span.ion.ion-edit.js-edit-text
                                 span.ion.text-info.js-edit-info 设置菜单内容布局
                                 span.ion.c-icon-edit.text-info.js-edit-info
-
 
           .row.c-module-setup-confirm
             .col-sm-0.col-md-2

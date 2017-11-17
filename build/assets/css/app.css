@@ -3864,16 +3864,6 @@ html {
     display: none;
   }
 }
-.c-module-setup .treeview {
-  max-height: 400px;
-  overflow-y: auto;
-}
-.c-module-setup .treeview::-webkit-scrollbar {
-  background-color: #ecf2fa;
-}
-.c-module-setup .treeview::-webkit-scrollbar-thumb {
-  background-color: #b4ceef;
-}
 .c-module-setup .treeview .icon {
   color: #7da6de;
 }

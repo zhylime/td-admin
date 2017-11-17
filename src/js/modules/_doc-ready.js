@@ -30,7 +30,4 @@ $(document).ready(function() {
 
     //file upload
     $('[data-js-file-input]').FileInput();
-
-
-
 });

@@ -249,6 +249,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
       this.upDateMenuTree();
       this.showInfoMenu();
       this.openDataTypeModal();
+      this.scrollBar();
       this.el.confirmBtn.off('click').on('click', function (evt) {
 
         var nodeIndex = void 0;
@@ -309,6 +310,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
           _this.editMenuText();
           _this.openInfoModal();
           _this.isSetMenu();
+          _this.scrollBar();
           break;
         case 1:
           nodeIndex = "node-second";
@@ -324,6 +326,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
           _this.editMenuText();
           _this.openInfoModal();
           _this.isSetMenu();
+          _this.scrollBar();
           break;
         default:
           nodeIndex = "node-third";
@@ -340,6 +343,7 @@ var AddMenu = function (_MLP$apps$MLPModule) {
           _this.openInfoModal();
           _this.isSetMenu();
           _this.showInfoMenu();
+          _this.scrollBar();
       }
     }
 
@@ -556,6 +560,17 @@ var AddMenu = function (_MLP$apps$MLPModule) {
         console.log(arr);
         $(".js-tree-menu").val(JSON.stringify(menuObj));
       }
+    }
+
+    //添加滚动条
+
+  }, {
+    key: 'scrollBar',
+    value: function scrollBar() {
+      $(".js-menu-scroll").mCustomScrollbar({
+        setHeight: 400,
+        theme: "blue-1"
+      });
     }
   }]);
 
