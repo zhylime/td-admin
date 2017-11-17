@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>td admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <meta name="description" content="td admin">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./assets/css/vendor/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/vendor/font-awesome.css">
+    <link rel="stylesheet" href="./assets/css/vendor/ionicons.css">
+    <link rel="stylesheet" href="./assets/css/vendor/b.tabs.css">
+    <link rel="stylesheet" href="./assets/css/vendor/bootstrap-select.css">
+    <link rel="stylesheet" href="./assets/css/vendor/bootstrap-switch.css">
+    <link rel="stylesheet" href="./assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="./assets/css/vendor/fileinput.css"><!--[if (gt IE 8)]><!-->
+    <link rel="stylesheet" href="./assets/css/app.css"><!--<![endif]-->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/ico">
+  </head>
+  <body>
+    <div class="c-module c-module-admin container-fluid">
+      <form method="POST" name="moduleAdmin" id="moduleAdmin" data-js-form-validator class="c-form-module">
+        <div class="table-responsive c-module-admin__table">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th><span>图片</span></th>
+                <th><span>用户名</span></th>
+                <th><span>真实姓名</span></th>
+                <th><span>角色</span></th>
+                <th><span>操作</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><img src="./assets/images/icon-user-sample.png" alt="item"></td>
+                <td>fishwon</td>
+                <td>王子夜</td>
+                <td>超级管理员</td>
+                <td><span data-toggle="modal" data-target="#modalConfirmDelate" class="ion ion-close"></span><span data-toggle="modal" data-target="#modalCreateUser" class="ion ion-edit"></span>
+                  <input type="checkbox" name="user-checkbox" checked data-size="mini" data-off-color="default" data-on-color="success" data-on-text="激活" data-off-text="禁用">
+                </td>
+              </tr>
+              <tr>
+                <td><img src="./assets/images/icon-user-sample1.png" alt="item"></td>
+                <td>edson</td>
+                <td>李建</td>
+                <td>管理员</td>
+                <td><span data-toggle="modal" data-target="#modalConfirmDelate" class="ion ion-close"></span><span data-toggle="modal" data-target="#modalCreateUser" class="ion ion-edit"></span>
+                  <input type="checkbox" name="user-checkbox" data-size="mini" data-radio-all-off="true" data-off-color="default" data-on-color="success" data-on-text="激活" data-off-text="禁用">
+                </td>
+              </tr>
+              <tr>
+                <td><img src="./assets/images/icon-user-sample2.png" alt="item"></td>
+                <td>西瓜</td>
+                <td>韩斌</td>
+                <td>普通管理员</td>
+                <td><span data-toggle="modal" data-target="#modalConfirmDelate" class="ion ion-close"></span><span data-toggle="modal" data-target="#modalCreateUser" class="ion ion-edit"></span>
+                  <input type="checkbox" name="user-checkbox" data-size="mini" data-off-color="default" data-on-color="success" data-on-text="激活" data-off-text="禁用">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row button-group l-p-top-2">
+          <div class="col-sm-12 col-xs-12 button-single">
+            <div class="form-group text-left">
+              <button type="button" data-toggle="modal" data-target="#modalCreateUser" class="btn btn-default js-create-user">创建用户</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!--确认删除信息的弹出框-->
+    <div id="modalConfirmDelate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade modalConfirm js-delete-modal">
+      <div role="document" class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+            <h4 class="myModalLabel modal-title">删除用户</h4>
+          </div>
+          <div class="modal-body">
+            <form class="c-form">
+              <div class="row">
+                <div class="col-sm-4 col-xs-4">
+                  <div class="form-group text-right">
+                    <label class="form__label text-description"><img src="./assets/images/icon-info.png" alt="item"></label>
+                  </div>
+                </div>
+                <div class="col-sm-7 col-xs-7">
+                  <div class="form-group">
+                    <label class="form__label text-blue text-bold text-description">确定要删除用户吗？</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row button-group text-center">
+                <div class="col-sm-6 col-xs-6 button-single">
+                  <div class="form-group text-right">
+                    <button type="button" class="btn btn-primary">确定</button>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xs-6 button-single">
+                  <div class="form-group text-left">
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">取消</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--创建用户-->
+    <div id="modalCreateUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade modalCreateUser modalConfirm js-createUser-modal">
+      <div role="document" class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+            <h4 class="myModalLabel modal-title">创建／编辑用户</h4>
+          </div>
+          <div class="modal-body">
+            <form method="POST" role="form" name="moduleAdminForm" id="moduleAdminForm" data-js-form-validator class="c-form">
+              <div class="row">
+                <div class="col-sm-2">
+                  <div class="form-group text-label">
+                    <label for="name" class="form__label">用户名</label>
+                  </div>
+                </div>
+                <div class="col-sm-10 col-xs-10">
+                  <div class="form-group">
+                    <input type="text" id="name" name="name" data-rule="required|alpha|max:30" placeholder="fishwon" class="form-control">
+                    <div class="text-danger l-padding-top-1 hide input-error-message">请输入用户名称</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-2">
+                  <div class="form-group text-label">
+                    <label for="password" class="form__label">密码</label>
+                  </div>
+                </div>
+                <div class="col-sm-7 col-xs-7">
+                  <div class="form-group">
+                    <input type="password" id="password" name="password" data-rule="required" class="form-control js-password">
+                    <div class="text-danger l-padding-top-1 hide input-error-message">请输入密码</div>
+                  </div>
+                </div>
+                <div class="col-sm-3 col-xs-3">
+                  <div class="form-group"><span><img src="./assets/images/icon-hide-ps.png" alt="" class="ion js-hide-password"></span><span><img src="./assets/images/icon-show-ps.png" alt="" class="ion js-show-password"></span></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-2">
+                  <div class="form-group">
+                    <label for="imgUpload" class="file-label">照片</label>
+                  </div>
+                </div>
+                <div class="col-sm-10 col-xs-10">
+                  <div class="file-loading">
+                    <input name="imgUpload" id="imgUpload" type="file" data-preview-file-type="any" accept="image/*" class="file">
+                  </div>
+                </div>
+              </div>
+              <div class="row l-p-top-1">
+                <div class="col-sm-2">
+                  <div class="form-group text-label">
+                    <label for="realname" class="form__label">真实姓名</label>
+                  </div>
+                </div>
+                <div class="col-sm-10 col-xs-10">
+                  <div class="form-group">
+                    <input type="text" id="realname" name="realname" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-2">
+                  <div class="form-group text-label">
+                    <label for="roleType" class="form__label">角色</label>
+                  </div>
+                </div>
+                <div class="col-sm-10 col-xs-10">
+                  <div class="form-group">
+                    <select type="text" data-js-mobile-smart-label id="roleType" name="roleType" data-rule="required" class="form-control js-select-fancy">
+                      <option value="" class="active"></option>
+                      <option value="001">超级管理员</option>
+                      <option value="002">管理员</option>
+                    </select>
+                    <div class="text-danger l-padding-top-1 hide input-error-message">请选择内容</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row button-group">
+                <div class="col-sm-6 col-xs-6 button-single">
+                  <div class="form-group text-right">
+                    <button type="button" class="btn btn-primary js-save-item">确定</button>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xs-6 button-single">
+                  <div class="form-group text-left">
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">取消</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    window.MLP = window.MLP || {};
+    MLP.paths = {"root":"./","static":"./assets/","img":"./assets/images/","js":"./assets/js/","css":"./assets/css/"};
+    
+    
+  </script>
+  <script src="./assets/js/vendor/jquery.js"></script>
+  <script src="./assets/js/vendor/jquery-ui.js"></script>
+  <script src="./assets/js/vendor/bootstrap.js"></script>
+  <script src="./assets/js/vendor/jquery.validate.js"></script>
+  <script src="./assets/js/vendor/mainFrame.js"></script>
+  <script src="./assets/js/vendor/b.tabs.js"></script>
+  <script src="./assets/js/vendor/isotope.pkgd.min.js"></script>
+  <script src="./assets/js/vendor/bootstrap-select.js"></script>
+  <script src="./assets/js/vendor/bootstrap-switch.js"></script>
+  <script src="./assets/js/vendor/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="./assets/js/vendor/fileinput.js"></script>
+  <script src="./assets/js/app.js"></script><!--[if IE 9]>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script><![endif]-->
+</html>

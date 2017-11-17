@@ -7,7 +7,7 @@ $(document).ready(function() {
   // $('[data-js-top-menu]').TopMenu();
   // $.TopMenuSmall();
 
-
+    $("[name='user-checkbox']").bootstrapSwitch();
     $('[data-js-full-page]').FullPage();
     $('[data-js-sideNav]').SideNav();
     $('[data-js-module-setup-radios]').RadioBtn(); 

@@ -1,0 +1,95 @@
+.c-module
+  &-admin
+    &__table
+      background-color $color-white
+      background-image url('../images/bg-user.png')
+      background-position center
+      background-repeat no-repeat
+      min-height 300px
+      border 1px solid #dde8f8
+      .table
+        margin-bottom 0
+      thead tr
+        background-color #dde8f8
+        th
+          vertical-align middle
+          text-align center
+      tbody
+        tr
+          td
+            vertical-align middle
+            text-align center
+            img
+              max-height 64px
+              max-width 64px
+              border 4px solid $color-panel-icon
+            .ion
+              padding 0 15px
+              cursor pointer
+              color $color-panel-icon
+          border-bottom 1px solid #dde8f8
+          &:hover
+            background-color #f4f9ff
+
+.modalCreateUser
+  .modal-dialog
+    width 600px!important
+    span
+      line-height 2em
+    img.ion
+      padding-right 1em
+      cursor pointer
+  .file-preview
+    display block
+    max-width 126px
+    max-height 126px
+    width 126px
+    height 126px
+    border 4px solid $color-panel-icon
+    border-radius 0
+    float left
+    background #c9e5ff url('../images/bg-user-icon.png') no-repeat center bottom
+
+  .file-input
+    position relative
+    .input-group
+      display block
+  .input-group.file-caption-main
+      float right
+      width 70%
+    .btn-primary.btn-file
+      margin-top .5em
+  .fileinput-remove
+  .fileinput-upload.fileinput-upload-button
+  .file-thumbnail-footer
+    display none
+  .krajee-default.file-preview-frame
+    margin 0
+    border 0
+    box-shadow none
+    padding 0
+  .krajee-default.file-preview-frame
+    .kv-file-content
+      max-width 118px
+      max-height 118px
+      position relative
+      left 0
+      top -8px
+      @media(min-width: $tablet-min)
+        left -8px
+  .file-caption.icon-visible .file-caption-icon
+    line-height 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

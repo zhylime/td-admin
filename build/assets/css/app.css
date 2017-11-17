@@ -3347,6 +3347,109 @@ html {
 .modalDataType-grid:nth-child(2) .modalDataType-btn {
   left: 1em;
 }
+.c-module-admin__table {
+  background-color: #fff;
+  background-image: url("../images/bg-user.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  border: 1px solid #dde8f8;
+}
+.c-module-admin__table .table {
+  margin-bottom: 0;
+}
+.c-module-admin__table thead tr {
+  background-color: #dde8f8;
+}
+.c-module-admin__table thead tr th {
+  vertical-align: middle;
+  text-align: center;
+}
+.c-module-admin__table tbody tr {
+  border-bottom: 1px solid #dde8f8;
+}
+.c-module-admin__table tbody tr td {
+  vertical-align: middle;
+  text-align: center;
+}
+.c-module-admin__table tbody tr td img {
+  max-height: 64px;
+  max-width: 64px;
+  border: 4px solid #7da6de;
+}
+.c-module-admin__table tbody tr td .ion {
+  padding: 0 15px;
+  cursor: pointer;
+  color: #7da6de;
+}
+.c-module-admin__table tbody tr:hover {
+  background-color: #f4f9ff;
+}
+.modalCreateUser .modal-dialog {
+  width: 600px !important;
+}
+.modalCreateUser .modal-dialog span {
+  line-height: 2em;
+}
+.modalCreateUser .modal-dialog img.ion {
+  padding-right: 1em;
+  cursor: pointer;
+}
+.modalCreateUser .file-preview {
+  display: block;
+  max-width: 126px;
+  max-height: 126px;
+  width: 126px;
+  height: 126px;
+  border: 4px solid #7da6de;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  float: left;
+  background: #c9e5ff url("../images/bg-user-icon.png") no-repeat center bottom;
+}
+.modalCreateUser .file-input {
+  position: relative;
+}
+.modalCreateUser .file-input .input-group {
+  display: block;
+}
+.modalCreateUser .input-group.file-caption-main {
+  float: right;
+  width: 70%;
+}
+.modalCreateUser .btn-primary.btn-file {
+  margin-top: 0.5em;
+}
+.modalCreateUser .fileinput-remove,
+.modalCreateUser .fileinput-upload.fileinput-upload-button,
+.modalCreateUser .file-thumbnail-footer {
+  display: none;
+}
+.modalCreateUser .krajee-default.file-preview-frame {
+  margin: 0;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 0;
+}
+.modalCreateUser .krajee-default.file-preview-frame .kv-file-content {
+  max-width: 118px;
+  max-height: 118px;
+  position: relative;
+  left: 0;
+  top: -8px;
+}
+@media (min-width: 768px) {
+  .modalCreateUser .krajee-default.file-preview-frame .kv-file-content {
+    left: -8px;
+  }
+}
+.modalCreateUser .file-caption.icon-visible .file-caption-icon {
+  line-height: 1;
+}
 .c-module-charts {
   max-width: 1000px;
 }

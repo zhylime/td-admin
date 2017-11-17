@@ -25,6 +25,13 @@ class Validator extends MLP.apps.MLPModule {
       return false;
     });
 
+    $(".js-hide-password").on("click", evt =>{
+      $(".js-password").attr("type", "password");
+    });
+
+    $(".js-show-password").on("click", evt =>{
+      $(".js-password").attr("type", "text");
+    });
   }
 
   validate() {

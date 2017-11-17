@@ -787,7 +787,7 @@ $(document).ready(function () {
   // $('[data-js-top-menu]').TopMenu();
   // $.TopMenuSmall();
 
-
+  $("[name='user-checkbox']").bootstrapSwitch();
   $('[data-js-full-page]').FullPage();
   $('[data-js-sideNav]').SideNav();
   $('[data-js-module-setup-radios]').RadioBtn();
@@ -1496,6 +1496,14 @@ var Validator = function (_MLP$apps$MLPModule) {
         }
 
         return false;
+      });
+
+      $(".js-hide-password").on("click", function (evt) {
+        $(".js-password").attr("type", "password");
+      });
+
+      $(".js-show-password").on("click", function (evt) {
+        $(".js-password").attr("type", "text");
       });
     }
   }, {

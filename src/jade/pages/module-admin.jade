@@ -1,0 +1,155 @@
+extends ../partials/_template
+block footer
+block header
+block headCss
+  link(rel='stylesheet', href=paths.css + 'vendor/fileinput.css')
+block footerJs
+  script(src=paths.js + 'vendor/fileinput.js')
+block content
+  .c-module.c-module-admin.container-fluid
+      form.c-form-module(method="POST" name="moduleAdmin" id="moduleAdmin" data-js-form-validator)
+        .table-responsive.c-module-admin__table
+          table.table.table-hover
+            thead
+              tr
+                th
+                  span 图片
+                th
+                  span 用户名
+                th
+                  span 真实姓名
+                th
+                  span 角色
+                th
+                  span 操作
+            tbody
+              tr
+                td
+                  img(src=paths.img + "icon-user-sample.png", alt="item")
+                td fishwon
+                td 王子夜
+                td 超级管理员
+                td
+                  span.ion.ion-close(data-toggle='modal', data-target='#modalConfirmDelate')
+                  span.ion.ion-edit(data-toggle='modal', data-target='#modalCreateUser')
+                  input(type='checkbox', name='user-checkbox', checked data-size="mini" data-off-color="default" data-on-color="success" data-on-text="激活" data-off-text="禁用")
+
+              tr
+                td
+                  img(src=paths.img + "icon-user-sample1.png", alt="item")
+                td edson
+                td 李建
+                td 管理员
+                td
+                  span.ion.ion-close(data-toggle='modal', data-target='#modalConfirmDelate')
+                  span.ion.ion-edit(data-toggle='modal', data-target='#modalCreateUser')
+                  input(type='checkbox', name='user-checkbox', data-size="mini" data-radio-all-off="true" data-off-color="default" data-on-color="success" data-on-text="激活" data-off-text="禁用")
+
+              tr
+                td
+                  img(src=paths.img + "icon-user-sample2.png", alt="item")
+                td 西瓜
+                td 韩斌
+                td 普通管理员
+                td
+                  span.ion.ion-close(data-toggle='modal', data-target='#modalConfirmDelate')
+                  span.ion.ion-edit(data-toggle='modal', data-target='#modalCreateUser')
+                  input(type='checkbox', name='user-checkbox',  data-size="mini" data-off-color="default" data-on-color="success" data-on-text="激活" data-off-text="禁用")
+
+
+        .row.button-group.l-p-top-2
+          .col-sm-12.col-xs-12.button-single
+            .form-group.text-left
+              button.btn.btn-default.js-create-user(type='button' data-toggle='modal', data-target='#modalCreateUser') 创建用户
+
+
+  //确认删除信息的弹出框
+  #modalConfirmDelate.modal.fade.modalConfirm.js-delete-modal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
+    .modal-dialog(role='document')
+      .modal-content
+        .modal-header
+          button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
+            | &times;
+          h4.myModalLabel.modal-title 删除用户
+        .modal-body
+          form.c-form
+            .row
+              .col-sm-4.col-xs-4
+                .form-group.text-right
+                  label.form__label.text-description
+                    img(src="./assets/images/icon-info.png", alt="item")
+              .col-sm-7.col-xs-7
+                .form-group
+                  label.form__label.text-blue.text-bold.text-description 确定要删除用户吗？
+            .row.button-group.text-center
+              .col-sm-6.col-xs-6.button-single
+                .form-group.text-right
+                  button.btn.btn-primary(type='button') 确定
+              .col-sm-6.col-xs-6.button-single
+                .form-group.text-left
+                  button.btn.btn-default(type='button' data-dismiss='modal' aria-label='Close') 取消
+
+  //创建用户
+  #modalCreateUser.modal.fade.modalCreateUser.modalConfirm.js-createUser-modal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
+    .modal-dialog(role='document')
+      .modal-content
+        .modal-header
+          button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
+            | &times;
+          h4.myModalLabel.modal-title 创建／编辑用户
+        .modal-body
+          form.c-form(method="POST" role="form"  name="moduleAdminForm" id="moduleAdminForm" data-js-form-validator)
+            .row
+              .col-sm-2
+                .form-group.text-label
+                  label.form__label(for="name") 用户名
+              .col-sm-10.col-xs-10
+                .form-group
+                  input.form-control(type="text" id="name" name="name" data-rule="required|alpha|max:30" placeholder="fishwon")
+                  div.text-danger.l-padding-top-1.hide.input-error-message 请输入用户名称
+            .row
+              .col-sm-2
+                .form-group.text-label
+                  label.form__label(for="password") 密码
+              .col-sm-7.col-xs-7
+                .form-group
+                  input.form-control.js-password(type="password" id="password" name="password" data-rule="required" )
+                  div.text-danger.l-padding-top-1.hide.input-error-message 请输入密码
+              .col-sm-3.col-xs-3
+                .form-group
+                  span
+                    img.ion.js-hide-password(src=paths.img + "icon-hide-ps.png", alt="")
+                  span
+                    img.ion.js-show-password(src=paths.img + "icon-show-ps.png", alt="")
+            .row
+              .col-sm-2
+                .form-group
+                  label.file-label(for='imgUpload') 照片
+              .col-sm-10.col-xs-10
+                .file-loading
+                  input.file(name='imgUpload', id="imgUpload", type='file' data-preview-file-type="any" accept="image/*")
+            .row.l-p-top-1
+              .col-sm-2
+                .form-group.text-label
+                  label.form__label(for="realname") 真实姓名
+              .col-sm-10.col-xs-10
+                .form-group
+                  input.form-control(type="text" id="realname" name="realname" )
+            .row
+              .col-sm-2
+                .form-group.text-label
+                  label.form__label(for="roleType") 角色
+              .col-sm-10.col-xs-10
+                .form-group
+                  select.form-control.js-select-fancy(type="text" data-js-mobile-smart-label id="roleType" name="roleType" data-rule="required")
+                    option(value="" class="active")
+                    option(value="001") 超级管理员
+                    option(value="002") 管理员
+                  div.text-danger.l-padding-top-1.hide.input-error-message 请选择内容
+            .row.button-group
+              .col-sm-6.col-xs-6.button-single
+                .form-group.text-right
+                  button.btn.btn-primary.js-save-item(type='button') 确定
+              .col-sm-6.col-xs-6.button-single
+                .form-group.text-left
+                  button.btn.btn-default(type='button' data-dismiss='modal' aria-label='Close') 取消
