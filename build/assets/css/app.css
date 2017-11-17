@@ -4074,6 +4074,7 @@ html {
   top: 35%;
   color: #7ea3d9;
   font-weight: bold;
+  cursor: pointer;
 }
 .c-module-setup__item-btn span.ion-plus-round {
   font-size: 3em;

@@ -567,10 +567,12 @@ var AddMenu = function (_MLP$apps$MLPModule) {
   }, {
     key: 'scrollBar',
     value: function scrollBar() {
-      $(".js-menu-scroll").mCustomScrollbar({
-        setHeight: 300,
-        theme: "blue-1"
-      });
+      if ($(".js-menu-scroll").length) {
+        $(".js-menu-scroll").mCustomScrollbar({
+          setHeight: 300,
+          theme: "blue-1"
+        });
+      }
     }
   }]);
 
@@ -1139,8 +1141,7 @@ var RadioBtn = function (_MLP$apps$MLPModule) {
           var id = $(this).attr('data-image');
           console.log(id);
           $('.js-radio-images img').removeClass('active');
-          $('.js-add-menu-info').removeClass('active');
-          $('img#' + id).addClass('active');
+          $('.c-module-setup__item').removeClass('active');
           $('#' + id).addClass('active');
         });
       });

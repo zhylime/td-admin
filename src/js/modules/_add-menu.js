@@ -328,10 +328,12 @@ class AddMenu extends MLP.apps.MLPModule {
 
   //添加滚动条
   scrollBar(){
-    $(".js-menu-scroll").mCustomScrollbar({
-      setHeight:300,
-      theme:"blue-1"
-    });
+    if($(".js-menu-scroll").length){
+      $(".js-menu-scroll").mCustomScrollbar({
+        setHeight:300,
+        theme:"blue-1"
+      });
+    }
   }
 
 

@@ -64,22 +64,24 @@
                 <div class="form-group c-module-setup-editMenu c-module-setup-menu">
                   <button type="button" class="btn btn-default js-edit-menu">编辑菜单</button>
                 </div>
-                <div data-tree-view class="panel panel-default">
+                <div class="panel panel-default">
                   <div class="panel-body js-menu-scroll">
-                    <input type="hidden" name="treeMenu" id="treeMenu" value="" class="js-tree-menu">
-                    <div class="js-menu-item treeview">
-                      <!--基本结构-->
-                      <ul class="list-group list-group-first">
-                        <li data-index="0" class="list-group-item node-first"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span><span class="text-edit text-first">关于我们</span><span class="ion ion-arrow"><span data-action="orderFirst" class="ion ion-arrow-down-b js-arrow-down"></span><span data-action="orderFirst" class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeALL" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span data-action="addSecond" class="ion ion-plus-round js-open-modal"></span>
-                          <ul class="list-group list-group-second">
-                            <li data-index="1" class="list-group-item node-second"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span><span class="text-edit text-second">公司简介</span><span class="ion ion-arrow"><span class="ion ion-arrow-down-b js-arrow-down"></span><span class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeSecond" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span data-action="addThird" class="ion ion-plus-round js-open-modal"></span>
-                              <ul class="list-group list-group-third">
-                                <li data-index="2" class="list-group-item node-third"><span class="icon glyphicon"></span><span class="icon node-icon ion-stop"></span><span class="text-edit text-third">联系电话</span><span class="ion ion-arrow"><span class="ion ion-arrow-down-b js-arrow-down"></span><span class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeThird" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span class="ion text-info js-edit-info">设置菜单内容布局</span><span class="ion c-icon-edit text-info js-edit-info"></span></li>
-                              </ul>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
+                    <div data-tree-view="data-tree-view">
+                      <input type="hidden" name="treeMenu" id="treeMenu" value="" class="js-tree-menu"/>
+                      <div class="js-menu-item treeview">
+                        <!--基本结构-->
+                        <ul class="list-group list-group-first">
+                          <li data-index="0" class="list-group-item node-first"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span><span class="text-edit text-first">关于我们</span><span class="ion ion-arrow"><span data-action="orderFirst" class="ion ion-arrow-down-b js-arrow-down"></span><span data-action="orderFirst" class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeALL" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span data-action="addSecond" class="ion ion-plus-round js-open-modal"></span>
+                            <ul class="list-group list-group-second">
+                              <li data-index="1" class="list-group-item node-second"><span class="icon expand-icon ion-arrow-down-b"></span><span class="icon node-icon"></span><span class="text-edit text-second">公司简介</span><span class="ion ion-arrow"><span class="ion ion-arrow-down-b js-arrow-down"></span><span class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeSecond" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span data-action="addThird" class="ion ion-plus-round js-open-modal"></span>
+                                <ul class="list-group list-group-third">
+                                  <li data-index="2" class="list-group-item node-third"><span class="icon glyphicon"></span><span class="icon node-icon ion-stop"></span><span class="text-edit text-third">联系电话</span><span class="ion ion-arrow"><span class="ion ion-arrow-down-b js-arrow-down"></span><span class="ion ion-arrow-up-b js-arrow-up"></span></span><span data-action="removeThird" class="ion ion-close js-remove-node"></span><span class="ion ion-edit js-edit-text"></span><span class="ion text-info js-edit-info">设置菜单内容布局</span><span class="ion c-icon-edit text-info js-edit-info"></span></li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -98,109 +100,111 @@
               </div>
             </div>
           </div>
-          <div data-js-module-setup-radios class="col-sm-6 c-module-setup__right l-p-bottom-5 js-module-setup-radios hide">
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="form-group text-label">
-                  <label for="setupOption" class="form__label">菜单详情-内容布局</label>
-                </div>
-              </div>
-            </div>
-            <div class="row radioGroup">
-              <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
-                <label>
-                  <input id="setupOption1" type="radio" name="setupOption" autocomplete="off">
-                  <div data-image="setupOptionImg1" class="setupOption-image setupOption-image--1 js-radio-item"></div>
-                </label>
-              </div>
-              <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
-                <label>
-                  <input id="setupOption2" type="radio" name="setupOption" autocomplete="off">
-                  <div data-image="setupOptionImg2" class="setupOption-image setupOption-image--2 js-radio-item"></div>
-                </label>
-              </div>
-              <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
-                <label>
-                  <input id="setupOption3" type="radio" name="setupOption" autocomplete="off">
-                  <div data-image="setupOptionImg3" class="setupOption-image setupOption-image--3 js-radio-item"></div>
-                </label>
-              </div>
-              <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
-                <label>
-                  <input id="setupOption4" type="radio" name="setupOption" autocomplete="off">
-                  <div data-image="setupOptionImg4" class="setupOption-image setupOption-image--4 js-radio-item"></div>
-                </label>
-              </div>
-              <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
-                <label>
-                  <input id="setupOption5" type="radio" name="setupOption" autocomplete="off">
-                  <div data-image="setupOptionImg5" class="setupOption-image setupOption-image--5 js-radio-item"></div>
-                </label>
-              </div>
-              <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
-                <label>
-                  <input id="setupOption6" type="radio" name="setupOption" autocomplete="off">
-                  <div data-image="setupOptionImg6" class="setupOption-image setupOption-image--6 js-radio-item"></div>
-                </label>
-              </div>
-            </div>
-            <div class="row setupOptionImgGroup js-radio-images">
-              <div class="col-sm-12">
-                <div id="setupOptionImg1" class="c-module-setup__item active c-module-setup__item-one js-add-menu-info">
-                  <div class="c-module-setup__item-block">
-                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置1添加数据</span></div>
+          <div class="col-sm-6">
+            <div data-js-module-setup-radios="data-js-module-setup-radios" class="c-module-setup__right l-p-bottom-5 js-module-setup-radios hide">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group text-label">
+                    <label for="setupOption" class="form__label">菜单详情-内容布局</label>
                   </div>
                 </div>
-                <div id="setupOptionImg2" class="c-module-setup__item c-module-setup__item-two-h js-add-menu-info">
-                  <div class="c-module-setup__item-block">
-                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置1添加数据</span></div>
-                  </div>
-                  <div class="c-module-setup__item-block">
-                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置2添加数据</span></div>
-                  </div>
+              </div>
+              <div class="row radioGroup">
+                <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
+                  <label>
+                    <input id="setupOption1" type="radio" name="setupOption" autocomplete="off"/>
+                    <div data-image="setupOptionImg1" class="setupOption-image setupOption-image--1 js-radio-item"></div>
+                  </label>
                 </div>
-                <div id="setupOptionImg3" class="c-module-setup__item c-module-setup__item-two-v js-add-menu-info">
-                  <div class="c-module-setup__item-block">
-                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置1添加数据</span></div>
-                  </div>
-                  <div class="c-module-setup__item-block">
-                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置2添加数据</span></div>
-                  </div>
+                <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
+                  <label>
+                    <input id="setupOption2" type="radio" name="setupOption" autocomplete="off"/>
+                    <div data-image="setupOptionImg2" class="setupOption-image setupOption-image--2 js-radio-item"></div>
+                  </label>
                 </div>
-                <div id="setupOptionImg4" class="c-module-setup__item c-module-setup__item-three-h js-add-menu-info">
-                  <div class="c-module-setup__item-block">
-                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置1添加数据</span></div>
-                  </div>
-                  <div class="c-module-setup__item-block">
-                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置2添加数据</span></div>
-                  </div>
-                  <div class="c-module-setup__item-block">
-                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置3添加数据</span></div>
-                  </div>
+                <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
+                  <label>
+                    <input id="setupOption3" type="radio" name="setupOption" autocomplete="off"/>
+                    <div data-image="setupOptionImg3" class="setupOption-image setupOption-image--3 js-radio-item"></div>
+                  </label>
                 </div>
-                <div id="setupOptionImg5" class="c-module-setup__item c-module-setup__item-three-v js-add-menu-info">
-                  <div class="c-module-setup__item-block">
-                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置1添加数据</span></div>
-                  </div>
-                  <div class="c-module-setup__item-block">
-                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置2添加数据</span></div>
-                  </div>
-                  <div class="c-module-setup__item-block">
-                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置3添加数据</span></div>
-                  </div>
+                <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
+                  <label>
+                    <input id="setupOption4" type="radio" name="setupOption" autocomplete="off"/>
+                    <div data-image="setupOptionImg4" class="setupOption-image setupOption-image--4 js-radio-item"></div>
+                  </label>
                 </div>
-                <div id="setupOptionImg6" class="c-module-setup__item c-module-setup__item-four js-add-menu-info">
-                  <div class="c-module-setup__item-block">
-                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置1添加数据</span></div>
+                <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
+                  <label>
+                    <input id="setupOption5" type="radio" name="setupOption" autocomplete="off"/>
+                    <div data-image="setupOptionImg5" class="setupOption-image setupOption-image--5 js-radio-item"></div>
+                  </label>
+                </div>
+                <div class="col-sm-3 col-xs-2 col-md-3 col-lg-2">
+                  <label>
+                    <input id="setupOption6" type="radio" name="setupOption" autocomplete="off"/>
+                    <div data-image="setupOptionImg6" class="setupOption-image setupOption-image--6 js-radio-item"></div>
+                  </label>
+                </div>
+              </div>
+              <div class="row setupOptionImgGroup js-radio-images">
+                <div class="col-sm-12">
+                  <div id="setupOptionImg1" class="c-module-setup__item active c-module-setup__item-one">
+                    <div class="c-module-setup__item-block">
+                      <div class="c-module-setup__item-btn js-add-menu-info"><span class="icon ion-plus-round"></span><br/><span>位置1添加数据</span></div>
+                    </div>
                   </div>
-                  <div class="c-module-setup__item-block">
-                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置2添加数据</span></div>
+                  <div id="setupOptionImg2" class="c-module-setup__item c-module-setup__item-two-h">
+                    <div class="c-module-setup__item-block">
+                      <div class="c-module-setup__item-btn js-add-menu-info"><span class="icon ion-plus-round"></span><br/><span>位置1添加数据</span></div>
+                    </div>
+                    <div class="c-module-setup__item-block">
+                      <div class="c-module-setup__item-btn js-add-menu-info"><span class="icon ion-plus-round"></span><br/><span>位置2添加数据</span></div>
+                    </div>
                   </div>
-                  <div class="c-module-setup__item-block">
-                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置3添加数据</span></div>
+                  <div id="setupOptionImg3" class="c-module-setup__item c-module-setup__item-two-v">
+                    <div class="c-module-setup__item-block">
+                      <div class="c-module-setup__item-btn js-add-menu-info"><span class="icon ion-plus-round"></span><br/><span>位置1添加数据</span></div>
+                    </div>
+                    <div class="c-module-setup__item-block">
+                      <div class="c-module-setup__item-btn js-add-menu-info"><span class="icon ion-plus-round"></span><br/><span>位置2添加数据</span></div>
+                    </div>
                   </div>
-                  <div class="c-module-setup__item-block">
-                    <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br><span>位置4添加数据</span></div>
+                  <div id="setupOptionImg4" class="c-module-setup__item c-module-setup__item-three-h">
+                    <div class="c-module-setup__item-block">
+                      <div class="c-module-setup__item-btn js-add-menu-info"><span class="icon ion-plus-round"></span><br/><span>位置1添加数据</span></div>
+                    </div>
+                    <div class="c-module-setup__item-block">
+                      <div class="c-module-setup__item-btn js-add-menu-info"><span class="icon ion-plus-round"></span><br/><span>位置2添加数据</span></div>
+                    </div>
+                    <div class="c-module-setup__item-block">
+                      <div class="c-module-setup__item-btn js-add-menu-info"><span class="icon ion-plus-round"></span><br/><span>位置3添加数据</span></div>
+                    </div>
+                  </div>
+                  <div id="setupOptionImg5" class="c-module-setup__item c-module-setup__item-three-v">
+                    <div class="c-module-setup__item-block">
+                      <div class="c-module-setup__item-btn js-add-menu-info"><span class="icon ion-plus-round"></span><br/><span>位置1添加数据</span></div>
+                    </div>
+                    <div class="c-module-setup__item-block">
+                      <div class="c-module-setup__item-btn js-add-menu-info"><span class="icon ion-plus-round"></span><br/><span>位置2添加数据</span></div>
+                    </div>
+                    <div class="c-module-setup__item-block">
+                      <div class="c-module-setup__item-btn js-add-menu-info"><span class="icon ion-plus-round"></span><br/><span>位置3添加数据</span></div>
+                    </div>
+                  </div>
+                  <div id="setupOptionImg6" class="c-module-setup__item c-module-setup__item-four">
+                    <div class="c-module-setup__item-block">
+                      <div class="c-module-setup__item-btn js-add-menu-info"><span class="icon ion-plus-round"></span><br/><span>位置1添加数据</span></div>
+                    </div>
+                    <div class="c-module-setup__item-block">
+                      <div class="c-module-setup__item-btn"><span class="icon ion-plus-round"></span><br/><span>位置2添加数据</span></div>
+                    </div>
+                    <div class="c-module-setup__item-block">
+                      <div class="c-module-setup__item-btn js-add-menu-info"><span class="icon ion-plus-round"></span><br/><span>位置3添加数据</span></div>
+                    </div>
+                    <div class="c-module-setup__item-block">
+                      <div class="c-module-setup__item-btn js-add-menu-info"><span class="icon ion-plus-round"></span><br/><span>位置4添加数据</span></div>
+                    </div>
                   </div>
                 </div>
               </div>
