@@ -8,16 +8,16 @@ block headCss
   link(rel='stylesheet', href=paths.css + 'vendor/pager.css')
 block footerJs
   script(src=paths.js + 'vendor/masonry-docs.js')
-  script(src=paths.js + 'vendor/jquery.pager.js')
+
 //- 业务表单 - 后台
 block content
-  .c-module.c-module-charts.c-module-charts-edit.isEdit.c-module-setup.container-fluid
+  .c-module.c-module-charts.c-module-charts-edit.isEdit.c-module-setup.container-fluid(data-add-menu)
     form.c-form-module(method="POST" name="moduleChartsEditForm" id="moduleChartsEditForm" data-js-form-validator)
       
       .c-module-charts-edit__menu
-        +module-create-menu("js-menu-scroll")
+        +module-create-menu()
       .c-module-charts__grid(data-js-masonry)
-        #masonry.container-fluid
+        .masonry.container-fluid
           .box.grid-item
             .grid-item__image
               img(src=paths.img + 'chart-grid-thumb.jpg')
@@ -146,6 +146,32 @@ block content
                 .col-sm-6.col-xs-6.button-single
                   .form-group.text-right
                     button.btn.btn-primary.js-save-item(type='button') 保存
+                .col-sm-6.col-xs-6.button-single
+                  .form-group.text-left
+                    button.btn.btn-default(type='button' data-dismiss='modal' aria-label='Close') 取消
+
+     //确认删除信息的弹出框
+    #modalConfirm.modal.fade.modalConfirm.js-confirm-modal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
+              | &times;
+            h4.myModalLabel.modal-title 添加菜单
+          .modal-body
+            form.c-form
+              .row
+                .col-sm-4.col-xs-4
+                  .form-group.text-right
+                    label.form__label.text-description
+                      img(src="./assets/images/icon-info.png", alt="item")
+                .col-sm-7.col-xs-7
+                  .form-group
+                    label.form__label.text-blue.text-bold.text-description 将删除所有子菜单，是否删除？
+              .row.button-group.text-center
+                .col-sm-6.col-xs-6.button-single
+                  .form-group.text-right
+                    button.btn.btn-primary.js-remove-btn(type='button') 确定
                 .col-sm-6.col-xs-6.button-single
                   .form-group.text-left
                     button.btn.btn-default(type='button' data-dismiss='modal' aria-label='Close') 取消

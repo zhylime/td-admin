@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/ico">
   </head>
   <body>
-    <div class="c-module c-module-charts c-module-charts-edit isEdit c-module-setup container-fluid">
+    <div data-add-menu class="c-module c-module-charts c-module-charts-edit isEdit c-module-setup container-fluid">
       <form method="POST" name="moduleChartsEditForm" id="moduleChartsEditForm" data-js-form-validator class="c-form-module">
         <div class="c-module-charts-edit__menu">
           <div class="form-group c-module-setup-addMenu c-module-setup-menu">
@@ -28,7 +28,7 @@
             <button type="button" class="btn btn-default js-edit-menu">编辑菜单</button>
           </div>
           <div class="panel panel-default">
-            <div class="panel-body js-menu-scroll">
+            <div class="panel-body undefined">
               <div data-tree-view="data-tree-view">
                 <input type="hidden" name="treeMenu" id="treeMenu" value="" class="js-tree-menu"/>
                 <div class="js-menu-item treeview">
@@ -50,7 +50,7 @@
           </div>
         </div>
         <div data-js-masonry class="c-module-charts__grid">
-          <div id="masonry" class="container-fluid">
+          <div class="masonry container-fluid">
             <div class="box grid-item">
               <div class="grid-item__image"><img src="./assets/images/chart-grid-thumb.jpg"></div>
               <div class="grid-item__content">
@@ -152,6 +152,45 @@
           </div>
         </div>
       </div>
+      <!--确认删除信息的弹出框-->
+      <div id="modalConfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade modalConfirm js-confirm-modal">
+        <div role="document" class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+              <h4 class="myModalLabel modal-title">添加菜单</h4>
+            </div>
+            <div class="modal-body">
+              <form class="c-form">
+                <div class="row">
+                  <div class="col-sm-4 col-xs-4">
+                    <div class="form-group text-right">
+                      <label class="form__label text-description"><img src="./assets/images/icon-info.png" alt="item"></label>
+                    </div>
+                  </div>
+                  <div class="col-sm-7 col-xs-7">
+                    <div class="form-group">
+                      <label class="form__label text-blue text-bold text-description">将删除所有子菜单，是否删除？</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row button-group text-center">
+                  <div class="col-sm-6 col-xs-6 button-single">
+                    <div class="form-group text-right">
+                      <button type="button" class="btn btn-primary js-remove-btn">确定</button>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-xs-6 button-single">
+                    <div class="form-group text-left">
+                      <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-default">取消</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
   <script>
@@ -171,7 +210,6 @@
   <script src="./assets/js/vendor/bootstrap-switch.js"></script>
   <script src="./assets/js/vendor/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="./assets/js/vendor/masonry-docs.js"></script>
-  <script src="./assets/js/vendor/jquery.pager.js"></script>
   <script src="./assets/js/app.js"></script><!--[if IE 9]>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script><![endif]-->
 </html>

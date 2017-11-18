@@ -354,10 +354,11 @@ var AddMenu = function (_MLP$apps$MLPModule) {
     value: function openModal() {
       var _this4 = this;
 
+      var _this = this;
       $(".js-open-modal").off('click').on('click', function (evt) {
         _this4.target = $(evt.target);
         _this4.$action = $(evt.target).data("action");
-        _this4.el.modalItem.modal('show');
+        _this.el.modalItem.modal('show');
       });
     }
   }, {
@@ -1055,7 +1056,7 @@ var MasonryLayout = function (_MLP$apps$MLPModule) {
     value: function init() {
       _get(MasonryLayout.prototype.__proto__ || Object.getPrototypeOf(MasonryLayout.prototype), 'init', this).call(this);
       this.el = {
-        gridContainer: this.el.target.find('#masonry'),
+        gridContainer: this.el.target.find('.masonry'),
         gridItem: this.el.target.find('.grid-item'),
         previewBtn: this.el.target.find('.js-open-modal-charts-preview'),
         pager: $('#chartsPager')

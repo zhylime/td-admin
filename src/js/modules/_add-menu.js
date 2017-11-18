@@ -144,10 +144,11 @@ class AddMenu extends MLP.apps.MLPModule {
 
   //打开modal
   openModal() {
+    var _this = this;
     $(".js-open-modal").off('click').on('click', (evt) =>{
       this.target = $(evt.target);
       this.$action = $(evt.target).data("action");
-      this.el.modalItem.modal('show');
+      _this.el.modalItem.modal('show');
     });
   }
   openInfoModal() {

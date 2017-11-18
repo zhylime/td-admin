@@ -1439,6 +1439,16 @@ select.form-control option {
   height: 10px;
   width: 6px;
 }
+.icon-user {
+  background: url("../images/header-login-logo.png") no-repeat;
+  height: 20px;
+  width: 19px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.icon-user:before {
+  display: none;
+}
 .c-icon-edit {
   display: inline-block;
   content: url("../images/icon-edit.png");
@@ -3825,8 +3835,17 @@ html {
 .c-module-charts .button-remove {
   display: none;
 }
+.c-module-charts-edit {
+  max-width: 1400px;
+}
 .c-module-charts-edit__menu {
   width: 240px;
+  float: left;
+  margin-top: 30px;
+}
+.c-module-charts-edit .c-module-charts__grid {
+  display: inline-block;
+  width: calc(100% - 240px);
 }
 .c-module-createCharts-select select {
   width: 33%;

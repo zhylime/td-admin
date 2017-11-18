@@ -5,7 +5,7 @@ class MasonryLayout extends MLP.apps.MLPModule {
     init() {
       super.init();
       this.el ={
-        gridContainer: this.el.target.find('#masonry'),
+        gridContainer: this.el.target.find('.masonry'),
         gridItem : this.el.target.find('.grid-item'),
         previewBtn : this.el.target.find('.js-open-modal-charts-preview'),
         pager: $('#chartsPager'),
