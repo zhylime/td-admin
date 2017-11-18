@@ -3,6 +3,12 @@
 
 .modal
   .modal-header
+    height 36px
+    padding 0 20px
+    .modal-title
+      line-height 36px
+      font-size 14px
+      font-weight bold
     .close
       color $color-white
       opacity .9
@@ -25,7 +31,21 @@
       text-align right
 
   button
-    min-width 100px
+    font-size 20px
+    font-weight bold
+    background #e4eaf3 
+    background linear-gradient(top, white, #e4eaf3)
+    width 152px
+    height 47px
+    line-height 47px
+    padding 0
+    color #354967
+    border 1px solid #ccc
+    &:hover
+      background #52a9e8
+      background linear-gradient(top, #52a9e8, #3397de)
+      color white
+      border 1px solid #2b8fd5
 
   .button-group
     padding-top 2rem
