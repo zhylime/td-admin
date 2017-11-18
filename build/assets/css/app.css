@@ -3798,13 +3798,16 @@ html {
 .c-module-createCharts__table {
   background-image: none;
 }
-.c-module-createCharts__table select {
+.c-module-createCharts__table select#input_alias {
   display: inline-block;
   width: 77% !important;
 }
 .c-module-createCharts__select {
   padding-left: 0;
   padding-right: 0;
+}
+.c-module-createCharts th .form__label {
+  vertical-align: sub;
 }
 .c-module-data {
   max-width: 1000px;

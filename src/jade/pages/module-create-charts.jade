@@ -74,11 +74,13 @@ block content
                   th
                     span 字段名称
                   th
-                    span 别名
-                    select#input_alias.form-control.js-select-fancy(name='input_alias')
-                      option(value='001') 飞机类型
-                      option(value='002') 飞机状态
-                      option(value='003') 飞机指标
+                    .col-sm-3
+                      label.form__label 别名
+                    .col-sm-9.c-module-createCharts__select
+                      select#input_alias.form-control.js-select-fancy(name='input_alias')
+                        option(value='001') 飞机类型
+                        option(value='002') 飞机状态
+                        option(value='003') 飞机指标
                   th
                     span 是否为纬度
                   th
