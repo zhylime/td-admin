@@ -1,4 +1,5 @@
 extends ../partials/_template
+include ../mixins/_createMenu
 block footer
 block header
 
@@ -8,56 +9,13 @@ block headCss
 block footerJs
   script(src=paths.js + 'vendor/masonry-docs.js')
   script(src=paths.js + 'vendor/jquery.pager.js')
-//- 业务表单
+//- 业务表单 - 后台
 block content
-  .c-module.c-module-charts.container-fluid
-    form.c-form-module(method="POST" name="moduleChartsForm" id="moduleChartsForm" data-js-form-validator)
+  .c-module.c-module-charts.c-module-charts-edit.isEdit.c-module-setup.container-fluid
+    form.c-form-module(method="POST" name="moduleChartsEditForm" id="moduleChartsEditForm" data-js-form-validator)
       
-      //- dropdown下拉菜单
-      .c-module-charts__dropdown-menu(data-js-dropdown)
-        //- 搜索
-        .c-module-charts__search-container.l-float-right
-          input.c-module-charts__search-container__input
-          button.c-module-charts__search-container__button 搜索
-        div.c-module-charts__dropdown-menu__selected.js-dropdown-btn
-          span 选择类型
-          span.icon-dropdown-arrow
-        ul.c-module-charts__dropdown-menu__list.hide.js-dropdown-list
-          li
-            div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
-              span 装备
-              span.icon-dropdown-arrow
-            ul.c-module-charts__dropdown-menu__sub-list.hide.jd-dropdown-sub-list
-              li
-                div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
-                  span 飞机
-                  span.icon-dropdown-arrow
-                ul.c-module-charts__dropdown-menu__sub-list.hide.jd-dropdown-sub-list
-                  li
-                    div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
-                      span 采购
-                      span.icon-dropdown-arrow
-                  li
-                    div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
-                      span 研制
-                      span.icon-dropdown-arrow
-                  li
-                    div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
-                      span 统计
-                      span.icon-dropdown-arrow
-              li
-                div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
-                  span 发动机
-                  span.icon-dropdown-arrow
-          li
-            div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
-              span 合同
-              span.icon-dropdown-arrow
-          li
-            div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
-              span 数据
-              span.icon-dropdown-arrow
-
+      .c-module-charts-edit__menu
+        +module-create-menu("js-menu-scroll")
       .c-module-charts__grid(data-js-masonry)
         #masonry.container-fluid
           .box.grid-item
@@ -165,52 +123,33 @@ block content
                 i.icon-preview
                 | 预览
 
-      //添加菜单的弹出框
-    #previewPopup.modal.fade.modalChartsPreview(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
+     
+    //添加菜单的弹出框
+    #modalSetup.modal.fade.modalSetup.js-menu-modal(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
       .modal-dialog(role='document')
         .modal-content
           .modal-header
             button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
               | &times;
-            h4#myModalLabel.modal-title 业务列表预览
+            h4#myModalLabel.modal-title 添加菜单
           .modal-body
-            table
-              tr
-                th 字段名称
-                th 别名
-                th 表头
-                th 表头
-                th 是否为维度
-                th 是否为指标
-              tr
-                td 字段 
-                td 飞机类型
-                td 表格内容
-                td 表格内容
-                td 是
-                td 是
-              tr
-                td 字段 
-                td 飞机类型
-                td 表格内容
-                td 表格内容
-                td 是
-                td 是
-              tr
-                td 字段 
-                td 飞机类型
-                td 表格内容
-                td 表格内容
-                td 是
-                td 是
-              tr
-                td 字段 
-                td 飞机类型
-                td 表格内容
-                td 表格内容
-                td 是
-                td 是
-            #chartsPager
+            form.c-form(method="POST" name="addMenuForm" id="addMenuForm" data-js-form-validator)
+              .row
+                .col-sm-3.col-xs-3
+                  .form-group.text-label
+                    label.form__label(for="menuName") 菜单名称
+                .col-sm-8.col-xs-8
+                  .form-group
+                    input.form-control.js-add-menu(type="text" id="menuName" name="menuName" autocomplete='off')
+                    div.text-danger.l-padding-top-1.hide.input-error-message 请输入有效名称
+              .row.button-group
+                .col-sm-6.col-xs-6.button-single
+                  .form-group.text-right
+                    button.btn.btn-primary.js-save-item(type='button') 保存
+                .col-sm-6.col-xs-6.button-single
+                  .form-group.text-left
+                    button.btn.btn-default(type='button' data-dismiss='modal' aria-label='Close') 取消
+      
 
       
 

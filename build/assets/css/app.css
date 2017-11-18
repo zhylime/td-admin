@@ -3076,6 +3076,7 @@ html {
   opacity: 0.9;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
   filter: alpha(opacity=90);
+  margin-top: 10px;
 }
 .modal .modal-header .close:hover {
   opacity: 1;
@@ -3823,6 +3824,9 @@ html {
 }
 .c-module-charts .button-remove {
   display: none;
+}
+.c-module-charts-edit__menu {
+  width: 240px;
 }
 .c-module-createCharts-select select {
   width: 33%;
