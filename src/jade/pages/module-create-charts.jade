@@ -1,0 +1,183 @@
+extends ../partials/_template
+//- include ../mixins/_card-flip
+block footer
+block header
+
+
+block headCss
+  link(rel='stylesheet', href=paths.css + 'vendor/pager.css')
+block footerJs
+  script(src=paths.js + 'vendor/masonry-docs.js')
+  script(src=paths.js + 'vendor/jquery.pager.js')
+//- 业务表单
+block content
+  .c-module.c-module-charts.c-module-createCharts.container-fluid
+    form.c-form-module(method="POST" name="moduleEditForm" id="moduleChartsForm" data-js-form-validator)
+
+      .row
+        .col-sm-3
+          .form-group.text-label.text-right
+            label.form__label(for="name") 业务表单名称
+        .col-sm-9
+          .form-group
+            input.form-control(type="text" id="name" name="name" data-rule="required|alpha|max:30")
+            div.text-danger.l-padding-top-1.hide.input-error-message 请输入名称
+
+      .row.l-p-1-2
+        .col-sm-3
+          .form-group.text-label.text-right
+            label.form__label(for="input_type1") 业务表单类型
+        .col-sm-9
+          .form-group.c-module-createCharts-select
+            select#input_type1.form-control(name='input_type1')
+              option(value='')
+            select#input_type2.form-control(name='input_type2')
+              option(value='')
+            select#input_type3.form-control(name='input_type3')
+              option(value='')
+      .row
+        .col-sm-3
+          .form-group.text-label.text-right
+            label.form__label(for="description") 描述
+        .col-sm-9
+          .form-group
+            textarea.form-control(id="description" name="description" data-rule="required|max:200")
+            div.text-danger.l-padding-top-1.hide.input-error-message 请输入描述
+      .row
+        .col-sm-3
+          .form-group.text-label.text-right
+            label.form__label(for="script") SQL脚本
+        .col-sm-9
+          .form-group
+            textarea.form-control(id="script" name="description" data-rule="required|max:200")
+            div.text-danger.l-padding-top-1.hide.input-error-message 请输入脚本
+
+      .row.button-group.text-center
+        .col-sm-3
+          .form-group.text-label
+            label.form__label
+        .col-sm-9.button-single
+          .form-group.text-left
+            button.btn.btn-default(type='button' data-toggle='modal', data-target='#previewPopup') 预览
+      .row.l-p-2-1
+        .col-sm-3
+          .form-group.text-label
+            label.form__label
+        .col-sm-9
+          .form-group.text-label.text-left
+            label.form__label 查询字段
+
+          .table-responsive.c-module-createCharts__table
+            table.table.table-hover
+              thead
+                tr
+                  th
+                    span 字段名称
+                  th
+                    span 别名
+                    select#input_alias.form-control.js-select-fancy(name='input_alias')
+                      option(value='001') 飞机类型
+                      option(value='002') 飞机状态
+                      option(value='003') 飞机指标
+                  th
+                    span 是否为纬度
+                  th
+                    span 是否为指标
+              tbody
+                tr
+                  td 我是字段名称
+                  td
+                    input.form-control(type="text" id="name1" name="name1" placeholder="飞机类型")
+                  td
+                    input(type='checkbox', name='user-checkbox', data-size="mini" data-off-color="default" data-on-color="success" data-on-text="&nbsp;&nbsp;" data-off-text="&nbsp;&nbsp;")
+                  td
+                    input(type='checkbox', name='user-checkbox', checked data-size="mini" data-off-color="default" data-on-color="success" data-on-text="&nbsp;&nbsp; " data-off-text="&nbsp;&nbsp;")
+                tr
+                  td 状态名称字段
+                  td
+                    .col-sm-9.c-module-createCharts__select
+                      select#input_type.form-control.js-select-fancy(name='input_type')
+                        option(value='001') 飞机类型
+                        option(value='002') 飞机状态
+                        option(value='003') 飞机指标
+                    .col-sm-3
+                      button.btn.btn-default(type='button') 清除
+                  td
+                    input(type='checkbox', name='user-checkbox', data-size="mini" data-off-color="default" data-on-color="success" data-on-text="&nbsp;&nbsp;" data-off-text="&nbsp;&nbsp;")
+                  td
+                    input(type='checkbox', name='user-checkbox', checked data-size="mini" data-off-color="default" data-on-color="success" data-on-text="&nbsp;&nbsp; " data-off-text="&nbsp;&nbsp;")
+
+                tr
+                  td 状态名称字段
+                  td
+                    .col-sm-9.c-module-createCharts__select
+                      select#input_m.form-control.js-select-fancy(name='input_m')
+                        option(value='001') 操作机
+                        option(value='002') 森林防护机
+                        option(value='003') 航测机
+                        option(value='004' disabled) 医疗救护机
+                        option(value='005' disabled) 游览机
+                        option(value='006' ) 特技表演机
+                    .col-sm-3
+                      button.btn.btn-default(type='button') 清除
+                  td
+                    input(type='checkbox', name='user-checkbox', data-size="mini" data-off-color="default" data-on-color="success" data-on-text="&nbsp;&nbsp;" data-off-text="&nbsp;&nbsp;")
+                  td
+                    input(type='checkbox', name='user-checkbox', checked data-size="mini" data-off-color="default" data-on-color="success" data-on-text="&nbsp;&nbsp; " data-off-text="&nbsp;&nbsp;")
+
+      //添加菜单的弹出框
+    #previewPopup.modal.fade.modalChartsPreview(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
+              | &times;
+            h4#myModalLabel.modal-title 业务列表预览
+          .modal-body
+            table
+              tr
+                th 字段名称
+                th 别名
+                th 表头
+                th 表头
+                th 是否为维度
+                th 是否为指标
+              tr
+                td 字段 
+                td 飞机类型
+                td 表格内容
+                td 表格内容
+                td 是
+                td 是
+              tr
+                td 字段 
+                td 飞机类型
+                td 表格内容
+                td 表格内容
+                td 是
+                td 是
+              tr
+                td 字段 
+                td 飞机类型
+                td 表格内容
+                td 表格内容
+                td 是
+                td 是
+              tr
+                td 字段 
+                td 飞机类型
+                td 表格内容
+                td 表格内容
+                td 是
+                td 是
+            #chartsPager
+
+      
+
+
+
+
+
+
+
+      

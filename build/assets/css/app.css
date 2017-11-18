@@ -3405,7 +3405,8 @@ html {
 .modalChartsPreview table tr:nth-last-of-type(1) td {
   border-bottom: none;
 }
-.c-module-admin__table {
+.c-module-admin__table,
+.c-module-createCharts__table {
   background-color: #fff;
   background-image: url("../images/bg-user.png");
   background-position: center;
@@ -3413,34 +3414,42 @@ html {
   min-height: 300px;
   border: 1px solid #dde8f8;
 }
-.c-module-admin__table .table {
+.c-module-admin__table .table,
+.c-module-createCharts__table .table {
   margin-bottom: 0;
 }
-.c-module-admin__table thead tr {
+.c-module-admin__table thead tr,
+.c-module-createCharts__table thead tr {
   background-color: #dde8f8;
 }
-.c-module-admin__table thead tr th {
+.c-module-admin__table thead tr th,
+.c-module-createCharts__table thead tr th {
   vertical-align: middle;
   text-align: center;
 }
-.c-module-admin__table tbody tr {
+.c-module-admin__table tbody tr,
+.c-module-createCharts__table tbody tr {
   border-bottom: 1px solid #dde8f8;
 }
-.c-module-admin__table tbody tr td {
+.c-module-admin__table tbody tr td,
+.c-module-createCharts__table tbody tr td {
   vertical-align: middle;
   text-align: center;
 }
-.c-module-admin__table tbody tr td img {
+.c-module-admin__table tbody tr td img,
+.c-module-createCharts__table tbody tr td img {
   max-height: 64px;
   max-width: 64px;
   border: 4px solid #7da6de;
 }
-.c-module-admin__table tbody tr td .ion {
+.c-module-admin__table tbody tr td .ion,
+.c-module-createCharts__table tbody tr td .ion {
   padding: 0 15px;
   cursor: pointer;
   color: #7da6de;
 }
-.c-module-admin__table tbody tr:hover {
+.c-module-admin__table tbody tr:hover,
+.c-module-createCharts__table tbody tr:hover {
   background-color: #f4f9ff;
 }
 .modalCreateUser .modal-dialog {
@@ -3772,6 +3781,30 @@ html {
 }
 .c-module-charts .button-remove {
   display: none;
+}
+.c-module-createCharts-select select {
+  width: 33%;
+  float: left;
+  margin-right: 0.3%;
+}
+@media (max-width: 768px) {
+  .c-module-createCharts .text-label {
+    text-align: left !important;
+  }
+}
+.c-module-createCharts .button-single button {
+  min-width: 100px;
+}
+.c-module-createCharts__table {
+  background-image: none;
+}
+.c-module-createCharts__table select {
+  display: inline-block;
+  width: 77% !important;
+}
+.c-module-createCharts__select {
+  padding-left: 0;
+  padding-right: 0;
 }
 .c-module-data {
   max-width: 1000px;

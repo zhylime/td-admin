@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>td admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <meta name="description" content="td admin">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="./assets/css/vendor/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/vendor/font-awesome.css">
+    <link rel="stylesheet" href="./assets/css/vendor/ionicons.css">
+    <link rel="stylesheet" href="./assets/css/vendor/b.tabs.css">
+    <link rel="stylesheet" href="./assets/css/vendor/bootstrap-select.css">
+    <link rel="stylesheet" href="./assets/css/vendor/bootstrap-switch.css">
+    <link rel="stylesheet" href="./assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="./assets/css/vendor/pager.css"><!--[if (gt IE 8)]><!-->
+    <link rel="stylesheet" href="./assets/css/app.css"><!--<![endif]-->
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/ico">
+  </head>
+  <body>
+    <div class="c-module c-module-charts c-module-createCharts container-fluid">
+      <form method="POST" name="moduleEditForm" id="moduleChartsForm" data-js-form-validator class="c-form-module">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="form-group text-label text-right">
+              <label for="name" class="form__label">业务表单名称</label>
+            </div>
+          </div>
+          <div class="col-sm-9">
+            <div class="form-group">
+              <input type="text" id="name" name="name" data-rule="required|alpha|max:30" class="form-control">
+              <div class="text-danger l-padding-top-1 hide input-error-message">请输入名称</div>
+            </div>
+          </div>
+        </div>
+        <div class="row l-p-1-2">
+          <div class="col-sm-3">
+            <div class="form-group text-label text-right">
+              <label for="input_type1" class="form__label">业务表单类型</label>
+            </div>
+          </div>
+          <div class="col-sm-9">
+            <div class="form-group c-module-createCharts-select">
+              <select id="input_type1" name="input_type1" class="form-control">
+                <option value=""></option>
+              </select>
+              <select id="input_type2" name="input_type2" class="form-control">
+                <option value=""></option>
+              </select>
+              <select id="input_type3" name="input_type3" class="form-control">
+                <option value=""></option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="form-group text-label text-right">
+              <label for="description" class="form__label">描述</label>
+            </div>
+          </div>
+          <div class="col-sm-9">
+            <div class="form-group">
+              <textarea id="description" name="description" data-rule="required|max:200" class="form-control"></textarea>
+              <div class="text-danger l-padding-top-1 hide input-error-message">请输入描述</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="form-group text-label text-right">
+              <label for="script" class="form__label">SQL脚本</label>
+            </div>
+          </div>
+          <div class="col-sm-9">
+            <div class="form-group">
+              <textarea id="script" name="description" data-rule="required|max:200" class="form-control"></textarea>
+              <div class="text-danger l-padding-top-1 hide input-error-message">请输入脚本</div>
+            </div>
+          </div>
+        </div>
+        <div class="row button-group text-center">
+          <div class="col-sm-3">
+            <div class="form-group text-label">
+              <label class="form__label"></label>
+            </div>
+          </div>
+          <div class="col-sm-9 button-single">
+            <div class="form-group text-left">
+              <button type="button" data-toggle="modal" data-target="#previewPopup" class="btn btn-default">预览</button>
+            </div>
+          </div>
+        </div>
+        <div class="row l-p-2-1">
+          <div class="col-sm-3">
+            <div class="form-group text-label">
+              <label class="form__label"></label>
+            </div>
+          </div>
+          <div class="col-sm-9">
+            <div class="form-group text-label text-left">
+              <label class="form__label">查询字段</label>
+            </div>
+            <div class="table-responsive c-module-createCharts__table">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th><span>字段名称</span></th>
+                    <th><span>别名</span>
+                      <select id="input_alias" name="input_alias" class="form-control js-select-fancy">
+                        <option value="001">飞机类型</option>
+                        <option value="002">飞机状态</option>
+                        <option value="003">飞机指标</option>
+                      </select>
+                    </th>
+                    <th><span>是否为纬度</span></th>
+                    <th><span>是否为指标</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>我是字段名称</td>
+                    <td>
+                      <input type="text" id="name1" name="name1" placeholder="飞机类型" class="form-control">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="user-checkbox" data-size="mini" data-off-color="default" data-on-color="success" data-on-text="&amp;nbsp;&amp;nbsp;" data-off-text="&amp;nbsp;&amp;nbsp;">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="user-checkbox" checked data-size="mini" data-off-color="default" data-on-color="success" data-on-text="&amp;nbsp;&amp;nbsp; " data-off-text="&amp;nbsp;&amp;nbsp;">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>状态名称字段</td>
+                    <td>
+                      <div class="col-sm-9 c-module-createCharts__select">
+                        <select id="input_type" name="input_type" class="form-control js-select-fancy">
+                          <option value="001">飞机类型</option>
+                          <option value="002">飞机状态</option>
+                          <option value="003">飞机指标</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-3">
+                        <button type="button" class="btn btn-default">清除</button>
+                      </div>
+                    </td>
+                    <td>
+                      <input type="checkbox" name="user-checkbox" data-size="mini" data-off-color="default" data-on-color="success" data-on-text="&amp;nbsp;&amp;nbsp;" data-off-text="&amp;nbsp;&amp;nbsp;">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="user-checkbox" checked data-size="mini" data-off-color="default" data-on-color="success" data-on-text="&amp;nbsp;&amp;nbsp; " data-off-text="&amp;nbsp;&amp;nbsp;">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>状态名称字段</td>
+                    <td>
+                      <div class="col-sm-9 c-module-createCharts__select">
+                        <select id="input_m" name="input_m" class="form-control js-select-fancy">
+                          <option value="001">操作机</option>
+                          <option value="002">森林防护机</option>
+                          <option value="003">航测机</option>
+                          <option value="004" disabled>医疗救护机</option>
+                          <option value="005" disabled>游览机</option>
+                          <option value="006">特技表演机</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-3">
+                        <button type="button" class="btn btn-default">清除</button>
+                      </div>
+                    </td>
+                    <td>
+                      <input type="checkbox" name="user-checkbox" data-size="mini" data-off-color="default" data-on-color="success" data-on-text="&amp;nbsp;&amp;nbsp;" data-off-text="&amp;nbsp;&amp;nbsp;">
+                    </td>
+                    <td>
+                      <input type="checkbox" name="user-checkbox" checked data-size="mini" data-off-color="default" data-on-color="success" data-on-text="&amp;nbsp;&amp;nbsp; " data-off-text="&amp;nbsp;&amp;nbsp;">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--添加菜单的弹出框-->
+      </form>
+      <div id="previewPopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade modalChartsPreview">
+        <div role="document" class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" data-dismiss="modal" aria-hidden="true" class="close">&times;</button>
+              <h4 id="myModalLabel" class="modal-title">业务列表预览</h4>
+            </div>
+            <div class="modal-body">
+              <table>
+                <tr>
+                  <th>字段名称</th>
+                  <th>别名</th>
+                  <th>表头</th>
+                  <th>表头</th>
+                  <th>是否为维度</th>
+                  <th>是否为指标</th>
+                </tr>
+                <tr>
+                  <td>字段 </td>
+                  <td>飞机类型</td>
+                  <td>表格内容</td>
+                  <td>表格内容</td>
+                  <td>是</td>
+                  <td>是</td>
+                </tr>
+                <tr>
+                  <td>字段 </td>
+                  <td>飞机类型</td>
+                  <td>表格内容</td>
+                  <td>表格内容</td>
+                  <td>是</td>
+                  <td>是</td>
+                </tr>
+                <tr>
+                  <td>字段 </td>
+                  <td>飞机类型</td>
+                  <td>表格内容</td>
+                  <td>表格内容</td>
+                  <td>是</td>
+                  <td>是</td>
+                </tr>
+                <tr>
+                  <td>字段 </td>
+                  <td>飞机类型</td>
+                  <td>表格内容</td>
+                  <td>表格内容</td>
+                  <td>是</td>
+                  <td>是</td>
+                </tr>
+              </table>
+              <div id="chartsPager"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    window.MLP = window.MLP || {};
+    MLP.paths = {"root":"./","static":"./assets/","img":"./assets/images/","js":"./assets/js/","css":"./assets/css/"};
+    
+    
+  </script>
+  <script src="./assets/js/vendor/jquery.js"></script>
+  <script src="./assets/js/vendor/jquery-ui.js"></script>
+  <script src="./assets/js/vendor/bootstrap.js"></script>
+  <script src="./assets/js/vendor/jquery.validate.js"></script>
+  <script src="./assets/js/vendor/mainFrame.js"></script>
+  <script src="./assets/js/vendor/b.tabs.js"></script>
+  <script src="./assets/js/vendor/isotope.pkgd.min.js"></script>
+  <script src="./assets/js/vendor/bootstrap-select.js"></script>
+  <script src="./assets/js/vendor/bootstrap-switch.js"></script>
+  <script src="./assets/js/vendor/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="./assets/js/vendor/masonry-docs.js"></script>
+  <script src="./assets/js/vendor/jquery.pager.js"></script>
+  <script src="./assets/js/app.js"></script><!--[if IE 9]>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script><![endif]-->
+</html>
