@@ -1360,6 +1360,91 @@ body {
     transform: translate(0, 0);
   }
 }
+.c-module-admin .btn-default,
+.demandDataModal .btn.btn-primary.btn-file,
+.modalCreateUser .btn.btn-primary.btn-file {
+  color: #000;
+  border: solid 1px #b6c0cf;
+  background: #f3f6fa;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#f3f6fa), to(#e1e8f1));
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#f3f6fa), to(#e1e8f1));
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#f3f6fa), to(#e1e8f1));
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#f3f6fa), to(#e1e8f1));
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#f3f6fa), to(#e1e8f1));
+  background-image: -moz--webkit-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -moz--moz-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -moz--o-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -moz--ms-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -moz-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -ms--webkit-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -ms--moz-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -ms--o-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -ms--ms-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -ms-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f6fa), color-stop(100%, #e1e8f1));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f6fa), color-stop(100%, #e1e8f1));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f6fa), color-stop(100%, #e1e8f1));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f6fa), color-stop(100%, #e1e8f1));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f3f6fa), color-stop(100%, #e1e8f1));
+  background-image: -webkit--webkit-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -webkit--moz-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -webkit--o-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -webkit--ms-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -webkit-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -o--webkit-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -o--moz-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -o--o-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -o--ms-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -o-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -webkit-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -moz-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -o-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: -ms-linear-gradient(#f3f6fa, #e1e8f1);
+  background-image: linear-gradient(#f3f6fa, #e1e8f1);
+}
+.c-module-admin .btn-default:hover,
+.demandDataModal .btn.btn-primary.btn-file:hover,
+.modalCreateUser .btn.btn-primary.btn-file:hover {
+  background: #eaeff5;
+  color: #000;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#eaeff5), to(#e2e9f2));
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#eaeff5), to(#e2e9f2));
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#eaeff5), to(#e2e9f2));
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#eaeff5), to(#e2e9f2));
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#eaeff5), to(#e2e9f2));
+  background-image: -moz--webkit-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -moz--moz-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -moz--o-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -moz--ms-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -moz-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -ms--webkit-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -ms--moz-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -ms--o-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -ms--ms-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -ms-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eaeff5), color-stop(100%, #e2e9f2));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eaeff5), color-stop(100%, #e2e9f2));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eaeff5), color-stop(100%, #e2e9f2));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eaeff5), color-stop(100%, #e2e9f2));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eaeff5), color-stop(100%, #e2e9f2));
+  background-image: -webkit--webkit-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -webkit--moz-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -webkit--o-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -webkit--ms-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -webkit-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -o--webkit-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -o--moz-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -o--o-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -o--ms-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -o-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -webkit-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -moz-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -o-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: -ms-linear-gradient(#eaeff5, #e2e9f2);
+  background-image: linear-gradient(#eaeff5, #e2e9f2);
+}
 @font-face {
   font-family: 'Glypha LT Std';
   src: url("../fonts/32411E_4_0.eot");
@@ -2461,7 +2546,7 @@ html {
 }
 .c-content__menu--info {
   background-color: #001e4c;
-  border: 2px solid #b4ceef;
+  border: 2px solid #59b0e5;
   color: #fff;
   z-index: 100000;
   position: absolute;
@@ -2521,11 +2606,12 @@ html {
   height: 26px;
   line-height: 26px;
   font-size: 16px;
-  color: #11cfe5;
+  color: #2fa9ff;
   font-weight: 400;
   text-align: center;
   margin-top: 8px;
   overflow: hidden;
+  font-weight: bold;
 }
 .c-content__menu--detail {
   width: 280px;
@@ -2537,7 +2623,7 @@ html {
   display: block;
   line-height: 16px;
   font-size: 12px;
-  color: #11cfe5;
+  color: #2fa9ff;
   padding: 3px 0;
 }
 .c-content__menu--detail.txt {
@@ -3458,6 +3544,25 @@ html {
 .modalChartsPreview table tr:nth-last-of-type(1) td {
   border-bottom: none;
 }
+.demandDataModal .btn.btn-primary.btn-file {
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.demandDataModal .input-group.file-caption-main {
+  float: right;
+  width: 65%;
+}
+.demandDataModal .file-input.file-input-new {
+  position: relative;
+  top: -1em;
+}
+.demandDataModal [for="fileUpload"] {
+  position: relative;
+  top: 1.5em;
+}
 .c-module-admin__table,
 .c-module-createCharts__table {
   background-color: #fff;
@@ -3480,6 +3585,11 @@ html {
   vertical-align: middle;
   text-align: center;
 }
+.c-module-admin__table thead tr th span,
+.c-module-createCharts__table thead tr th span {
+  color: #354967;
+  font-weight: bold;
+}
 .c-module-admin__table tbody tr,
 .c-module-createCharts__table tbody tr {
   border-bottom: 1px solid #dde8f8;
@@ -3488,6 +3598,7 @@ html {
 .c-module-createCharts__table tbody tr td {
   vertical-align: middle;
   text-align: center;
+  color: #5c5c5c;
 }
 .c-module-admin__table tbody tr td img,
 .c-module-createCharts__table tbody tr td img {
@@ -3507,6 +3618,9 @@ html {
 }
 .modalCreateUser .modal-dialog {
   width: 600px !important;
+}
+.modalCreateUser .modal-dialog label {
+  font-weight: bold;
 }
 .modalCreateUser .modal-dialog span {
   line-height: 2em;
@@ -3569,6 +3683,17 @@ html {
 }
 .modalCreateUser .file-caption.icon-visible .file-caption-icon {
   line-height: 1;
+}
+.modalCreateUser .btn.btn-primary.btn-file {
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.modalCreateUser .krajee-default.file-preview-frame:not(.file-preview-error):hover {
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 .c-module-charts {
   max-width: 1000px;

@@ -14,11 +14,15 @@
         th
           vertical-align middle
           text-align center
+          span
+            color $tabs-nav-text-active-blue
+            font-weight bold
       tbody
         tr
           td
             vertical-align middle
             text-align center
+            color $color-user-grey
             img
               max-height 64px
               max-width 64px
@@ -34,6 +38,8 @@
 .modalCreateUser
   .modal-dialog
     width 600px!important
+    label
+      font-weight bold
     span
       line-height 2em
     img.ion
@@ -79,6 +85,11 @@
         left -8px
   .file-caption.icon-visible .file-caption-icon
     line-height 1
+  .btn.btn-primary.btn-file
+    @extends .c-module-admin .btn-default
+    border-radius 4px
+  .krajee-default.file-preview-frame:not(.file-preview-error):hover
+    box-shadow none
 
 
 

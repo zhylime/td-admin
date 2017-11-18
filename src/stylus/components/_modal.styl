@@ -167,7 +167,7 @@
   &-btn
     width 145px
     height 145px
-    border 1px solid $color-border-blue
+    border 1px solid $color-border-blue1
     border-radius .2em
     margin 0 auto
     position absolute
@@ -230,6 +230,21 @@
         th
         td
           border-bottom none
+
+//数据需求
+.demandDataModal
+  .btn.btn-primary.btn-file
+    @extends .c-module-admin .btn-default
+    border-radius 4px
+  .input-group.file-caption-main
+    float right
+    width 65%
+  .file-input.file-input-new
+    position relative
+    top -1em
+  [for="fileUpload"]
+    position relative
+    top 1.5em
         
 
 

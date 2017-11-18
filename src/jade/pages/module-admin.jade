@@ -13,7 +13,7 @@ block content
             thead
               tr
                 th
-                  span 图片
+                  span 照片
                 th
                   span 用户名
                 th
@@ -123,19 +123,19 @@ block content
                     img.ion.js-show-password(src=paths.img + "icon-show-ps.png", alt="")
             .row
               .col-sm-2
-                .form-group
-                  label.file-label(for='imgUpload') 照片
-              .col-sm-10.col-xs-10
-                .file-loading
-                  input.file(name='imgUpload', id="imgUpload", type='file' data-preview-file-type="any" accept="image/*")
-            .row.l-p-top-1
-              .col-sm-2
                 .form-group.text-label
                   label.form__label(for="realname") 真实姓名
               .col-sm-10.col-xs-10
                 .form-group
                   input.form-control(type="text" id="realname" name="realname" )
             .row
+              .col-sm-2
+                .form-group
+                  label.file-label(for='imgUpload') 照片
+              .col-sm-10.col-xs-10
+                .file-loading
+                  input.file(name='imgUpload', id="imgUpload", type='file' data-preview-file-type="any" accept="image/*")
+            .row.l-p-top-1
               .col-sm-2
                 .form-group.text-label
                   label.form__label(for="roleType") 角色
