@@ -1,59 +1,264 @@
 extends ../partials/_template
-include ../mixins/_card-flip
+//- include ../mixins/_card-flip
 block footer
 block header
+
+
+block headCss
+  link(rel='stylesheet', href=paths.css + 'vendor/pager.css')
+block footerJs
+  script(src=paths.js + 'vendor/masonry-docs.js')
+  script(src=paths.js + 'vendor/jquery.pager.js')
 //- 业务表单
 block content
   .c-module.c-module-charts.container-fluid
     form.c-form-module(method="POST" name="moduleEditForm" id="moduleChartsForm" data-js-form-validator)
-      .c-module-charts__search-container.l-float-right
-        input.c-module-charts__search-container__input
-        button.c-module-charts__search-container__button 搜索
-      ul.nav.nav-tabs(role="tablist")
-        li(role="presentation")
-          a(href="#contract", aria-controls="contract", role="tab", data-toggle="tab") 合同
-        li(role="presentation")
-          a(href="#equipment", aria-controls="equipment", role="tab", data-toggle="tab") 装备
-      .tab-content(data-js-charts-filter)
-        .tab-pane(role="tabpanel", id="contract")
-          .radio-group(data-toggle="buttons")
-            label.btn.btn-default(data-group-id="filterID1")
-              input(type="radio", name="chartsOptionGroup1")
-              | option1
-            label.btn.btn-default(data-group-id="filterID2")
-              input(type="radio", name="chartsOptionGroup1")
-              | option2
+      
+      //- dropdown下拉菜单
+      .c-module-charts__dropdown-menu(data-js-dropdown)
+        //- 搜索
+        .c-module-charts__search-container.l-float-right
+          input.c-module-charts__search-container__input
+          button.c-module-charts__search-container__button 搜索
+        div.c-module-charts__dropdown-menu__selected.js-dropdown-btn
+          span 选择类型
+          span.icon-dropdown-arrow
+        ul.c-module-charts__dropdown-menu__list.hide.js-dropdown-list
+          li
+            div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
+              span 装备
+              span.icon-dropdown-arrow
+            ul.c-module-charts__dropdown-menu__sub-list.hide.jd-dropdown-sub-list
+              li
+                div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
+                  span 飞机
+                  span.icon-dropdown-arrow
+                ul.c-module-charts__dropdown-menu__sub-list.hide.jd-dropdown-sub-list
+                  li
+                    div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
+                      span 采购
+                      span.icon-dropdown-arrow
+                  li
+                    div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
+                      span 研制
+                      span.icon-dropdown-arrow
+                  li
+                    div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
+                      span 统计
+                      span.icon-dropdown-arrow
+              li
+                div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
+                  span 发动机
+                  span.icon-dropdown-arrow
+          li
+            div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
+              span 合同
+              span.icon-dropdown-arrow
+          li
+            div.c-module-charts__dropdown-menu__list__item.js-dropdown-item
+              span 数据
+              span.icon-dropdown-arrow
 
-          .filter-group#filterID1
-            .filter-item 采购1
-            .filter-item 采购2
-            .filter-item 采购3
-          .filter-group#filterID2
-            .filter-item 统计
-            .filter-item 统计2
-            .filter-item 统计3
-        .tab-pane(role="tabpanel", id="equipment")
-          .radio-group(data-toggle="buttons")
-            label.btn.btn-default(data-group-id="filterID3")
-              input(type="radio", name="chartsOptionGroup1")
-              | 飞机
-            label.btn.btn-default(data-group-id="filterID4")
-              input(type="radio", name="chartsOptionGroup1")
-              | 发动机
-            label.btn.btn-default(data-group-id="filterID5")
-              input(type="radio", name="chartsOptionGroup1")
-              | 雷达
-          .filter-group#filterID3
-            .filter-item Filter1
-          .filter-group#filterID4
-            .filter-item Filter2
-            .filter-item FilterZ
-          .filter-group#filterID5
-            .filter-item FilterY
-            .filter-item FilterX
 
-      .c-module-charts__grid
-        +card-flip
+
+      //- ul.nav.nav-tabs(role="tablist")
+      //-   li(role="presentation")
+      //-     a(href="#contract", aria-controls="contract", role="tab", data-toggle="tab") 合同
+      //-   li(role="presentation")
+      //-     a(href="#equipment", aria-controls="equipment", role="tab", data-toggle="tab") 装备
+      //- .tab-content(data-js-charts-filter)
+      //-   .tab-pane(role="tabpanel", id="contract")
+      //-     .radio-group(data-toggle="buttons")
+      //-       label.btn.btn-default(data-group-id="filterID1")
+      //-         input(type="radio", name="chartsOptionGroup1")
+      //-         | option1
+      //-       label.btn.btn-default(data-group-id="filterID2")
+      //-         input(type="radio", name="chartsOptionGroup1")
+      //-         | option2
+
+      //-     .filter-group#filterID1
+      //-       .filter-item 采购1
+      //-       .filter-item 采购2
+      //-       .filter-item 采购3
+      //-     .filter-group#filterID2
+      //-       .filter-item 统计
+      //-       .filter-item 统计2
+      //-       .filter-item 统计3
+      //-   .tab-pane(role="tabpanel", id="equipment")
+      //-     .radio-group(data-toggle="buttons")
+      //-       label.btn.btn-default(data-group-id="filterID3")
+      //-         input(type="radio", name="chartsOptionGroup1")
+      //-         | 飞机
+      //-       label.btn.btn-default(data-group-id="filterID4")
+      //-         input(type="radio", name="chartsOptionGroup1")
+      //-         | 发动机
+      //-       label.btn.btn-default(data-group-id="filterID5")
+      //-         input(type="radio", name="chartsOptionGroup1")
+      //-         | 雷达
+      //-     .filter-group#filterID3
+      //-       .filter-item Filter1
+      //-     .filter-group#filterID4
+      //-       .filter-item Filter2
+      //-       .filter-item FilterZ
+      //-     .filter-group#filterID5
+      //-       .filter-item FilterY
+      //-       .filter-item FilterX
+
+      .c-module-charts__grid(data-js-masonry)
+        #masonry.container-fluid
+          .box.grid-item
+            .grid-item__image
+              img(src=paths.img + 'chart-grid-thumb.jpg')
+            .grid-item__content
+              .name 数据权限对比模块
+              .brief.
+                先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：“这场比赛这场比赛两队都无欲无求欲无求了...
+            .grid-item__btns
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+              a(href="#", data-toggle='modal', data-target='#previewPopup').button-preview.js-open-modal-charts-preview
+                i.icon-preview
+                | 预览
+
+          .box.grid-item
+            .grid-item__image
+              img(src=paths.img + 'chart-grid-thumb.jpg')
+            .grid-item__content
+              .name 数据权限对比模块
+              .brief.
+                先来看看范志毅命中的瑞超2串1，“这场比赛这场比赛两队都无欲无求欲无求了...
+            .grid-item__btns
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+              a(href="#", data-toggle='modal', data-target='#previewPopup').button-preview
+                i.icon-preview
+                | 预览
+
+          .box.grid-item
+            .grid-item__image
+              //- img(src=paths.img + 'chart-grid-thumb.jpg')
+            .grid-item__content
+              .name 数据权限对比模块
+              .brief.
+                先来看看范志毅命中的瑞超2串1前，范志毅分析后给出推荐：“这场比赛这场比赛两队都无欲无求欲无求了...
+            .grid-item__btns
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+              a(href="#", data-toggle='modal', data-target='#previewPopup').button-preview
+                i.icon-preview
+                | 预览
+
+          .box.grid-item
+            .grid-item__image
+              img(src=paths.img + 'chart-grid-thumb.jpg')
+            .grid-item__content
+              .name 数据权限对比模块
+              .brief.
+                先来看看范志毅命中的瑞超2串1前，范志毅分析后给出推荐：“这场比赛这场比赛两队都无欲无求欲无求了...
+            .grid-item__btns
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+              a(href="#", data-toggle='modal', data-target='#previewPopup').button-preview
+                i.icon-preview
+                | 预览
+
+          .box.grid-item
+            .grid-item__image
+              //- img(src=paths.img + 'chart-grid-thumb.jpg')
+            .grid-item__content
+              .name 数据权限对比模块
+              .brief.
+                先来看看范志毅命中的瑞超2串1前，范志毅分析后给出推荐：“这场比赛这场比赛两队都无欲无求欲无求了...
+            .grid-item__btns
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+              a(href="#", data-toggle='modal', data-target='#previewPopup').button-preview
+                i.icon-preview
+                | 预览
+
+          .box.grid-item
+            .grid-item__image
+              img(src=paths.img + 'chart-grid-thumb.jpg')
+            .grid-item__content
+              .name 数据权限对比模块
+              .brief.
+                先来看看范志毅命中的瑞超2串1，前国足队长如何分析比赛的？在北雪平主场2-0战胜厄勒布鲁的比赛前，范志毅分析后给出推荐：“这场比赛这场比赛两队都无欲无求欲无求了...
+            .grid-item__btns
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+              a(href="#", data-toggle='modal', data-target='#previewPopup').button-preview
+                i.icon-preview
+                | 预览
+
+          .box.grid-item
+            .grid-item__image
+              img(src=paths.img + 'chart-grid-thumb.jpg')
+            .grid-item__content
+              .name 数据权限对比模块
+              .brief.
+                先来看看范志毅命中的瑞超2串1，“这场比赛这场比赛两队都无欲无求欲无求了...
+            .grid-item__btns
+              a(href="javascript:void(0);").button-create
+                i.icon-module
+                | 建模
+              a(href="#", data-toggle='modal', data-target='#previewPopup').button-preview
+                i.icon-preview
+                | 预览
+
+      //添加菜单的弹出框
+    #previewPopup.modal.fade.modalChartsPreview(tabindex='-1', role='dialog', aria-labelledby='myModalLabel' aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button(type="button" class="close" data-dismiss="modal" aria-hidden="true")
+              | &times;
+            h4#myModalLabel.modal-title 业务列表预览
+          .modal-body
+            table
+              tr
+                th 字段名称
+                th 别名
+                th 表头
+                th 表头
+                th 是否为维度
+                th 是否为指标
+              tr
+                td 字段 
+                td 飞机类型
+                td 表格内容
+                td 表格内容
+                td 是
+                td 是
+              tr
+                td 字段 
+                td 飞机类型
+                td 表格内容
+                td 表格内容
+                td 是
+                td 是
+              tr
+                td 字段 
+                td 飞机类型
+                td 表格内容
+                td 表格内容
+                td 是
+                td 是
+              tr
+                td 字段 
+                td 飞机类型
+                td 表格内容
+                td 表格内容
+                td 是
+                td 是
+            #chartsPager
+
+      
 
 
 

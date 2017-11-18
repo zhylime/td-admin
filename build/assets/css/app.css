@@ -1426,6 +1426,11 @@ select.form-control option {
   height: 14px;
   display: inline-block !important;
 }
+.icon-dropdown-arrow {
+  background: url("../images/spirit-icon.png") no-repeat;
+  height: 10px;
+  width: 6px;
+}
 .c-icon-edit {
   display: inline-block;
   content: url("../images/icon-edit.png");
@@ -3104,6 +3109,7 @@ html {
 .modalSetup textarea,
 .modalConfirm textarea,
 .modalAddData textarea,
+.modalChartsPreview textarea,
 .modalDataType textarea {
   resize: none;
   min-height: 100px;
@@ -3113,6 +3119,7 @@ html {
   .modalSetup,
   .modalConfirm,
   .modalAddData,
+  .modalChartsPreview,
   .modalDataType {
     margin-top: -300px;
     top: 50%;
@@ -3122,6 +3129,7 @@ html {
 .modalSetup .modal-header,
 .modalConfirm .modal-header,
 .modalAddData .modal-header,
+.modalChartsPreview .modal-header,
 .modalDataType .modal-header {
   background-color: #7897c5;
   color: #fff;
@@ -3131,6 +3139,7 @@ html {
   .modalSetup .modal-dialog,
   .modalConfirm .modal-dialog,
   .modalAddData .modal-dialog,
+  .modalChartsPreview .modal-dialog,
   .modalDataType .modal-dialog {
     width: 400px;
   }
@@ -3140,6 +3149,7 @@ html {
   .modalSetup .modal-dialog,
   .modalConfirm .modal-dialog,
   .modalAddData .modal-dialog,
+  .modalChartsPreview .modal-dialog,
   .modalDataType .modal-dialog {
     min-width: 450px;
   }
@@ -3148,6 +3158,7 @@ html {
 .modalSetup .modal-body,
 .modalConfirm .modal-body,
 .modalAddData .modal-body,
+.modalChartsPreview .modal-body,
 .modalDataType .modal-body {
   padding-right: 2rem;
   padding-left: 2rem;
@@ -3158,6 +3169,7 @@ html {
 .modalSetup .control-group select.input-xlarge,
 .modalConfirm .control-group select.input-xlarge,
 .modalAddData .control-group select.input-xlarge,
+.modalChartsPreview .control-group select.input-xlarge,
 .modalDataType .control-group select.input-xlarge {
   width: 100%;
   min-height: 100px;
@@ -3166,6 +3178,7 @@ html {
 .modalSetup .button-group,
 .modalConfirm .button-group,
 .modalAddData .button-group,
+.modalChartsPreview .button-group,
 .modalDataType .button-group {
   padding-top: 2rem;
 }
@@ -3174,6 +3187,7 @@ html {
   .modalSetup .button-group .button-single:nth-child(1),
   .modalConfirm .button-group .button-single:nth-child(1),
   .modalAddData .button-group .button-single:nth-child(1),
+  .modalChartsPreview .button-group .button-single:nth-child(1),
   .modalDataType .button-group .button-single:nth-child(1) {
     text-align: center;
   }
@@ -3182,6 +3196,7 @@ html {
 .modalSetup .modal-header button,
 .modalConfirm .modal-header button,
 .modalAddData .modal-header button,
+.modalChartsPreview .modal-header button,
 .modalDataType .modal-header button {
   min-width: auto;
 }
@@ -3189,6 +3204,7 @@ html {
 .modalSetup button,
 .modalConfirm button,
 .modalAddData button,
+.modalChartsPreview button,
 .modalDataType button {
   min-width: 100px;
   outline: none !important;
@@ -3197,6 +3213,7 @@ html {
 .modalSetup .control-group,
 .modalConfirm .control-group,
 .modalAddData .control-group,
+.modalChartsPreview .control-group,
 .modalDataType .control-group {
   padding-top: 2rem;
 }
@@ -3204,6 +3221,7 @@ html {
 .modalSetup .control-group button,
 .modalConfirm .control-group button,
 .modalAddData .control-group button,
+.modalChartsPreview .control-group button,
 .modalDataType .control-group button {
   min-width: 70px;
   margin-bottom: 10px;
@@ -3217,6 +3235,7 @@ html {
 .modalSetup #businessIndex,
 .modalConfirm #businessIndex,
 .modalAddData #businessIndex,
+.modalChartsPreview #businessIndex,
 .modalDataType #businessIndex {
   min-height: 210px;
   scroll: auto;
@@ -3225,6 +3244,7 @@ html {
 .modalSetup label.form__label.ion-android-warning,
 .modalConfirm label.form__label.ion-android-warning,
 .modalAddData label.form__label.ion-android-warning,
+.modalChartsPreview label.form__label.ion-android-warning,
 .modalDataType label.form__label.ion-android-warning {
   font-size: 100px;
   color: #f6cc9f;
@@ -3233,6 +3253,7 @@ html {
 .modalSetup .text-description,
 .modalConfirm .text-description,
 .modalAddData .text-description,
+.modalChartsPreview .text-description,
 .modalDataType .text-description {
   font-size: 16px;
   line-height: 150%;
@@ -3346,6 +3367,43 @@ html {
 }
 .modalDataType-grid:nth-child(2) .modalDataType-btn {
   left: 1em;
+}
+.modalChartsPreview .modal-dialog {
+  width: 760px;
+}
+.modalChartsPreview table {
+  border: 1px solid #dde8f8;
+  width: 100%;
+}
+.modalChartsPreview table tr th {
+  font-weight: bold;
+  font-size: 16px;
+  color: #354967;
+}
+.modalChartsPreview table tr td {
+  font-size: 14px;
+  color: #5c5c5c;
+}
+.modalChartsPreview table tr th,
+.modalChartsPreview table tr td {
+  border-right: 1px solid #dde8f8;
+  border-bottom: 1px solid #dde8f8;
+  text-align: center;
+  padding: 10px;
+}
+.modalChartsPreview table tr th:nth-last-of-type,
+.modalChartsPreview table tr td:nth-last-of-type {
+  border-right: none;
+}
+.modalChartsPreview table tr:nth-of-type(1) {
+  background-color: #dde8f8;
+}
+.modalChartsPreview table tr:nth-of-type(2n+3) {
+  background-color: #f4f9ff;
+}
+.modalChartsPreview table tr:nth-last-of-type(1) th,
+.modalChartsPreview table tr:nth-last-of-type(1) td {
+  border-bottom: none;
 }
 .c-module-admin__table {
   background-color: #fff;
@@ -3507,115 +3565,210 @@ html {
   transform: translateX(-50%);
   top: 29px;
 }
+.c-module-charts__dropdown-menu {
+  position: relative;
+  background: #edf4fc;
+  height: 60px;
+  width: 100%;
+  padding: 9px 10px;
+}
+.c-module-charts__dropdown-menu__list {
+  background: #5085cd;
+  padding: 15px 5px;
+  width: 185px;
+  position: absolute;
+  z-index: 1;
+  -webkit-box-shadow: 1px 3px 10px #ccc;
+  box-shadow: 1px 3px 10px #ccc;
+}
+.c-module-charts__dropdown-menu__list .icon-dropdown-arrow {
+  background-position: 0 0;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.c-module-charts__dropdown-menu__list__item {
+  width: 175px;
+  height: 42px;
+  line-height: 42px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  cursor: pointer;
+}
+.c-module-charts__dropdown-menu__list__item.active,
+.c-module-charts__dropdown-menu__list__item:hover {
+  background: #7da6de;
+}
+.c-module-charts__dropdown-menu__sub-list {
+  background: #ddecff;
+  padding: 15px 5px;
+  width: 185px;
+  position: absolute;
+  z-index: 1;
+  -webkit-box-shadow: 1px 3px 10px #ccc;
+  box-shadow: 1px 3px 10px #ccc;
+}
+.c-module-charts__dropdown-menu__sub-list .icon-dropdown-arrow {
+  background-position: -7px 0;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.c-module-charts__dropdown-menu__sub-list .c-module-charts__dropdown-menu__list__item {
+  width: 175px;
+  height: 42px;
+  line-height: 42px;
+  color: #354967;
+  text-align: center;
+}
+.c-module-charts__dropdown-menu__sub-list .c-module-charts__dropdown-menu__list__item.active,
+.c-module-charts__dropdown-menu__sub-list .c-module-charts__dropdown-menu__list__item:hover {
+  background: #b1ccf1;
+}
+.c-module-charts__dropdown-menu__selected {
+  width: 175px;
+  height: 42px;
+  line-height: 42px;
+  background: #7da6de;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  cursor: pointer;
+}
+.c-module-charts__dropdown-menu__selected .icon-dropdown-arrow {
+  background-position: 0 0;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 .c-module-charts__grid {
   margin-top: 30px;
 }
 .c-module-charts__grid .grid-item {
-  width: 32%;
+  width: 260px;
   float: left;
   position: relative;
-  height: 24vw;
-  margin-bottom: 12px;
-  max-height: 280px;
-  min-height: 240px;
+  border: 2px solid #e2ecf9;
+  margin-bottom: 30px;
 }
-.c-module-charts__grid .grid-item:nth-of-type(3n+2) {
-  margin-left: 2%;
-  margin-right: 2%;
-}
-.c-module-charts__grid__thumb {
-  width: 100%;
-  height: 18vw;
-  border-left: 1px solid #ccc;
-  border-top: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  min-height: 200px;
-  max-height: 233px;
-}
-.c-module-charts__grid__thumb img {
-  width: 100%;
-}
-.c-module-charts__grid__title {
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  border-left: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-}
-.c-module-charts__grid__buttons,
-.c-module-charts__grid__desc {
+.c-module-charts__grid .grid-item.active,
+.c-module-charts__grid .grid-item:hover {
   background: #ee5f20;
+}
+.c-module-charts__grid .grid-item.active .grid-item__content .name,
+.c-module-charts__grid .grid-item:hover .grid-item__content .name,
+.c-module-charts__grid .grid-item.active .grid-item__content .brief,
+.c-module-charts__grid .grid-item:hover .grid-item__content .brief {
   color: #fff;
 }
-.c-module-charts__grid__desc {
-  height: 18vw;
-  border-left: 1px solid #ccc;
-  border-top: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  padding: 20px 20px;
-  min-height: 200px;
-  max-height: 233px;
+.c-module-charts__grid .grid-item.active .grid-item__btns,
+.c-module-charts__grid .grid-item:hover .grid-item__btns {
+  background: #e25517;
 }
-.c-module-charts__grid__desc .desc-title {
-  line-height: 36px;
+.c-module-charts__grid .grid-item.active .grid-item__btns a,
+.c-module-charts__grid .grid-item:hover .grid-item__btns a {
+  color: #fff;
 }
-.c-module-charts__grid__desc .desc-author,
-.c-module-charts__grid__desc .desc-title {
+.c-module-charts__grid .grid-item.active .grid-item__btns .icon-preview,
+.c-module-charts__grid .grid-item:hover .grid-item__btns .icon-preview {
+  background: url("../images/icon-preview.png");
+}
+.c-module-charts__grid .grid-item.active .grid-item__btns .icon-module,
+.c-module-charts__grid .grid-item:hover .grid-item__btns .icon-module {
+  background: url("../images/icon-module.png");
+}
+.c-module-charts__grid .grid-item__image {
+  padding: 5px 10px;
+}
+.c-module-charts__grid .grid-item__image img {
+  width: 100%;
+  border: 2px solid #e2ecf9;
+}
+.c-module-charts__grid .grid-item__content {
+  padding: 5px 10px 15px;
+}
+.c-module-charts__grid .grid-item__content .name {
   font-size: 18px;
-}
-.c-module-charts__grid__desc .desc-content {
-  font-size: 14px;
-  line-height: 20px;
-  margin-bottom: 10px;
-}
-.c-module-charts__grid__desc .desc-author {
-  line-height: 20px;
-}
-.c-module-charts__grid__buttons {
-  height: 40px;
+  color: #000;
   line-height: 40px;
-  border-left: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+}
+.c-module-charts__grid .grid-item__content .brief {
+  font-size: 14px;
+  color: #787878;
+  line-height: 20px;
+}
+.c-module-charts__grid .grid-item__btns {
+  background: #f2f8ff;
   text-align: center;
 }
-.c-module-charts__grid__buttons a {
+.c-module-charts__grid .grid-item__btns a {
   display: inline-block;
   width: 65px;
   height: 37px;
   font-size: 16px;
   line-height: 37px;
-  color: #fff;
+  color: #7da6de;
   margin: 0 10px;
 }
-.c-module-charts__grid__buttons a:hover {
+.c-module-charts__grid .grid-item__btns a:hover {
   text-decoration: none;
 }
-.c-module-charts__grid__buttons a .icon-preview {
-  background: url("../images/icon-preview.png");
+.c-module-charts__grid .grid-item__btns a .icon-preview {
+  background: url("../images/icon-preview-blue.png");
   display: inline-block;
   vertical-align: middle;
   width: 21px;
   height: 12px;
   margin-right: 5px;
 }
-.c-module-charts__grid__buttons a .icon-module {
-  background: url("../images/icon-module.png");
+.c-module-charts__grid .grid-item__btns a .icon-module {
+  background: url("../images/icon-module-blue.png");
   display: inline-block;
   vertical-align: middle;
   width: 15px;
   height: 16px;
   margin-right: 5px;
 }
+.c-module-charts__search-container {
+  margin-top: 5px;
+}
 .c-module-charts__search-container__button {
-  height: 22px;
   padding: 0 20px;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
+}
+.c-module-charts__search-container__button,
+.c-module-charts__search-container input {
+  height: 35px;
 }
 .c-module-charts .button-remove {
   display: none;

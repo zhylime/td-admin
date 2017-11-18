@@ -1,0 +1,80 @@
+
+// 业务表单 - 瀑布流 + 点击popup
+class MasonryLayout extends MLP.apps.MLPModule {
+
+    init() {
+      super.init();
+      this.el ={
+        gridContainer: this.el.target.find('#masonry'),
+        gridItem : this.el.target.find('.grid-item'),
+        previewBtn : this.el.target.find('.js-open-modal-charts-preview'),
+        pager: $('#chartsPager'),
+      }
+  
+      this.events();
+    }
+
+    events(){
+        var _this = this;
+        this.layout();
+        this.highlightItem();
+        this.popup();
+        
+    
+
+ 
+    }
+
+    layout(){
+      this.el.gridContainer.masonry({
+        itemSelector: '.box',
+        columnWidth: 260,
+        // isFitWidth:true,
+        gutter: 20,
+        // isAnimated: true
+      })
+    }
+    highlightItem(){
+      var _this = this;
+      this.el.gridItem.each(function(){
+        $(this).on('click', function(e){
+         
+          _this.el.gridItem.removeClass('active');
+          $(this).addClass('active');
+        })
+      })
+    }
+    popup(){
+      var _this = this;
+
+      this.el.previewBtn.on('click', function(e){
+        e.stopPropagation();
+        var id=$(this).attr('data-target');
+        $(id).modal('show');
+        _this.previewPager();
+      
+      })
+
+    }
+
+    previewPager(){
+      $(this.el.pager).pager({
+        buttonClickCallback: function(pagenumber, pagecount, buttonClickCallback){
+
+        }
+      })
+    }
+
+    
+   
+
+ 
+
+
+      
+
+   
+
+}
+
+$.mlpPlugin(MasonryLayout, 'MasonryLayout', false, false);
