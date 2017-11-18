@@ -201,7 +201,7 @@ a img {
   border: none;
 }
 body {
-  font-family: 'Microsoft YaHei', 'Arial', sans-serif;
+  font-family: 'Heiti SC', 'Microsoft YaHei', 'Arial', sans-serif;
   background: #f8fbff;
 }
 .btn:focus,
@@ -1645,7 +1645,7 @@ a img {
   border: none;
 }
 body {
-  font-family: 'Microsoft YaHei', 'Arial', sans-serif;
+  font-family: 'Heiti SC', 'Microsoft YaHei', 'Arial', sans-serif;
   background: #f8fbff;
 }
 .btn:focus,
@@ -2520,7 +2520,7 @@ html {
 .c-content__menu--detail {
   width: 280px;
   margin: 0 auto 6px;
-  font-family: 'Microsoft YaHei', 'Arial', sans-serif;
+  font-family: 'Heiti SC', 'Microsoft YaHei', 'Arial', sans-serif;
 }
 .c-content__menu--detail.tit {
   overflow: hidden;
@@ -2556,7 +2556,7 @@ html {
 }
 .c-footer {
   background-color: #041e45;
-  font-family: 'Microsoft YaHei', 'Arial', sans-serif;
+  font-family: 'Heiti SC', 'Microsoft YaHei', 'Arial', sans-serif;
   font-size: 14px;
   text-align: center;
   padding: 1em 0;
@@ -2588,7 +2588,7 @@ html {
   color: #fff;
   height: 70px;
   vertical-align: middle;
-  font-family: 'Microsoft YaHei', 'Arial', sans-serif;
+  font-family: 'Heiti SC', 'Microsoft YaHei', 'Arial', sans-serif;
   position: relative;
   top: 0;
   left: 0;
@@ -4089,24 +4089,26 @@ html {
   vertical-align: top;
   color: #536a8d;
   padding-left: 2em;
-  font-family: 'Microsoft YaHei';
+  margin-top: 20px;
 }
 .c-module-login__header--copy h3 {
   font-size: 30px;
   font-weight: bold;
-  line-height: em;
+  line-height: 2em;
 }
 .c-module-login__header--copy p {
-  font-size: 14px;
-  line-height: 2em;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: #7f7f7f;
 }
 .c-module-login__desc {
   color: #536a8d;
-  font-family: 'Microsoft YaHei';
+  font-family: 'Heiti SC', 'Microsoft YaHei', 'Arial', sans-serif;
   position: relative;
 }
 .c-module-login__desc-item {
   margin-top: 3em;
+  margin-left: 10px;
 }
 .c-module-login__desc-item:nth-child(1) p {
   width: 400px;
@@ -4122,15 +4124,22 @@ html {
   font-weight: bold;
   line-height: 2em;
 }
+.c-module-login__desc-item h3 a {
+  color: #536a8d;
+}
+.c-module-login__desc-item h3 a:hover {
+  text-decoration: none;
+}
 .c-module-login__desc-item h3 .ion-stop {
-  font-size: 8px;
+  font-size: 10px;
   position: absolute;
-  left: -15px;
+  left: -12px;
   color: #addaff;
 }
 .c-module-login__desc-item p {
-  font-size: 14px;
-  line-height: 2em;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: #7f7f7f;
 }
 .c-module-setup .panel {
   margin-bottom: 10px;
