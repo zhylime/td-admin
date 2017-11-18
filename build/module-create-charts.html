@@ -21,12 +21,12 @@
     <div class="c-module c-module-charts c-module-createCharts container-fluid">
       <form method="POST" name="moduleEditForm" id="moduleChartsForm" data-js-form-validator class="c-form-module">
         <div class="row">
-          <div class="col-sm-3">
-            <div class="form-group text-label text-right">
+          <div class="col-sm-2">
+            <div class="form-group text-label text-left">
               <label for="name" class="form__label">业务表单名称</label>
             </div>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-10">
             <div class="form-group">
               <input type="text" id="name" name="name" data-rule="required|alpha|max:30" class="form-control">
               <div class="text-danger l-padding-top-1 hide input-error-message">请输入名称</div>
@@ -34,12 +34,12 @@
           </div>
         </div>
         <div class="row l-p-1-2">
-          <div class="col-sm-3">
-            <div class="form-group text-label text-right">
+          <div class="col-sm-2">
+            <div class="form-group text-label text-left">
               <label for="input_type1" class="form__label">业务表单类型</label>
             </div>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-10">
             <div class="form-group c-module-createCharts-select">
               <select id="input_type1" name="input_type1" class="form-control">
                 <option value=""></option>
@@ -54,12 +54,12 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-3">
-            <div class="form-group text-label text-right">
+          <div class="col-sm-2">
+            <div class="form-group text-label text-left">
               <label for="description" class="form__label">描述</label>
             </div>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-10">
             <div class="form-group">
               <textarea id="description" name="description" data-rule="required|max:200" class="form-control"></textarea>
               <div class="text-danger l-padding-top-1 hide input-error-message">请输入描述</div>
@@ -67,12 +67,12 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-3">
-            <div class="form-group text-label text-right">
+          <div class="col-sm-2">
+            <div class="form-group text-label text-left">
               <label for="script" class="form__label">SQL脚本</label>
             </div>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-10">
             <div class="form-group">
               <textarea id="script" name="description" data-rule="required|max:200" class="form-control"></textarea>
               <div class="text-danger l-padding-top-1 hide input-error-message">请输入脚本</div>
@@ -80,24 +80,24 @@
           </div>
         </div>
         <div class="row button-group text-center">
-          <div class="col-sm-3">
+          <div class="col-sm-2">
             <div class="form-group text-label">
               <label class="form__label"></label>
             </div>
           </div>
-          <div class="col-sm-9 button-single">
+          <div class="col-sm-10 button-single">
             <div class="form-group text-left">
               <button type="button" data-toggle="modal" data-target="#previewPopup" class="btn btn-default">预览</button>
             </div>
           </div>
         </div>
         <div class="row l-p-2-1">
-          <div class="col-sm-3">
+          <div class="col-sm-2">
             <div class="form-group text-label">
               <label class="form__label"></label>
             </div>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-10">
             <div class="form-group text-label text-left">
               <label class="form__label">查询字段</label>
             </div>

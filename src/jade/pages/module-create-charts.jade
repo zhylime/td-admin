@@ -15,19 +15,19 @@ block content
     form.c-form-module(method="POST" name="moduleEditForm" id="moduleChartsForm" data-js-form-validator)
 
       .row
-        .col-sm-3
-          .form-group.text-label.text-right
+        .col-sm-2
+          .form-group.text-label.text-left
             label.form__label(for="name") 业务表单名称
-        .col-sm-9
+        .col-sm-10
           .form-group
             input.form-control(type="text" id="name" name="name" data-rule="required|alpha|max:30")
             div.text-danger.l-padding-top-1.hide.input-error-message 请输入名称
 
       .row.l-p-1-2
-        .col-sm-3
-          .form-group.text-label.text-right
+        .col-sm-2
+          .form-group.text-label.text-left
             label.form__label(for="input_type1") 业务表单类型
-        .col-sm-9
+        .col-sm-10
           .form-group.c-module-createCharts-select
             select#input_type1.form-control(name='input_type1')
               option(value='')
@@ -36,34 +36,34 @@ block content
             select#input_type3.form-control(name='input_type3')
               option(value='')
       .row
-        .col-sm-3
-          .form-group.text-label.text-right
+        .col-sm-2
+          .form-group.text-label.text-left
             label.form__label(for="description") 描述
-        .col-sm-9
+        .col-sm-10
           .form-group
             textarea.form-control(id="description" name="description" data-rule="required|max:200")
             div.text-danger.l-padding-top-1.hide.input-error-message 请输入描述
       .row
-        .col-sm-3
-          .form-group.text-label.text-right
+        .col-sm-2
+          .form-group.text-label.text-left
             label.form__label(for="script") SQL脚本
-        .col-sm-9
+        .col-sm-10
           .form-group
             textarea.form-control(id="script" name="description" data-rule="required|max:200")
             div.text-danger.l-padding-top-1.hide.input-error-message 请输入脚本
 
       .row.button-group.text-center
-        .col-sm-3
+        .col-sm-2
           .form-group.text-label
             label.form__label
-        .col-sm-9.button-single
+        .col-sm-10.button-single
           .form-group.text-left
             button.btn.btn-default(type='button' data-toggle='modal', data-target='#previewPopup') 预览
       .row.l-p-2-1
-        .col-sm-3
+        .col-sm-2
           .form-group.text-label
             label.form__label
-        .col-sm-9
+        .col-sm-10
           .form-group.text-label.text-left
             label.form__label 查询字段
 
