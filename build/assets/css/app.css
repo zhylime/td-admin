@@ -3926,13 +3926,15 @@ html {
 .c-module-charts__grid .grid-item__btns a:hover {
   text-decoration: none;
 }
+.c-module-charts__grid .grid-item__btns a i {
+  margin-right: 5px;
+}
 .c-module-charts__grid .grid-item__btns a .icon-preview {
   background: url("../images/icon-preview-blue.png");
   display: inline-block;
   vertical-align: middle;
   width: 21px;
   height: 12px;
-  margin-right: 5px;
 }
 .c-module-charts__grid .grid-item__btns a .icon-module {
   background: url("../images/icon-module-blue.png");
@@ -3940,7 +3942,6 @@ html {
   vertical-align: middle;
   width: 15px;
   height: 16px;
-  margin-right: 5px;
 }
 .c-module-charts__search-container {
   margin-top: 5px;
@@ -3971,6 +3972,12 @@ html {
 .c-module-charts-edit .c-module-charts__grid {
   display: inline-block;
   width: calc(100% - 240px);
+}
+.c-module-charts-edit .c-module-charts__grid .grid-item {
+  width: 300px;
+}
+.c-module-charts-edit .c-module-charts__grid .grid-item__btns a {
+  margin: 0;
 }
 .c-module-createCharts-select select {
   width: 33%;

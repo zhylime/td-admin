@@ -1071,13 +1071,14 @@ var MasonryLayout = function (_MLP$apps$MLPModule) {
       this.layout();
       this.highlightItem();
       this.popup();
+      this.removeItem();
     }
   }, {
     key: 'layout',
     value: function layout() {
       this.el.gridContainer.masonry({
         itemSelector: '.box',
-        columnWidth: 260,
+        // columnWidth: 260,
         // isFitWidth:true,
         gutter: 20
         // isAnimated: true
@@ -1112,6 +1113,16 @@ var MasonryLayout = function (_MLP$apps$MLPModule) {
     value: function previewPager() {
       $(this.el.pager).pager({
         buttonClickCallback: function buttonClickCallback(pagenumber, pagecount, _buttonClickCallback) {}
+      });
+    }
+  }, {
+    key: 'removeItem',
+    value: function removeItem() {
+      var _this = this;
+      $(document).on('click', '.js-remove-chart-item', function (e) {
+        console.log(e.target);
+        $(e.target).parents('.grid-item').remove();
+        $(_this.el.gridContainer).masonry('layout');
       });
     }
   }]);

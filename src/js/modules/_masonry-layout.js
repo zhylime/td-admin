@@ -19,6 +19,7 @@ class MasonryLayout extends MLP.apps.MLPModule {
         this.layout();
         this.highlightItem();
         this.popup();
+        this.removeItem();
         
     
 
@@ -28,7 +29,7 @@ class MasonryLayout extends MLP.apps.MLPModule {
     layout(){
       this.el.gridContainer.masonry({
         itemSelector: '.box',
-        columnWidth: 260,
+        // columnWidth: 260,
         // isFitWidth:true,
         gutter: 20,
         // isAnimated: true
@@ -62,6 +63,15 @@ class MasonryLayout extends MLP.apps.MLPModule {
         buttonClickCallback: function(pagenumber, pagecount, buttonClickCallback){
 
         }
+      })
+    }
+
+    removeItem(){
+      var _this = this;
+      $(document).on('click', '.js-remove-chart-item', function(e){
+        console.log(e.target);
+        $(e.target).parents('.grid-item').remove();
+         $(_this.el.gridContainer).masonry('layout');
       })
     }
 
