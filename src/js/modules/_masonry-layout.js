@@ -10,6 +10,8 @@ class MasonryLayout extends MLP.apps.MLPModule {
         previewBtn : this.el.target.find('.js-open-modal-charts-preview'),
         pager: $('#chartsPager'),
       }
+
+      this.removedItem;
   
       this.events();
     }
@@ -69,9 +71,18 @@ class MasonryLayout extends MLP.apps.MLPModule {
     removeItem(){
       var _this = this;
       $(document).on('click', '.js-remove-chart-item', function(e){
-        console.log(e.target);
-        $(e.target).parents('.grid-item').remove();
-         $(_this.el.gridContainer).masonry('layout');
+        e.stopPropagation();
+        _this.removedItem = $(e.target).parents('.grid-item');
+        // $(e.target).parents('.grid-item').remove();
+         // $(_this.el.gridContainer).masonry('layout');
+         var id = $(this).attr('data-target');
+         $(id).modal('show');
+
+         $(id).find('.js-remove-btn').unbind('click').on('click', function(){
+           $(_this.removedItem).remove();
+           $(_this.el.gridContainer).masonry('layout');
+           $(id).find('.close').trigger('click');
+         });
       })
     }
 
