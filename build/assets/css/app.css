@@ -3700,7 +3700,7 @@ html {
   box-shadow: none;
 }
 .c-module-charts {
-  max-width: 1000px;
+  max-width: 100%;
 }
 .c-module-charts .nav-tabs a {
   background: #d9e6f9;
@@ -3982,6 +3982,9 @@ html {
 }
 .c-module-charts-edit .c-module-charts__grid .grid-item__btns a {
   margin: 0;
+}
+.c-module-createCharts {
+  max-width: 1000px;
 }
 .c-module-createCharts-select select {
   width: 33%;
