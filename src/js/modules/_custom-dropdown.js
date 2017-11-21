@@ -40,6 +40,8 @@ class CustomDropDown extends MLP.apps.MLPModule {
               left: _left,
               top: _top
             })
+          }else {
+            $(".js-dropdown-list").addClass('hide');
           }
         });
 
@@ -66,11 +68,7 @@ class CustomDropDown extends MLP.apps.MLPModule {
 
     }
 
- 
-
-
-      
-
+  
    
 
 }

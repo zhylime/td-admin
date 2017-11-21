@@ -838,6 +838,8 @@ var CustomDropDown = function (_MLP$apps$MLPModule) {
             left: _left,
             top: _top
           });
+        } else {
+          $(".js-dropdown-list").addClass('hide');
         }
       });
     }
