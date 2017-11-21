@@ -33,17 +33,28 @@ class CustomDropDown extends MLP.apps.MLPModule {
           if($(this).next().hasClass('jd-dropdown-sub-list')){
             var _left = $(this).parent().parent().outerWidth(),
                 _top = $(this).position().top;
+            // $(_this.el.dropDownItem).removeClass('active');
+            _this.resetSubList();
+            console.log($(this).parents('.jd-dropdown-sub-list').prev().hasClass('js-dropdown-item'));
+            if($(this).parents('.jd-dropdown-sub-list').prev().hasClass('js-dropdown-item') > 0){
+              $(this).parents('.jd-dropdown-sub-list').prev().toggleClass('active');
+            }
+            $(this).parents('.jd-dropdown-sub-list').toggleClass('hide');
             $(this).toggleClass('active');
             $(this).next().toggleClass('hide');
-            console.log(_left);
+    
             $(this).next().css({
               left: _left,
               top: _top
             })
-          }else {
-            $(".js-dropdown-list").addClass('hide');
           }
         });
+
+        // this.el.dropDownList.on('mouseleave', function(){
+        //   $(_this.el.dropDownBtn).trigger('click');
+        // })
+
+
 
  
     }
@@ -68,7 +79,11 @@ class CustomDropDown extends MLP.apps.MLPModule {
 
     }
 
-  
+ 
+
+
+      
+
    
 
 }
