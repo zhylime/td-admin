@@ -2866,11 +2866,11 @@ html {
 .c-mainFrame__sideNav li span:before,
 .c-mainFrame__sideNav li a:before {
   content: "";
-  background: url("../images/spirit-icons.png");
+  background-image: url("../images/spirit-icons.png");
   background-repeat: no-repeat;
   position: absolute;
   display: block;
-  top: 50%;
+  top: 52%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -o-transform: translateY(-50%);
@@ -2878,6 +2878,41 @@ html {
   transform: translateY(-50%);
   width: 20px;
   height: 22px;
+  -webkit-background-size: 20px;
+  -moz-background-size: 20px;
+  background-size: 20px;
+}
+.c-mainFrame__sideNav li span.ico-user-admin:before,
+.c-mainFrame__sideNav li a.ico-user-admin:before {
+  background-image: url("../images/icon-user-admin.png");
+}
+.c-mainFrame__sideNav li span.ico-role-admin:before,
+.c-mainFrame__sideNav li a.ico-role-admin:before {
+  background-image: url("../images/icon-role-setting.png");
+}
+.c-mainFrame__sideNav li span.ico-data-setting:before,
+.c-mainFrame__sideNav li a.ico-data-setting:before {
+  background-image: url("../images/icon-setting.png");
+}
+.c-mainFrame__sideNav li span.ico-data-demand:before,
+.c-mainFrame__sideNav li a.ico-data-demand:before {
+  background-image: url("../images/icon-data-demand.png");
+}
+.c-mainFrame__sideNav li span.ico-data-source:before,
+.c-mainFrame__sideNav li a.ico-data-source:before {
+  background-image: url("../images/icon-data-source.png");
+}
+.c-mainFrame__sideNav li span.ico-data-form:before,
+.c-mainFrame__sideNav li a.ico-data-form:before {
+  background-image: url("../images/icon-data-form.png");
+}
+.c-mainFrame__sideNav li span.ico-setting:before,
+.c-mainFrame__sideNav li a.ico-setting:before {
+  background-image: url("../images/icon-setting.png");
+}
+.c-mainFrame__sideNav li span.ico-data-authority:before,
+.c-mainFrame__sideNav li a.ico-data-authority:before {
+  background-image: url("../images/icon-data-authority.png");
 }
 .c-mainFrame__sideNav li a:hover,
 .c-mainFrame__sideNav li a:focus {
@@ -2897,7 +2932,12 @@ html {
 .c-mainFrame__sideNav .subnav-1-item>a:before {
   width: 24px;
   height: 24px;
-  left: 18px;
+  left: 20px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .c-mainFrame__sideNav .subnav-1-item[data-expanded='false']>span:after,
 .c-mainFrame__sideNav .subnav-1-item[data-expanded='false']>a:after {
