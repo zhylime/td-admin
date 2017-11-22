@@ -2878,9 +2878,9 @@ html {
   transform: translateY(-50%);
   width: 20px;
   height: 22px;
-  -webkit-background-size: 20px;
-  -moz-background-size: 20px;
-  background-size: 20px;
+  -webkit-background-size: 20px auto;
+  -moz-background-size: 20px auto;
+  background-size: 20px auto;
 }
 .c-mainFrame__sideNav li span.ico-user-admin:before,
 .c-mainFrame__sideNav li a.ico-user-admin:before {
@@ -2910,9 +2910,21 @@ html {
 .c-mainFrame__sideNav li a.ico-setting:before {
   background-image: url("../images/icon-setting.png");
 }
+.c-mainFrame__sideNav li span.ico-web-setup:before,
+.c-mainFrame__sideNav li a.ico-web-setup:before {
+  background-image: url("../images/icon-web-setup.png");
+}
 .c-mainFrame__sideNav li span.ico-data-authority:before,
 .c-mainFrame__sideNav li a.ico-data-authority:before {
   background-image: url("../images/icon-data-authority.png");
+}
+.c-mainFrame__sideNav li span.ico-module-setting:before,
+.c-mainFrame__sideNav li a.ico-module-setting:before {
+  background-image: url("../images/icon-module-setting.png");
+}
+.c-mainFrame__sideNav li span.ico-module-preview:before,
+.c-mainFrame__sideNav li a.ico-module-preview:before {
+  background-image: url("../images/icon-module-preview.png");
 }
 .c-mainFrame__sideNav li a:hover,
 .c-mainFrame__sideNav li a:focus {
