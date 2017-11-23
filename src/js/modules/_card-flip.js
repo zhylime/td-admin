@@ -44,36 +44,56 @@ class CardFlip extends MLP.apps.MLPModule {
       })
     })
     // this.initCardSide();
-    this.el.cardItems.each(function(){
-      $(this).on('click', function(e){
+    // this.el.cardItems.each(function(){
+
+    //   $(this).on('click', function(e){
         
-   
-        if($(this).find('.card-side').hasClass('card-front')){
-          _this.cardFront = $(this).find('.card-front');
-          // console.log(_this.cardFront);
-          setTimeout(function(){
-            _this.cardFront.addClass('card-back').removeClass('card-front');
-          })
+    //     if($(this).find('.card-side').hasClass('card-front')){
+    //       _this.cardFront = $(this).find('.card-front');
+    //       // console.log(_this.cardFront);
+    //       setTimeout(function(){
+    //         _this.cardFront.addClass('card-back').removeClass('card-front');
+    //       })
           
-        }
-        if($(this).find('.card-side').hasClass('card-back')){
-          _this.cardBack = $(this).find('.card-back');
-          setTimeout(function(){
-            _this.cardBack.addClass('card-front').removeClass('card-back');
-          })
+    //     }
+    //     if($(this).find('.card-side').hasClass('card-back')){
+    //       _this.cardBack = $(this).find('.card-back');
+    //       setTimeout(function(){
+    //         _this.cardBack.addClass('card-front').removeClass('card-back');
+    //       })
           
-        }
-        
-       
+    //     }
+    //   });
+    // })
+
+    $(document).on('click', '.js-card', function(e){
+      var _target = $(e.target).parents('.js-card');
+      if(_target.length>0){
+        _this.playCard(_target);
+      }
+    });
+
+
     
 
+  }
 
+  playCard(obj){
+    var _this = this;
+   if($(obj).find('.card-side').hasClass('card-front')){
+      _this.cardFront = $(obj).find('.card-front');
+      setTimeout(function(){
+        _this.cardFront.addClass('card-back').removeClass('card-front');
       })
-    })
-
-
-    
-
+      
+    }
+    if($(obj).find('.card-side').hasClass('card-back')){
+      _this.cardBack = $(obj).find('.card-back');
+      setTimeout(function(){
+        _this.cardBack.addClass('card-front').removeClass('card-back');
+      })
+      
+    }
   }
 
 
